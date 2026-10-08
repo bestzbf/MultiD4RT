@@ -1,0 +1,35 @@
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /data1/zbf/d4rt_val_datasets/PointOdyssey
+    weight: 0.45
+    adapter_kwargs:
+      fast_root: null
+      require_tracks: true
+  - name: dynamic_replica
+    root: /data1/zbf/d4rt_val_datasets/Dynamic_Replica
+    weight: 0.25
+    val_split: valid
+  - name: blendedmvs
+    root: /data1/zbf/d4rt_val_datasets/BlendedMVS
+    weight: 0.30
+    adapter_kwargs:
+      use_masked: false
+
+clip_len: 48
+img_size: 256
+num_queries: 512
+use_augs: false
+boundary_ratio: 0.3
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 42
+allow_track_fallback: true
+
+epoch_size: 2000
+precompute_patches: false
+precompute_from_highres: false
+
+index_cache_dir: /data1/zbf/my_dfrt/.index_cache_3datasets_val_local
+index_workers: 16
+
+planned_mode: false

@@ -1,0 +1,373 @@
+{
+  "time": "2026-10-08T19:39:22.268538+08:00",
+  "evaluation_checkpoint_step": 55500,
+  "production_commit": "3a4cc688cc6bb9b4e41b77332a55c21e9de0c7b3",
+  "training_stage": "train_56000_try0",
+  "child_pid": 833554,
+  "physical_gpus": [
+    4,
+    5,
+    2,
+    3
+  ],
+  "training_ranks": [
+    {
+      "pid": 834091,
+      "physical_gpu": 2,
+      "used_memory_mib": 233404,
+      "command": "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python -u -m multicamera4rc.train --data-config /data8/zbf/multicamera4rc_runs/syn4d_replay_20261008/replay_mixture.json --output /data8/zbf/multicamera4rc_runs/lr_trial_20261008/training/continuation_55500_56000_try0 --resume /data8/zbf/multicamera4rc_runs/scaleout_immediate_20261008/continuation_55000_55500_try0/latest.pt --preset giant --device cuda --amp --amp-dtype bfloat16 --steps 56000 --batch-size 1 --source-count 4 --max-source-time-pairs 64 --workers 2 --save-every 1000 --lr 7.052329015968307e-07 --backbone-lr 7.052329015968308e-08 --weight-decay 0.05 --clip-grad 1.0 --seed 49 --cpu-threads 4 --override-lr --prefer-motion-sources --loss-profile auto --lr-schedule cosine --warmup-steps 100 --min-lr-ratio 0.2 --warmup-start-ratio 0.6666666666666666 --lr-end-step 100000 --decoder-memory target_time --no-query-chunking "
+    },
+    {
+      "pid": 834092,
+      "physical_gpu": 3,
+      "used_memory_mib": 233212,
+      "command": "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python -u -m multicamera4rc.train --data-config /data8/zbf/multicamera4rc_runs/syn4d_replay_20261008/replay_mixture.json --output /data8/zbf/multicamera4rc_runs/lr_trial_20261008/training/continuation_55500_56000_try0 --resume /data8/zbf/multicamera4rc_runs/scaleout_immediate_20261008/continuation_55000_55500_try0/latest.pt --preset giant --device cuda --amp --amp-dtype bfloat16 --steps 56000 --batch-size 1 --source-count 4 --max-source-time-pairs 64 --workers 2 --save-every 1000 --lr 7.052329015968307e-07 --backbone-lr 7.052329015968308e-08 --weight-decay 0.05 --clip-grad 1.0 --seed 49 --cpu-threads 4 --override-lr --prefer-motion-sources --loss-profile auto --lr-schedule cosine --warmup-steps 100 --min-lr-ratio 0.2 --warmup-start-ratio 0.6666666666666666 --lr-end-step 100000 --decoder-memory target_time --no-query-chunking "
+    },
+    {
+      "pid": 834089,
+      "physical_gpu": 4,
+      "used_memory_mib": 174406,
+      "command": "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python -u -m multicamera4rc.train --data-config /data8/zbf/multicamera4rc_runs/syn4d_replay_20261008/replay_mixture.json --output /data8/zbf/multicamera4rc_runs/lr_trial_20261008/training/continuation_55500_56000_try0 --resume /data8/zbf/multicamera4rc_runs/scaleout_immediate_20261008/continuation_55000_55500_try0/latest.pt --preset giant --device cuda --amp --amp-dtype bfloat16 --steps 56000 --batch-size 1 --source-count 4 --max-source-time-pairs 64 --workers 2 --save-every 1000 --lr 7.052329015968307e-07 --backbone-lr 7.052329015968308e-08 --weight-decay 0.05 --clip-grad 1.0 --seed 49 --cpu-threads 4 --override-lr --prefer-motion-sources --loss-profile auto --lr-schedule cosine --warmup-steps 100 --min-lr-ratio 0.2 --warmup-start-ratio 0.6666666666666666 --lr-end-step 100000 --decoder-memory target_time --no-query-chunking "
+    },
+    {
+      "pid": 834090,
+      "physical_gpu": 5,
+      "used_memory_mib": 174048,
+      "command": "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python -u -m multicamera4rc.train --data-config /data8/zbf/multicamera4rc_runs/syn4d_replay_20261008/replay_mixture.json --output /data8/zbf/multicamera4rc_runs/lr_trial_20261008/training/continuation_55500_56000_try0 --resume /data8/zbf/multicamera4rc_runs/scaleout_immediate_20261008/continuation_55000_55500_try0/latest.pt --preset giant --device cuda --amp --amp-dtype bfloat16 --steps 56000 --batch-size 1 --source-count 4 --max-source-time-pairs 64 --workers 2 --save-every 1000 --lr 7.052329015968307e-07 --backbone-lr 7.052329015968308e-08 --weight-decay 0.05 --clip-grad 1.0 --seed 49 --cpu-threads 4 --override-lr --prefer-motion-sources --loss-profile auto --lr-schedule cosine --warmup-steps 100 --min-lr-ratio 0.2 --warmup-start-ratio 0.6666666666666666 --lr-end-step 100000 --decoder-memory target_time --no-query-chunking "
+    }
+  ],
+  "latest_logged_update": {
+    "step": 55565,
+    "world_size": 4,
+    "metrics_version": 2,
+    "supervision": "dense",
+    "input_hw": [
+      434,
+      560
+    ],
+    "rank_batches": [
+      {
+        "dataset": [
+          "scannetpp"
+        ],
+        "clip_id": [
+          "scannetpp/eaab7bcc15"
+        ],
+        "input_hw": [
+          434,
+          560
+        ],
+        "observations": 12,
+        "times": 12,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -0.8276797533035278,
+          "depth_abs_rel": 0.021879449486732483,
+          "depth_mae_normalized": 0.018805870786309242,
+          "trajectory_epe_normalized": 0.0392327606678009,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 924330.0,
+          "supervised_trajectory_pixels": 924330.0,
+          "camera_rotation_degrees": 0.7804746031761169
+        },
+        "scene_scale": [
+          1.558997392654419
+        ],
+        "depth_filter": [
+          {
+            "max_depth": null,
+            "max_percentile": null,
+            "percentile_population": "all_pixels_including_zero",
+            "application_stage": "after_padding_before_track_generation",
+            "per_raw_frame_percentile_threshold": {
+              "824": null,
+              "828": null,
+              "832": null,
+              "836": null,
+              "840": null,
+              "844": null,
+              "848": null,
+              "852": null,
+              "856": null,
+              "860": null,
+              "864": null,
+              "868": null
+            },
+            "filtered_positive_pixels": 0,
+            "sanitized_pixels": 0
+          }
+        ]
+      },
+      {
+        "dataset": [
+          "vkitti2_Camera_1"
+        ],
+        "clip_id": [
+          "vkitti2/Scene20_rain"
+        ],
+        "input_hw": [
+          378,
+          1246
+        ],
+        "observations": 24,
+        "times": 24,
+        "decoded_sources": 2,
+        "metrics": {
+          "loss": -3.0298688411712646,
+          "depth_abs_rel": 0.032866623252630234,
+          "depth_mae_normalized": 0.05397424474358559,
+          "trajectory_epe_normalized": 0.0683755949139595,
+          "displacement_epe_dynamic_normalized": 0.000828486867249012,
+          "depth_confidence_saturated_fraction": 0.0,
+          "trajectory_epe_temporal_normalized": 0.06838833540678024,
+          "displacement_epe_temporal_normalized": 0.0003649243153631687,
+          "supervised_source_pixels": 772915.0,
+          "supervised_trajectory_pixels": 2318745.0,
+          "camera_rotation_degrees": 0.35545045137405396
+        },
+        "scene_scale": [
+          53.784603118896484
+        ]
+      },
+      {
+        "dataset": [
+          "kubric_variable"
+        ],
+        "clip_id": [
+          "kubric_multicam/scene_F_001028"
+        ],
+        "input_hw": [
+          266,
+          266
+        ],
+        "observations": 24,
+        "times": 4,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -0.9019920825958252,
+          "depth_abs_rel": 0.049844544380903244,
+          "depth_mae_normalized": 0.056258030235767365,
+          "trajectory_epe_normalized": 0.08187566697597504,
+          "displacement_epe_dynamic_normalized": 0.012164834886789322,
+          "depth_confidence_saturated_fraction": 0.0,
+          "trajectory_epe_temporal_normalized": 0.08184105157852173,
+          "displacement_epe_temporal_normalized": 0.0013397729489952326,
+          "supervised_source_pixels": 205830.0,
+          "supervised_trajectory_pixels": 823320.0,
+          "camera_rotation_degrees": 1.8802293539047241,
+          "excluded_background_pixels": 327764.0,
+          "excluded_background_fraction": 0.20838673412799835
+        },
+        "scene_scale": [
+          10.107625007629395
+        ]
+      },
+      {
+        "dataset": [
+          "tartanair_v2_left"
+        ],
+        "clip_id": [
+          "tartanair_v2_zip/AbandonedSchool/Data_easy/P007"
+        ],
+        "input_hw": [
+          644,
+          644
+        ],
+        "observations": 16,
+        "times": 8,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -1.536177635192871,
+          "depth_abs_rel": 0.0177056472748518,
+          "depth_mae_normalized": 0.009175265207886696,
+          "trajectory_epe_normalized": 0.03337519243359566,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 1605669.0,
+          "supervised_trajectory_pixels": 1605669.0,
+          "camera_rotation_degrees": 0.804557740688324
+        },
+        "scene_scale": [
+          5.9099345207214355
+        ],
+        "depth_filter": [
+          [
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 8.25,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401411
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 4.171875,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401411
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 12.7421875,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401409
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.328125,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401418
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 16.265625,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401420
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.5,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409599,
+              "retained_pixels": 401413
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.921875,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401409
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.125,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401417
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 9.0625,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401449
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 5.1640625,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401438
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 10.9296875,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401435
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.53125,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401472
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 16.4375,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401437
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.20361328125,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401408
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.53125,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409599,
+              "retained_pixels": 401409
+            },
+            {
+              "depth_max": 200.0,
+              "percentile": 98.0,
+              "cutoff": 17.3125,
+              "finite_pixels": 409600,
+              "range_valid_pixels": 409600,
+              "retained_pixels": 401428
+            }
+          ]
+        ]
+      }
+    ],
+    "data_epoch": 0,
+    "optimizer_step_skipped": false,
+    "amp_dtype": "bfloat16",
+    "loss_profile": "dense",
+    "backbone_lr": 6.229557297438672e-08,
+    "lr": 6.229557297438671e-07,
+    "loss": -1.5739295780658722,
+    "depth": 0.3986768610775471,
+    "camera": 0.007122955517843366,
+    "ray": 0.18929848819971085,
+    "trajectory": 0.36959055345505476,
+    "displacement": 0.019826072268188,
+    "visibility": 0.08472660928964615,
+    "static": 8.494227222399786e-05,
+    "confidence": -2.6124739348888397,
+    "grad_norm": 511.97711181640625,
+    "depth_gradient": 0.03372141998261213,
+    "velocity": 0.011826945003122091,
+    "supervised_source_pixels": 877186.0,
+    "supervised_trajectory_pixels": 1418016.0,
+    "trajectory_epe_normalized": 0.055714803747832775,
+    "displacement_epe_normalized": 0.0006240563234314322,
+    "trajectory_epe_temporal_normalized": 0.07511469349265099,
+    "displacement_epe_temporal_normalized": 0.0008523486321792006,
+    "trajectory_epe_dynamic_normalized": 0.0425092289224267,
+    "displacement_epe_dynamic_normalized": 0.006496660877019167,
+    "supervised_dynamic_pixels": 48854.75,
+    "depth_mae_normalized": 0.03455335274338722,
+    "depth_abs_rel": 0.03057406609877944,
+    "base_epe_normalized": 0.05185274872928858,
+    "velocity_epe_normalized": 0.0006324688729364425,
+    "velocity_epe_dynamic_normalized": 0.0056127640418708324,
+    "depth_confidence_mean": 66.6765193939209,
+    "depth_confidence_log_mean": 3.332161068916321,
+    "depth_confidence_saturated_fraction": 0.0,
+    "motion_confidence_mean": 74.68601989746094,
+    "motion_confidence_log_mean": 3.4474841356277466,
+    "motion_confidence_saturated_fraction": 0.0,
+    "camera_translation_epe_normalized": 0.03513352572917938,
+    "camera_rotation_degrees": 0.9551780372858047,
+    "visibility_precision": 0.8379637598991394,
+    "visibility_recall": 0.910857081413269,
+    "visibility_f1": 0.8728912472724915,
+    "excluded_background_pixels": 81941.0,
+    "excluded_background_fraction": 0.20838673412799835
+  },
+  "training_four_gpu_processes_present": true
+}

@@ -1,0 +1,39 @@
+# Standalone Syn4D example. See docs/syn4d.md to append it to the existing mix.
+image_mode: native
+supervision: dense
+num_queries: 0
+num_times: 4
+include_visibility: true
+sampling: balanced_coverage
+epoch_size: 100000
+seed: 49
+sources:
+  - adapter: syn4d
+    name: syn4d_v1
+    root: /data6/Syn4D
+    split: train
+    weight: 1
+    strides: [1]
+    options:
+      subsets: [syn4d_v1_stride_5]
+      frame_policy: reference
+      missing_mesh: mask
+    layouts:
+      - {cameras: 1, num_times: 16, weight: 0.2}
+      - {cameras: 2, num_times: 8, weight: 0.4}
+      - {cameras: 4, num_times: 4, weight: 0.3}
+      - {cameras: 8, num_times: 2, weight: 0.1}
+  - adapter: syn4d
+    name: syn4d_sim
+    root: /data6/Syn4D
+    split: train
+    weight: 1
+    strides: [1]
+    options:
+      subsets: [syn4d_sim]
+      frame_policy: reference
+      missing_mesh: mask
+    layouts:
+      - {cameras: 1, num_times: 16, weight: 0.2}
+      - {cameras: 2, num_times: 8, weight: 0.45}
+      - {cameras: 4, num_times: 4, weight: 0.35}

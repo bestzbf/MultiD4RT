@@ -1,0 +1,2899 @@
+{
+  "passed": true,
+  "stage": "complete",
+  "config": "/data8/zbf/multicamera4rc_runs/syn4d_complete_20261008/full_mixture.json",
+  "config_sha256": "2579d07b6af106ac9d06558c0cc40a7a4216e5cfbfa1bbb7bcfb81b125e07f15",
+  "official_loader_sha256": "6c4ffd29625545ce4b1fca06e6e2c2dd401ed72c3e371432f0530dbdabd493b2",
+  "audit_code_sha256": "c693d60a78a5c2a20f332bda0508476c661785a4c67183e46db18b689793f009",
+  "reviewed_exclusions": {
+    "version": 1,
+    "checked_at_utc": "2026-10-07",
+    "scope": "Complete V1 frame_policy=all pool; required human/cloth meshes. Six cameras still lack tracking; eight upstream object meshes remain unavailable.",
+    "exclusions": [
+      {
+        "source": "syn4d_v1",
+        "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000002_7_camera.csv",
+        "reason": "tracking index is not downloaded",
+        "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 164 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras. Environment masks alone do not establish foreground motion GT."
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000004_2_camera.csv",
+        "reason": "tracking index is not downloaded",
+        "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 195 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras."
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000012_0_camera.csv",
+        "reason": "tracking index is not downloaded",
+        "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 477 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras."
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000013_2_camera.csv",
+        "reason": "tracking index is not downloaded",
+        "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 270 environment PNGs present. This sequence also lacks camera 3; retain its other 6 complete cameras."
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000013_3_camera.csv",
+        "reason": "tracking index is not downloaded",
+        "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 270 environment PNGs present. This sequence also lacks camera 2; retain its other 6 complete cameras."
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000015_3_camera.csv",
+        "reason": "tracking index is not downloaded",
+        "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 304 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras."
+      }
+    ],
+    "missing_objects": [
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-021/91e56c85fd9a4c439d015d7e232ec987/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/cyber_bald/seq_000011"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-022/1f712c03b748426da77a36343d263913/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/cyber_bald/seq_000013"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-005/64350a72ad11412b9725721d8b27d225/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/hallway/seq_000007"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-080/810c966e8e704e848e5e2d6e78ec5783/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/hallway/seq_000013"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-082/4ca1501b0a4548afb35d26f44d3bbdb8/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/hospital/seq_000015"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-030/510c266578f240bbb40d31c00e8dbc13/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/office_bald/seq_000008"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-039/5e1b5352b67d402f97b3ccc5fe92bc06/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/office_bald/seq_000013"
+        ]
+      },
+      {
+        "source": "syn4d_v1",
+        "path": "data/metadata/new_weight_bone/000-039/498a9ca0f5724c6da0fa7102a62f8783/vertices_sequence.npz",
+        "reason": "object mesh is unavailable; motion masked",
+        "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+        "affected_sequences": [
+          "syn4d_v1_stride_1/village/seq_000014"
+        ]
+      }
+    ],
+    "extra_sequences": [
+      "syn4d_v1_stride_1/hallway/seq_000000",
+      "syn4d_v1_stride_1/hallway/seq_000005",
+      "syn4d_v1_stride_1/hallway/seq_000008"
+    ]
+  },
+  "reviewed_exclusions_sha256": "633648f727596bb7e19650dd9a8425fb2d3d7b5b4efb0e5fa91eecbc0b5c77bc",
+  "sources": [
+    {
+      "name": "syn4d_v1",
+      "sequences": 565,
+      "split_counts": {
+        "train": 455,
+        "val": 50,
+        "test": 60
+      },
+      "camera_count_histogram": {
+        "8": 560,
+        "7": 4,
+        "6": 1
+      },
+      "missing_mesh_masks": {
+        "obj_02": 2,
+        "obj_03": 3,
+        "obj_01": 3
+      },
+      "scenes": {
+        "bigoffice_v1": 5,
+        "castle": 20,
+        "arena": 20,
+        "cave_group": 20,
+        "brushify_bald": 20,
+        "countryside": 20,
+        "desert_bald": 20,
+        "downtown_bald": 20,
+        "genshin_group": 20,
+        "flying_group": 20,
+        "japenese_bald": 20,
+        "hallway": 20,
+        "lab_bald": 20,
+        "hospital": 20,
+        "middleeast_bald": 20,
+        "cyber_bald": 20,
+        "planet_bald": 20,
+        "post_bald": 20,
+        "scifiroom_bald": 20,
+        "soul_bald": 20,
+        "office_bald": 20,
+        "space_bald": 20,
+        "soviet_group": 20,
+        "temple_group": 20,
+        "train_group": 20,
+        "warehouse_group_static": 20,
+        "village": 20,
+        "winter": 20,
+        "winter_group_static": 20
+      },
+      "rejected": [
+        {
+          "path": "/data6/Syn4D/data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000002_7_camera.csv",
+          "reason": "tracking index is not downloaded"
+        },
+        {
+          "path": "/data6/Syn4D/data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000004_2_camera.csv",
+          "reason": "tracking index is not downloaded"
+        },
+        {
+          "path": "/data6/Syn4D/data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000012_0_camera.csv",
+          "reason": "tracking index is not downloaded"
+        },
+        {
+          "path": "/data6/Syn4D/data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000013_2_camera.csv",
+          "reason": "tracking index is not downloaded"
+        },
+        {
+          "path": "/data6/Syn4D/data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000013_3_camera.csv",
+          "reason": "tracking index is not downloaded"
+        },
+        {
+          "path": "/data6/Syn4D/data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000015_3_camera.csv",
+          "reason": "tracking index is not downloaded"
+        }
+      ],
+      "reviewed_exclusions": [
+        {
+          "source": "syn4d_v1",
+          "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000002_7_camera.csv",
+          "reason": "tracking index is not downloaded",
+          "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 164 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras. Environment masks alone do not establish foreground motion GT."
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000004_2_camera.csv",
+          "reason": "tracking index is not downloaded",
+          "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 195 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras."
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000012_0_camera.csv",
+          "reason": "tracking index is not downloaded",
+          "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 477 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras."
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000013_2_camera.csv",
+          "reason": "tracking index is not downloaded",
+          "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 270 environment PNGs present. This sequence also lacks camera 3; retain its other 6 complete cameras."
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000013_3_camera.csv",
+          "reason": "tracking index is not downloaded",
+          "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 270 environment PNGs present. This sequence also lacks camera 2; retain its other 6 complete cameras."
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/syn4d_v1_stride_1/hallway/ground_truth/meta_exr_csv/seq_000015_3_camera.csv",
+          "reason": "tracking index is not downloaded",
+          "review": "Completed extraction marker present. Tracking index, tracking shard and raw tracking NPZ absent; camera CSV and 304 environment PNGs present. Keep this camera excluded; retain the other 7 complete cameras."
+        }
+      ],
+      "reviewed_missing_objects": [
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-005/64350a72ad11412b9725721d8b27d225/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/hallway/seq_000007"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-021/91e56c85fd9a4c439d015d7e232ec987/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/cyber_bald/seq_000011"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-022/1f712c03b748426da77a36343d263913/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/cyber_bald/seq_000013"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-030/510c266578f240bbb40d31c00e8dbc13/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/office_bald/seq_000008"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-039/498a9ca0f5724c6da0fa7102a62f8783/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/village/seq_000014"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-039/5e1b5352b67d402f97b3ccc5fe92bc06/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/office_bald/seq_000013"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-080/810c966e8e704e848e5e2d6e78ec5783/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/hallway/seq_000013"
+          ]
+        },
+        {
+          "source": "syn4d_v1",
+          "path": "data/metadata/new_weight_bone/000-082/4ca1501b0a4548afb35d26f44d3bbdb8/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "review": "Absent locally and HTTP 404 EntryNotFound in official dataset revision bb08d13faabc0649a4a938030025e9e2b32a6189. Preserve depth and other known surfaces; this object has no cross-time motion or static supervision.",
+          "affected_sequences": [
+            "syn4d_v1_stride_1/hospital/seq_000015"
+          ]
+        }
+      ],
+      "missing_object_occurrences": [
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-005/64350a72ad11412b9725721d8b27d225/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/hallway/seq_000007",
+              "mask": "obj_02"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-080/810c966e8e704e848e5e2d6e78ec5783/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/hallway/seq_000013",
+              "mask": "obj_03"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-082/4ca1501b0a4548afb35d26f44d3bbdb8/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/hospital/seq_000015",
+              "mask": "obj_01"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-021/91e56c85fd9a4c439d015d7e232ec987/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/cyber_bald/seq_000011",
+              "mask": "obj_03"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-022/1f712c03b748426da77a36343d263913/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/cyber_bald/seq_000013",
+              "mask": "obj_03"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-030/510c266578f240bbb40d31c00e8dbc13/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/office_bald/seq_000008",
+              "mask": "obj_01"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-039/5e1b5352b67d402f97b3ccc5fe92bc06/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/office_bald/seq_000013",
+              "mask": "obj_01"
+            }
+          ]
+        },
+        {
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-039/498a9ca0f5724c6da0fa7102a62f8783/vertices_sequence.npz",
+          "reason": "object mesh is unavailable; motion masked",
+          "occurrences": [
+            {
+              "sequence": "syn4d_v1_stride_1/village/seq_000014",
+              "mask": "obj_02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "syn4d_sim",
+      "sequences": 256,
+      "split_counts": {
+        "train": 204,
+        "val": 25,
+        "test": 27
+      },
+      "camera_count_histogram": {
+        "4": 256
+      },
+      "missing_mesh_masks": {},
+      "scenes": {
+        "cave_sim": 32,
+        "downtown_sim": 32,
+        "japanese_sim": 32,
+        "post_sim": 32,
+        "space_sim": 32,
+        "temple_sim": 32,
+        "train_sim": 32,
+        "winter_sim": 32
+      },
+      "rejected": [],
+      "reviewed_exclusions": [],
+      "reviewed_missing_objects": [],
+      "missing_object_occurrences": []
+    }
+  ],
+  "cases": [
+    {
+      "sequence": "syn4d_v1_stride_1/bigoffice_v1/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5460045,
+      "trajectory_pixel_times": 5455498,
+      "dynamic_pixel_times": 451440,
+      "max_displacement_m": 0.24831853806972504,
+      "human_motion_pixel_times": {
+        "_00_body": 17727,
+        "_00_clothing": 79605
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2690913,
+          "mean_error_m": 5.553694625628683e-07,
+          "p99_error_m": 2.4937176345286406e-06,
+          "max_error_m": 8.993129675116587e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2763705,
+          "mean_error_m": 7.464393562876381e-07,
+          "p99_error_m": 2.5577905075953865e-06,
+          "max_error_m": 1.9268918881382688e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        }
+      ],
+      "seconds": 18.727
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/castle/seq_000003",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5399968,
+      "dynamic_pixel_times": 338157,
+      "max_displacement_m": 0.7004706263542175,
+      "human_motion_pixel_times": {
+        "_00_body": 76383,
+        "_00_clothing": 156972
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2658579,
+          "mean_error_m": 2.9018803861727877e-05,
+          "p99_error_m": 6.566131083285495e-05,
+          "max_error_m": 0.0007522351622504527,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.52587890625e-05
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2676573,
+          "mean_error_m": 3.2597544096774776e-05,
+          "p99_error_m": 6.751657207192078e-05,
+          "max_error_m": 0.0009349241287535586,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 3.0517578125e-05
+        }
+      ],
+      "seconds": 25.246
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/arena/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5520421,
+      "trajectory_pixel_times": 5519043,
+      "dynamic_pixel_times": 381885,
+      "max_displacement_m": 0.6107086539268494,
+      "human_motion_pixel_times": {
+        "_00_body": 46137,
+        "_00_clothing": 192969
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2756871,
+          "mean_error_m": 5.342500156396202e-07,
+          "p99_error_m": 7.300540993731227e-06,
+          "max_error_m": 2.408846635365697e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2760858,
+          "mean_error_m": 2.654409008952631e-06,
+          "p99_error_m": 8.204383466917948e-06,
+          "max_error_m": 3.820614596370681e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.9802322387695312e-08
+        }
+      ],
+      "seconds": 27.976
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/cave_group/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5529586,
+      "dynamic_pixel_times": 353802,
+      "max_displacement_m": 0.6601048111915588,
+      "human_motion_pixel_times": {
+        "_00_body": 23127,
+        "_00_clothing": 67428
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764788,
+          "mean_error_m": 1.4252875583595476e-06,
+          "p99_error_m": 3.6829658410930273e-06,
+          "max_error_m": 0.0007659683718311498,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764791,
+          "mean_error_m": 1.5233493754978832e-06,
+          "p99_error_m": 4.055532264713004e-06,
+          "max_error_m": 0.0005641777733745204,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 14.846
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/brushify_bald/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5520649,
+      "dynamic_pixel_times": 1001735,
+      "max_displacement_m": 0.632053554058075,
+      "human_motion_pixel_times": {
+        "_00_body": 109861,
+        "_00_clothing": 187311
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2757648,
+          "mean_error_m": 0.00012893966269563403,
+          "p99_error_m": 0.00030566389262916667,
+          "max_error_m": 0.0010371583242969463,
+          "additional_valid_pixel_times": 124,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2758451,
+          "mean_error_m": 0.00016260384846937488,
+          "p99_error_m": 0.00034294962441403865,
+          "max_error_m": 0.0016694927061781462,
+          "additional_valid_pixel_times": 137,
+          "max_camera_translation_roundoff_m": 0.0001220703125
+        }
+      ],
+      "seconds": 67.326
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/countryside/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5527451,
+      "trajectory_pixel_times": 5524629,
+      "dynamic_pixel_times": 193881,
+      "max_displacement_m": 0.5202208161354065,
+      "human_motion_pixel_times": {
+        "_00_body": 12267,
+        "_00_clothing": 24285
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2759871,
+          "mean_error_m": 3.0643640205985844e-06,
+          "p99_error_m": 9.841225877403808e-06,
+          "max_error_m": 0.0003802011835845491,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764524,
+          "mean_error_m": 3.644818523906636e-06,
+          "p99_error_m": 9.696368913806713e-06,
+          "max_error_m": 0.0005691744381331495,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 3.814697265625e-06
+        }
+      ],
+      "seconds": 13.235
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/desert_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5528283,
+      "trajectory_pixel_times": 5528246,
+      "dynamic_pixel_times": 968169,
+      "max_displacement_m": 0.9320764541625977,
+      "human_motion_pixel_times": {
+        "_00_body": 42207,
+        "_00_clothing": 115311
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764740,
+          "mean_error_m": 7.20057140688092e-06,
+          "p99_error_m": 1.8688039828700316e-05,
+          "max_error_m": 0.00022073927582641178,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2763474,
+          "mean_error_m": 6.160412863801664e-06,
+          "p99_error_m": 2.0035731589479048e-05,
+          "max_error_m": 9.417767498222543e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 7.62939453125e-06
+        }
+      ],
+      "seconds": 11.417
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/downtown_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5446872,
+      "trajectory_pixel_times": 5464912,
+      "dynamic_pixel_times": 242508,
+      "max_displacement_m": 0.7345747351646423,
+      "human_motion_pixel_times": {
+        "_00_body": 14790,
+        "_00_clothing": 43224
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2700183,
+          "mean_error_m": 9.924499896527204e-07,
+          "p99_error_m": 7.2242765506069705e-06,
+          "max_error_m": 2.1792981058750128e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764713,
+          "mean_error_m": 7.799967088866898e-07,
+          "p99_error_m": 1.9883730985800002e-06,
+          "max_error_m": 1.0639742565765216e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 12.78
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/genshin_group/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5481698,
+      "trajectory_pixel_times": 5481144,
+      "dynamic_pixel_times": 463292,
+      "max_displacement_m": 1.108974575996399,
+      "human_motion_pixel_times": {
+        "_00_body": 42086,
+        "_00_clothing": 76665
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764778,
+          "mean_error_m": 2.401708324424924e-05,
+          "p99_error_m": 5.9793178502943785e-05,
+          "max_error_m": 0.0019537587421156874,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.52587890625e-05
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2716359,
+          "mean_error_m": 2.686241167352191e-05,
+          "p99_error_m": 6.60551012836271e-05,
+          "max_error_m": 0.0004818734389900486,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        }
+      ],
+      "seconds": 20.0
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/flying_group/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5529578,
+      "dynamic_pixel_times": 1484310,
+      "max_displacement_m": 0.8925418853759766,
+      "human_motion_pixel_times": {
+        "_00_body": 82512,
+        "_00_clothing": 215985
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764791,
+          "mean_error_m": 5.858639209803731e-06,
+          "p99_error_m": 1.3662958242664958e-05,
+          "max_error_m": 3.5012241141107336e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764776,
+          "mean_error_m": 8.887739364212054e-06,
+          "p99_error_m": 1.7417980058171248e-05,
+          "max_error_m": 4.152991649447827e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 7.62939453125e-06
+        }
+      ],
+      "seconds": 18.113
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/japenese_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5528364,
+      "trajectory_pixel_times": 5526035,
+      "dynamic_pixel_times": 649845,
+      "max_displacement_m": 1.4831653833389282,
+      "human_motion_pixel_times": {
+        "_00_body": 27099,
+        "_00_clothing": 176250
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764218,
+          "mean_error_m": 9.447000290673465e-07,
+          "p99_error_m": 3.231104968644073e-06,
+          "max_error_m": 0.000854084117299964,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2760774,
+          "mean_error_m": 1.7452526902117618e-06,
+          "p99_error_m": 1.3213790910499403e-05,
+          "max_error_m": 0.0013293894153460536,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        }
+      ],
+      "seconds": 25.231
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hallway/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5186164,
+      "trajectory_pixel_times": 5029798,
+      "dynamic_pixel_times": 794799,
+      "max_displacement_m": 0.9578107595443726,
+      "human_motion_pixel_times": {
+        "_00_body": 118686,
+        "_00_clothing": 94179
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2509257,
+          "mean_error_m": 3.669787153553982e-07,
+          "p99_error_m": 1.3535819657542106e-06,
+          "max_error_m": 2.861551389026539e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.9802322387695312e-08
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2432772,
+          "mean_error_m": 5.343251032367239e-07,
+          "p99_error_m": 1.7483126526753434e-06,
+          "max_error_m": 2.4396945338338976e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        }
+      ],
+      "seconds": 10.937
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hallway/seq_000005",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5520526,
+      "trajectory_pixel_times": 5521160,
+      "dynamic_pixel_times": 156864,
+      "max_displacement_m": 1.6289180517196655,
+      "human_motion_pixel_times": {
+        "_00_body": 12714,
+        "_00_clothing": 59268
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764797,
+          "mean_error_m": 3.945206599017222e-07,
+          "p99_error_m": 1.0416024281680507e-06,
+          "max_error_m": 0.011979801176158288,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.9802322387695312e-08
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2756283,
+          "mean_error_m": 6.089897119225748e-07,
+          "p99_error_m": 1.7869192674319736e-06,
+          "max_error_m": 0.0001883685446779281,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 21.695
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hallway/seq_000007",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5511438,
+      "trajectory_pixel_times": 5328551,
+      "dynamic_pixel_times": 417594,
+      "max_displacement_m": 0.3018820583820343,
+      "human_motion_pixel_times": {
+        "_00_body": 49509,
+        "_00_clothing": 175401
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_02",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-005/64350a72ad11412b9725721d8b27d225/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2580354,
+          "mean_error_m": 6.847789153703333e-07,
+          "p99_error_m": 1.8855188384505003e-06,
+          "max_error_m": 1.735782919593554e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2655921,
+          "mean_error_m": 5.38246472403982e-07,
+          "p99_error_m": 1.807242997511134e-06,
+          "max_error_m": 2.1381711292751706e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        }
+      ],
+      "seconds": 24.602
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hallway/seq_000008",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5195770,
+      "trajectory_pixel_times": 5195070,
+      "dynamic_pixel_times": 294213,
+      "max_displacement_m": 0.6596516370773315,
+      "human_motion_pixel_times": {
+        "_00_body": 21621,
+        "_00_clothing": 73275
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2427585,
+          "mean_error_m": 6.271979832432675e-07,
+          "p99_error_m": 1.6732613133477482e-06,
+          "max_error_m": 4.3058362294157795e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764800,
+          "mean_error_m": 3.2998162081053064e-07,
+          "p99_error_m": 5.941209956081604e-07,
+          "max_error_m": 8.536709093578595e-07,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        }
+      ],
+      "seconds": 10.405
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hallway/seq_000013",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        4,
+        7
+      ],
+      "depth_pixels": 5193675,
+      "trajectory_pixel_times": 5021624,
+      "dynamic_pixel_times": 663933,
+      "max_displacement_m": 0.30280017852783203,
+      "human_motion_pixel_times": {
+        "_00_body": 36864,
+        "_00_clothing": 205920
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_03",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-080/810c966e8e704e848e5e2d6e78ec5783/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2227635,
+          "mean_error_m": 5.366811237815702e-07,
+          "p99_error_m": 1.676187044028757e-06,
+          "max_error_m": 8.222843094453313e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2706354,
+          "mean_error_m": 7.064523986083521e-07,
+          "p99_error_m": 1.8996393489000718e-06,
+          "max_error_m": 2.1646251570157253e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 19.392
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/lab_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5503740,
+      "dynamic_pixel_times": 569958,
+      "max_displacement_m": 1.1840057373046875,
+      "human_motion_pixel_times": {
+        "_00_body": 37173,
+        "_00_clothing": 191121
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2761899,
+          "mean_error_m": 6.982538913827406e-07,
+          "p99_error_m": 2.1342789247300592e-06,
+          "max_error_m": 1.8886867779431658e-05,
+          "additional_valid_pixel_times": 3,
+          "max_camera_translation_roundoff_m": 9.5367431640625e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2728908,
+          "mean_error_m": 8.74373476309956e-07,
+          "p99_error_m": 1.8402770571538905e-06,
+          "max_error_m": 4.533165719468529e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 9.5367431640625e-07
+        }
+      ],
+      "seconds": 15.398
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hospital/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5524832,
+      "trajectory_pixel_times": 5240710,
+      "dynamic_pixel_times": 269482,
+      "max_displacement_m": 0.1878035068511963,
+      "human_motion_pixel_times": {
+        "_00_body": 59794,
+        "_00_clothing": 195186
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2760972,
+          "mean_error_m": 1.2209347753329988e-06,
+          "p99_error_m": 3.3740819205236198e-06,
+          "max_error_m": 0.00010492558299267458,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2336812,
+          "mean_error_m": 1.5795039028648772e-06,
+          "p99_error_m": 4.606933388558237e-06,
+          "max_error_m": 0.00011369476346365461,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 9.5367431640625e-07
+        }
+      ],
+      "seconds": 100.883
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/hospital/seq_000015",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5268281,
+      "trajectory_pixel_times": 5092553,
+      "dynamic_pixel_times": 878577,
+      "max_displacement_m": 0.636423647403717,
+      "human_motion_pixel_times": {
+        "_00_body": 47391,
+        "_00_clothing": 294819
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_01",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-082/4ca1501b0a4548afb35d26f44d3bbdb8/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2535066,
+          "mean_error_m": 2.287836369021668e-06,
+          "p99_error_m": 5.5131659838062466e-06,
+          "max_error_m": 0.00020304304443138698,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2460888,
+          "mean_error_m": 2.1904484105586837e-06,
+          "p99_error_m": 5.201497016252089e-06,
+          "max_error_m": 4.314160923267648e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 23.529
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/middleeast_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5076953,
+      "trajectory_pixel_times": 4886048,
+      "dynamic_pixel_times": 580565,
+      "max_displacement_m": 0.9809361696243286,
+      "human_motion_pixel_times": {
+        "_00_body": 27840,
+        "_00_clothing": 171222
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764793,
+          "mean_error_m": 2.9553869382728216e-06,
+          "p99_error_m": 5.316754627355477e-06,
+          "max_error_m": 0.00043955416747238816,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2121243,
+          "mean_error_m": 2.246806577369582e-06,
+          "p99_error_m": 6.2125404706421245e-06,
+          "max_error_m": 0.0011117094403351215,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 29.429
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/cyber_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5367187,
+      "trajectory_pixel_times": 4868058,
+      "dynamic_pixel_times": 1119117,
+      "max_displacement_m": 0.05900302156805992,
+      "human_motion_pixel_times": {
+        "_00_body": 302508,
+        "_00_clothing": 143751
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2614197,
+          "mean_error_m": 2.086072988722019e-06,
+          "p99_error_m": 6.816025424251287e-06,
+          "max_error_m": 1.524409215058147e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2032077,
+          "mean_error_m": 2.4127484076499086e-06,
+          "p99_error_m": 9.612794191282268e-06,
+          "max_error_m": 2.3713889597264852e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 11.954
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/cyber_bald/seq_000011",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5374538,
+      "dynamic_pixel_times": 2632350,
+      "max_displacement_m": 0.48358866572380066,
+      "human_motion_pixel_times": {
+        "_00_body": 47148,
+        "_00_clothing": 295035
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_03",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-021/91e56c85fd9a4c439d015d7e232ec987/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2759466,
+          "mean_error_m": 2.064406348909072e-06,
+          "p99_error_m": 5.116037800043491e-06,
+          "max_error_m": 1.0115778581784828e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2537541,
+          "mean_error_m": 1.7120383571021564e-06,
+          "p99_error_m": 4.515903208700328e-06,
+          "max_error_m": 2.9776181902534787e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 217.513
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/cyber_bald/seq_000013",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5208064,
+      "dynamic_pixel_times": 568218,
+      "max_displacement_m": 0.5512745976448059,
+      "human_motion_pixel_times": {
+        "_00_body": 104955,
+        "_00_clothing": 265809
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_03",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-022/1f712c03b748426da77a36343d263913/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2637489,
+          "mean_error_m": 1.560966844511078e-06,
+          "p99_error_m": 3.548897432258379e-06,
+          "max_error_m": 9.638297680694424e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2409807,
+          "mean_error_m": 2.607677883582687e-06,
+          "p99_error_m": 5.2256186532150085e-06,
+          "max_error_m": 1.25761006341667e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 28.467
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/planet_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5529582,
+      "dynamic_pixel_times": 943899,
+      "max_displacement_m": 0.6617858409881592,
+      "human_motion_pixel_times": {
+        "_00_body": 47112,
+        "_00_clothing": 228519
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764773,
+          "mean_error_m": 5.5779168720689176e-05,
+          "p99_error_m": 0.0001494909229333498,
+          "max_error_m": 0.0005413164055083244,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 6.103515625e-05
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764800,
+          "mean_error_m": 0.00010925622229217414,
+          "p99_error_m": 0.00020135777310237112,
+          "max_error_m": 0.0006485660118449509,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 6.103515625e-05
+        }
+      ],
+      "seconds": 14.493
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/post_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5431054,
+      "trajectory_pixel_times": 5405586,
+      "dynamic_pixel_times": 234256,
+      "max_displacement_m": 0.6785521507263184,
+      "human_motion_pixel_times": {
+        "_00_body": 23121,
+        "_00_clothing": 40458
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764738,
+          "mean_error_m": 1.6296326237288114e-05,
+          "p99_error_m": 3.3599967288351015e-05,
+          "max_error_m": 0.00014639190839930332,
+          "additional_valid_pixel_times": 3,
+          "max_camera_translation_roundoff_m": 1.52587890625e-05
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2640825,
+          "mean_error_m": 8.012957796704875e-06,
+          "p99_error_m": 2.2895797635025832e-05,
+          "max_error_m": 0.00012278423893706905,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 9.5367431640625e-07
+        }
+      ],
+      "seconds": 13.979
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/scifiroom_bald/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529257,
+      "trajectory_pixel_times": 5528569,
+      "dynamic_pixel_times": 585975,
+      "max_displacement_m": 0.06258150190114975,
+      "human_motion_pixel_times": {
+        "_00_body": 69279,
+        "_00_clothing": 164955
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764797,
+          "mean_error_m": 1.0818545002537502e-06,
+          "p99_error_m": 3.2080857049948568e-06,
+          "max_error_m": 4.469814446155699e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2763771,
+          "mean_error_m": 1.247416925936801e-06,
+          "p99_error_m": 2.9701896288263095e-06,
+          "max_error_m": 6.342285563757954e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        }
+      ],
+      "seconds": 21.153
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/soul_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5484217,
+      "trajectory_pixel_times": 5474540,
+      "dynamic_pixel_times": 387615,
+      "max_displacement_m": 0.829572319984436,
+      "human_motion_pixel_times": {
+        "_00_body": 57096,
+        "_00_clothing": 41217
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764794,
+          "mean_error_m": 3.580321164915541e-06,
+          "p99_error_m": 7.650826308900237e-06,
+          "max_error_m": 0.00019673750955207086,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2709741,
+          "mean_error_m": 5.304795208404277e-06,
+          "p99_error_m": 1.8401232381645294e-05,
+          "max_error_m": 0.0005413274158373759,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 3.814697265625e-06
+        }
+      ],
+      "seconds": 16.917
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/office_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 4931802,
+      "dynamic_pixel_times": 1567245,
+      "max_displacement_m": 0.44248318672180176,
+      "human_motion_pixel_times": {
+        "_00_body": 107745,
+        "_00_clothing": 583047
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2583027,
+          "mean_error_m": 1.2802636717620504e-06,
+          "p99_error_m": 4.111294011516419e-06,
+          "max_error_m": 0.00014634365662691512,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2049876,
+          "mean_error_m": 1.5300037353043883e-06,
+          "p99_error_m": 4.242657887414435e-06,
+          "max_error_m": 5.4827258908580185e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 28.417
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/office_bald/seq_000008",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 4911087,
+      "dynamic_pixel_times": 694958,
+      "max_displacement_m": 0.03995900973677635,
+      "human_motion_pixel_times": {
+        "_00_body": 91400,
+        "_00_clothing": 603558
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_01",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-030/510c266578f240bbb40d31c00e8dbc13/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2385264,
+          "mean_error_m": 2.644901397020098e-06,
+          "p99_error_m": 5.058415050705044e-06,
+          "max_error_m": 1.4136272674450186e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2216567,
+          "mean_error_m": 1.4857936719783716e-06,
+          "p99_error_m": 3.841749794218211e-06,
+          "max_error_m": 9.421403165541974e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 36.562
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/office_bald/seq_000013",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5491566,
+      "trajectory_pixel_times": 4777620,
+      "dynamic_pixel_times": 847290,
+      "max_displacement_m": 0.4619603753089905,
+      "human_motion_pixel_times": {
+        "_00_body": 36636,
+        "_00_clothing": 285699
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_01",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-039/5e1b5352b67d402f97b3ccc5fe92bc06/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 1852173,
+          "mean_error_m": 1.5350367967634765e-06,
+          "p99_error_m": 3.827177944978283e-06,
+          "max_error_m": 1.562407787319336e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2569452,
+          "mean_error_m": 2.0214315091882815e-06,
+          "p99_error_m": 4.851166595743504e-06,
+          "max_error_m": 2.9968223563304274e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 31.087
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/space_bald/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5529202,
+      "dynamic_pixel_times": 1270959,
+      "max_displacement_m": 0.5602457523345947,
+      "human_motion_pixel_times": {
+        "_00_body": 47034,
+        "_00_clothing": 350619
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764233,
+          "mean_error_m": 5.140130363234894e-07,
+          "p99_error_m": 1.4431382786377626e-06,
+          "max_error_m": 0.00016360335425832692,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764770,
+          "mean_error_m": 5.048123980763393e-07,
+          "p99_error_m": 1.4468501104742213e-06,
+          "max_error_m": 0.00014732139853928448,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        }
+      ],
+      "seconds": 19.68
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/soviet_group/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5529560,
+      "dynamic_pixel_times": 930786,
+      "max_displacement_m": 0.8206251859664917,
+      "human_motion_pixel_times": {
+        "_00_body": 77046,
+        "_00_clothing": 182055
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764764,
+          "mean_error_m": 2.239929591069868e-05,
+          "p99_error_m": 4.65694859341073e-05,
+          "max_error_m": 0.0002935496345747983,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.52587890625e-05
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764776,
+          "mean_error_m": 2.1091923174105325e-05,
+          "p99_error_m": 5.026760919531421e-05,
+          "max_error_m": 0.00021592572969732224,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.52587890625e-05
+        }
+      ],
+      "seconds": 28.539
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/temple_group/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529588,
+      "trajectory_pixel_times": 5529526,
+      "dynamic_pixel_times": 735033,
+      "max_displacement_m": 0.9901424646377563,
+      "human_motion_pixel_times": {
+        "_00_body": 41325,
+        "_00_clothing": 278118
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764797,
+          "mean_error_m": 5.618244155052805e-07,
+          "p99_error_m": 1.4295385063555666e-06,
+          "max_error_m": 7.000843542765908e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764710,
+          "mean_error_m": 6.889339934025892e-07,
+          "p99_error_m": 1.6444843939309713e-06,
+          "max_error_m": 0.00013135711575083873,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 15.918
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/train_group/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5529586,
+      "dynamic_pixel_times": 1122234,
+      "max_displacement_m": 0.7391926646232605,
+      "human_motion_pixel_times": {
+        "_00_body": 72990,
+        "_00_clothing": 283083
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764779,
+          "mean_error_m": 1.90853982462309e-06,
+          "p99_error_m": 4.734538241069417e-06,
+          "max_error_m": 4.887293452787033e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2764800,
+          "mean_error_m": 2.0747029639537422e-06,
+          "p99_error_m": 5.334631942457196e-06,
+          "max_error_m": 7.085548410998173e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 25.081
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/warehouse_group_static/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5526539,
+      "trajectory_pixel_times": 5526531,
+      "dynamic_pixel_times": 478089,
+      "max_displacement_m": 1.1705200672149658,
+      "human_motion_pixel_times": {
+        "_00_body": 54747,
+        "_00_clothing": 103683
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2764722,
+          "mean_error_m": 7.276793227779467e-07,
+          "p99_error_m": 2.452678875871526e-06,
+          "max_error_m": 6.750956877668601e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2761809,
+          "mean_error_m": 1.2892074530280594e-06,
+          "p99_error_m": 2.437471469919203e-06,
+          "max_error_m": 6.262724233160919e-06,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 9.5367431640625e-07
+        }
+      ],
+      "seconds": 8.42
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/village/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 4731636,
+      "trajectory_pixel_times": 4673359,
+      "dynamic_pixel_times": 1286742,
+      "max_displacement_m": 0.785118818283081,
+      "human_motion_pixel_times": {
+        "_00_body": 31107,
+        "_00_clothing": 75639
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2699028,
+          "mean_error_m": 3.407470649436183e-06,
+          "p99_error_m": 1.1514845011101e-05,
+          "max_error_m": 0.00029343156647371573,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 1946850,
+          "mean_error_m": 4.256403610587293e-06,
+          "p99_error_m": 1.3106415288395177e-05,
+          "max_error_m": 0.0007054281903922188,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 7.62939453125e-06
+        }
+      ],
+      "seconds": 18.068
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/village/seq_000014",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5347479,
+      "trajectory_pixel_times": 5193735,
+      "dynamic_pixel_times": 1405743,
+      "max_displacement_m": 0.5895170569419861,
+      "human_motion_pixel_times": {
+        "_00_body": 151641,
+        "_00_clothing": 295521
+      },
+      "missing_meshes": [
+        {
+          "mask": "obj_02",
+          "path": "/data6/Syn4D/data/metadata/new_weight_bone/000-039/498a9ca0f5724c6da0fa7102a62f8783/vertices_sequence.npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2474748,
+          "mean_error_m": 3.522557795658394e-06,
+          "p99_error_m": 1.01996727167165e-05,
+          "max_error_m": 4.839173888084743e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2639220,
+          "mean_error_m": 3.257339930724557e-06,
+          "p99_error_m": 1.0443931840615795e-05,
+          "max_error_m": 0.00018646976627846967,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 7.62939453125e-06
+        }
+      ],
+      "seconds": 13.31
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/winter/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5524990,
+      "dynamic_pixel_times": 941004,
+      "max_displacement_m": 0.92633056640625,
+      "human_motion_pixel_times": {
+        "_00_body": 233874,
+        "_00_clothing": 390609
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2761161,
+          "mean_error_m": 8.172847198312813e-05,
+          "p99_error_m": 0.00023679952045178808,
+          "max_error_m": 0.006845444617209306,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0001220703125
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2761515,
+          "mean_error_m": 9.863666641645565e-05,
+          "p99_error_m": 0.0002667113330993851,
+          "max_error_m": 0.007061896637780706,
+          "additional_valid_pixel_times": 12,
+          "max_camera_translation_roundoff_m": 0.0001220703125
+        }
+      ],
+      "seconds": 24.131
+    },
+    {
+      "sequence": "syn4d_sim/cave_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291456,
+      "trajectory_pixel_times": 6291428,
+      "dynamic_pixel_times": 990037,
+      "max_displacement_m": 1.856789231300354,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145719,
+          "mean_error_m": 1.313150161883682e-06,
+          "p99_error_m": 3.6101541464375917e-06,
+          "max_error_m": 3.356627615450749e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145694,
+          "mean_error_m": 1.446306331314289e-06,
+          "p99_error_m": 3.959755336104001e-06,
+          "max_error_m": 0.00013148790029009682,
+          "additional_valid_pixel_times": 2,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        }
+      ],
+      "seconds": 13.25
+    },
+    {
+      "sequence": "syn4d_sim/downtown_sim/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6286628,
+      "trajectory_pixel_times": 6291407,
+      "dynamic_pixel_times": 1688403,
+      "max_displacement_m": 1.8681561946868896,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145695,
+          "mean_error_m": 5.821383713488908e-07,
+          "p99_error_m": 1.2127550432532797e-06,
+          "max_error_m": 0.0001821317631353932,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145695,
+          "mean_error_m": 6.521237326071426e-07,
+          "p99_error_m": 2.9865220885641424e-06,
+          "max_error_m": 0.0002757627802914698,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 15.391
+    },
+    {
+      "sequence": "syn4d_sim/japanese_sim/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6290790,
+      "trajectory_pixel_times": 6289952,
+      "dynamic_pixel_times": 865998,
+      "max_displacement_m": 0.6171067357063293,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3144225,
+          "mean_error_m": 3.474235363260177e-07,
+          "p99_error_m": 1.4465365124346055e-06,
+          "max_error_m": 1.0409909754128933e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145710,
+          "mean_error_m": 3.2585423947657096e-07,
+          "p99_error_m": 7.853819431949285e-07,
+          "max_error_m": 7.445303213356404e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        }
+      ],
+      "seconds": 13.127
+    },
+    {
+      "sequence": "syn4d_sim/post_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6280423,
+      "trajectory_pixel_times": 6270492,
+      "dynamic_pixel_times": 1436744,
+      "max_displacement_m": 1.4184894561767578,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3124802,
+          "mean_error_m": 7.395695712854018e-06,
+          "p99_error_m": 2.7314381531786175e-05,
+          "max_error_m": 0.0013715669804911321,
+          "additional_valid_pixel_times": 3,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145551,
+          "mean_error_m": 1.7768627862960956e-05,
+          "p99_error_m": 3.79592122578371e-05,
+          "max_error_m": 0.00012109303549701562,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.52587890625e-05
+        }
+      ],
+      "seconds": 12.523
+    },
+    {
+      "sequence": "syn4d_sim/space_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291456,
+      "trajectory_pixel_times": 6291247,
+      "dynamic_pixel_times": 1062893,
+      "max_displacement_m": 1.0484628677368164,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145482,
+          "mean_error_m": 4.0452558340328096e-07,
+          "p99_error_m": 8.548374400903971e-07,
+          "max_error_m": 3.725933403427802e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145659,
+          "mean_error_m": 3.6336807545944376e-07,
+          "p99_error_m": 9.778931763829824e-07,
+          "max_error_m": 9.77348825340234e-06,
+          "additional_valid_pixel_times": 2,
+          "max_camera_translation_roundoff_m": 1.1920928955078125e-07
+        }
+      ],
+      "seconds": 13.265
+    },
+    {
+      "sequence": "syn4d_sim/temple_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6007064,
+      "trajectory_pixel_times": 5849654,
+      "dynamic_pixel_times": 883065,
+      "max_displacement_m": 1.416734218597412,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2704518,
+          "mean_error_m": 5.567032792244829e-07,
+          "p99_error_m": 2.7457917054099766e-06,
+          "max_error_m": 8.084905137001616e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 4.76837158203125e-07
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145020,
+          "mean_error_m": 4.914360139430824e-07,
+          "p99_error_m": 1.4197155855923802e-06,
+          "max_error_m": 0.00016680038969580675,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 2.384185791015625e-07
+        }
+      ],
+      "seconds": 15.065
+    },
+    {
+      "sequence": "syn4d_sim/train_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291453,
+      "trajectory_pixel_times": 6291292,
+      "dynamic_pixel_times": 1149921,
+      "max_displacement_m": 1.1629396677017212,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145668,
+          "mean_error_m": 3.220228312240105e-06,
+          "p99_error_m": 6.5680729438073914e-06,
+          "max_error_m": 2.983607665748318e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145542,
+          "mean_error_m": 2.479336158113155e-06,
+          "p99_error_m": 5.397537220271137e-06,
+          "max_error_m": 1.7194200759503346e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 1.9073486328125e-06
+        }
+      ],
+      "seconds": 12.839
+    },
+    {
+      "sequence": "syn4d_sim/winter_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291456,
+      "trajectory_pixel_times": 6291432,
+      "dynamic_pixel_times": 1608645,
+      "max_displacement_m": 1.3118383884429932,
+      "human_motion_pixel_times": {},
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145722,
+          "mean_error_m": 4.985628893110683e-06,
+          "p99_error_m": 1.0030599411604742e-05,
+          "max_error_m": 2.9808560965099533e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 3.814697265625e-06
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145698,
+          "mean_error_m": 4.530178423259001e-06,
+          "p99_error_m": 9.837617483627031e-06,
+          "max_error_m": 5.219223517484149e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 3.814697265625e-06
+        }
+      ],
+      "seconds": 14.415
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/winter_group_static/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 4882120,
+      "trajectory_pixel_times": 4898218,
+      "dynamic_pixel_times": 475329,
+      "max_displacement_m": 1.2156299352645874,
+      "human_motion_pixel_times": {
+        "_00_body": 58656,
+        "_00_clothing": 68853
+      },
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2474820,
+          "mean_error_m": 2.4639204592343685e-06,
+          "p99_error_m": 8.592253776567674e-06,
+          "max_error_m": 2.814036663428487e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 0.0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2423394,
+          "mean_error_m": 4.286071574905992e-06,
+          "p99_error_m": 1.2415834107336383e-05,
+          "max_error_m": 6.863303546824216e-05,
+          "additional_valid_pixel_times": 0,
+          "max_camera_translation_roundoff_m": 3.814697265625e-06
+        }
+      ],
+      "seconds": 10.526
+    }
+  ],
+  "errors": [],
+  "total_scenes": 37,
+  "completed_scenes": 37,
+  "human_motion_pixel_times": {
+    "_00_body": 2561208,
+    "_00_clothing": 7476624
+  }
+}

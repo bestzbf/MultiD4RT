@@ -1,0 +1,142 @@
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /data2/d4rt/datasets/PointOdyssey
+    weight: 0.0903
+    adapter_kwargs:
+      fast_root: null
+      require_tracks: true
+      load_normals: false
+  - name: kubric
+    root: /data3/Kubric
+    weight: 0.1013
+  - name: dynamic_replica
+    root: /data_cos/hdu_datasets/Dynamic_Replica
+    weight: 0.0631
+    val_split: valid
+  - name: co3dv2
+    root: /data_cos/hdu_datasets/Co3Dv2
+    weight: 0.1909
+    adapter_kwargs:
+      subset_name: fewview_train
+      categories: null
+      require_precomputed: false
+      require_pointcloud: true
+      load_normals: false
+      sequence_denylist: /data/zbf/openclaw/d4rt/configs/co3dv2_denylist_degenerate_clips_20260422.txt
+  - name: blendedmvs
+    root: /data2/d4rt/datasets/BlendedMVS
+    weight: 0.0121
+    adapter_kwargs:
+      use_masked: false
+      load_normals: false
+  - name: scannetpp
+    root: /data_cos/hdu_datasets/scannetpp/data
+    weight: 0.1504
+    adapter_kwargs:
+      splits_dir: /data_cos/hdu_datasets/scannetpp/splits
+      strict: false
+      scenes_record: /data_cos/hdu_datasets/scannetpp/scenes_record.json
+      target_hw: [256, 256]
+      precomputed_cos_timeout_s: 8
+      precomputed_cos_range_retries: 1
+      precomputed_cos_range_workers: 4
+  - name: scannet
+    root: /data4/d4rt_dataset/scannet
+    weight: 0.2605
+    adapter_kwargs:
+      precompute_root: /data4/d4rt_dataset/scannet
+  - name: tartanair
+    root: /data5/d4rt_dataset/tartanairv1
+    weight: 0.0926
+    adapter_kwargs:
+      camera: left
+      precompute_root: /data5/d4rt_dataset/tartanairv1
+      load_precomputed: true
+      visibility_depth_support_radius: 2
+      visibility_visible_abs_thresh: 0.25
+      visibility_occlusion_abs_thresh: 1.0
+      visibility_occlusion_rel_thresh: 0.08
+      visibility_occlusion_min_support: 9
+      io_workers: 4
+      io_read_retries: 3
+      io_retry_delay_s: 0.05
+      pose_cache_items: 128
+  - name: vkitti2
+    root: /data5/d4rt_dataset/VirtualKitti
+    weight: 0.0249
+    adapter_kwargs:
+      camera: Camera_0
+      precompute_root: /data5/d4rt_dataset/VirtualKitti
+      load_normals: false
+      load_flow: false
+  - name: mvssynth
+    root: /data2/d4rt/datasets/MVS-Synth/GTAV_1080
+    weight: 0.0139
+    adapter_kwargs:
+      precompute_root: /data2/d4rt/datasets/MVS-Synth/GTAV_1080
+      load_precomputed: true
+      load_normals: false
+      io_workers: 4
+      io_read_retries: 3
+      io_retry_delay_s: 0.05
+
+epoch_size: 500000
+clip_len: 48
+img_size: 256
+num_queries: 2048
+use_augs: true
+boundary_ratio: 0.3
+use_motion_boundaries: true
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 42
+allow_track_fallback: true
+dataset_locality_size: 12
+sequence_locality_size: 12
+frame_locality_radius: 16
+
+precompute_patches: true
+precompute_from_highres: false
+return_highres_video: false
+store_video_uint8: true
+store_auxiliary_tensors: false
+color_aug_after_resize: true
+keep_cropped_images: false
+motion_boundary_on_resized: true
+
+index_cache_dir: /data/zbf/openclaw/d4rt/.index_cache_10datasets_local
+index_workers: 16
+
+planned_mode: true
+planned_start_immediately: true
+planned_initial_epoch: 0
+builder_workers: 24
+prefetch_depth: 960
+max_spool_bytes: 32212254720
+
+sample_stage_backend: cos_sdk
+sample_stage_root: /data1/zbf/d4rt_sample_stage
+sample_stage_sdk_workers: 8
+sample_stage_request_timeout_s: 5
+sample_stage_request_retries: 1
+sample_stage_cache_max_bytes: 399431958528
+sample_stage_cache_low_watermark_ratio: 0.99
+sample_stage_cache_touch_interval_s: 30
+sample_stage_cache_scan_interval_s: 30
+sample_stage_eviction_mode: external
+sample_stage_window_radius: 0
+sample_stage_datasets:
+  - pointodyssey
+  - kubric
+  - dynamic_replica
+  - co3dv2
+  - scannetpp
+  - scannet
+  - tartanair
+  - vkitti2
+sample_stage_scene_prefetch_datasets: []
+sample_stage_mount_root: /data_cos
+sample_stage_extra_mount_roots: [/data4, /data5]
+sample_stage_bucket: hd-ai-data-1251882982
+sample_stage_region: ap-beijing
+sample_stage_passwd_file: /etc/passwd-s3fs-data_cos

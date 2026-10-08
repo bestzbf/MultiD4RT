@@ -1,0 +1,185 @@
+[
+  {
+    "path": "/data7/mugen/scannetpp.h5",
+    "stage": "header_readable",
+    "splits": {
+      "test": {
+        "sequences": 50,
+        "sample": "09c1414f1b",
+        "fields": {
+          "depths": {
+            "shape": [
+              1071,
+              560,
+              560
+            ],
+            "dtype": "float32"
+          },
+          "extrinsics": {
+            "shape": [
+              1071,
+              4,
+              4
+            ],
+            "dtype": "float32"
+          },
+          "images": {
+            "shape": [
+              1071,
+              560,
+              560,
+              3
+            ],
+            "dtype": "uint8"
+          },
+          "intrinsics": {
+            "shape": [
+              1071,
+              3,
+              3
+            ],
+            "dtype": "float32"
+          }
+        }
+      },
+      "train": {
+        "sequences": 855,
+        "sample": "00777c41d4",
+        "fields": {
+          "depths": {
+            "shape": [
+              919,
+              560,
+              560
+            ],
+            "dtype": "float32"
+          },
+          "extrinsics": {
+            "shape": [
+              919,
+              4,
+              4
+            ],
+            "dtype": "float32"
+          },
+          "images": {
+            "shape": [
+              919,
+              560,
+              560,
+              3
+            ],
+            "dtype": "uint8"
+          },
+          "intrinsics": {
+            "shape": [
+              919,
+              3,
+              3
+            ],
+            "dtype": "float32"
+          }
+        }
+      }
+    },
+    "elapsed_seconds": 7.114088566042483
+  },
+  {
+    "path": "/data7/mugen/taskonomy.h5",
+    "stage": "header_readable",
+    "splits": {
+      "train": {
+        "sequences": 537,
+        "sample": "ackermanville",
+        "fields": {
+          "depths": {
+            "shape": [
+              3862,
+              560,
+              560
+            ],
+            "dtype": "float32"
+          },
+          "extrinsics": {
+            "shape": [
+              3862,
+              4,
+              4
+            ],
+            "dtype": "float32"
+          },
+          "images": {
+            "shape": [
+              3862,
+              560,
+              560,
+              3
+            ],
+            "dtype": "uint8"
+          },
+          "intrinsics": {
+            "shape": [
+              3862,
+              3,
+              3
+            ],
+            "dtype": "float32"
+          },
+          "pairs": {
+            "shape": [
+              3862
+            ],
+            "dtype": "object"
+          }
+        }
+      }
+    },
+    "elapsed_seconds": 7.755334235029295
+  },
+  {
+    "path": "/data7/mugen/wildrgbd.h5",
+    "stage": "header_readable",
+    "splits": {
+      "train": {
+        "sequences": 19676,
+        "sample": "apple_scene_000",
+        "fields": {
+          "depths": {
+            "shape": [
+              330,
+              560,
+              560
+            ],
+            "dtype": "float32"
+          },
+          "extrinsics": {
+            "shape": [
+              330,
+              4,
+              4
+            ],
+            "dtype": "float32"
+          },
+          "images": {
+            "shape": [
+              330,
+              560,
+              560,
+              3
+            ],
+            "dtype": "uint8"
+          },
+          "intrinsics": {
+            "shape": [
+              330,
+              3,
+              3
+            ],
+            "dtype": "float32"
+          }
+        }
+      }
+    },
+    "elapsed_seconds": 8.127270398195833
+  }
+]

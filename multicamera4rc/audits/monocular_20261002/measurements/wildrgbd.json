@@ -1,0 +1,280 @@
+{
+  "dataset": "wildrgbd",
+  "path": "/data7/mugen/wildrgbd.h5",
+  "train_sequences": 18692,
+  "frame_interleave": 1,
+  "camera_stream_index": 0,
+  "samples": [
+    {
+      "sequence": "ball_scene_016",
+      "native_content_hw": [
+        [
+          560,
+          560
+        ],
+        [
+          560,
+          560
+        ],
+        [
+          560,
+          560
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 4.7494588040208896e-08,
+      "rotation_determinants": {
+        "count": 3,
+        "mean": 0.9999999996339376,
+        "p50": 1.0,
+        "p95": 1.0000000383643557,
+        "max": 1.0000000426270619
+      },
+      "camera_translation_between_first_two": 0.0009740169659112234,
+      "has_authoritative_tracks": false,
+      "depth_positive_fraction": [
+        0.7739604591836735,
+        0.7856505102040816,
+        0.76921875
+      ],
+      "depth_positive_values": {
+        "count": 730321,
+        "mean": 0.4456089013627548,
+        "p50": 0.31494140625,
+        "p95": 1.4287109375,
+        "max": 1.671875
+      },
+      "bridge_input_shape": [
+        3,
+        3,
+        560,
+        560
+      ],
+      "valid_depth_pixels": 730321,
+      "calibration_convention": "w2c",
+      "depth_unit": "scene_units",
+      "source_padding_removed": false,
+      "raw_frame_indices": [
+        0,
+        1,
+        2
+      ],
+      "source_crop_top_bottom": [
+        0,
+        0
+      ],
+      "static_world_diagnostic": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16363,
+        "target_depth_available": 16101,
+        "relative_residual": {
+          "count": 16101,
+          "mean": 0.005430444342970125,
+          "p50": 0.0015038828358604971,
+          "p95": 0.024581120345564866,
+          "max": 1.8901276203108377
+        },
+        "within_one_percent": 0.9171480032296131,
+        "within_five_percent": 0.9778274641326625,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      },
+      "inverted_pose_diagnostic": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16375,
+        "target_depth_available": 16055,
+        "relative_residual": {
+          "count": 16055,
+          "mean": 0.005496701057753823,
+          "p50": 0.001601659804548996,
+          "p95": 0.02499912078571149,
+          "max": 1.900515534173287
+        },
+        "within_one_percent": 0.9163500467144192,
+        "within_five_percent": 0.9765805045157272,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      }
+    },
+    {
+      "sequence": "cup_scene_454",
+      "native_content_hw": [
+        [
+          560,
+          560
+        ],
+        [
+          560,
+          560
+        ],
+        [
+          560,
+          560
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 5.29885950673048e-08,
+      "rotation_determinants": {
+        "count": 3,
+        "mean": 1.0000000210518043,
+        "p50": 1.000000009305713,
+        "p95": 1.0000000493953012,
+        "max": 1.0000000538496998
+      },
+      "camera_translation_between_first_two": 0.00017292201990135562,
+      "has_authoritative_tracks": false,
+      "depth_positive_fraction": [
+        0.6949968112244898,
+        0.6945184948979591,
+        0.693233418367347
+      ],
+      "depth_positive_values": {
+        "count": 653150,
+        "mean": 0.680977345962834,
+        "p50": 0.410888671875,
+        "p95": 1.814453125,
+        "max": 3.3359375
+      },
+      "bridge_input_shape": [
+        3,
+        3,
+        560,
+        560
+      ],
+      "valid_depth_pixels": 653150,
+      "calibration_convention": "w2c",
+      "depth_unit": "scene_units",
+      "source_padding_removed": false,
+      "raw_frame_indices": [
+        0,
+        1,
+        2
+      ],
+      "source_crop_top_bottom": [
+        0,
+        0
+      ],
+      "static_world_diagnostic": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16384,
+        "target_depth_available": 16198,
+        "relative_residual": {
+          "count": 16198,
+          "mean": 0.0034440347258153266,
+          "p50": 0.0005919066628385141,
+          "p95": 0.013535302908189646,
+          "max": 0.9423150167841177
+        },
+        "within_one_percent": 0.9276453883195456,
+        "within_five_percent": 0.994628966539079,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      },
+      "inverted_pose_diagnostic": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16384,
+        "target_depth_available": 16198,
+        "relative_residual": {
+          "count": 16198,
+          "mean": 0.0034104718017570848,
+          "p50": 0.0005918999975710257,
+          "p95": 0.013563569233586606,
+          "max": 0.941742947114458
+        },
+        "within_one_percent": 0.9285714285714286,
+        "within_five_percent": 0.9945672305222867,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      }
+    },
+    {
+      "sequence": "book_scene_301",
+      "native_content_hw": [
+        [
+          560,
+          560
+        ],
+        [
+          560,
+          560
+        ],
+        [
+          560,
+          560
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 5.4387361059227146e-08,
+      "rotation_determinants": {
+        "count": 3,
+        "mean": 0.9999999969241049,
+        "p50": 1.0,
+        "p95": 1.0000000163700693,
+        "max": 1.000000018188966
+      },
+      "camera_translation_between_first_two": 0.0006134823989502252,
+      "has_authoritative_tracks": false,
+      "depth_positive_fraction": [
+        0.8897385204081633,
+        0.8946332908163265,
+        0.8927710459183673
+      ],
+      "depth_positive_values": {
+        "count": 839552,
+        "mean": 2.1689590719309972,
+        "p50": 2.318359375,
+        "p95": 3.078125,
+        "max": 3.154296875
+      },
+      "bridge_input_shape": [
+        3,
+        3,
+        560,
+        560
+      ],
+      "valid_depth_pixels": 839552,
+      "calibration_convention": "w2c",
+      "depth_unit": "scene_units",
+      "source_padding_removed": false,
+      "raw_frame_indices": [
+        0,
+        1,
+        2
+      ],
+      "source_crop_top_bottom": [
+        0,
+        0
+      ],
+      "static_world_diagnostic": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16354,
+        "target_depth_available": 16097,
+        "relative_residual": {
+          "count": 16097,
+          "mean": 0.012234600201107716,
+          "p50": 0.006392900156608805,
+          "p95": 0.03506604778330369,
+          "max": 2.6140805036670542
+        },
+        "within_one_percent": 0.6709324718891719,
+        "within_five_percent": 0.9686898179785053,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      },
+      "inverted_pose_diagnostic": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16370,
+        "target_depth_available": 16108,
+        "relative_residual": {
+          "count": 16108,
+          "mean": 0.012704073233920183,
+          "p50": 0.0063074728143691396,
+          "p95": 0.035327600142008996,
+          "max": 2.631339494813019
+        },
+        "within_one_percent": 0.6707226222994785,
+        "within_five_percent": 0.9682766327290787,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      }
+    }
+  ],
+  "stage": "sampled_geometry_readable",
+  "limitation": "Packed labels have no persistent trajectory or per-pixel material-motion identity. Static-depth checks cannot establish dynamic GT or the accuracy of SfM/pseudo-depth.",
+  "elapsed_seconds": 14.403597129974514,
+  "gpu_used": false
+}

@@ -1,0 +1,29 @@
+# Paths are relative to this YAML; replace these with your local dataset paths.
+image_size: [280, 504]
+num_times: 3
+num_queries: 1024
+epoch_size: 10000
+seed: 49
+include_visibility: true
+sources:
+  - adapter: kubric_multicam
+    root: /data8/kubric_multicam_tracking_v3
+    split: train
+    cameras: 2
+    weight: 1.0
+    strides: [1, 2, 5]
+    options:
+      cache_dir: ../../../.cache/multicamera4rc/kubric
+      index_workers: 8
+      required_schema_version: movi_tracking_v3
+      require_native_tracks: true
+      require_depth: true
+      require_validation_stamp: true
+      validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+      min_validation_revision: 4
+      split_strategy: variant_balanced
+      val_ratio: 0.05
+      random_cameras: true
+      depth_is_ray_distance: true
+      extrinsics_are_opengl: false
+      verbose: false

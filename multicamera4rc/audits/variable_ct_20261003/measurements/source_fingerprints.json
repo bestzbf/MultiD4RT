@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "verified_source_root": "/data9/zbf/my_dfrt_variable_ct_review",
+  "files": {
+    "multicamera4rc/datasets/mixture.py": "b82aa1f020f3ae9260b79b03d000d752011c8d0f25a99da7c09dfd3ab3e8d15f",
+    "multicamera4rc/datasets/sampling.py": "ec9b52c7724fcb36abedc14e26e93c578c0e2a42b4f0c501f1cf22f8d0d7f79f",
+    "multicamera4rc/train.py": "260c9cc6c615944361212f71293267b13f19424fa3df62c368d6fe2a8d178b66",
+    "multicamera4rc/launch.py": "19cff740af1a2a8a0801ef49763d567cc0883f0deb24925718ebca01100d2cb0",
+    "multicamera4rc/schedule.py": "cc812e710a5e51bf5a2acb28800f9f56296c939726ddb0d47e19849528edaf99",
+    "scripts/build_variable_curriculum.py": "c22dcfa0b97e7cb2e382a5aca5c8c392c3833a0e70e13c9932514dd9a70e21c9",
+    "scripts/audit_variable_curriculum.py": "1c19d39eadbe4b68f261a9ecf32a98c5cbd89ec03ffb30cd4f7a1fa01d39383e",
+    "scripts/build_variable_validation.py": "64b67f0a189db6673ce8c9e16dd1e559f9b0e4f8711c503c5689b5e9fd82dc76",
+    "scripts/preflight_variable_ddp.py": "8829d023c1f8848c79446454c46319ea5afb690ee58f78fdbab68b57ed72e950",
+    "scripts/queue_variable_continuation.py": "11ebba3de30266528df3acc0d500c160257ae4fbbd81a6347badace656383d3b",
+    "tests/multicamera4rc/test_variable_curriculum.py": "ec3d0d6e8fcf7250ab7bcb83f4e38dc9385de4c0247cf30bd4502512d64ee056",
+    "tests/multicamera4rc/test_launcher.py": "04d9a4bb360ece3051df80d138f668eb8637ef9de8f184377c0228695b94d5e2"
+  }
+}

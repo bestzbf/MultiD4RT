@@ -1,0 +1,471 @@
+image_mode: native
+supervision: dense
+sampling: coverage
+num_times: 8
+num_queries: 0
+epoch_size: 12992066
+seed: 49
+include_visibility: true
+sources:
+- name: kubric_C2
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 2
+  num_times: 12
+  weight: 1.0
+  strides:
+  - 1
+  - 2
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/kubric_C2_manifest.json
+- name: kubric_C3
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 3
+  num_times: 8
+  weight: 1.0
+  strides:
+  - 1
+  - 2
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/kubric_C3_manifest.json
+- name: kubric_C4
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 4
+  num_times: 6
+  weight: 1.0
+  strides:
+  - 1
+  - 2
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/kubric_C4_manifest.json
+- name: dynamic_replica
+  adapter: dynamic_replica
+  root: /data5/d4rt_dataset/Dynamic_Replica
+  num_times: 8
+  weight: 1.5
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    cameras: both
+    load_trajectories: false
+    pixel_coordinates: array_index_v1
+    rgb_from_trajectory: false
+    index_workers: 2
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: replica_flow
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/dynamic_replica_manifest.json
+- name: pointodyssey
+  adapter: pointodyssey_tracks
+  root: /data5/d4rt_dataset/PointOdyssey
+  num_times: 8
+  weight: 0.75
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: pointodyssey_tracks
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/pointodyssey_manifest.json
+- name: vkitti2_Camera_0
+  adapter: vkitti2
+  root: /data8/mugen/vKITTI2
+  num_times: 8
+  weight: 0.375
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    camera: Camera_0
+    strict_calibration: true
+    load_precomputed: false
+    load_normals: false
+    load_flow: false
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: vkitti_scene_flow
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/vkitti2_Camera_0_manifest.json
+- name: vkitti2_Camera_1
+  adapter: vkitti2
+  root: /data8/mugen/vKITTI2
+  num_times: 8
+  weight: 0.375
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    camera: Camera_1
+    strict_calibration: true
+    load_precomputed: false
+    load_normals: false
+    load_flow: false
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: vkitti_scene_flow
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/vkitti2_Camera_1_manifest.json
+- name: tartanair_left
+  adapter: tartanair_v1_zip
+  root: /data8/mugen/TartanAir_V1
+  num_times: 8
+  weight: 0.1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    camera: left
+    depth_max: 200.0
+    depth_percentile: 98.0
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/tartanair_left_manifest.json
+- name: tartanair_right
+  adapter: tartanair_v1_zip
+  root: /data8/mugen/TartanAir_V1
+  num_times: 8
+  weight: 0.1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    camera: right
+    depth_max: 200.0
+    depth_percentile: 98.0
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/tartanair_right_manifest.json
+- name: hypersim
+  adapter: hypersim_zip
+  root: /data8/mugen/Hypersim/raw
+  num_times: 1
+  weight: 0.3
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    camera_metadata: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/monocular_gt_audit_20261001_1536/metadata_camera_parameters.csv
+    split_metadata: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/monocular_gt_audit_20261001_1536/metadata_images_split_scene_v1.csv
+  split: train
+  cameras:
+  - 2
+  - 4
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/hypersim_manifest.json
+  view_mode: static_multiview
+- name: scannet
+  adapter: mugen_h5
+  root: /data7/mugen/scannet.h5
+  num_times: 8
+  weight: 0.35
+  options:
+    dataset_name: scannet
+    strip_padding: true
+    generate_static_tracks: false
+    prefer_precomputed_tracks: false
+    require_generated_tracks: false
+    assume_static_scene: false
+    train_only_val_ratio: 0.0
+    verbose: false
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/scannet_manifest.json
+- name: scannetpp
+  adapter: mugen_h5
+  root: /data7/mugen/scannetpp.h5
+  num_times: 8
+  weight: 0.35
+  options:
+    dataset_name: scannetpp
+    strip_padding: true
+    generate_static_tracks: false
+    prefer_precomputed_tracks: false
+    require_generated_tracks: false
+    assume_static_scene: false
+    train_only_val_ratio: 0.0
+    verbose: false
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/scannetpp_manifest.json
+- name: wildrgbd
+  adapter: mugen_h5
+  root: /data7/mugen/wildrgbd.h5
+  num_times: 8
+  weight: 0.35
+  options:
+    dataset_name: wildrgbd
+    strip_padding: true
+    generate_static_tracks: false
+    prefer_precomputed_tracks: false
+    require_generated_tracks: false
+    assume_static_scene: false
+    train_only_val_ratio: 0.0
+    verbose: false
+  split: train
+  cameras: 1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/wildrgbd_manifest.json
+- name: blended
+  adapter: mugen_h5
+  root: /data7/mugen/blended_mvg.h5
+  num_times: 1
+  weight: 0.2
+  options:
+    dataset_name: blended
+    strip_padding: true
+    generate_static_tracks: false
+    prefer_precomputed_tracks: false
+    require_generated_tracks: false
+    assume_static_scene: false
+    train_only_val_ratio: 0.0
+    verbose: false
+  split: train
+  cameras:
+  - 4
+  - 8
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/blended_manifest.json
+  view_mode: static_multiview
+- name: taskonomy
+  adapter: mugen_h5
+  root: /data7/mugen/taskonomy.h5
+  num_times: 1
+  weight: 0.2
+  options:
+    dataset_name: taskonomy
+    strip_padding: true
+    generate_static_tracks: false
+    prefer_precomputed_tracks: false
+    require_generated_tracks: false
+    assume_static_scene: false
+    train_only_val_ratio: 0.0
+    verbose: false
+  split: train
+  cameras:
+  - 4
+  - 8
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/taskonomy_manifest.json
+  view_mode: static_multiview
+- name: vkitti2_stereo
+  adapter: vkitti2_stereo
+  root: /data8/mugen/vKITTI2
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.75
+  strides:
+  - 1
+  dense_kind: vkitti_scene_flow
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/vkitti2_stereo_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    verbose: false
+- name: tartanair_v1_stereo
+  adapter: tartanair_v1_stereo
+  root: /data8/mugen/TartanAir_V1
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.2
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v1_stereo_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    verbose: false
+- name: tartanair_v2_front
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_front_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: front
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+- name: tartanair_v2_back
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_back_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: back
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+- name: tartanair_v2_left
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_left_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: left
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+- name: tartanair_v2_right
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_right_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: right
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+- name: tartanair_v2_top
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_top_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: top
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+- name: tartanair_v2_bottom
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 2
+  num_times: 6
+  weight: 0.1
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_bottom_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: bottom
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+- name: tartanair_v2_front_mono
+  adapter: tartanair_v2_zip
+  root: /data8/mugen/TartanAir_V2_subset
+  split: train
+  cameras: 1
+  num_times: 8
+  weight: 0.2
+  strides:
+  - 1
+  dense_kind: geometry
+  manifest: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/tartanair_v2_front_mono_manifest.json
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/index_cache
+    direction: front
+    stereo: false
+    camera: lcam
+    verbose: false
+    depth_max: 200.0
+    depth_percentile: 98.0
+skip_invalid: true
+invalid_log: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/runtime_invalid_clips.jsonl

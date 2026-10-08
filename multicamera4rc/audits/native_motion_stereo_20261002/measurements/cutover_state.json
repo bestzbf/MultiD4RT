@@ -1,0 +1,6 @@
+{
+  "stage": "preflight_started",
+  "pid": 3931946,
+  "checkpoint": "/data9/zbf/my_dfrt_multicamera4rc/outputs/full_dense_mixture_static_multiview_gpu45_20261002_135514/step_00017500.pt",
+  "control_dir": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/jobs/full_dense_native_motion_stereo_gpu45_20261002_082322UTC"
+}

@@ -1,0 +1,30 @@
+{
+  "pid": 3224045,
+  "argv": [
+    "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python",
+    "-u",
+    "-m",
+    "scripts.evaluate_static_multiview",
+    "--train-config",
+    "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/full_mixture_static_multiview.yaml",
+    "--plan",
+    "/data8/zbf/multicamera4rc_runs/blended_scene_audit_20261008/expanded/fixed_plan.json",
+    "--output",
+    "/data8/zbf/multicamera4rc_runs/blended_scene_audit_20261008/expanded",
+    "--memory-fraction",
+    ".12",
+    "--checkpoints",
+    "53000=/data8/zbf/multicamera4rc_runs/extended_100k_20261005_165948UTC/continuation_52000_54000_try0/step_00053000.pt",
+    "55000=/data8/zbf/multicamera4rc_runs/syn4d_activation_20261007/continuation_54000_56000_try0/step_00055000.pt",
+    "55500_replay1=/data8/zbf/multicamera4rc_runs/syn4d_replay_20261008/continuation_55000_55500_try1/latest.pt"
+  ],
+  "physical_gpu": 0,
+  "memory_fraction": 0.12,
+  "time": "2026-10-08T16:17:05.581221",
+  "training_gpus_untouched": [
+    2,
+    3,
+    4,
+    5
+  ]
+}

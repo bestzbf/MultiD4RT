@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "last_step": 54901,
+  "human_enabled_samples": 86,
+  "layouts": {
+    "C2T8": 42,
+    "C4T4": 26,
+    "C1T16": 10,
+    "C8T2": 8
+  },
+  "samples": [
+    {
+      "step": 54856,
+      "clip": "syn4d/syn4d_v1_stride_1/brushify_bald/seq_000006",
+      "cameras": 4,
+      "times": 4,
+      "metrics": {
+        "loss": 0.5822878479957581,
+        "depth_abs_rel": 0.2728517949581146,
+        "depth_mae_normalized": 0.262805700302124,
+        "trajectory_epe_normalized": 0.36918216943740845,
+        "displacement_epe_dynamic_normalized": 0.0010893783764913678,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.3693663477897644,
+        "displacement_epe_temporal_normalized": 0.001763167092576623,
+        "supervised_source_pixels": 3640221.0,
+        "supervised_trajectory_pixels": 14560815.0,
+        "camera_rotation_degrees": 2.9928462505340576
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54857,
+      "clip": "syn4d/syn4d_v1_stride_1/arena/seq_000012",
+      "cameras": 1,
+      "times": 16,
+      "metrics": {
+        "loss": 5.39965295791626,
+        "depth_abs_rel": 0.14444668591022491,
+        "depth_mae_normalized": 0.15919923782348633,
+        "trajectory_epe_normalized": 0.1718633770942688,
+        "displacement_epe_dynamic_normalized": 0.018784448504447937,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.17199115455150604,
+        "displacement_epe_temporal_normalized": 0.002568934578448534,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 57444736.0,
+        "camera_rotation_degrees": 0.24442878365516663
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54859,
+      "clip": "syn4d/syn4d_v1_stride_1/brushify_bald/seq_000001",
+      "cameras": 2,
+      "times": 8,
+      "metrics": {
+        "loss": -0.4033846855163574,
+        "depth_abs_rel": 0.13811589777469635,
+        "depth_mae_normalized": 0.1815168857574463,
+        "trajectory_epe_normalized": 0.2036822885274887,
+        "displacement_epe_dynamic_normalized": 0.012598153203725815,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.20373038947582245,
+        "displacement_epe_temporal_normalized": 0.003366704098880291,
+        "supervised_source_pixels": 3681070.0,
+        "supervised_trajectory_pixels": 29437992.0,
+        "camera_rotation_degrees": 1.0715243816375732
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54860,
+      "clip": "syn4d/syn4d_v1_stride_1/arena/seq_000013",
+      "cameras": 4,
+      "times": 4,
+      "metrics": {
+        "loss": -0.5262587070465088,
+        "depth_abs_rel": 0.10115189105272293,
+        "depth_mae_normalized": 0.08047545701265335,
+        "trajectory_epe_normalized": 0.11785197257995605,
+        "displacement_epe_dynamic_normalized": 0.002796126063913107,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.11765909194946289,
+        "displacement_epe_temporal_normalized": 0.0035006506368517876,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 14735837.0,
+        "camera_rotation_degrees": 2.770881175994873
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54874,
+      "clip": "syn4d/syn4d_v1_stride_1/cave_group/seq_000013",
+      "cameras": 8,
+      "times": 2,
+      "metrics": {
+        "loss": -0.24551303684711456,
+        "depth_abs_rel": 0.0955677330493927,
+        "depth_mae_normalized": 0.12944144010543823,
+        "trajectory_epe_normalized": 0.2687762379646301,
+        "displacement_epe_dynamic_normalized": 0.002988761058077216,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.2690031826496124,
+        "displacement_epe_temporal_normalized": 0.00294288108125329,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 7372774.0,
+        "camera_rotation_degrees": 1.9570236206054688
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54883,
+      "clip": "syn4d/syn4d_v1_stride_1/cave_group/seq_000018",
+      "cameras": 2,
+      "times": 8,
+      "metrics": {
+        "loss": -1.2557929754257202,
+        "depth_abs_rel": 0.045037005096673965,
+        "depth_mae_normalized": 0.043298088014125824,
+        "trajectory_epe_normalized": 0.06273769587278366,
+        "displacement_epe_dynamic_normalized": 0.007431408856064081,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.06284923851490021,
+        "displacement_epe_temporal_normalized": 0.002982331905514002,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 29487252.0,
+        "camera_rotation_degrees": 5.39573860168457
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54889,
+      "clip": "syn4d/syn4d_v1_stride_1/cave_group/seq_000012",
+      "cameras": 8,
+      "times": 2,
+      "metrics": {
+        "loss": -0.8719832301139832,
+        "depth_abs_rel": 0.04959063604474068,
+        "depth_mae_normalized": 0.03685855492949486,
+        "trajectory_epe_normalized": 0.04479370638728142,
+        "displacement_epe_dynamic_normalized": 0.0006180997588671744,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.04479334130883217,
+        "displacement_epe_temporal_normalized": 0.00040165011887438595,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 7371761.0,
+        "camera_rotation_degrees": 1.8382222652435303
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    },
+    {
+      "step": 54891,
+      "clip": "syn4d/syn4d_v1_stride_1/cave_group/seq_000019",
+      "cameras": 2,
+      "times": 8,
+      "metrics": {
+        "loss": -0.4501851797103882,
+        "depth_abs_rel": 0.08646316081285477,
+        "depth_mae_normalized": 0.06240488961338997,
+        "trajectory_epe_normalized": 0.09924280643463135,
+        "displacement_epe_dynamic_normalized": 0.011849388480186462,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.09926341474056244,
+        "displacement_epe_temporal_normalized": 0.0019452569540590048,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 29490036.0,
+        "camera_rotation_degrees": 1.1309964656829834
+      },
+      "missing_meshes": [],
+      "update_applied": true,
+      "finite": true
+    }
+  ]
+}

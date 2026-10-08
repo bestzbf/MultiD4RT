@@ -1,0 +1,89 @@
+{
+  "checked_at": "2026-10-07T08:13:29.473041+00:00",
+  "stage": "train_53500_try0",
+  "first_step": 53001,
+  "last_step": 53177,
+  "updates": 177,
+  "skipped_updates": 0,
+  "nonfinite_loss_or_gradient": 0,
+  "dataset_counts": {
+    "dynamic_replica_left": 25,
+    "kubric_variable": 89,
+    "pointodyssey": 58,
+    "syn4d_v1": 26,
+    "syn4d_sim": 24,
+    "tartanair_v2_left": 4,
+    "scannetpp": 6,
+    "tartanair_v1_stereo": 6,
+    "blended": 15,
+    "hypersim": 10,
+    "tartanair_v2_back": 2,
+    "dynamic_replica_right": 6,
+    "wildrgbd": 10,
+    "taskonomy": 4,
+    "vkitti2_Camera_1": 5,
+    "vkitti2_stereo": 25,
+    "scannet": 9,
+    "tartanair_v2_front_mono": 1,
+    "vkitti2_Camera_0": 9,
+    "tartanair_v2_top": 4,
+    "tartanair_v2_right": 3,
+    "tartanair_left": 4,
+    "tartanair_v2_bottom": 5,
+    "tartanair_right": 3,
+    "tartanair_v2_front": 1
+  },
+  "syn4d_layouts": {
+    "syn4d_v1": {
+      "C4T4": 7,
+      "C8T2": 6,
+      "C1T16": 4,
+      "C2T8": 9
+    },
+    "syn4d_sim": {
+      "C4T4": 10,
+      "C2T8": 13,
+      "C1T16": 1
+    }
+  },
+  "syn4d_supervision": {
+    "syn4d_v1": {
+      "samples": 26,
+      "min_source_pixels": 3527332.0,
+      "min_trajectory_pixel_times": 7041027.0,
+      "min_pixels_with_face": 390509,
+      "samples_with_dynamic_error_metric": 26,
+      "input_hw": [
+        [
+          728,
+          1288
+        ]
+      ]
+    },
+    "syn4d_sim": {
+      "samples": 24,
+      "min_source_pixels": 3169623.0,
+      "min_trajectory_pixel_times": 16754349.0,
+      "min_pixels_with_face": 1881777,
+      "samples_with_dynamic_error_metric": 24,
+      "input_hw": [
+        [
+          1036,
+          1036
+        ]
+      ]
+    }
+  },
+  "invalid_log_exists": false,
+  "lr": 4.827252496272668e-07,
+  "syn4d_admitted": true,
+  "full_pool_admitted": null,
+  "full_pool_admission": {
+    "passed": false,
+    "stage": "checking_all_scenes_with_reviewed_exclusions",
+    "started_at": 1791360311.2353356
+  },
+  "full_pool_audit_passed": false,
+  "full_pool_audit_cases": 0,
+  "validation_note": "The latest fixed validation is the pre-Syn4D 53000 baseline; the next is at 53500."
+}

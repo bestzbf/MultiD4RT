@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "preset": "tiny",
+  "physical_gpus": [
+    4,
+    5
+  ],
+  "world_size": 2,
+  "per_gpu_batch_size": 1,
+  "steps": 6,
+  "source_batches": {
+    "kubric_variable": 4,
+    "syn4d_v1": 4,
+    "syn4d_sim": 4
+  },
+  "losses": [
+    8.430574417114258,
+    8.164877891540527,
+    7.439970970153809,
+    8.136990547180176,
+    7.668127059936523,
+    7.554075717926025
+  ],
+  "gradient_norms": [
+    40.261451721191406,
+    41.13969421386719,
+    44.1903190612793,
+    40.490966796875,
+    38.241214752197266,
+    39.56089401245117
+  ],
+  "no_skipped_updates": true,
+  "checkpoint_step": 6,
+  "rank_rng_states": 2,
+  "checkpoint": "/data8/zbf/multicamera4rc_runs/syn4d_integration_20261006/mixed_ddp/latest.pt"
+}

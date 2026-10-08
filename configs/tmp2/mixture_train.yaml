@@ -1,0 +1,37 @@
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /mnt/d/data/ZBF_Data/d4rt/PointOdyssey
+    weight: 0.4
+  - name: scannet
+    root: /mnt/d/data/ZBF_Data/d4rt/ScanNet
+    weight: 0.3
+  - name: co3dv2
+    root: /mnt/d/data/ZBF_Data/d4rt/Co3Dv2
+    weight: 0.3
+    adapter_kwargs:
+      # 默认启用的 Co3Dv2 质量过滤，防止训练时忘记加
+      # 1) 跟随 DUSt3R/CUT3R 风格，至少保留 viewpoint_quality_score 较高的序列
+      min_viewpoint_quality: 0.5
+      # 2) 再做一层几何可用性过滤：有效深度比例、前景占比
+      min_valid_depth_ratio: 0.1
+      min_foreground_ratio: 0.05
+      quality_probe_frames: 3
+      # 3) 序列必须真的有 pointcloud
+      require_pointcloud: true
+
+clip_len: 48
+img_size: 256
+num_queries: 2048
+use_augs: true
+boundary_ratio: 0.3
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 42
+
+# ---- patch provider 说明 ----
+# precompute_patches: true   → 预计算 256×256 resized patches（当前默认）
+# precompute_patches: false  → 配合 --patch-provider sampled_highres 使用原始 crop 分辨率 patches
+#                              （论文 strongest setting，boundary/小目标细��更好）
+# precompute_from_highres: false  → 仅在 precompute_patches: true 时有效
+precompute_patches: true
+precompute_from_highres: false

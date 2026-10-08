@@ -1,0 +1,36 @@
+# C varies across sources; Tq/H/W/N are fixed and the collator pads C and S.
+image_size: [280, 504]
+num_times: 3
+num_queries: 1024
+epoch_size: 10000
+seed: 49
+include_visibility: true
+sources:
+  - adapter: kubric_multicam
+    root: /data8/kubric_multicam_tracking_v3
+    split: train
+    cameras: 2
+    weight: 0.7
+    strides: [1, 2, 5]
+    options:
+      required_schema_version: movi_tracking_v3
+      require_native_tracks: true
+      require_depth: true
+      depth_is_ray_distance: true
+      extrinsics_are_opengl: false
+      random_cameras: true
+      verbose: false
+  - adapter: mugen_h5
+    root: /data/pointodyssey_packed.h5
+    split: train
+    cameras: 1
+    weight: 0.3
+    strides: [1, 2, 5]
+    options:
+      dataset_name: pointodyssey_packed
+      prefer_precomputed_tracks: true
+      require_precomputed_tracks: true
+      generate_static_tracks: false
+      assume_static_scene: false
+      strip_padding: true
+      verbose: false

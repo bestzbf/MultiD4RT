@@ -1,0 +1,314 @@
+{
+  "dataset": "Hypersim",
+  "samples": [
+    {
+      "scene": "ai_002_008",
+      "frame": 99,
+      "K": [
+        [
+          886.809983634957,
+          0.0,
+          511.5
+        ],
+        [
+          0.0,
+          886.8099836349569,
+          383.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 0.0,
+      "reconstruction_error": 0.0,
+      "intrinsic_skew_px": 0.0,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 1.0
+    },
+    {
+      "scene": "ai_016_007",
+      "frame": 0,
+      "K": [
+        [
+          877.3881290416805,
+          -2.807884505702174e-16,
+          511.5
+        ],
+        [
+          0.0,
+          877.3881290416808,
+          512.4263994253646
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.989375566511403,
+          -0.14538221483469124
+        ],
+        [
+          0.0,
+          0.14538221483469124,
+          0.989375566511403
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 5.963421614488968e-19,
+      "reconstruction_error": 5.684341886080802e-14,
+      "intrinsic_skew_px": -2.807884505702174e-16,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 0.9999621075161221
+    },
+    {
+      "scene": "ai_016_007",
+      "frame": 50,
+      "K": [
+        [
+          877.3881290416805,
+          -2.807884505702174e-16,
+          511.5
+        ],
+        [
+          0.0,
+          877.3881290416808,
+          512.4263994253646
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.989375566511403,
+          -0.14538221483469124
+        ],
+        [
+          0.0,
+          0.14538221483469124,
+          0.989375566511403
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 5.963421614488968e-19,
+      "reconstruction_error": 5.684341886080802e-14,
+      "intrinsic_skew_px": -2.807884505702174e-16,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 0.9999621075161221
+    },
+    {
+      "scene": "ai_016_007",
+      "frame": 99,
+      "K": [
+        [
+          877.3881290416805,
+          -2.807884505702174e-16,
+          511.5
+        ],
+        [
+          0.0,
+          877.3881290416808,
+          512.4263994253646
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.989375566511403,
+          -0.14538221483469124
+        ],
+        [
+          0.0,
+          0.14538221483469124,
+          0.989375566511403
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 5.963421614488968e-19,
+      "reconstruction_error": 5.684341886080802e-14,
+      "intrinsic_skew_px": -2.807884505702174e-16,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 0.9999621075161221
+    },
+    {
+      "scene": "ai_038_006",
+      "frame": 0,
+      "K": [
+        [
+          882.4089163735703,
+          1.7944521805366256e-15,
+          511.5000000000001
+        ],
+        [
+          0.0,
+          882.40891637357,
+          471.74087980333144
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9950371915312255,
+          -0.09950370580863394
+        ],
+        [
+          0.0,
+          0.09950370580863394,
+          0.9950371915312257
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 4.440892098500626e-16,
+      "reconstruction_error": 2.2737367544323206e-13,
+      "intrinsic_skew_px": 1.7944521805366256e-15,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 0.9999917623638558
+    },
+    {
+      "scene": "ai_038_006",
+      "frame": 50,
+      "K": [
+        [
+          882.4089163735703,
+          1.7944521805366256e-15,
+          511.5000000000001
+        ],
+        [
+          0.0,
+          882.40891637357,
+          471.74087980333144
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9950371915312255,
+          -0.09950370580863394
+        ],
+        [
+          0.0,
+          0.09950370580863394,
+          0.9950371915312257
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 4.440892098500626e-16,
+      "reconstruction_error": 2.2737367544323206e-13,
+      "intrinsic_skew_px": 1.7944521805366256e-15,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 0.9999917623638558
+    },
+    {
+      "scene": "ai_038_006",
+      "frame": 99,
+      "K": [
+        [
+          882.4089163735703,
+          1.7944521805366256e-15,
+          511.5000000000001
+        ],
+        [
+          0.0,
+          882.40891637357,
+          471.74087980333144
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_camera_axis_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9950371915312255,
+          -0.09950370580863394
+        ],
+        [
+          0.0,
+          0.09950370580863394,
+          0.9950371915312257
+        ]
+      ],
+      "rotation_determinant": 1.0,
+      "rotation_orthogonality": 4.440892098500626e-16,
+      "reconstruction_error": 2.2737367544323206e-13,
+      "intrinsic_skew_px": 1.7944521805366256e-15,
+      "within_current_pinhole_family": true,
+      "homogeneous_projection_scale": 0.9999917623638558
+    }
+  ],
+  "recipe": "Use RQ decomposition of official pixel projection; adjust every w2c rotation by the resulting camera-axis rotation. Z depth is Euclidean range divided by the length of K-inverse pixel ray. Scale world points and camera centers with meters_per_asset_unit. No reprojection fit or image warping used."
+}

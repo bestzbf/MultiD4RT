@@ -1,0 +1,166 @@
+{
+  "format_version": 1,
+  "sources": [
+    "hypersim",
+    "blended",
+    "taskonomy"
+  ],
+  "cases": [
+    {
+      "source": 0,
+      "sequence": "ai_050_002/cam_00",
+      "index": 5408,
+      "requested_cameras": 2,
+      "view_indices": [
+        48,
+        47
+      ]
+    },
+    {
+      "source": 0,
+      "sequence": "ai_050_002/cam_00",
+      "index": 5408,
+      "requested_cameras": 4,
+      "view_indices": [
+        48,
+        47,
+        45,
+        54
+      ]
+    },
+    {
+      "source": 0,
+      "sequence": "ai_022_010/cam_00",
+      "index": 2476,
+      "requested_cameras": 2,
+      "view_indices": [
+        49,
+        30
+      ]
+    },
+    {
+      "source": 0,
+      "sequence": "ai_022_010/cam_00",
+      "index": 2476,
+      "requested_cameras": 4,
+      "view_indices": [
+        49,
+        30,
+        43,
+        41
+      ]
+    },
+    {
+      "source": 1,
+      "sequence": "5b62647143840965efc0dbde",
+      "index": 12465,
+      "requested_cameras": 4,
+      "view_indices": [
+        39,
+        74,
+        72,
+        4
+      ]
+    },
+    {
+      "source": 1,
+      "sequence": "5b62647143840965efc0dbde",
+      "index": 12465,
+      "requested_cameras": 8,
+      "view_indices": [
+        39,
+        74,
+        72,
+        4,
+        21,
+        45,
+        63,
+        34
+      ]
+    },
+    {
+      "source": 1,
+      "sequence": "58970fd09a8c0314c5d0e383",
+      "index": 11325,
+      "requested_cameras": 4,
+      "view_indices": [
+        28,
+        42,
+        29,
+        16
+      ]
+    },
+    {
+      "source": 1,
+      "sequence": "58970fd09a8c0314c5d0e383",
+      "index": 11325,
+      "requested_cameras": 8,
+      "view_indices": [
+        28,
+        42,
+        29,
+        16,
+        41,
+        27,
+        40,
+        30
+      ]
+    },
+    {
+      "source": 2,
+      "sequence": "hambleton",
+      "index": 78671,
+      "requested_cameras": 4,
+      "view_indices": [
+        1660,
+        1597,
+        310,
+        3014
+      ]
+    },
+    {
+      "source": 2,
+      "sequence": "hambleton",
+      "index": 78671,
+      "requested_cameras": 8,
+      "view_indices": [
+        1660,
+        1597,
+        310,
+        3014,
+        214,
+        2018,
+        436,
+        1087
+      ]
+    },
+    {
+      "source": 2,
+      "sequence": "pleasant",
+      "index": 144033,
+      "requested_cameras": 4,
+      "view_indices": [
+        2822,
+        1748,
+        3735,
+        795
+      ]
+    },
+    {
+      "source": 2,
+      "sequence": "pleasant",
+      "index": 144033,
+      "requested_cameras": 8,
+      "view_indices": [
+        2822,
+        1748,
+        3735,
+        795,
+        2720,
+        1586,
+        2831,
+        792
+      ]
+    }
+  ]
+}

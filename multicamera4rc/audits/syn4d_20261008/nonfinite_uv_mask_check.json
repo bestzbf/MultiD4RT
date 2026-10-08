@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-07T17:52:20.567781+00:00",
+  "environment": "B300zbf production Python and NumPy",
+  "scope": "Controlled bridge fixture checks nonfinite UV source exclusion after the observed affine warning. No production code or GT changed.",
+  "cases": [
+    {
+      "image_mode": "pad",
+      "invalid_coordinate": "inf",
+      "excluded_queries": 1,
+      "remaining_queries": 10,
+      "all_output_tensors_finite": true,
+      "other_gt_unchanged": true,
+      "warnings": [
+        "invalid value encountered in matmul"
+      ]
+    },
+    {
+      "image_mode": "pad",
+      "invalid_coordinate": "-inf",
+      "excluded_queries": 1,
+      "remaining_queries": 10,
+      "all_output_tensors_finite": true,
+      "other_gt_unchanged": true,
+      "warnings": [
+        "invalid value encountered in matmul"
+      ]
+    },
+    {
+      "image_mode": "pad",
+      "invalid_coordinate": "nan",
+      "excluded_queries": 1,
+      "remaining_queries": 10,
+      "all_output_tensors_finite": true,
+      "other_gt_unchanged": true,
+      "warnings": []
+    },
+    {
+      "image_mode": "resize",
+      "invalid_coordinate": "inf",
+      "excluded_queries": 1,
+      "remaining_queries": 10,
+      "all_output_tensors_finite": true,
+      "other_gt_unchanged": true,
+      "warnings": [
+        "invalid value encountered in matmul"
+      ]
+    },
+    {
+      "image_mode": "resize",
+      "invalid_coordinate": "-inf",
+      "excluded_queries": 1,
+      "remaining_queries": 10,
+      "all_output_tensors_finite": true,
+      "other_gt_unchanged": true,
+      "warnings": [
+        "invalid value encountered in matmul"
+      ]
+    },
+    {
+      "image_mode": "resize",
+      "invalid_coordinate": "nan",
+      "excluded_queries": 1,
+      "remaining_queries": 10,
+      "all_output_tensors_finite": true,
+      "other_gt_unchanged": true,
+      "warnings": []
+    }
+  ]
+}

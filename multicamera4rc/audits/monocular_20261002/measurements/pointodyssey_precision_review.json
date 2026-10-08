@@ -1,0 +1,320 @@
+{
+  "dataset": "PointOdyssey",
+  "samples": [
+    {
+      "sequence": "ani",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            1841,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            1841,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 0.874966051059207
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.3044706453342961,
+      "observed_depth_relative_p95": 0.023086534989213436,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "animal1_s_",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            1453,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            1453,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 0.8727632484514797
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.26082456229100737,
+      "observed_depth_relative_p95": 0.020865383533039496,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "r2_new_",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            1543,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            1543,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 0.87649870382372
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.32379011684514464,
+      "observed_depth_relative_p95": 0.017009111132113088,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "ani17_new_",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            1437,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            1437,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 0.873999652052888
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.9328904841949354,
+      "observed_depth_relative_p95": 0.023785056272427912,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "cab_e1_3rd",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            2180,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            2180,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.34045062811614896,
+      "observed_depth_relative_p95": 0.03263512697206675,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "scene_recording_20210910_S05_S06_0_ego2",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            2729,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            2729,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.35123292969767006,
+      "observed_depth_relative_p95": 0.027420982397185014,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "r7_new",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            984,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            984,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 0.8729674796747967
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.5749854627864822,
+      "observed_depth_relative_p95": 0.0157001184928465,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    },
+    {
+      "sequence": "dancing",
+      "fields": {
+        "intrinsics": {
+          "shape": [
+            1499,
+            3,
+            3
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "extrinsics": {
+          "shape": [
+            1499,
+            4,
+            4
+          ],
+          "h5_dtype": "float32",
+          "npz_dtype": "float32",
+          "h5_matches_original_npz": true,
+          "max_h5_original_difference": 0.0,
+          "fp16_exact_fraction": 1.0
+        },
+        "trajs_2d_sample": {
+          "h5_dtype": "float32",
+          "sampled_frames": 3,
+          "fp16_exact_fraction": 1.0
+        }
+      },
+      "observed_reprojection_p95_px": 0.28063444350417055,
+      "observed_depth_relative_p95": 0.02776074018330003,
+      "usable_for_dense_geometry_with_valid_masks": true,
+      "authoritative_native_track_only": true,
+      "full_per_pixel_dynamic_trajectories": false
+    }
+  ],
+  "source_reference": "https://github.com/y-zheng18/point_odyssey/blob/main/utils/gen_tracking.py",
+  "interpretation": "Native cameras, trajectories and image coordinates were half-precision quantized; the official generator also snaps UV near segmentation boundaries. Strict sub-0.05px checks in the initial report are diagnostics, not an eligibility gate for this source.",
+  "stage": "sampled_native_precision_consistent"
+}

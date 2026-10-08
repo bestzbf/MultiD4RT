@@ -1,0 +1,82 @@
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /data2/d4rt/datasets/PointOdyssey
+    weight: 0.20
+    adapter_kwargs:
+      fast_root: null
+      require_tracks: true
+      io_workers: 1
+  - name: kubric
+    root: /data_cos/hdu_datasets/Kubric
+    weight: 0.16
+  - name: dynamic_replica
+    root: /data_cos/hdu_datasets/Dynamic_Replica
+    weight: 0.14
+    val_split: valid
+  - name: co3dv2
+    root: /data2/d4rt/datasets/Co3Dv2
+    weight: 0.17
+    adapter_kwargs:
+      subset_name: fewview_train
+      categories: null
+      require_precomputed: false
+      require_pointcloud: true
+      io_workers: 2
+      load_normals: false
+      sequence_denylist: /data/zbf/openclaw/d4rt/configs/co3dv2_denylist_degenerate_clips_20260422.txt
+  - name: blendedmvs
+    root: /data2/d4rt/datasets/BlendedMVS
+    weight: 0.12
+    adapter_kwargs:
+      use_masked: false
+      io_workers: 1
+      load_precomputed: true
+  - name: scannetpp
+    root: /data_cos/hdu_datasets/scannetpp/data
+    weight: 0.14
+    adapter_kwargs:
+      splits_dir: /data_cos/hdu_datasets/scannetpp/splits
+      strict: false
+      scenes_record: /data_cos/hdu_datasets/scannetpp/scenes_record.json
+      target_hw: [256, 256]
+
+clip_len: 48
+img_size: 256
+num_queries: 2048
+use_augs: true
+boundary_ratio: 0.3
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 42
+allow_track_fallback: true
+
+precompute_patches: false
+precompute_from_highres: false
+
+index_cache_dir: /data/zbf/openclaw/d4rt/.index_cache_5datasets_local
+index_workers: 16
+
+planned_mode: true
+builder_workers: 4
+prefetch_depth: 128
+max_spool_bytes: 53687091200
+
+sample_stage_backend: cos_sdk
+sample_stage_root: /data1/zbf/d4rt_sample_stage
+sample_stage_sdk_workers: 16
+sample_stage_cache_max_bytes: 107374182400
+sample_stage_cache_low_watermark_ratio: 0.9
+sample_stage_cache_touch_interval_s: 30
+sample_stage_cache_scan_interval_s: 30
+sample_stage_window_radius: 0
+sample_stage_datasets:
+  - pointodyssey
+  - kubric
+  - dynamic_replica
+  - co3dv2
+  - scannetpp
+sample_stage_scene_prefetch_datasets: []
+sample_stage_mount_root: /data_cos
+sample_stage_bucket: hd-ai-data-1251882982
+sample_stage_region: ap-beijing
+sample_stage_passwd_file: /etc/passwd-s3fs-data_cos

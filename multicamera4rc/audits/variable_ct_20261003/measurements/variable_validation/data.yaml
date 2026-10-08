@@ -1,0 +1,334 @@
+image_mode: native
+supervision: dense
+sampling: weighted
+num_times: 8
+num_queries: 0
+epoch_size: 100
+seed: 49
+include_visibility: true
+sources:
+- name: kubric_C1T8
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 1
+  num_times: 8
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C1T16
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 1
+  num_times: 16
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C1T24
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 1
+  num_times: 24
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C1T32
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 1
+  num_times: 32
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C2T16
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 2
+  num_times: 16
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C2T24
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 2
+  num_times: 24
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C4T12
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 4
+  num_times: 12
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C5T4
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 5
+  num_times: 4
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C6T4
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 6
+  num_times: 4
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C7T4
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 7
+  num_times: 4
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C8T6
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 8
+  num_times: 6
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C9T4
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 9
+  num_times: 4
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric
+- name: kubric_C10T4
+  adapter: kubric_multicam
+  root: /data8/kubric_multicam_tracking_v3
+  split: train
+  cameras: 10
+  num_times: 4
+  weight: 1.0
+  strides:
+  - 1
+  options:
+    cache_dir: /data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/index_cache
+    verbose: false
+    index_workers: 4
+    required_schema_version: movi_tracking_v3
+    require_native_tracks: true
+    require_depth: true
+    require_validation_stamp: true
+    validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+    min_validation_revision: 4
+    split_strategy: variant_balanced
+    val_ratio: 0.05
+    random_cameras: true
+    depth_is_ray_distance: true
+    extrinsics_are_opengl: false
+  dense_kind: kubric

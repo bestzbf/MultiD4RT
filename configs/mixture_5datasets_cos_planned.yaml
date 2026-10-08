@@ -1,0 +1,246 @@
+mode: mixture
+datasets:
+  - name: scannet
+    root: /data4/d4rt_dataset/scannet/scans
+    weight: 0.2457
+    adapter_kwargs:
+      precompute_root: /data4/d4rt_dataset/scannet/scans
+
+      depth_scale: 1000.0
+      recompute_legacy_visibility: true
+  - name: pointodyssey
+    root: /data2/d4rt/datasets/PointOdyssey
+    weight: 0.0852
+    adapter_kwargs:
+      fast_root: null
+      require_tracks: true
+      load_normals: false
+  - name: kubric
+    root: /data3/Kubric
+    weight: 0.0955
+  - name: dynamic_replica
+    # NFS-mounted copy tested faster for DynamicReplica than COS staging.
+    # Do not move ScanNet++/PointOdyssey/BlendedMVS to /data5 by default; their
+    # NFS small-file reads were slower in the 6-rank probe.
+    root: /data5/d4rt_dataset/Dynamic_Replica
+    weight: 0.0595
+    val_split: valid
+    adapter_kwargs:
+      # Track-supervised DynamicReplica samples already get RGB + 2D/3D tracks
+      # from trajectory .pth files. Skipping depth avoids 48 extra COS objects
+      # per 48-frame sample. This also disables the depth-map validity check in
+      # _sample_with_tracks for DynamicReplica; measured mask3d impact was tiny,
+      # while local /data5 load cost roughly doubled on slow 48-frame clips.
+      skip_depth_when_tracks: true
+      # Prefer uploaded compact trajectory npz files. They omit duplicated RGB,
+      # so RGB is read from image PNG while trajectory traffic is much smaller
+      # than staging the legacy per-frame pth archive.
+      prefer_trajectory_npz: true
+      # Small per-sample thread pool for local PNG/npz decode after staging.
+      # Keep this modest because planned mode already runs many builders.
+      io_workers: 4
+  - name: co3dv2
+    root: /data4/d4rt_dataset/Co3Dv2
+    weight: 0.1801
+    adapter_kwargs:
+      subset_name: fewview_train
+      categories: null
+      require_precomputed: false
+      require_pointcloud: true
+      load_normals: false
+      frame_cache_items: 384
+      io_workers: 4
+      sequence_denylist: /data/zbf/openclaw/d4rt/configs/co3dv2_denylist_degenerate_clips_20260422.txt
+  - name: blendedmvs
+    root: /data2/d4rt/datasets/BlendedMVS
+    weight: 0.04
+    adapter_kwargs:
+      use_masked: false
+      load_normals: false
+      enable_covisibility_sampling: true
+      covisibility_max_baseline_m: 0.5
+      covisibility_max_angle_deg: 30.0
+      covisibility_min_neighbors: 10
+  - name: mvssynth
+    root: /data2/d4rt/datasets/MVS-Synth/GTAV_1080
+    weight: 0.01
+    adapter_kwargs:
+      precompute_root: /data2/d4rt/datasets/MVS-Synth/GTAV_1080
+      load_precomputed: true
+      load_normals: false
+      io_workers: 4
+      io_read_retries: 3
+      io_retry_delay_s: 0.05
+  - name: tartanair
+    root: /data2/d4rt/datasets/tartanairv1
+    weight: 0.0874
+    adapter_kwargs:
+      camera: left
+      precompute_root: /data2/d4rt/datasets/tartanairv1
+      load_precomputed: true
+      load_normals: false
+      visibility_depth_support_radius: 2
+      visibility_visible_abs_thresh: 0.25
+      visibility_occlusion_abs_thresh: 1.0
+      visibility_occlusion_rel_thresh: 0.08
+      visibility_occlusion_min_support: 9
+      io_workers: 4
+      io_read_retries: 3
+      io_retry_delay_s: 0.05
+      pose_cache_items: 128
+  - name: waymo
+    root: /data2/d4rt/datasets/waymo_pre
+    split: training
+    val_split: validation
+    weight: 0.0568
+    adapter_kwargs:
+      precompute_root: /data2/d4rt/datasets/waymo_pre
+      camera_name: FRONT
+      extract_flow: false
+      depth_dilation_radius: 6
+      io_workers: 4
+      io_read_retries: 3
+      io_retry_delay_s: 0.05
+      calib_cache_items: 128
+  - name: vkitti2
+    root: /data3/dataset/VirtualKitti
+    weight: 0.015
+    adapter_kwargs:
+      camera: Camera_0
+      precompute_root: /data3/dataset/VirtualKitti
+      load_precomputed: true
+      load_normals: false
+      load_flow: false
+  - name: scannetpp
+    root: /data5/d4rt_dataset/scannetpp/data
+    weight: 0.125
+    adapter_kwargs:
+      splits_dir: /data5/d4rt_dataset/scannetpp/splits
+      strict: false
+      scenes_record: /data5/d4rt_dataset/scannetpp/scenes_record.json
+      target_hw: [256, 256]
+      precomputed_cos_timeout_s: 12
+      precomputed_cos_range_retries: 1
+      precomputed_cos_range_workers: 16
+      precomputed_cos_range_merge_gap_bytes: 67108864
+      precomputed_cos_range_max_span_bytes: 2097152
+
+epoch_size: 100000
+clip_len: 48
+img_size: 256
+num_queries: 2048
+# Limit dense track candidates before transform/query. The model still samples
+# 2048 queries; this keeps CPU work bounded on ScanNet++/DynamicReplica/Co3D.
+max_track_points: 4096
+use_augs: true
+boundary_ratio: 0.3
+use_motion_boundaries: true
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 48
+allow_track_fallback: true
+dataset_locality_size: 48
+
+# Per-dataset sampling modes:
+# - blendedmvs: covisibility_stride (co-visible set + random stride subsampling)
+#   for sparse-view reconstruction on arbitrarily-ordered multi-view frames.
+# - co3dv2: stride_wrap (modular wrap-around stride). co3d is a ~102-frame
+#   orbit around a static object; linear stride>=3 can't fit (needs >=142
+#   frames) and stride=2 gives only ~8 distinct clips/seq. Wrap-around lets
+#   larger strides spread 48 distinct views around the full 360 orbit, one
+#   distinct subset per start phase (~100/seq) -> richer view diversity.
+# - others default to 'stride' if not listed here.
+sampling_mode:
+  blendedmvs: covisibility_stride
+  co3dv2: stride_wrap
+  # All other datasets default to 'stride' if not listed here
+
+# Explicit per-dataset stride policy (candidates + sampling weights).
+# This mirrors the hardcoded _DATASET_STRIDE_POLICY in datasets/sampling.py as
+# of 2026-06-09 (probed via tools/probe_adjacent_stride.py, adjacent-cov metric).
+# Externalized here so the current tuning is saved/version-controlled and a
+# variant config (e.g. *_random.yaml) can override it without touching code.
+# If this block is removed, the code falls back to the hardcoded default.
+stride_policy:
+  pointodyssey:    {candidates: [1, 2, 4, 8, 16, 24], weights: [0.20, 0.20, 0.25, 0.25, 0.07, 0.03]}
+  kubric:          {candidates: [1],                  weights: [1.0]}
+  dynamic_replica: {candidates: [1, 2, 3, 4],         weights: [0.35, 0.35, 0.20, 0.10]}
+  scannet:         {candidates: [1, 2, 3, 4, 6, 8],   weights: [0.05, 0.20, 0.25, 0.30, 0.15, 0.05]}
+  scannetpp:       {candidates: [1, 2, 3, 4, 6, 8],   weights: [0.05, 0.20, 0.25, 0.30, 0.15, 0.05]}
+  co3dv2:          {candidates: [1, 2, 4, 5, 7, 8],   weights: [0.10, 0.15, 0.20, 0.20, 0.20, 0.15]}
+  blendedmvs:      {candidates: [1, 2, 3, 4, 6],      weights: [0.10, 0.15, 0.20, 0.25, 0.30]}
+  tartanair:       {candidates: [1, 2, 3, 4, 6, 8],   weights: [0.10, 0.25, 0.30, 0.25, 0.08, 0.02]}
+  mvssynth:        {candidates: [1],                  weights: [1.0]}
+  waymo:           {candidates: [1, 2, 3],            weights: [0.60, 0.30, 0.10]}
+  vkitti2:         {candidates: [1, 2, 3, 4],         weights: [0.40, 0.35, 0.20, 0.05]}
+
+# Clip temporal order. false (default): each 48-frame clip is time-ascending.
+# true: the clip is randomly permuted (unordered multi-view set) -- this also
+# auto-disables motion boundaries in datasets/factory.py.
+shuffle_frame_order: false
+
+# Planned mode shards global locality blocks across 6 ranks and then balances
+# each rank's batches by dataset.  A larger sequence locality and tighter frame
+# radius keep expensive COS-backed datasets concentrated enough that
+# DynamicReplica/Co3D/ScanNet++ reuse staged frames across nearby batches.
+sequence_locality_size: 96
+frame_locality_radius: 12
+
+# Fast default: sample local patches on the GPU from the same 256x256 RGB frames
+# that feed the encoder. This removes CPU builder patch extraction while keeping
+# resized-patch semantics. If switching back to high-res patches, set:
+#   precompute_from_highres: true
+#   color_aug_after_resize: false
+#   keep_cropped_images: true
+# High-res patches need the augmented high-res crop; otherwise video and patch
+# RGB no longer share the same photometric augmentation.
+precompute_patches: false
+precompute_from_highres: false
+return_highres_video: false
+store_video_uint8: true
+store_auxiliary_tensors: false
+color_aug_after_resize: true
+keep_cropped_images: false
+motion_boundary_on_resized: true
+
+index_cache_dir: /data/zbf/openclaw/d4rt/.index_cache_5datasets_local
+index_workers: 16
+
+planned_mode: true
+planned_start_immediately: true
+planned_initial_epoch: 0
+builder_workers: 18
+prefetch_depth: 960
+max_spool_bytes: 32212254720
+
+sample_stage_backend: cos_sdk
+sample_stage_root: /data1/zbf/d4rt_sample_stage
+sample_stage_sdk_workers: 2
+# CO3D/ScanNet++ read many small COS objects per sample. Bound per-object tail
+# latency; a requeued sample is cheaper than blocking a builder for 20s+.
+sample_stage_request_timeout_s: 5
+sample_stage_request_retries: 1
+sample_stage_cache_max_bytes: 399431958528
+sample_stage_cache_low_watermark_ratio: 0.85
+sample_stage_cache_touch_interval_s: 30
+sample_stage_cache_scan_interval_s: 30
+sample_stage_eviction_mode: external
+sample_stage_window_radius: 0
+sample_stage_datasets:
+  - pointodyssey
+  - kubric
+  - co3dv2
+  - blendedmvs
+  - mvssynth
+  - tartanair
+  - waymo
+  - vkitti2
+  - scannetpp
+sample_stage_scene_prefetch_datasets:
+  - co3dv2
+  - kubric
+  - dynamic_replica
+sample_stage_mount_root: /data_cos
+sample_stage_extra_mount_roots: [/data2, /data3, /data4, /data5]
+sample_stage_bucket: hd-ai-data-1251882982
+sample_stage_region: ap-beijing
+sample_stage_passwd_file: /etc/passwd-s3fs-data_cos

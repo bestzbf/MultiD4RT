@@ -1,0 +1,320 @@
+{
+  "image_mode": "native",
+  "supervision": "dense",
+  "sampling": "balanced_coverage",
+  "num_times": 8,
+  "num_queries": 0,
+  "epoch_size": 14,
+  "seed": 49,
+  "include_visibility": true,
+  "skip_invalid": false,
+  "kubric_background_policy": "objects_ground",
+  "sources": [
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1,
+        2,
+        5
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_v1_c1t16",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_v1_stride_1"
+        ],
+        "frame_policy": "all",
+        "missing_mesh": "mask",
+        "scenes": [
+          "arena",
+          "bigoffice_v1",
+          "brushify_bald",
+          "castle",
+          "cave_group",
+          "countryside",
+          "cyber_bald",
+          "desert_bald",
+          "downtown_bald",
+          "flying_group",
+          "genshin_group",
+          "hallway",
+          "hospital",
+          "japenese_bald",
+          "lab_bald",
+          "middleeast_bald",
+          "office_bald",
+          "planet_bald",
+          "post_bald",
+          "scifiroom_bald",
+          "soul_bald",
+          "soviet_group",
+          "space_bald",
+          "temple_group",
+          "train_group",
+          "village",
+          "warehouse_group_static",
+          "winter",
+          "winter_group_static"
+        ],
+        "require_human_meshes": true
+      },
+      "cameras": 1,
+      "num_times": 16
+    },
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1,
+        2,
+        5
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_v1_c2t8",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_v1_stride_1"
+        ],
+        "frame_policy": "all",
+        "missing_mesh": "mask",
+        "scenes": [
+          "arena",
+          "bigoffice_v1",
+          "brushify_bald",
+          "castle",
+          "cave_group",
+          "countryside",
+          "cyber_bald",
+          "desert_bald",
+          "downtown_bald",
+          "flying_group",
+          "genshin_group",
+          "hallway",
+          "hospital",
+          "japenese_bald",
+          "lab_bald",
+          "middleeast_bald",
+          "office_bald",
+          "planet_bald",
+          "post_bald",
+          "scifiroom_bald",
+          "soul_bald",
+          "soviet_group",
+          "space_bald",
+          "temple_group",
+          "train_group",
+          "village",
+          "warehouse_group_static",
+          "winter",
+          "winter_group_static"
+        ],
+        "require_human_meshes": true
+      },
+      "cameras": 2,
+      "num_times": 8
+    },
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1,
+        2,
+        5
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_v1_c4t4",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_v1_stride_1"
+        ],
+        "frame_policy": "all",
+        "missing_mesh": "mask",
+        "scenes": [
+          "arena",
+          "bigoffice_v1",
+          "brushify_bald",
+          "castle",
+          "cave_group",
+          "countryside",
+          "cyber_bald",
+          "desert_bald",
+          "downtown_bald",
+          "flying_group",
+          "genshin_group",
+          "hallway",
+          "hospital",
+          "japenese_bald",
+          "lab_bald",
+          "middleeast_bald",
+          "office_bald",
+          "planet_bald",
+          "post_bald",
+          "scifiroom_bald",
+          "soul_bald",
+          "soviet_group",
+          "space_bald",
+          "temple_group",
+          "train_group",
+          "village",
+          "warehouse_group_static",
+          "winter",
+          "winter_group_static"
+        ],
+        "require_human_meshes": true
+      },
+      "cameras": 4,
+      "num_times": 4
+    },
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1,
+        2,
+        5
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_v1_c8t2",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_v1_stride_1"
+        ],
+        "frame_policy": "all",
+        "missing_mesh": "mask",
+        "scenes": [
+          "arena",
+          "bigoffice_v1",
+          "brushify_bald",
+          "castle",
+          "cave_group",
+          "countryside",
+          "cyber_bald",
+          "desert_bald",
+          "downtown_bald",
+          "flying_group",
+          "genshin_group",
+          "hallway",
+          "hospital",
+          "japenese_bald",
+          "lab_bald",
+          "middleeast_bald",
+          "office_bald",
+          "planet_bald",
+          "post_bald",
+          "scifiroom_bald",
+          "soul_bald",
+          "soviet_group",
+          "space_bald",
+          "temple_group",
+          "train_group",
+          "village",
+          "warehouse_group_static",
+          "winter",
+          "winter_group_static"
+        ],
+        "require_human_meshes": true
+      },
+      "cameras": 8,
+      "num_times": 2
+    },
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_sim_c1t16",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_sim"
+        ],
+        "frame_policy": "reference",
+        "missing_mesh": "mask",
+        "scenes": [
+          "cave_sim",
+          "downtown_sim",
+          "japanese_sim",
+          "post_sim",
+          "space_sim",
+          "temple_sim",
+          "train_sim",
+          "winter_sim"
+        ]
+      },
+      "cameras": 1,
+      "num_times": 16
+    },
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_sim_c2t8",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_sim"
+        ],
+        "frame_policy": "reference",
+        "missing_mesh": "mask",
+        "scenes": [
+          "cave_sim",
+          "downtown_sim",
+          "japanese_sim",
+          "post_sim",
+          "space_sim",
+          "temple_sim",
+          "train_sim",
+          "winter_sim"
+        ]
+      },
+      "cameras": 2,
+      "num_times": 8
+    },
+    {
+      "adapter": "syn4d",
+      "root": "/data6/Syn4D",
+      "split": "train",
+      "strides": [
+        1
+      ],
+      "dense_kind": "syn4d",
+      "name": "syn4d_sim_c4t4",
+      "weight": 1.0,
+      "options": {
+        "subsets": [
+          "syn4d_sim"
+        ],
+        "frame_policy": "reference",
+        "missing_mesh": "mask",
+        "scenes": [
+          "cave_sim",
+          "downtown_sim",
+          "japanese_sim",
+          "post_sim",
+          "space_sim",
+          "temple_sim",
+          "train_sim",
+          "winter_sim"
+        ]
+      },
+      "cameras": 4,
+      "num_times": 4
+    }
+  ]
+}

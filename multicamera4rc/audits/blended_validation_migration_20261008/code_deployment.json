@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "previous": "1cc5a033344f1e17cd9823be83d3bb28bf62c715",
+  "commit": "94b126c3eac10ee4a321bf2c83ab22c08bf9ae9d",
+  "changed": [
+    "multicamera4rc/audits/blended_scene_20261008/README.md",
+    "multicamera4rc/audits/blended_scene_20261008/depth_bias_diagnostics.jsonl",
+    "multicamera4rc/audits/blended_scene_20261008/depth_bias_run.py",
+    "multicamera4rc/audits/blended_scene_20261008/expanded_command.json",
+    "multicamera4rc/audits/blended_scene_20261008/expanded_comparison.json",
+    "multicamera4rc/audits/blended_scene_20261008/expanded_evaluation.json",
+    "multicamera4rc/audits/blended_scene_20261008/expanded_plan.json",
+    "multicamera4rc/audits/blended_scene_20261008/original_comparison.json",
+    "multicamera4rc/audits/blended_scene_20261008/original_evaluation_53000.json",
+    "multicamera4rc/audits/blended_scene_20261008/original_evaluation_55000.json",
+    "multicamera4rc/audits/blended_scene_20261008/original_evaluation_55500_replay1.json",
+    "multicamera4rc/audits/blended_scene_20261008/verification.json",
+    "scripts/audit_static_scene_regression.py",
+    "scripts/continue_extended_training.py",
+    "scripts/evaluate_static_multiview.py",
+    "scripts/migrate_static_validation.py",
+    "tests/multicamera4rc/test_extended_training.py",
+    "tests/multicamera4rc/test_scene_regression.py",
+    "tests/multicamera4rc/test_validation_migration.py"
+  ],
+  "training_model_optimizer_loader_files_unchanged": true,
+  "time": "2026-10-08T16:51:21.279383"
+}

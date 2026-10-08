@@ -1,0 +1,23 @@
+MultiCamera4RC v0.2.0
+https://github.com/bestzbf/MultiCamera4RC
+
+This standalone source snapshot was exported from:
+https://github.com/bestzbf/my_dfrt
+Branch: codex/multicamera-4rc
+Commit: 404d4fdfe547574bb2cbfa6a283a1dae917c7a15
+
+Third-party components retain their existing copyright, license and
+attribution notices. This release does not replace those notices with a
+single license for the entire repository.
+
+For the 4RC-derived and DINOv2-derived components, see:
+  multicamera4rc/vendor/NOTICE
+  multicamera4rc/vendor/LICENSE.S-Lab
+  multicamera4rc/vendor/LICENSE.Apache-2.0
+  multicamera4rc/vendor/UPSTREAM.json
+
+Dataset adapter provenance is recorded in:
+  multicamera4rc/datasets/UPSTREAM.json
+
+The source provenance manifest for this snapshot is recorded in:
+  releases/v0.2.0/source_provenance.json

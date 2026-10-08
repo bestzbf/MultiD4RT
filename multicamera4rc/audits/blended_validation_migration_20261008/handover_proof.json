@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "stopped_controller": 2149634,
+  "training_launcher": 2548590,
+  "preserved_rank_pids": [
+    2549220,
+    2549221,
+    2549222,
+    2549223
+  ],
+  "static_contract": {
+    "metrics_version": 2,
+    "plan_sha256": "47f5a1b5444c9143ef718966efd029d831875878f936cf02a0b672b3b62ff79f"
+  },
+  "training_restarted": false
+}

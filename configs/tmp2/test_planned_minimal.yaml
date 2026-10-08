@@ -1,0 +1,32 @@
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /data2/d4rt/datasets/PointOdyssey
+    weight: 0.5
+    adapter_kwargs:
+      require_tracks: false
+  - name: co3dv2
+    root: /data2/d4rt/datasets/Co3Dv2
+    weight: 0.5
+    adapter_kwargs:
+      subset_name: fewview_train
+      categories: null
+      require_precomputed: false
+      require_pointcloud: true
+      sequence_denylist: /data/zbf/openclaw/d4rt/configs/co3dv2_denylist_degenerate_clips_20260422.txt
+
+clip_len: 8
+img_size: 256
+num_queries: 512
+use_augs: true
+boundary_ratio: 0.3
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 42
+allow_track_fallback: true
+epoch_size: 20
+index_cache_dir: /data1/zbf/my_dfrt/.index_cache_4datasets
+
+# Planned mode settings
+planned_mode: true
+builder_workers: 2
+prefetch_depth: 8

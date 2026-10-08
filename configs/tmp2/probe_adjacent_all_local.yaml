@@ -1,0 +1,59 @@
+# Probe-only config: all locally-mounted datasets with LOCAL roots, for
+# tools/probe_adjacent_stride.py. scannetpp omitted (COS unmounted), waymo
+# omitted (no local root). Roots verified present 2026-06-04.
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /data2/d4rt/datasets/PointOdyssey
+    adapter_kwargs:
+      fast_root: null
+      require_tracks: true
+      load_normals: false
+  - name: kubric
+    root: /data3/Kubric
+  - name: dynamic_replica
+    root: /data1/d4rt/datasets/Dynamic_Replica
+    split: valid
+  - name: co3dv2
+    root: /data4/d4rt_dataset/Co3Dv2
+    adapter_kwargs:
+      subset_name: fewview_train
+      categories: null
+      require_precomputed: false
+      require_pointcloud: true
+      load_normals: false
+  - name: blendedmvs
+    root: /data2/d4rt/datasets/BlendedMVS
+    adapter_kwargs:
+      use_masked: false
+      load_normals: false
+  - name: scannet
+    root: /data4/d4rt_dataset/scannet
+    adapter_kwargs:
+      precompute_root: /data4/d4rt_dataset/scannet
+  - name: tartanair
+    root: /data5/d4rt_dataset/tartanairv1
+    adapter_kwargs:
+      camera: left
+      precompute_root: /data5/d4rt_dataset/tartanairv1
+      load_precomputed: true
+      io_workers: 4
+  - name: vkitti2
+    root: /data5/d4rt_dataset/VirtualKitti
+    adapter_kwargs:
+      camera: Camera_0
+      precompute_root: /data5/d4rt_dataset/VirtualKitti
+      load_normals: false
+      load_flow: false
+  - name: mvssynth
+    root: /data2/d4rt/datasets/MVS-Synth/GTAV_1080
+    adapter_kwargs:
+      precompute_root: /data2/d4rt/datasets/MVS-Synth/GTAV_1080
+      load_precomputed: true
+      load_normals: false
+      io_workers: 4
+
+clip_len: 48
+img_size: 256
+index_cache_dir: /data/zbf/openclaw/d4rt/.index_cache_probe_adjacent_local
+index_workers: 16

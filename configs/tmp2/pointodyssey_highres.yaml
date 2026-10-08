@@ -1,0 +1,39 @@
+# D4RT Training Config - PointOdyssey with High-Res Patches
+# Two modes:
+#   sampled_highres:      实时采样，无需预计算，慢 10-20%
+#   precomputed_highres:  预计算高分辨率 patch，训练速度与默认相同
+
+mode: single
+name: pointodyssey
+root: /data/zbf/pointodyssey
+
+# Training parameters
+clip_len: 48
+img_size: 256
+num_queries: 2048
+boundary_ratio: 0.3
+t_tgt_eq_t_cam_ratio: 0.4
+use_augs: true
+seed: 42
+
+# Patch provider configuration
+# Mode A: sampled_highres（实时采样，无预计算开销）
+#   precompute_patches: false
+#   precompute_from_highres: false
+#   --patch-provider sampled_highres
+#
+# Mode B: precomputed_highres（预计算，训练速度与默认相同）
+#   precompute_patches: true
+#   precompute_from_highres: true
+#   --patch-provider precomputed_highres
+#
+# 当前配置：Mode B（推荐，无训练速度损失）
+precompute_patches: true
+precompute_from_highres: true
+
+# Sampling configuration
+sampling_mode: stride
+epoch_size: 10000
+
+# Index cache (optional, speeds up dataset initialization)
+index_cache_dir: /data/zbf/openclaw/d4rt/.cache

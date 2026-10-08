@@ -1,0 +1,19 @@
+{
+  "pid": 3930000,
+  "argv": [
+    "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python",
+    "-u",
+    "/data9/zbf/my_dfrt_multicamera4rc/scripts/cutover_native_motion_stereo.py",
+    "--repo",
+    "/data9/zbf/my_dfrt_multicamera4rc",
+    "--audit",
+    "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002",
+    "--commit",
+    "370f6a85307b24e0bf8864b07a5e43c91d7c9a4b",
+    "--supervisor-pid",
+    "2844530",
+    "--resume-step",
+    "17500"
+  ],
+  "log": "/data9/zbf/native_motion_cutover_20261002.log"
+}

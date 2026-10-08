@@ -1,0 +1,212 @@
+{
+  "status": "training",
+  "observed_at": "2026-10-03T21:57:30.987770+08:00",
+  "supervisor_pid": 4016861,
+  "training_commit": "ed19140598bc9d72550c9f55f7c94d7cb3228382",
+  "branch": "codex/multicamera-4rc",
+  "repo": "/data9/zbf/my_dfrt_multicamera4rc",
+  "control_dir": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/jobs/quality_recovery_20261003_132437UTC",
+  "output_root": "/data8/zbf/multicamera4rc_runs/quality_recovery_20261003_132437UTC",
+  "run": "/data8/zbf/multicamera4rc_runs/quality_recovery_20261003_132437UTC/sampling_recovery_32000_32500",
+  "resumed_from": "/data8/zbf/multicamera4rc_runs/variable_ct_gpu45_20261002_170004UTC/stage_1_25000_32000/step_00032000.pt",
+  "resume_step": 32000,
+  "observed_step": 32015,
+  "target_step": 50000,
+  "physical_gpus": [
+    4,
+    5
+  ],
+  "batch_size_per_gpu": 1,
+  "global_batch_size": 2,
+  "decoder_memory": "target_time",
+  "time_origin": "absolute",
+  "no_query_chunking": true,
+  "image_mode": "native",
+  "prefer_motion_sources": true,
+  "lr_plan": {
+    "mode": "cosine",
+    "start_step": 25000,
+    "end_step": 50000,
+    "base_lrs": [
+      1e-06,
+      1e-05
+    ],
+    "warmup_steps": 500,
+    "min_ratio": 0.1,
+    "warmup_start_ratio": 0.3
+  },
+  "actual_lr": 8.519255122875324e-06,
+  "actual_backbone_lr": 8.519255122875323e-07,
+  "actual_initial_batches": [
+    {
+      "step": 32001,
+      "datasets": [
+        [
+          "kubric_variable"
+        ],
+        [
+          "kubric_variable"
+        ]
+      ],
+      "loss": -3.65671706199646,
+      "gradient_norm": 716.5587768554688,
+      "skipped": false
+    },
+    {
+      "step": 32002,
+      "datasets": [
+        [
+          "dynamic_replica_left"
+        ],
+        [
+          "kubric_variable"
+        ]
+      ],
+      "loss": -3.4438016414642334,
+      "gradient_norm": 479.0121154785156,
+      "skipped": false
+    },
+    {
+      "step": 32003,
+      "datasets": [
+        [
+          "dynamic_replica_left"
+        ],
+        [
+          "tartanair_v1_stereo"
+        ]
+      ],
+      "loss": -2.164831578731537,
+      "gradient_norm": 214.5575714111328,
+      "skipped": false
+    },
+    {
+      "step": 32004,
+      "datasets": [
+        [
+          "dynamic_replica_left"
+        ],
+        [
+          "tartanair_v2_bottom"
+        ]
+      ],
+      "loss": -2.6374584436416626,
+      "gradient_norm": 361.5503234863281,
+      "skipped": false
+    },
+    {
+      "step": 32005,
+      "datasets": [
+        [
+          "vkitti2_stereo"
+        ],
+        [
+          "kubric_variable"
+        ]
+      ],
+      "loss": -2.968084216117859,
+      "gradient_norm": 414.43377685546875,
+      "skipped": false
+    },
+    {
+      "step": 32006,
+      "datasets": [
+        [
+          "tartanair_v2_back"
+        ],
+        [
+          "tartanair_left"
+        ]
+      ],
+      "loss": -0.8889256417751312,
+      "gradient_norm": 57.8868293762207,
+      "skipped": false
+    },
+    {
+      "step": 32007,
+      "datasets": [
+        [
+          "taskonomy"
+        ],
+        [
+          "scannet"
+        ]
+      ],
+      "loss": -1.2208948731422424,
+      "gradient_norm": 61.74738693237305,
+      "skipped": false
+    },
+    {
+      "step": 32008,
+      "datasets": [
+        [
+          "vkitti2_stereo"
+        ],
+        [
+          "kubric_variable"
+        ]
+      ],
+      "loss": -2.9017333984375,
+      "gradient_norm": 782.856201171875,
+      "skipped": false
+    },
+    {
+      "step": 32009,
+      "datasets": [
+        [
+          "tartanair_v2_bottom"
+        ],
+        [
+          "tartanair_v2_back"
+        ]
+      ],
+      "loss": -0.7208579331636429,
+      "gradient_norm": 39.519710540771484,
+      "skipped": false
+    },
+    {
+      "step": 32010,
+      "datasets": [
+        [
+          "scannet"
+        ],
+        [
+          "pointodyssey"
+        ]
+      ],
+      "loss": -1.3552647829055786,
+      "gradient_norm": 95.2880630493164,
+      "skipped": false
+    }
+  ],
+  "planned_sampling_matches_observed": true,
+  "unit_tests_per_environment": 264,
+  "giant_ddp_preflight_updates": 4,
+  "baseline_validation": [
+    {
+      "name": "validate_baseline_32000_kubric",
+      "passed": true,
+      "seconds": 114.23045146930963
+    },
+    {
+      "name": "validate_baseline_32000_native_dynamic",
+      "passed": true,
+      "seconds": 52.18949593510479
+    },
+    {
+      "name": "validate_baseline_32000_static",
+      "passed": true,
+      "seconds": 39.9021508959122
+    },
+    {
+      "name": "validate_baseline_32000_variable",
+      "passed": true,
+      "seconds": 48.75473634619266
+    }
+  ],
+  "initial_quality_report": "/data8/zbf/multicamera4rc_runs/quality_recovery_20261003_132437UTC/validation/baseline_32000/quality.json",
+  "next_quality_check_step": 32500,
+  "trial_steps_per_branch": 250,
+  "trial_results": "pending",
+  "best_checkpoint_pointer": "/data8/zbf/multicamera4rc_runs/quality_recovery_20261003_132437UTC/best_checkpoint.json"
+}

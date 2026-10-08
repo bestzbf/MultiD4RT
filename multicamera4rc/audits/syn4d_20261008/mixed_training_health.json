@@ -1,0 +1,471 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-07T17:54:04.592610+00:00",
+  "code_commit": "79253cafd5bf1fbdde27c2c934d53e3c97085d7b",
+  "control_dir": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/jobs/syn4d_complete_20261008",
+  "controller_pid": 2869558,
+  "child_pid": 3955365,
+  "stage": "train_55500_try0",
+  "target_step": 100000,
+  "initial_checkpoint": "/data8/zbf/multicamera4rc_runs/syn4d_activation_20261007/continuation_54000_56000_try0/step_00055000.pt",
+  "config": "/data8/zbf/multicamera4rc_runs/syn4d_complete_20261008/full_mixture.json",
+  "config_sha256": "2579d07b6af106ac9d06558c0cc40a7a4216e5cfbfa1bbb7bcfb81b125e07f15",
+  "syn4d_admitted": true,
+  "full_pool_admitted": true,
+  "production_log": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/jobs/syn4d_complete_20261008/train_55500_try0.log",
+  "first_step": 55001,
+  "last_step": 55012,
+  "applied_updates": 12,
+  "samples": 24,
+  "all_losses_and_gradients_finite": true,
+  "skipped_updates": 0,
+  "invalid_clips": 0,
+  "runtime_warnings": [
+    "[default0]:/data9/zbf/my_dfrt_multicamera4rc/multicamera4rc/datasets/bridge.py:278: RuntimeWarning: invalid value encountered in matmul",
+    "[default0]:/data9/zbf/my_dfrt_multicamera4rc/multicamera4rc/datasets/bridge.py:278: RuntimeWarning: invalid value encountered in matmul"
+  ],
+  "warning_review": "Nonfinite UV affine warnings: invalid source queries are excluded; production-environment fixture confirms finite targets and unchanged valid GT. See nonfinite_uv_mask_check.json.",
+  "source_counts": {
+    "dynamic_replica_left": 2,
+    "kubric_variable": 4,
+    "pointodyssey": 3,
+    "syn4d_v1": 5,
+    "syn4d_sim": 2,
+    "tartanair_v2_left": 1,
+    "scannetpp": 1,
+    "tartanair_v1_stereo": 1,
+    "blended": 3,
+    "hypersim": 1,
+    "tartanair_v2_back": 1
+  },
+  "syn4d_samples": [
+    {
+      "step": 55003,
+      "rank": 1,
+      "dataset": "syn4d_v1",
+      "clip": "syn4d/syn4d_v1_stride_1/soviet_group/seq_000009",
+      "input_hw": [
+        728,
+        1288
+      ],
+      "cameras": 4,
+      "times": 4,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": -0.4800509810447693,
+        "depth_abs_rel": 0.13214486837387085,
+        "depth_mae_normalized": 0.1624332070350647,
+        "trajectory_epe_normalized": 0.2229996919631958,
+        "displacement_epe_dynamic_normalized": 0.0016509765991941094,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.22298920154571533,
+        "displacement_epe_temporal_normalized": 0.000656354648526758,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 14745498.0,
+        "camera_rotation_degrees": 0.8187142610549927
+      },
+      "syn4d": {
+        "frame_policy": "all",
+        "raw_time_indices": [
+          188,
+          189,
+          190,
+          191
+        ],
+        "mesh_masks": [
+          "_00_body",
+          "_00_clothing",
+          "obj_01",
+          "obj_02",
+          "obj_03"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 1226739
+      }
+    },
+    {
+      "step": 55004,
+      "rank": 1,
+      "dataset": "syn4d_sim",
+      "clip": "syn4d/syn4d_sim/train_sim/seq_000027",
+      "input_hw": [
+        1036,
+        1036
+      ],
+      "cameras": 4,
+      "times": 4,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": -0.4631596505641937,
+        "depth_abs_rel": 0.04359757527709007,
+        "depth_mae_normalized": 0.08502497524023056,
+        "trajectory_epe_normalized": 0.13209518790245056,
+        "displacement_epe_dynamic_normalized": 0.012004151940345764,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.13232602179050446,
+        "displacement_epe_temporal_normalized": 0.005821686703711748,
+        "supervised_source_pixels": 4194301.0,
+        "supervised_trajectory_pixels": 16776613.0,
+        "camera_rotation_degrees": 4.892144203186035
+      },
+      "syn4d": {
+        "frame_policy": "reference",
+        "raw_time_indices": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "mesh_masks": [
+          "obj_00",
+          "obj_01",
+          "obj_02",
+          "obj_03",
+          "obj_04",
+          "obj_05",
+          "obj_06",
+          "obj_07",
+          "obj_08",
+          "obj_09",
+          "obj_10",
+          "obj_11",
+          "obj_12",
+          "obj_13",
+          "obj_14",
+          "obj_15",
+          "obj_16",
+          "obj_17",
+          "obj_18",
+          "obj_19"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 5455019
+      }
+    },
+    {
+      "step": 55006,
+      "rank": 0,
+      "dataset": "syn4d_v1",
+      "clip": "syn4d/syn4d_v1_stride_1/soul_bald/seq_000003",
+      "input_hw": [
+        728,
+        1288
+      ],
+      "cameras": 8,
+      "times": 2,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": 0.20147612690925598,
+        "depth_abs_rel": 0.16485019028186798,
+        "depth_mae_normalized": 0.1781235635280609,
+        "trajectory_epe_normalized": 0.33993837237358093,
+        "displacement_epe_dynamic_normalized": 0.001735733007080853,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.3399079144001007,
+        "displacement_epe_temporal_normalized": 0.0005502700805664062,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 7372794.0,
+        "camera_rotation_degrees": 2.5391812324523926
+      },
+      "syn4d": {
+        "frame_policy": "all",
+        "raw_time_indices": [
+          460,
+          461
+        ],
+        "mesh_masks": [
+          "_00_body",
+          "_00_clothing",
+          "obj_01",
+          "obj_02",
+          "obj_03"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 1361426
+      }
+    },
+    {
+      "step": 55008,
+      "rank": 0,
+      "dataset": "syn4d_v1",
+      "clip": "syn4d/syn4d_v1_stride_1/soviet_group/seq_000015",
+      "input_hw": [
+        728,
+        1288
+      ],
+      "cameras": 1,
+      "times": 16,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": 0.40239250659942627,
+        "depth_abs_rel": 0.4984540045261383,
+        "depth_mae_normalized": 0.3766654431819916,
+        "trajectory_epe_normalized": 0.4071975350379944,
+        "displacement_epe_dynamic_normalized": 0.009543114341795444,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.4071526825428009,
+        "displacement_epe_temporal_normalized": 0.0038265748880803585,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 58982128.0,
+        "camera_rotation_degrees": 0.4805128574371338
+      },
+      "syn4d": {
+        "frame_policy": "all",
+        "raw_time_indices": [
+          104,
+          106,
+          108,
+          110,
+          112,
+          114,
+          116,
+          118,
+          120,
+          122,
+          124,
+          126,
+          128,
+          130,
+          132,
+          134
+        ],
+        "mesh_masks": [
+          "_00_body",
+          "_00_clothing",
+          "obj_01",
+          "obj_02",
+          "obj_03"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 1294676
+      }
+    },
+    {
+      "step": 55009,
+      "rank": 0,
+      "dataset": "syn4d_sim",
+      "clip": "syn4d/syn4d_sim/temple_sim/seq_000018",
+      "input_hw": [
+        1036,
+        1036
+      ],
+      "cameras": 2,
+      "times": 8,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": -0.9760221242904663,
+        "depth_abs_rel": 0.03398856148123741,
+        "depth_mae_normalized": 0.03589889407157898,
+        "trajectory_epe_normalized": 0.08576761931180954,
+        "displacement_epe_dynamic_normalized": 0.003000767668709159,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.08575944602489471,
+        "displacement_epe_temporal_normalized": 0.0010577798821032047,
+        "supervised_source_pixels": 4194304.0,
+        "supervised_trajectory_pixels": 33554096.0,
+        "camera_rotation_degrees": 2.3102731704711914
+      },
+      "syn4d": {
+        "frame_policy": "reference",
+        "raw_time_indices": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "mesh_masks": [
+          "obj_00",
+          "obj_01",
+          "obj_02",
+          "obj_03",
+          "obj_04",
+          "obj_05",
+          "obj_06",
+          "obj_07",
+          "obj_08",
+          "obj_09",
+          "obj_10",
+          "obj_11",
+          "obj_12",
+          "obj_13",
+          "obj_14",
+          "obj_15"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 2216792
+      }
+    },
+    {
+      "step": 55009,
+      "rank": 1,
+      "dataset": "syn4d_v1",
+      "clip": "syn4d/syn4d_v1_stride_1/soviet_group/seq_000009",
+      "input_hw": [
+        728,
+        1288
+      ],
+      "cameras": 4,
+      "times": 4,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": -0.24751582741737366,
+        "depth_abs_rel": 0.10966627299785614,
+        "depth_mae_normalized": 0.1269272416830063,
+        "trajectory_epe_normalized": 0.17832639813423157,
+        "displacement_epe_dynamic_normalized": 0.0034671819303184748,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.17806163430213928,
+        "displacement_epe_temporal_normalized": 0.0025121152866631746,
+        "supervised_source_pixels": 3686400.0,
+        "supervised_trajectory_pixels": 14745516.0,
+        "camera_rotation_degrees": 2.6155762672424316
+      },
+      "syn4d": {
+        "frame_policy": "all",
+        "raw_time_indices": [
+          150,
+          155,
+          160,
+          165
+        ],
+        "mesh_masks": [
+          "_00_body",
+          "_00_clothing",
+          "obj_01",
+          "obj_02",
+          "obj_03"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 1977839
+      }
+    },
+    {
+      "step": 55012,
+      "rank": 1,
+      "dataset": "syn4d_v1",
+      "clip": "syn4d/syn4d_v1_stride_1/planet_bald/seq_000011",
+      "input_hw": [
+        728,
+        1288
+      ],
+      "cameras": 4,
+      "times": 4,
+      "decoded_sources": 4,
+      "metrics": {
+        "loss": 0.3274664282798767,
+        "depth_abs_rel": 0.27651160955429077,
+        "depth_mae_normalized": 0.2668741047382355,
+        "trajectory_epe_normalized": 0.39506828784942627,
+        "displacement_epe_dynamic_normalized": 0.006146880332380533,
+        "depth_confidence_saturated_fraction": 0.0,
+        "trajectory_epe_temporal_normalized": 0.39480066299438477,
+        "displacement_epe_temporal_normalized": 0.00741285877302289,
+        "supervised_source_pixels": 3531113.0,
+        "supervised_trajectory_pixels": 14124245.0,
+        "camera_rotation_degrees": 2.897294521331787
+      },
+      "syn4d": {
+        "frame_policy": "all",
+        "raw_time_indices": [
+          368,
+          373,
+          378,
+          383
+        ],
+        "mesh_masks": [
+          "_00_body",
+          "_00_clothing",
+          "obj_01",
+          "obj_02",
+          "obj_03"
+        ],
+        "missing_meshes": [],
+        "visibility_source": "depth_consistency",
+        "pixels_with_face": 1581481
+      }
+    }
+  ],
+  "restored_training_state": {
+    "data_epoch": 0,
+    "batches_consumed": 2000,
+    "world_size": 2,
+    "batch_size": 1,
+    "source_count": 4,
+    "max_source_time_pairs": 64,
+    "prefer_motion_sources": true,
+    "time_projection_reset_step": null,
+    "seed": 49,
+    "optimizer_updates": 55000,
+    "supervision": "dense",
+    "scene_normalized": true,
+    "dense_target_version": 2,
+    "kubric_background_policy": "objects_ground",
+    "loss_weights": {
+      "depth": 1.0,
+      "camera": 1.0,
+      "ray": 1.0,
+      "trajectory": 1.0,
+      "displacement": 1.0,
+      "visibility": 0.1,
+      "static": 0.1,
+      "depth_gradient": 1.0,
+      "velocity": 1.0
+    },
+    "loss_profile": "dense",
+    "loss_config": {
+      "weights": {
+        "depth": 1.0,
+        "camera": 1.0,
+        "ray": 1.0,
+        "trajectory": 1.0,
+        "displacement": 1.0,
+        "visibility": 0.1,
+        "static": 0.1,
+        "depth_gradient": 1.0,
+        "velocity": 1.0
+      },
+      "confidence_alpha": 0.2,
+      "regression_norm": "l2",
+      "foreground_weight": 10.0,
+      "visibility_projection_mask": false,
+      "regression_norms": {},
+      "unweighted_regression_weight": 0.0,
+      "foreground_fraction": null,
+      "motion_confidence_targets": [
+        "trajectory",
+        "displacement",
+        "velocity"
+      ],
+      "depth_gradient_scales": [
+        1
+      ],
+      "depth_gradient_confidence": true,
+      "camera_loss_mode": "matrix"
+    },
+    "lr_plan": {
+      "mode": "cosine",
+      "start_step": 46000,
+      "end_step": 100000,
+      "base_lrs": [
+        4.9981530967498145e-08,
+        4.998153096749814e-07
+      ],
+      "warmup_steps": 20,
+      "min_ratio": 0.2,
+      "warmup_start_ratio": 0.5
+    },
+    "amp_dtype": "bfloat16"
+  },
+  "gpu_snapshot": "4, 86 %, 206418 MiB\n5, 89 %, 174354 MiB",
+  "note": "Production mixture updates only; independent DDP admission updates excluded. This snapshot verifies startup health, not long-term convergence."
+}

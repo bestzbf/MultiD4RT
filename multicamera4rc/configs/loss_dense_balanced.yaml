@@ -1,0 +1,28 @@
+# Full-pixel experimental loss profile. Compare on a fixed held-out plan.
+weights:
+  depth: 1.0
+  camera: 1.0
+  ray: 1.0
+  trajectory: 0.25
+  displacement: 1.0
+  visibility: 0.1
+  static: 0
+  depth_gradient: 1.0
+  velocity: 1.0
+confidence_alpha: 0.2
+regression_norm: l2
+foreground_weight: 1.0
+visibility_projection_mask: false
+regression_norms:
+  ray: l1_sum
+unweighted_regression_weight: 1.0
+foreground_fraction: 0.5
+motion_confidence_targets:
+- displacement
+depth_gradient_scales:
+- 1
+- 2
+- 4
+- 8
+depth_gradient_confidence: false
+camera_loss_mode: components

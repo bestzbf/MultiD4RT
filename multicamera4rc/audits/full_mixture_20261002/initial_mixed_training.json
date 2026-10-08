@@ -1,0 +1,3796 @@
+{
+  "captured_at_utc": "2026-10-01T19:33:58.342231+00:00",
+  "run": "/data9/zbf/my_dfrt_multicamera4rc/outputs/full_dense_mixture_gpu45_20261002_032608",
+  "log": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/jobs/full_dense_mixture_gpu45_20261002_032608/supervisor.log",
+  "code_commit": "c7c4e64df5f667e961b45830bb9560ec1cf59d4e",
+  "physical_gpus": [
+    4,
+    5
+  ],
+  "supervisor_pid": 2466456,
+  "stage": "training",
+  "resume_step": 5000,
+  "completed_optimizer_steps": 87,
+  "last_step": 5087,
+  "global_batch_size": 2,
+  "workers_per_gpu": 2,
+  "image_mode": "native",
+  "no_query_chunking": true,
+  "all_numeric_metrics_finite": true,
+  "skipped_optimizer_steps": 0,
+  "source_counts": {
+    "taskonomy": 61,
+    "tartanair_right": 3,
+    "dynamic_replica": 18,
+    "kubric_C3": 10,
+    "kubric_C4": 8,
+    "scannet": 9,
+    "kubric_C2": 16,
+    "vkitti2_Camera_1": 12,
+    "wildrgbd": 9,
+    "vkitti2_Camera_0": 9,
+    "scannetpp": 3,
+    "blended": 3,
+    "hypersim": 7,
+    "pointodyssey": 4,
+    "tartanair_left": 2
+  },
+  "all_15_source_configurations_seen": true,
+  "runtime_invalid_clips": 0,
+  "examples": {
+    "taskonomy": {
+      "step": 5001,
+      "batch": {
+        "dataset": [
+          "taskonomy"
+        ],
+        "clip_id": [
+          "taskonomy/sagerton"
+        ],
+        "input_hw": [
+          560,
+          560
+        ],
+        "observations": 1,
+        "times": 1,
+        "decoded_sources": 1
+      }
+    },
+    "tartanair_right": {
+      "step": 5001,
+      "batch": {
+        "dataset": [
+          "tartanair_right"
+        ],
+        "clip_id": [
+          "tartanair_v1_zip/neighborhood/Easy/P014/right"
+        ],
+        "input_hw": [
+          490,
+          644
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "dynamic_replica": {
+      "step": 5002,
+      "batch": {
+        "dataset": [
+          "dynamic_replica"
+        ],
+        "clip_id": [
+          "dynamic_replica/2b5d84-3_obj_source_right"
+        ],
+        "input_hw": [
+          728,
+          1288
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "kubric_C3": {
+      "step": 5003,
+      "batch": {
+        "dataset": [
+          "kubric_C3"
+        ],
+        "clip_id": [
+          "kubric_multicam/scene_D_000541"
+        ],
+        "input_hw": [
+          266,
+          266
+        ],
+        "observations": 24,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "kubric_C4": {
+      "step": 5005,
+      "batch": {
+        "dataset": [
+          "kubric_C4"
+        ],
+        "clip_id": [
+          "kubric_multicam/scene_C_000967"
+        ],
+        "input_hw": [
+          266,
+          266
+        ],
+        "observations": 24,
+        "times": 6,
+        "decoded_sources": 4
+      }
+    },
+    "scannet": {
+      "step": 5007,
+      "batch": {
+        "dataset": [
+          "scannet"
+        ],
+        "clip_id": [
+          "scannet/scene0416_02"
+        ],
+        "input_hw": [
+          420,
+          560
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "kubric_C2": {
+      "step": 5008,
+      "batch": {
+        "dataset": [
+          "kubric_C2"
+        ],
+        "clip_id": [
+          "kubric_multicam/scene_D_000078"
+        ],
+        "input_hw": [
+          266,
+          266
+        ],
+        "observations": 24,
+        "times": 12,
+        "decoded_sources": 4
+      }
+    },
+    "vkitti2_Camera_1": {
+      "step": 5008,
+      "batch": {
+        "dataset": [
+          "vkitti2_Camera_1"
+        ],
+        "clip_id": [
+          "vkitti2/Scene18_overcast"
+        ],
+        "input_hw": [
+          378,
+          1246
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "wildrgbd": {
+      "step": 5010,
+      "batch": {
+        "dataset": [
+          "wildrgbd"
+        ],
+        "clip_id": [
+          "wildrgbd/box_scene_196"
+        ],
+        "input_hw": [
+          560,
+          560
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "vkitti2_Camera_0": {
+      "step": 5017,
+      "batch": {
+        "dataset": [
+          "vkitti2_Camera_0"
+        ],
+        "clip_id": [
+          "vkitti2/Scene20_fog"
+        ],
+        "input_hw": [
+          378,
+          1246
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "scannetpp": {
+      "step": 5024,
+      "batch": {
+        "dataset": [
+          "scannetpp"
+        ],
+        "clip_id": [
+          "scannetpp/0caa1ae59a"
+        ],
+        "input_hw": [
+          420,
+          560
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "blended": {
+      "step": 5029,
+      "batch": {
+        "dataset": [
+          "blended"
+        ],
+        "clip_id": [
+          "blended/588ab5bdec4d5a1c088ed60f"
+        ],
+        "input_hw": [
+          420,
+          560
+        ],
+        "observations": 1,
+        "times": 1,
+        "decoded_sources": 1
+      }
+    },
+    "hypersim": {
+      "step": 5029,
+      "batch": {
+        "dataset": [
+          "hypersim"
+        ],
+        "clip_id": [
+          "hypersim_zip/ai_030_007/cam_00"
+        ],
+        "input_hw": [
+          770,
+          1036
+        ],
+        "observations": 1,
+        "times": 1,
+        "decoded_sources": 1
+      }
+    },
+    "pointodyssey": {
+      "step": 5037,
+      "batch": {
+        "dataset": [
+          "pointodyssey"
+        ],
+        "clip_id": [
+          "pointodyssey_geometry/cab_h_bench_3rd"
+        ],
+        "input_hw": [
+          546,
+          966
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    },
+    "tartanair_left": {
+      "step": 5043,
+      "batch": {
+        "dataset": [
+          "tartanair_left"
+        ],
+        "clip_id": [
+          "tartanair_v1_zip/abandonedfactory/Easy/P009/left"
+        ],
+        "input_hw": [
+          490,
+          644
+        ],
+        "observations": 8,
+        "times": 8,
+        "decoded_sources": 4
+      }
+    }
+  },
+  "records": [
+    {
+      "step": 5001,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/sagerton"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "tartanair_right"
+          ],
+          "clip_id": [
+            "tartanair_v1_zip/neighborhood/Easy/P014/right"
+          ],
+          "input_hw": [
+            490,
+            644
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 10.988703161478043,
+      "grad_norm": 503.12799072265625,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 762371.5,
+      "supervised_trajectory_pixels": 762371.5
+    },
+    {
+      "step": 5002,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/2b5d84-3_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/imbery"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 0.039749935269355774,
+      "grad_norm": 139.64512634277344,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1993155.5,
+      "supervised_trajectory_pixels": 1993155.5
+    },
+    {
+      "step": 5003,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_D_000541"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000310"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -3.424995183944702,
+      "grad_norm": 1233.38818359375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 262144.0,
+      "supervised_trajectory_pixels": 2097152.0
+    },
+    {
+      "step": 5004,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/byers"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000548"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -2.4709878712892532,
+      "grad_norm": 664.8514404296875,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 281348.0,
+      "supervised_trajectory_pixels": 1198852.0
+    },
+    {
+      "step": 5005,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/american"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000967"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.7879358977079391,
+      "grad_norm": 566.88818359375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 279754.0,
+      "supervised_trajectory_pixels": 935114.0
+    },
+    {
+      "step": 5006,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/cornville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000698"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.7389904353767633,
+      "grad_norm": 526.9056396484375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 281174.0,
+      "supervised_trajectory_pixels": 936534.0
+    },
+    {
+      "step": 5007,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0416_02"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/wakeman"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.5988836884498596,
+      "grad_norm": 60.223331451416016,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 577947.5,
+      "supervised_trajectory_pixels": 577947.5
+    },
+    {
+      "step": 5008,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_D_000078"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_overcast"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 1.418236494064331,
+      "grad_norm": 628.477294921875,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 989869.5,
+      "supervised_trajectory_pixels": 3719655.0
+    },
+    {
+      "step": 5009,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/hurley"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000071"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -2.1403112560510635,
+      "grad_norm": 512.6328125,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 281473.5,
+      "supervised_trajectory_pixels": 1198977.5
+    },
+    {
+      "step": 5010,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000856"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/box_scene_196"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -2.0265159606933594,
+      "grad_norm": 319.410400390625,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 581962.0,
+      "supervised_trajectory_pixels": 1237322.0
+    },
+    {
+      "step": 5011,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene01_sunset"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene01_30-deg-right"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 5.111788034439087,
+      "grad_norm": 486.4955749511719,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1646081.5,
+      "supervised_trajectory_pixels": 4468862.0
+    },
+    {
+      "step": 5012,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_D_000474"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_15-deg-right"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 1.3916118144989014,
+      "grad_norm": 785.870849609375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 982229.5,
+      "supervised_trajectory_pixels": 4126332.0
+    },
+    {
+      "step": 5013,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/kevin"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000218"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -2.044632226228714,
+      "grad_norm": 580.4088745117188,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 280967.5,
+      "supervised_trajectory_pixels": 1722759.5
+    },
+    {
+      "step": 5014,
+      "rank_batches": [
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/bottle_scene_423"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/callicoon"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 8.508521795272827,
+      "grad_norm": 177.1817169189453,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 659887.5,
+      "supervised_trajectory_pixels": 659887.5
+    },
+    {
+      "step": 5015,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/manassas"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000456"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.5022192150354385,
+      "grad_norm": 432.519775390625,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 278522.5,
+      "supervised_trajectory_pixels": 933882.5
+    },
+    {
+      "step": 5016,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/1d3548-1_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene02_15-deg-left"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 4.003199815750122,
+      "grad_norm": 350.11419677734375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 2596470.5,
+      "supervised_trajectory_pixels": 6899871.5
+    },
+    {
+      "step": 5017,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/393bcc-3_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene20_fog"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 6.317663311958313,
+      "grad_norm": 351.2688293457031,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 2535215.5,
+      "supervised_trajectory_pixels": 3747442.5
+    },
+    {
+      "step": 5018,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/darrtown"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/stokes"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.07464581727981567,
+      "grad_norm": 109.36628723144531,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 279509.0,
+      "supervised_trajectory_pixels": 279509.0
+    },
+    {
+      "step": 5019,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/retsof"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/mcdade"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 0.008327968418598175,
+      "grad_norm": 69.94297790527344,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 294850.5,
+      "supervised_trajectory_pixels": 294850.5
+    },
+    {
+      "step": 5020,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/tariffville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/readsboro"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 0.18572622537612915,
+      "grad_norm": 107.1138687133789,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 294495.0,
+      "supervised_trajectory_pixels": 294495.0
+    },
+    {
+      "step": 5021,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_overcast"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000298"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 0.15222132205963135,
+      "grad_norm": 271.5032958984375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 990139.0,
+      "supervised_trajectory_pixels": 3363625.0
+    },
+    {
+      "step": 5022,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene02_30-deg-right"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/clock_scene_569"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 1.5159693360328674,
+      "grad_norm": 183.25009155273438,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1159344.5,
+      "supervised_trajectory_pixels": 2315018.5
+    },
+    {
+      "step": 5023,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_001161"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000845"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -3.0363396406173706,
+      "grad_norm": 504.45391845703125,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 262144.0,
+      "supervised_trajectory_pixels": 2621440.0
+    },
+    {
+      "step": 5024,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/southfield"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "scannetpp"
+          ],
+          "clip_id": [
+            "scannetpp/0caa1ae59a"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 0.6272534355521202,
+      "grad_norm": 102.97171020507812,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 534044.0,
+      "supervised_trajectory_pixels": 534044.0
+    },
+    {
+      "step": 5025,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/841771-1_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/gough"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 0.647850513458252,
+      "grad_norm": 108.07534790039062,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1993636.0,
+      "supervised_trajectory_pixels": 5136852.5
+    },
+    {
+      "step": 5026,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000854"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/chilhowie"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -1.0098658204078674,
+      "grad_norm": 211.52542114257812,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 224886.5,
+      "supervised_trajectory_pixels": 880246.5
+    },
+    {
+      "step": 5027,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/862299-3_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_001180"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.6864407733082771,
+      "grad_norm": 223.7569122314453,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1622687.0,
+      "supervised_trajectory_pixels": 2540191.0
+    },
+    {
+      "step": 5028,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/stockwell"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/0b6d88-4_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.7115005552768707,
+      "grad_norm": 90.33576965332031,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1988961.5,
+      "supervised_trajectory_pixels": 1988961.5
+    },
+    {
+      "step": 5029,
+      "rank_batches": [
+        {
+          "dataset": [
+            "blended"
+          ],
+          "clip_id": [
+            "blended/588ab5bdec4d5a1c088ed60f"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_030_007/cam_00"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 0.6409097164869308,
+      "grad_norm": 127.29920196533203,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 496617.0,
+      "supervised_trajectory_pixels": 496617.0
+    },
+    {
+      "step": 5030,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/pomaria"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000572"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.315402664244175,
+      "grad_norm": 305.5997619628906,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 280247.0,
+      "supervised_trajectory_pixels": 1722039.0
+    },
+    {
+      "step": 5031,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/1d3548-1_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_D_001027"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.9294010400772095,
+      "grad_norm": 254.0166015625,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1974272.0,
+      "supervised_trajectory_pixels": 6132442.5
+    },
+    {
+      "step": 5032,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0627_01"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/razor_scene_261"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 5.575226843357086,
+      "grad_norm": 105.29460906982422,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 887721.0,
+      "supervised_trajectory_pixels": 887721.0
+    },
+    {
+      "step": 5033,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0703_01"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/stockwell"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.6906006336212158,
+      "grad_norm": 43.63854217529297,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 588743.0,
+      "supervised_trajectory_pixels": 588743.0
+    },
+    {
+      "step": 5034,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/6e1aaf-4_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/gluek"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.38124386593699455,
+      "grad_norm": 59.03473663330078,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1989759.0,
+      "supervised_trajectory_pixels": 1989759.0
+    },
+    {
+      "step": 5035,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannetpp"
+          ],
+          "clip_id": [
+            "scannetpp/9859de300f"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/roeville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.30167098343372345,
+      "grad_norm": 84.68077850341797,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 609754.5,
+      "supervised_trajectory_pixels": 609754.5
+    },
+    {
+      "step": 5036,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_fog"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "scannetpp"
+          ],
+          "clip_id": [
+            "scannetpp/e945643bef"
+          ],
+          "input_hw": [
+            434,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.21151377260684967,
+      "grad_norm": 47.822547912597656,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1342748.0,
+      "supervised_trajectory_pixels": 2884136.0
+    },
+    {
+      "step": 5037,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/0b10c6-3_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "pointodyssey"
+          ],
+          "clip_id": [
+            "pointodyssey_geometry/cab_h_bench_3rd"
+          ],
+          "input_hw": [
+            546,
+            966
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.8737731873989105,
+      "grad_norm": 65.90557098388672,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 2880000.0,
+      "supervised_trajectory_pixels": 5981816.5
+    },
+    {
+      "step": 5038,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000824"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0604_00"
+          ],
+          "input_hw": [
+            406,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.632540412247181,
+      "grad_norm": 202.911376953125,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 504608.5,
+      "supervised_trajectory_pixels": 1159968.5
+    },
+    {
+      "step": 5039,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0397_00"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/channel"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.38648537918925285,
+      "grad_norm": 25.215547561645508,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 576102.5,
+      "supervised_trajectory_pixels": 576102.5
+    },
+    {
+      "step": 5040,
+      "rank_batches": [
+        {
+          "dataset": [
+            "tartanair_right"
+          ],
+          "clip_id": [
+            "tartanair_v1_zip/endofworld/Hard/P005/right"
+          ],
+          "input_hw": [
+            490,
+            644
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/tansboro"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 4.245325565338135,
+      "grad_norm": 201.16018676757812,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 760179.5,
+      "supervised_trajectory_pixels": 760179.5
+    },
+    {
+      "step": 5041,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000553"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/gilbert"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -2.0790450870990753,
+      "grad_norm": 267.87420654296875,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 278210.5,
+      "supervised_trajectory_pixels": 1195714.5
+    },
+    {
+      "step": 5042,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_rain"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/1d6652-3_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.15915384888648987,
+      "grad_norm": 69.12479400634766,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 2709980.5,
+      "supervised_trajectory_pixels": 4226438.0
+    },
+    {
+      "step": 5043,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0582_02"
+          ],
+          "input_hw": [
+            406,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "tartanair_left"
+          ],
+          "clip_id": [
+            "tartanair_v1_zip/abandonedfactory/Easy/P009/left"
+          ],
+          "input_hw": [
+            490,
+            644
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.22859793715178967,
+      "grad_norm": 39.32600021362305,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1019909.5,
+      "supervised_trajectory_pixels": 1019909.5
+    },
+    {
+      "step": 5044,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/clive"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/remote_control_scene_440"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 3.5245654061436653,
+      "grad_norm": 100.97501373291016,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 736785.5,
+      "supervised_trajectory_pixels": 736785.5
+    },
+    {
+      "step": 5045,
+      "rank_batches": [
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_002_002/cam_00"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/sussex"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.04167267680168152,
+      "grad_norm": 44.496036529541016,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 540640.5,
+      "supervised_trajectory_pixels": 540640.5
+    },
+    {
+      "step": 5046,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/pamelia"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_rain"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.3667316287755966,
+      "grad_norm": 57.761268615722656,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1014334.5,
+      "supervised_trajectory_pixels": 2526106.5
+    },
+    {
+      "step": 5047,
+      "rank_batches": [
+        {
+          "dataset": [
+            "blended"
+          ],
+          "clip_id": [
+            "blended/58654563712e276146918643"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "tartanair_left"
+          ],
+          "clip_id": [
+            "tartanair_v1_zip/abandonedfactory/Hard/P003/left"
+          ],
+          "input_hw": [
+            490,
+            644
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 11.160521864891052,
+      "grad_norm": 311.0262145996094,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 710371.5,
+      "supervised_trajectory_pixels": 710371.5
+    },
+    {
+      "step": 5048,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C4"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_001119"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 6,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/hendrix"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -2.0304089784622192,
+      "grad_norm": 378.0853271484375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 281693.5,
+      "supervised_trajectory_pixels": 937053.5
+    },
+    {
+      "step": 5049,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_D_000394"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "pointodyssey"
+          ],
+          "clip_id": [
+            "pointodyssey_geometry/character5"
+          ],
+          "input_hw": [
+            546,
+            966
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.9758992195129395,
+      "grad_norm": 204.3099822998047,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1118721.5,
+      "supervised_trajectory_pixels": 2036225.5
+    },
+    {
+      "step": 5050,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/random"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/wilkinsburg"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.46306535601615906,
+      "grad_norm": 35.39628982543945,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 289488.5,
+      "supervised_trajectory_pixels": 289488.5
+    },
+    {
+      "step": 5051,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/bettendorf"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "tartanair_right"
+          ],
+          "clip_id": [
+            "tartanair_v1_zip/neighborhood/Easy/P003/right"
+          ],
+          "input_hw": [
+            490,
+            644
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 3.2241384238004684,
+      "grad_norm": 138.4062042236328,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 764951.0,
+      "supervised_trajectory_pixels": 764951.0
+    },
+    {
+      "step": 5052,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0459_00"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000081"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.3226891923695803,
+      "grad_norm": 292.5771179199219,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 560272.0,
+      "supervised_trajectory_pixels": 2002064.0
+    },
+    {
+      "step": 5053,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/dedham"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/cousins"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.5199336260557175,
+      "grad_norm": 28.298946380615234,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 299626.0,
+      "supervised_trajectory_pixels": 299626.0
+    },
+    {
+      "step": 5054,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene20_rain"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene18_15-deg-right"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.5555687546730042,
+      "grad_norm": 78.39217376708984,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1561541.5,
+      "supervised_trajectory_pixels": 4122255.0
+    },
+    {
+      "step": 5055,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_E_000481"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/clock_scene_409"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.4405454397201538,
+      "grad_norm": 304.2733154296875,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 532172.0,
+      "supervised_trajectory_pixels": 1973964.0
+    },
+    {
+      "step": 5056,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/ballou"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/aloha"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.3603397309780121,
+      "grad_norm": 43.1948356628418,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 292231.0,
+      "supervised_trajectory_pixels": 292231.0
+    },
+    {
+      "step": 5057,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/macarthur"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/winfield"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.6191149353981018,
+      "grad_norm": 23.694656372070312,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 299071.5,
+      "supervised_trajectory_pixels": 299071.5
+    },
+    {
+      "step": 5058,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/siren"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "pointodyssey"
+          ],
+          "clip_id": [
+            "pointodyssey_geometry/ani4_new_"
+          ],
+          "input_hw": [
+            546,
+            966
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.22978976368904114,
+      "grad_norm": 76.78616333007812,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1005037.5,
+      "supervised_trajectory_pixels": 1005037.5
+    },
+    {
+      "step": 5059,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000961"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/5d4458-4_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.7417426705360413,
+      "grad_norm": 333.4374694824219,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1974262.5,
+      "supervised_trajectory_pixels": 3416054.5
+    },
+    {
+      "step": 5060,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene01_15-deg-left"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/1b0545-3_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.8847014605998993,
+      "grad_norm": 39.99351501464844,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 2589724.0,
+      "supervised_trajectory_pixels": 7418492.0
+    },
+    {
+      "step": 5061,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/ohoopee"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene01_morning"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.8529693484306335,
+      "grad_norm": 32.05207443237305,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 905031.5,
+      "supervised_trajectory_pixels": 2036444.0
+    },
+    {
+      "step": 5062,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/28fe18-1_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/0423c7-3_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.4687435030937195,
+      "grad_norm": 30.243215560913086,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 3516627.5,
+      "supervised_trajectory_pixels": 3516627.5
+    },
+    {
+      "step": 5063,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/01bbd4-4_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_001001"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.6104192733764648,
+      "grad_norm": 283.53411865234375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1974072.5,
+      "supervised_trajectory_pixels": 6109220.5
+    },
+    {
+      "step": 5064,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/yadkinville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/cucumber_scene_092"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 1.0900594890117645,
+      "grad_norm": 51.25482177734375,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 731347.5,
+      "supervised_trajectory_pixels": 731347.5
+    },
+    {
+      "step": 5065,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000565"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/kingdom"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -1.6083675920963287,
+      "grad_norm": 357.0570373535156,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 279508.5,
+      "supervised_trajectory_pixels": 1721300.5
+    },
+    {
+      "step": 5066,
+      "rank_batches": [
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/hat_scene_014"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000558"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.9393640458583832,
+      "grad_norm": 329.36004638671875,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 562443.5,
+      "supervised_trajectory_pixels": 2004235.5
+    },
+    {
+      "step": 5067,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/leilani"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "pointodyssey"
+          ],
+          "clip_id": [
+            "pointodyssey_geometry/animal1_"
+          ],
+          "input_hw": [
+            546,
+            966
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.8676716387271881,
+      "grad_norm": 33.728721618652344,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1185886.0,
+      "supervised_trajectory_pixels": 1185886.0
+    },
+    {
+      "step": 5068,
+      "rank_batches": [
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_044_005/cam_00"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/stanleyville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": 0.7066632509231567,
+      "grad_norm": 38.447998046875,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 532775.5,
+      "supervised_trajectory_pixels": 532775.5
+    },
+    {
+      "step": 5069,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/adairsville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene02_rain"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 0.4256449118256569,
+      "grad_norm": 39.15739822387695,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 909164.0,
+      "supervised_trajectory_pixels": 2236078.0
+    },
+    {
+      "step": 5070,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/pearce"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene01_morning"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.8098783493041992,
+      "grad_norm": 29.206954956054688,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1002653.5,
+      "supervised_trajectory_pixels": 2494102.5
+    },
+    {
+      "step": 5071,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/pinesdale"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000286"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.7308117747306824,
+      "grad_norm": 310.82012939453125,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 275834.0,
+      "supervised_trajectory_pixels": 1193338.0
+    },
+    {
+      "step": 5072,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene20_clone"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "wildrgbd"
+          ],
+          "clip_id": [
+            "wildrgbd/cup_scene_167"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 2.11754909157753,
+      "grad_norm": 80.21780395507812,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1129719.0,
+      "supervised_trajectory_pixels": 2527543.0
+    },
+    {
+      "step": 5073,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000830"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_D_000895"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -2.3730797171592712,
+      "grad_norm": 506.1113586425781,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 262144.0,
+      "supervised_trajectory_pixels": 3145728.0
+    },
+    {
+      "step": 5074,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/kirksville"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/sunshine"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.8755141198635101,
+      "grad_norm": 38.03136444091797,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 301313.0,
+      "supervised_trajectory_pixels": 301313.0
+    },
+    {
+      "step": 5075,
+      "rank_batches": [
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/0c4449-7_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/7ec26d-3_obj_source_right"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.1721960008144379,
+      "grad_norm": 39.02769088745117,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 3686331.0,
+      "supervised_trajectory_pixels": 6841915.5
+    },
+    {
+      "step": 5076,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/michiana"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "blended"
+          ],
+          "clip_id": [
+            "blended/5892c0cd9a8c0314c5cdc977"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.805328756570816,
+      "grad_norm": 16.466373443603516,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 261308.0,
+      "supervised_trajectory_pixels": 261308.0
+    },
+    {
+      "step": 5077,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/fonda"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0118_00"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": 0.7908136695623398,
+      "grad_norm": 188.91732788085938,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 483069.0,
+      "supervised_trajectory_pixels": 483069.0
+    },
+    {
+      "step": 5078,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/belpre"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/bettendorf"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.4817786440253258,
+      "grad_norm": 15.807836532592773,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 268208.5,
+      "supervised_trajectory_pixels": 268208.5
+    },
+    {
+      "step": 5079,
+      "rank_batches": [
+        {
+          "dataset": [
+            "scannet"
+          ],
+          "clip_id": [
+            "scannet/scene0250_00"
+          ],
+          "input_hw": [
+            420,
+            560
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/darnestown"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.5653153359889984,
+      "grad_norm": 34.094139099121094,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 580173.5,
+      "supervised_trajectory_pixels": 580173.5
+    },
+    {
+      "step": 5080,
+      "rank_batches": [
+        {
+          "dataset": [
+            "kubric_C3"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000686"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_F_000473"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -2.6337214708328247,
+      "grad_norm": 425.1128234863281,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 262144.0,
+      "supervised_trajectory_pixels": 2621440.0
+    },
+    {
+      "step": 5081,
+      "rank_batches": [
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene20_morning"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        },
+        {
+          "dataset": [
+            "dynamic_replica"
+          ],
+          "clip_id": [
+            "dynamic_replica/896575-7_obj_source_left"
+          ],
+          "input_hw": [
+            728,
+            1288
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.5971873104572296,
+      "grad_norm": 33.32947540283203,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 2418210.0,
+      "supervised_trajectory_pixels": 6494050.0
+    },
+    {
+      "step": 5082,
+      "rank_batches": [
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_033_008/cam_00"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_016_006/cam_00"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.21619317308068275,
+      "grad_norm": 26.07299041748047,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 761538.5,
+      "supervised_trajectory_pixels": 761538.5
+    },
+    {
+      "step": 5083,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/klickitat"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_027_009/cam_01"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.6347137689590454,
+      "grad_norm": 28.201038360595703,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 543870.5,
+      "supervised_trajectory_pixels": 543870.5
+    },
+    {
+      "step": 5084,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/kevin"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_1"
+          ],
+          "clip_id": [
+            "vkitti2/Scene20_15-deg-right"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.7978242933750153,
+      "grad_norm": 41.284236907958984,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 912853.0,
+      "supervised_trajectory_pixels": 2437403.0
+    },
+    {
+      "step": 5085,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/southfield"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "vkitti2_Camera_0"
+          ],
+          "clip_id": [
+            "vkitti2/Scene01_15-deg-right"
+          ],
+          "input_hw": [
+            378,
+            1246
+          ],
+          "observations": 8,
+          "times": 8,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -0.8209637999534607,
+      "grad_norm": 37.91079330444336,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 1040297.0,
+      "supervised_trajectory_pixels": 2598342.0
+    },
+    {
+      "step": 5086,
+      "rank_batches": [
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/donaldson"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "taskonomy"
+          ],
+          "clip_id": [
+            "taskonomy/benevolence"
+          ],
+          "input_hw": [
+            560,
+            560
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        }
+      ],
+      "loss": -0.5739183872938156,
+      "grad_norm": 46.64314651489258,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 289961.5,
+      "supervised_trajectory_pixels": 289961.5
+    },
+    {
+      "step": 5087,
+      "rank_batches": [
+        {
+          "dataset": [
+            "hypersim"
+          ],
+          "clip_id": [
+            "hypersim_zip/ai_003_001/cam_00"
+          ],
+          "input_hw": [
+            770,
+            1036
+          ],
+          "observations": 1,
+          "times": 1,
+          "decoded_sources": 1
+        },
+        {
+          "dataset": [
+            "kubric_C2"
+          ],
+          "clip_id": [
+            "kubric_multicam/scene_C_000857"
+          ],
+          "input_hw": [
+            266,
+            266
+          ],
+          "observations": 24,
+          "times": 12,
+          "decoded_sources": 4
+        }
+      ],
+      "loss": -1.020433247089386,
+      "grad_norm": 393.3747863769531,
+      "optimizer_step_skipped": false,
+      "supervised_source_pixels": 328580.0,
+      "supervised_trajectory_pixels": 1770372.0
+    }
+  ],
+  "passed": true,
+  "limitation": "Startup health only; random mixed batches cannot establish loss convergence or completion of a full epoch."
+}

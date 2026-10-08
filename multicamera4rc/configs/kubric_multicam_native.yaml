@@ -1,0 +1,48 @@
+# Preserve each file's native RGB dimensions and aspect ratio. The bridge
+# automatically pads the bottom/right to a multiple of 14; no fixed 256 canvas.
+image_mode: native
+supervision: dense
+num_times: 12
+num_queries: 0
+epoch_size: 10000
+seed: 49
+include_visibility: true
+sources:
+  - adapter: kubric_multicam
+    root: /data8/kubric_multicam_tracking_v3
+    split: train
+    cameras: 2
+    num_times: 12
+    weight: 1.0
+    strides: [1, 2]
+    options: &kubric_options
+      cache_dir: ../../../.cache/multicamera4rc/kubric
+      index_workers: 8
+      required_schema_version: movi_tracking_v3
+      require_native_tracks: true
+      require_depth: true
+      require_validation_stamp: true
+      validation_stamp_dir: /data8/kubric_multicam_tracking_v3_state/validated
+      min_validation_revision: 4
+      split_strategy: variant_balanced
+      val_ratio: 0.05
+      random_cameras: true
+      depth_is_ray_distance: true
+      extrinsics_are_opengl: false
+      verbose: false
+  - adapter: kubric_multicam
+    root: /data8/kubric_multicam_tracking_v3
+    split: train
+    cameras: 3
+    num_times: 8
+    weight: 1.0
+    strides: [1, 2, 3]
+    options: *kubric_options
+  - adapter: kubric_multicam
+    root: /data8/kubric_multicam_tracking_v3
+    split: train
+    cameras: 4
+    num_times: 6
+    weight: 1.0
+    strides: [1, 2, 4]
+    options: *kubric_options

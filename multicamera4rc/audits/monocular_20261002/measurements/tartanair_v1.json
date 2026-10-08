@@ -1,0 +1,122 @@
+{
+  "dataset": "TartanAir_V1",
+  "root": "/data8/mugen/TartanAir_V1",
+  "available_easy_environments": 18,
+  "samples": [
+    {
+      "environment": "abandonedfactory_night",
+      "trajectory": "P001",
+      "frames": [
+        10,
+        11
+      ],
+      "native_hw": [
+        480,
+        640
+      ],
+      "checked_pixels": 307200,
+      "static_world_projected_flow_epe_px": {
+        "count": 307200,
+        "mean": 8.94024203877146e-06,
+        "p50": 7.646968640508043e-06,
+        "p95": 1.6563786959877008e-05,
+        "max": 2.0724655779124085e-05
+      },
+      "depth_temporal_consistency": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 16067,
+        "target_depth_available": 16067,
+        "relative_residual": {
+          "count": 16067,
+          "mean": 5.948064102182186,
+          "p50": 0.0009100335693546092,
+          "p95": 0.005909800635935743,
+          "max": 2653.106855800294
+        },
+        "within_one_percent": 0.9795854857783034,
+        "within_five_percent": 0.986929731748304,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      },
+      "calibration": "Official V1 pinhole fx=fy=320,cx=320,cy=240; pose XYZW camera-to-world NED converted to OpenCV camera axes",
+      "sample_passed": true
+    },
+    {
+      "environment": "neighborhood",
+      "trajectory": "P000",
+      "frames": [
+        10,
+        11
+      ],
+      "native_hw": [
+        480,
+        640
+      ],
+      "checked_pixels": 307200,
+      "static_world_projected_flow_epe_px": {
+        "count": 307200,
+        "mean": 2.2880890924806773e-05,
+        "p50": 2.063574852745454e-05,
+        "p95": 4.1850859886075715e-05,
+        "max": 8.161201011871003e-05
+      },
+      "depth_temporal_consistency": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 13697,
+        "target_depth_available": 13697,
+        "relative_residual": {
+          "count": 13697,
+          "mean": 56.03672910270519,
+          "p50": 0.001844220986247051,
+          "p95": 0.8368904685851115,
+          "max": 8875.531167433037
+        },
+        "within_one_percent": 0.8500401547784187,
+        "within_five_percent": 0.8774184127911221,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      },
+      "calibration": "Official V1 pinhole fx=fy=320,cx=320,cy=240; pose XYZW camera-to-world NED converted to OpenCV camera axes",
+      "sample_passed": true
+    },
+    {
+      "environment": "amusement",
+      "trajectory": "P001",
+      "frames": [
+        10,
+        11
+      ],
+      "native_hw": [
+        480,
+        640
+      ],
+      "checked_pixels": 307200,
+      "static_world_projected_flow_epe_px": {
+        "count": 307200,
+        "mean": 7.981500854761906e-06,
+        "p50": 8.296580544258574e-06,
+        "p95": 1.3139069706086946e-05,
+        "max": 1.669975873827962e-05
+      },
+      "depth_temporal_consistency": {
+        "source_pixels_checked": 16384,
+        "projected_in_frame": 15540,
+        "target_depth_available": 15540,
+        "relative_residual": {
+          "count": 15540,
+          "mean": 0.03654935370226908,
+          "p50": 0.0011362266460414536,
+          "p95": 0.1883584318408099,
+          "max": 1.8491651626110304
+        },
+        "within_one_percent": 0.7945302445302446,
+        "within_five_percent": 0.8965894465894466,
+        "limitation": "Static-world diagnostic only; occlusion, dynamics and sensor noise can raise residuals."
+      },
+      "calibration": "Official V1 pinhole fx=fy=320,cx=320,cy=240; pose XYZW camera-to-world NED converted to OpenCV camera axes",
+      "sample_passed": true
+    }
+  ],
+  "stage": "sampled_consistent",
+  "capability": "Dense rendered depth, calibration and optical flow. Audited flow agrees with stationary world surfaces; does not add dynamic-object trajectories.",
+  "elapsed_seconds": 1.3416355629451573,
+  "gpu_used": false
+}

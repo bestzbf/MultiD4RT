@@ -1,0 +1,59 @@
+{
+  "device": "NVIDIA B300 SXM6 AC",
+  "dtype": "bfloat16",
+  "samples": [
+    {
+      "head_dim": 64,
+      "fp32_qk_under_autocast": false,
+      "forward_relative_l2": 0.00223739561624825,
+      "q_k_v_weight_gradient_relative_l2": [
+        0.002713973866775632,
+        0.002663985826075077,
+        0.0026286954525858164,
+        0.0
+      ],
+      "forced_flash_backend_passed": true,
+      "zero_initialized_weight_gradient": -12.9375
+    },
+    {
+      "head_dim": 96,
+      "fp32_qk_under_autocast": false,
+      "forward_relative_l2": 0.002186352387070656,
+      "q_k_v_weight_gradient_relative_l2": [
+        0.002702630590647459,
+        0.0026888030115514994,
+        0.0026612887158989906,
+        0.006107826251536608
+      ],
+      "forced_flash_backend_passed": true,
+      "zero_initialized_weight_gradient": -3.90625
+    },
+    {
+      "head_dim": 64,
+      "fp32_qk_under_autocast": true,
+      "forward_relative_l2": 0.0022236285731196404,
+      "q_k_v_weight_gradient_relative_l2": [
+        0.002682507038116455,
+        0.002652601106092334,
+        0.002587412018328905,
+        0.0019490983104333282
+      ],
+      "forced_flash_backend_passed": true,
+      "zero_initialized_weight_gradient": -12.606292724609375
+    },
+    {
+      "head_dim": 96,
+      "fp32_qk_under_autocast": true,
+      "forward_relative_l2": 0.002215611981227994,
+      "q_k_v_weight_gradient_relative_l2": [
+        0.002716989256441593,
+        0.0026790034025907516,
+        0.0026295578572899103,
+        0.009838140569627285
+      ],
+      "forced_flash_backend_passed": true,
+      "zero_initialized_weight_gradient": -0.488239049911499
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "source": "/data6/zbf/download_jobs/syn4d_bedlam2_20261007/COMPLETE.json",
+  "source_sha256": "e244e9e271705c32374d2cb2e343a7928028609dc26abf37afbc2a29ef66fc58",
+  "body_meshes": 560,
+  "clothing_meshes": 560,
+  "metadata_root": "/data6/Syn4D/data/metadata",
+  "completed_at": "2026-10-07T10:56:27Z"
+}

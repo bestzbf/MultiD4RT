@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "sequence": "syn4d_v1_stride_1/middleeast_bald/seq_000014",
+      "shape": [
+        8,
+        3,
+        728,
+        1288
+      ],
+      "geometry_tensors_bitwise_identical": [
+        "K",
+        "c2w",
+        "camera_valid",
+        "depth",
+        "depth_valid",
+        "ray",
+        "ray_valid",
+        "trajectory",
+        "trajectory_valid",
+        "displacement",
+        "displacement_valid",
+        "trajectory_foreground",
+        "source_pixel_valid",
+        "static_mask",
+        "scene_scale"
+      ],
+      "existing_positive_visibility_preserved": true,
+      "new_positive_boundary_pixels": 3140,
+      "removed_known_boundary_pixels": 2,
+      "new_known_out_of_image": 73415,
+      "old_known": 13394673,
+      "new_known": 13468086
+    },
+    {
+      "sequence": "syn4d_sim/temple_sim/seq_000012",
+      "shape": [
+        8,
+        3,
+        1036,
+        1036
+      ],
+      "geometry_tensors_bitwise_identical": [
+        "K",
+        "c2w",
+        "camera_valid",
+        "depth",
+        "depth_valid",
+        "ray",
+        "ray_valid",
+        "trajectory",
+        "trajectory_valid",
+        "displacement",
+        "displacement_valid",
+        "trajectory_foreground",
+        "source_pixel_valid",
+        "static_mask",
+        "scene_scale"
+      ],
+      "existing_positive_visibility_preserved": true,
+      "new_positive_boundary_pixels": 6411,
+      "removed_known_boundary_pixels": 7,
+      "new_known_out_of_image": 102897,
+      "old_known": 16571608,
+      "new_known": 16674498
+    }
+  ]
+}

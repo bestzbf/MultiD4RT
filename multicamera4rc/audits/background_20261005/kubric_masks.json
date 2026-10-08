@@ -1,0 +1,413 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": 0,
+      "sequence": "scene_C_001228",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 252113,
+      "excluded_fraction": 0.16028912862141928,
+      "objects_retained": 53042,
+      "ground_retained": 1267709,
+      "old_scale_m": 15.789258336067048,
+      "filtered_scale_m": 10.827152252197266,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 1,
+      "sequence": "scene_C_001234",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 274493,
+      "excluded_fraction": 0.17451794942220053,
+      "objects_retained": 69846,
+      "ground_retained": 1228525,
+      "old_scale_m": 15.984896275223027,
+      "filtered_scale_m": 10.793804168701172,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 2,
+      "sequence": "scene_D_001204",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 111528,
+      "excluded_fraction": 0.0709075927734375,
+      "objects_retained": 246947,
+      "ground_retained": 1214389,
+      "old_scale_m": 12.649044363576957,
+      "filtered_scale_m": 10.58610725402832,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 3,
+      "sequence": "scene_D_001243",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 255662,
+      "excluded_fraction": 0.16254552205403647,
+      "objects_retained": 164749,
+      "ground_retained": 1152453,
+      "old_scale_m": 16.460092631050546,
+      "filtered_scale_m": 11.301484107971191,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 4,
+      "sequence": "scene_E_001213",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 141360,
+      "excluded_fraction": 0.089874267578125,
+      "objects_retained": 163599,
+      "ground_retained": 1267905,
+      "old_scale_m": 13.25410483097628,
+      "filtered_scale_m": 10.623827934265137,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 5,
+      "sequence": "scene_E_001192",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 223658,
+      "excluded_fraction": 0.14219792683919272,
+      "objects_retained": 215280,
+      "ground_retained": 1133926,
+      "old_scale_m": 14.50728702383437,
+      "filtered_scale_m": 10.051924705505371,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 6,
+      "sequence": "scene_F_001204",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 159024,
+      "excluded_fraction": 0.101104736328125,
+      "objects_retained": 203816,
+      "ground_retained": 1210024,
+      "old_scale_m": 13.321189840826685,
+      "filtered_scale_m": 10.253807067871094,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 7,
+      "sequence": "scene_F_001211",
+      "layout": [
+        2,
+        12
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 238776,
+      "excluded_fraction": 0.1518096923828125,
+      "objects_retained": 306461,
+      "ground_retained": 1027627,
+      "old_scale_m": 15.08269531860241,
+      "filtered_scale_m": 10.634896278381348,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 8,
+      "sequence": "scene_C_001228",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 114376,
+      "excluded_fraction": 0.07271830240885417,
+      "objects_retained": 66047,
+      "ground_retained": 1392441,
+      "old_scale_m": 12.976304860157269,
+      "filtered_scale_m": 10.613022804260254,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 9,
+      "sequence": "scene_C_001234",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 252656,
+      "excluded_fraction": 0.16063435872395834,
+      "objects_retained": 77676,
+      "ground_retained": 1242532,
+      "old_scale_m": 15.614689552222638,
+      "filtered_scale_m": 10.82420539855957,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 10,
+      "sequence": "scene_D_001204",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 160656,
+      "excluded_fraction": 0.102142333984375,
+      "objects_retained": 293702,
+      "ground_retained": 1118506,
+      "old_scale_m": 14.00313312305857,
+      "filtered_scale_m": 10.705158233642578,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 11,
+      "sequence": "scene_D_001243",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 134960,
+      "excluded_fraction": 0.08580525716145833,
+      "objects_retained": 168552,
+      "ground_retained": 1269352,
+      "old_scale_m": 13.369230207009911,
+      "filtered_scale_m": 10.846003532409668,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 12,
+      "sequence": "scene_E_001213",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 260698,
+      "excluded_fraction": 0.16574732462565103,
+      "objects_retained": 154186,
+      "ground_retained": 1157980,
+      "old_scale_m": 16.100610054067555,
+      "filtered_scale_m": 10.47824478149414,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 13,
+      "sequence": "scene_E_001192",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 202128,
+      "excluded_fraction": 0.128509521484375,
+      "objects_retained": 260777,
+      "ground_retained": 1109959,
+      "old_scale_m": 14.531505703958269,
+      "filtered_scale_m": 10.963996887207031,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 14,
+      "sequence": "scene_F_001204",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 306629,
+      "excluded_fraction": 0.19494946797688803,
+      "objects_retained": 188687,
+      "ground_retained": 1077548,
+      "old_scale_m": 17.661884663293794,
+      "filtered_scale_m": 11.13150405883789,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 15,
+      "sequence": "scene_F_001211",
+      "layout": [
+        3,
+        8
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 187947,
+      "excluded_fraction": 0.11949348449707031,
+      "objects_retained": 260146,
+      "ground_retained": 1124771,
+      "old_scale_m": 14.862867962978155,
+      "filtered_scale_m": 11.174837112426758,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 16,
+      "sequence": "scene_C_001228",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 146080,
+      "excluded_fraction": 0.09287516276041667,
+      "objects_retained": 72094,
+      "ground_retained": 1354690,
+      "old_scale_m": 12.825035996496432,
+      "filtered_scale_m": 9.947163581848145,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 17,
+      "sequence": "scene_C_001234",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 279792,
+      "excluded_fraction": 0.177886962890625,
+      "objects_retained": 52411,
+      "ground_retained": 1240661,
+      "old_scale_m": 16.333203117278256,
+      "filtered_scale_m": 10.443028450012207,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 18,
+      "sequence": "scene_D_001204",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 109632,
+      "excluded_fraction": 0.0697021484375,
+      "objects_retained": 362208,
+      "ground_retained": 1101024,
+      "old_scale_m": 12.661974361506088,
+      "filtered_scale_m": 10.643282890319824,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 19,
+      "sequence": "scene_D_001243",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 272921,
+      "excluded_fraction": 0.17351849873860678,
+      "objects_retained": 159936,
+      "ground_retained": 1140007,
+      "old_scale_m": 16.162365906919057,
+      "filtered_scale_m": 10.52723503112793,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 20,
+      "sequence": "scene_E_001213",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 205950,
+      "excluded_fraction": 0.13093948364257812,
+      "objects_retained": 165584,
+      "ground_retained": 1201330,
+      "old_scale_m": 14.581949379848774,
+      "filtered_scale_m": 10.51018238067627,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 21,
+      "sequence": "scene_E_001192",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 224154,
+      "excluded_fraction": 0.14251327514648438,
+      "objects_retained": 258538,
+      "ground_retained": 1090172,
+      "old_scale_m": 15.130237196404275,
+      "filtered_scale_m": 10.356919288635254,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 22,
+      "sequence": "scene_F_001204",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 254268,
+      "excluded_fraction": 0.16165924072265625,
+      "objects_retained": 198822,
+      "ground_retained": 1119774,
+      "old_scale_m": 16.062376857405656,
+      "filtered_scale_m": 11.06611156463623,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    },
+    {
+      "case": 23,
+      "sequence": "scene_F_001211",
+      "layout": [
+        4,
+        6
+      ],
+      "original_pixels": 1572864,
+      "excluded_pixels": 239376,
+      "excluded_fraction": 0.152191162109375,
+      "objects_retained": 253296,
+      "ground_retained": 1080192,
+      "old_scale_m": 15.433527950456769,
+      "filtered_scale_m": 10.612079620361328,
+      "raw_h5_mask_exact": true,
+      "all_target_masks_passed": true
+    }
+  ]
+}

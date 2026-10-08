@@ -1,0 +1,16 @@
+Vendored components derived from 4RC
+https://github.com/Luo-Yihang/4RC
+Commit: a08ca0a5394c7c5f6a2a3423223cb98f85f84e6a
+Source directory: arc/models/arc
+
+Copyright 2026 S-Lab. Redistribution and use of 4RC-derived code are subject
+to the S-Lab License 1.0, retained in LICENSE.S-Lab (non-commercial use).
+Files originating from Meta/DINOv2 retain their original copyright headers
+and Apache License, Version 2.0 notices; see LICENSE.Apache-2.0.
+All original per-file copyright and license notices are retained.
+
+Namespace imports were relocated. Attention and encoder components were
+adapted for explicit frame/camera relations, padding, fixed-reference and
+checkpointing behavior. Separate wrappers add the multi-camera model.
+UPSTREAM.json records provenance and changed behavior.
+No original checkpoints, datasets or compiled CUDA extensions are included.

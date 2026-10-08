@@ -1,0 +1,224 @@
+{
+  "official_scene_count": 482,
+  "max_abs_skew_px": 16.010536829492818,
+  "unsupported_current_pinhole_scenes": [
+    {
+      "scene": "ai_019_007",
+      "skew_px": -16.010536829492818,
+      "det": 0.9999999999999999,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.7053025658242404e-13
+    },
+    {
+      "scene": "ai_021_001",
+      "skew_px": 3.232451953680335,
+      "det": 0.9999999999999994,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_021_003",
+      "skew_px": -3.8006752119799643,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_021_008",
+      "skew_px": 0.6231200589162538,
+      "det": 0.9999999999999998,
+      "projection_has_translation": false,
+      "reconstruction_error": 5.684341886080802e-14
+    },
+    {
+      "scene": "ai_027_004",
+      "skew_px": -0.8247279672857677,
+      "det": 0.9999999999999998,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_027_010",
+      "skew_px": 8.89163195492787,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_028_004",
+      "skew_px": -0.08376419643796376,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_028_005",
+      "skew_px": 1.3624070306901503,
+      "det": 0.9999999999999999,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_030_003",
+      "skew_px": -0.2963505237538716,
+      "det": 0.9999999999999999,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_030_008",
+      "skew_px": -0.2352334673750194,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 5.684341886080802e-14
+    },
+    {
+      "scene": "ai_030_010",
+      "skew_px": 9.222325522007777,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_031_003",
+      "skew_px": -0.4011802176146802,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_031_010",
+      "skew_px": -14.720021414292107,
+      "det": 0.9999999999999998,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_033_007",
+      "skew_px": 1.0688349653413112,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_035_004",
+      "skew_px": 0.9256482474495247,
+      "det": 1.0000000000000004,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.8421709430404007e-13
+    },
+    {
+      "scene": "ai_037_004",
+      "skew_px": -0.44868754817017553,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_039_008",
+      "skew_px": 0.9694177143274665,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_039_009",
+      "skew_px": 0.9777877372548279,
+      "det": 0.9999999999999997,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_041_003",
+      "skew_px": 9.73640445948925,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_041_008",
+      "skew_px": 3.158935163660897,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 8.881784197001252e-16
+    },
+    {
+      "scene": "ai_042_003",
+      "skew_px": -15.257922568167292,
+      "det": 0.9999999999999997,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.7053025658242404e-13
+    },
+    {
+      "scene": "ai_042_005",
+      "skew_px": -5.822808172477247,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_043_005",
+      "skew_px": -2.7319053239049675,
+      "det": 1.0000000000000002,
+      "projection_has_translation": false,
+      "reconstruction_error": 5.684341886080802e-14
+    },
+    {
+      "scene": "ai_044_004",
+      "skew_px": 14.487236031037686,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_044_008",
+      "skew_px": -12.199617708631633,
+      "det": 0.9999999999999999,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_047_001",
+      "skew_px": -2.6616793839221495,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 3.979039320256561e-13
+    },
+    {
+      "scene": "ai_048_008",
+      "skew_px": -1.6304846192861258,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.8421709430404007e-13
+    },
+    {
+      "scene": "ai_050_003",
+      "skew_px": 0.9618034982567231,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_051_004",
+      "skew_px": 0.2944089674069058,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 1.1368683772161603e-13
+    },
+    {
+      "scene": "ai_052_002",
+      "skew_px": -2.157502225796547,
+      "det": 0.9999999999999998,
+      "projection_has_translation": false,
+      "reconstruction_error": 2.2737367544323206e-13
+    },
+    {
+      "scene": "ai_055_005",
+      "skew_px": -1.415717020270384,
+      "det": 1.0,
+      "projection_has_translation": false,
+      "reconstruction_error": 4.547473508864641e-13
+    }
+  ],
+  "limitation": "Camera-model algebra audit of official CSV only; does not validate image/depth labels of all scenes."
+}

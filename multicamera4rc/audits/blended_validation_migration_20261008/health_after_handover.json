@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "time": "2026-10-08T16:55:33.962297",
+  "controller_pid": 3603577,
+  "stage": "train_55500_adopted",
+  "step_before": 55173,
+  "step_after": 55178,
+  "updates_after_handover": 5,
+  "physical_gpus": [
+    4,
+    5,
+    2,
+    3
+  ],
+  "world_size": 4,
+  "global_batch_size": 4,
+  "learning_rate": 4.7208897833397724e-07,
+  "backbone_learning_rate": 4.720889783339773e-08,
+  "skipped_updates_after_handover": 0,
+  "finite_logged_training_metrics": true,
+  "training_launcher": 2548590,
+  "preserved_rank_pids": [
+    2549220,
+    2549221,
+    2549222,
+    2549223
+  ],
+  "training_restarted": false,
+  "next_validation_step": 55500,
+  "target_step": 100000,
+  "static_plan": "/data8/zbf/multicamera4rc_runs/blended_validation_migration_20261008/static/fixed_plan.json",
+  "static_contract": {
+    "metrics_version": 2,
+    "plan_sha256": "47f5a1b5444c9143ef718966efd029d831875878f936cf02a0b672b3b62ff79f"
+  },
+  "current_best_step": 55000,
+  "current_best_record": "/data8/zbf/multicamera4rc_runs/blended_validation_migration_20261008/training/best_checkpoint.json",
+  "code_commit": "94b126c3eac10ee4a321bf2c83ab22c08bf9ae9d"
+}

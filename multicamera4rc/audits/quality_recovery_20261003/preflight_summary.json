@@ -1,0 +1,804 @@
+{
+  "passed": true,
+  "training_code_commit": "ed19140598bc9d72550c9f55f7c94d7cb3228382",
+  "unit_tests": {
+    "local": 264,
+    "B300": 264
+  },
+  "data_stages": [
+    {
+      "start_step": 32000,
+      "epoch_size": 100000,
+      "sources": [
+        {
+          "name": "kubric_variable",
+          "sequences": 4752,
+          "frames": 142560,
+          "quota": 35000,
+          "fraction": 0.35,
+          "dense_kind": "kubric"
+        },
+        {
+          "name": "dynamic_replica_left",
+          "sequences": 483,
+          "frames": 144900,
+          "quota": 9000,
+          "fraction": 0.09,
+          "dense_kind": "replica_flow"
+        },
+        {
+          "name": "dynamic_replica_right",
+          "sequences": 483,
+          "frames": 144900,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "replica_flow"
+        },
+        {
+          "name": "pointodyssey",
+          "sequences": 131,
+          "frames": 236883,
+          "quota": 12000,
+          "fraction": 0.12,
+          "dense_kind": "pointodyssey_tracks"
+        },
+        {
+          "name": "vkitti2_Camera_0",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 2200,
+          "fraction": 0.022,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "vkitti2_Camera_1",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 2200,
+          "fraction": 0.022,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "tartanair_left",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 800,
+          "fraction": 0.008,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_right",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 800,
+          "fraction": 0.008,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "hypersim",
+          "sequences": 614,
+          "frames": 59492,
+          "quota": 4000,
+          "fraction": 0.04,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "scannet",
+          "sequences": 1138,
+          "frames": 1777906,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "scannetpp",
+          "sequences": 812,
+          "frames": 690631,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "wildrgbd",
+          "sequences": 18692,
+          "frames": 6514594,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "blended",
+          "sequences": 475,
+          "frames": 109223,
+          "quota": 4000,
+          "fraction": 0.04,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "taskonomy",
+          "sequences": 510,
+          "frames": 4456268,
+          "quota": 2000,
+          "fraction": 0.02,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "vkitti2_stereo",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 6600,
+          "fraction": 0.066,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "tartanair_v1_stereo",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 2400,
+          "fraction": 0.024,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_front",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_back",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_left",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_right",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_top",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_bottom",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_front_mono",
+          "sequences": 1050,
+          "frames": 1334841,
+          "quota": 700,
+          "fraction": 0.007,
+          "dense_kind": "geometry"
+        }
+      ],
+      "all_admitted_pools_equal": true
+    },
+    {
+      "start_step": 34000,
+      "epoch_size": 100000,
+      "sources": [
+        {
+          "name": "kubric_variable",
+          "sequences": 4752,
+          "frames": 142560,
+          "quota": 35000,
+          "fraction": 0.35,
+          "dense_kind": "kubric"
+        },
+        {
+          "name": "dynamic_replica_left",
+          "sequences": 483,
+          "frames": 144900,
+          "quota": 9000,
+          "fraction": 0.09,
+          "dense_kind": "replica_flow"
+        },
+        {
+          "name": "dynamic_replica_right",
+          "sequences": 483,
+          "frames": 144900,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "replica_flow"
+        },
+        {
+          "name": "pointodyssey",
+          "sequences": 131,
+          "frames": 236883,
+          "quota": 12000,
+          "fraction": 0.12,
+          "dense_kind": "pointodyssey_tracks"
+        },
+        {
+          "name": "vkitti2_Camera_0",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 2200,
+          "fraction": 0.022,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "vkitti2_Camera_1",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 2200,
+          "fraction": 0.022,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "tartanair_left",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 800,
+          "fraction": 0.008,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_right",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 800,
+          "fraction": 0.008,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "hypersim",
+          "sequences": 614,
+          "frames": 59492,
+          "quota": 4000,
+          "fraction": 0.04,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "scannet",
+          "sequences": 1138,
+          "frames": 1777906,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "scannetpp",
+          "sequences": 812,
+          "frames": 690631,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "wildrgbd",
+          "sequences": 18692,
+          "frames": 6514594,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "blended",
+          "sequences": 475,
+          "frames": 109223,
+          "quota": 4000,
+          "fraction": 0.04,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "taskonomy",
+          "sequences": 510,
+          "frames": 4456268,
+          "quota": 2000,
+          "fraction": 0.02,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "vkitti2_stereo",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 6600,
+          "fraction": 0.066,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "tartanair_v1_stereo",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 2400,
+          "fraction": 0.024,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_front",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_back",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_left",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_right",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_top",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_bottom",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_front_mono",
+          "sequences": 1050,
+          "frames": 1334841,
+          "quota": 700,
+          "fraction": 0.007,
+          "dense_kind": "geometry"
+        }
+      ],
+      "all_admitted_pools_equal": true
+    },
+    {
+      "start_step": 40000,
+      "epoch_size": 100000,
+      "sources": [
+        {
+          "name": "kubric_variable",
+          "sequences": 4752,
+          "frames": 142560,
+          "quota": 35000,
+          "fraction": 0.35,
+          "dense_kind": "kubric"
+        },
+        {
+          "name": "dynamic_replica_left",
+          "sequences": 483,
+          "frames": 144900,
+          "quota": 9000,
+          "fraction": 0.09,
+          "dense_kind": "replica_flow"
+        },
+        {
+          "name": "dynamic_replica_right",
+          "sequences": 483,
+          "frames": 144900,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "replica_flow"
+        },
+        {
+          "name": "pointodyssey",
+          "sequences": 131,
+          "frames": 236883,
+          "quota": 12000,
+          "fraction": 0.12,
+          "dense_kind": "pointodyssey_tracks"
+        },
+        {
+          "name": "vkitti2_Camera_0",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 2200,
+          "fraction": 0.022,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "vkitti2_Camera_1",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 2200,
+          "fraction": 0.022,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "tartanair_left",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 800,
+          "fraction": 0.008,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_right",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 800,
+          "fraction": 0.008,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "hypersim",
+          "sequences": 614,
+          "frames": 59492,
+          "quota": 4000,
+          "fraction": 0.04,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "scannet",
+          "sequences": 1138,
+          "frames": 1777906,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "scannetpp",
+          "sequences": 812,
+          "frames": 690631,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "wildrgbd",
+          "sequences": 18692,
+          "frames": 6514594,
+          "quota": 3000,
+          "fraction": 0.03,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "blended",
+          "sequences": 475,
+          "frames": 109223,
+          "quota": 4000,
+          "fraction": 0.04,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "taskonomy",
+          "sequences": 510,
+          "frames": 4456268,
+          "quota": 2000,
+          "fraction": 0.02,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "vkitti2_stereo",
+          "sequences": 40,
+          "frames": 18560,
+          "quota": 6600,
+          "fraction": 0.066,
+          "dense_kind": "vkitti_scene_flow"
+        },
+        {
+          "name": "tartanair_v1_stereo",
+          "sequences": 354,
+          "frames": 297279,
+          "quota": 2400,
+          "fraction": 0.024,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_front",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_back",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_left",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_right",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_top",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_bottom",
+          "sequences": 278,
+          "frames": 313128,
+          "quota": 1050,
+          "fraction": 0.0105,
+          "dense_kind": "geometry"
+        },
+        {
+          "name": "tartanair_v2_front_mono",
+          "sequences": 1050,
+          "frames": 1334841,
+          "quota": 700,
+          "fraction": 0.007,
+          "dense_kind": "geometry"
+        }
+      ],
+      "all_admitted_pools_equal": true
+    }
+  ],
+  "real_native_gt_samples": [
+    {
+      "source": "dynamic_replica_left",
+      "clip_id": [
+        "dynamic_replica/15b5fb-4_obj_source_left"
+      ],
+      "image_shape": [
+        1,
+        8,
+        3,
+        728,
+        1288
+      ],
+      "available_motion_sources": 8,
+      "selected_motion_sources": 4,
+      "source_indices": [
+        [
+          3,
+          4,
+          6,
+          0
+        ]
+      ],
+      "valid_trajectory_pixels": 9538602,
+      "valid_displacement_pixels": 9538602
+    },
+    {
+      "source": "dynamic_replica_right",
+      "clip_id": [
+        "dynamic_replica/7ec26d-3_obj_source_right"
+      ],
+      "image_shape": [
+        1,
+        8,
+        3,
+        728,
+        1288
+      ],
+      "available_motion_sources": 0,
+      "selected_motion_sources": 0,
+      "source_indices": [
+        [
+          6,
+          3,
+          5,
+          0
+        ]
+      ],
+      "valid_trajectory_pixels": 3686400,
+      "valid_displacement_pixels": 0
+    }
+  ],
+  "ddp": {
+    "passed": true,
+    "stage": "passed",
+    "phases": [
+      {
+        "mode": "absolute",
+        "end_step": 31002,
+        "passed": true,
+        "seconds": 216.84671567287296,
+        "training_state": {
+          "data_epoch": 0,
+          "batches_consumed": 2,
+          "world_size": 2,
+          "batch_size": 1,
+          "source_count": 4,
+          "max_source_time_pairs": 64,
+          "prefer_motion_sources": true,
+          "time_projection_reset_step": null,
+          "seed": 49,
+          "optimizer_updates": 31002,
+          "supervision": "dense",
+          "scene_normalized": true,
+          "loss_weights": {
+            "depth": 1.0,
+            "camera": 1.0,
+            "ray": 1.0,
+            "trajectory": 1.0,
+            "displacement": 1.0,
+            "visibility": 0.1,
+            "static": 0.1,
+            "depth_gradient": 1.0,
+            "velocity": 1.0
+          },
+          "loss_profile": "dense",
+          "loss_config": {
+            "weights": {
+              "depth": 1.0,
+              "camera": 1.0,
+              "ray": 1.0,
+              "trajectory": 1.0,
+              "displacement": 1.0,
+              "visibility": 0.1,
+              "static": 0.1,
+              "depth_gradient": 1.0,
+              "velocity": 1.0
+            },
+            "confidence_alpha": 0.2,
+            "regression_norm": "l2",
+            "foreground_weight": 10.0,
+            "visibility_projection_mask": false,
+            "regression_norms": {},
+            "unweighted_regression_weight": 0.0,
+            "foreground_fraction": null,
+            "motion_confidence_targets": [
+              "trajectory",
+              "displacement",
+              "velocity"
+            ],
+            "depth_gradient_scales": [
+              1
+            ],
+            "depth_gradient_confidence": true,
+            "camera_loss_mode": "matrix"
+          },
+          "lr_plan": {
+            "mode": "cosine",
+            "start_step": 25000,
+            "end_step": 50000,
+            "base_lrs": [
+              1e-06,
+              1e-05
+            ],
+            "warmup_steps": 500,
+            "min_ratio": 0.1,
+            "warmup_start_ratio": 0.3
+          },
+          "amp_dtype": "bfloat16"
+        },
+        "losses": [
+          -3.892992377281189,
+          -3.8406654596328735
+        ]
+      },
+      {
+        "mode": "clip_start",
+        "end_step": 31004,
+        "passed": true,
+        "seconds": 263.26559863612056,
+        "training_state": {
+          "data_epoch": 1,
+          "batches_consumed": 0,
+          "world_size": 2,
+          "batch_size": 1,
+          "source_count": 4,
+          "max_source_time_pairs": 64,
+          "prefer_motion_sources": true,
+          "time_projection_reset_step": null,
+          "seed": 49,
+          "optimizer_updates": 31004,
+          "supervision": "dense",
+          "scene_normalized": true,
+          "loss_weights": {
+            "depth": 1.0,
+            "camera": 1.0,
+            "ray": 1.0,
+            "trajectory": 1.0,
+            "displacement": 1.0,
+            "visibility": 0.1,
+            "static": 0.1,
+            "depth_gradient": 1.0,
+            "velocity": 1.0
+          },
+          "loss_profile": "custom",
+          "loss_config": {
+            "weights": {
+              "depth": 1.0,
+              "camera": 1.0,
+              "ray": 1.0,
+              "trajectory": 1.0,
+              "displacement": 1.0,
+              "visibility": 0.1,
+              "static": 0.1,
+              "depth_gradient": 1.0,
+              "velocity": 1.0
+            },
+            "confidence_alpha": 0.2,
+            "regression_norm": "l2",
+            "foreground_weight": 10.0,
+            "visibility_projection_mask": false,
+            "regression_norms": {},
+            "unweighted_regression_weight": 0.0,
+            "foreground_fraction": 0.5,
+            "motion_confidence_targets": [
+              "trajectory",
+              "displacement",
+              "velocity"
+            ],
+            "depth_gradient_scales": [
+              1
+            ],
+            "depth_gradient_confidence": true,
+            "camera_loss_mode": "matrix"
+          },
+          "lr_plan": {
+            "mode": "cosine",
+            "start_step": 25000,
+            "end_step": 50000,
+            "base_lrs": [
+              1e-06,
+              1e-05
+            ],
+            "warmup_steps": 500,
+            "min_ratio": 0.1,
+            "warmup_start_ratio": 0.3
+          },
+          "amp_dtype": "bfloat16"
+        },
+        "losses": [
+          -3.410589814186096,
+          -3.1982109546661377
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "Full admitted sequence and valid-frame pools preserved in all three curriculum stages.",
+    "Four real giant DDP optimizer updates validated; these are execution checks, not convergence evidence.",
+    "250-step architecture and loss paired trials remain scheduled until their decision reports complete."
+  ]
+}

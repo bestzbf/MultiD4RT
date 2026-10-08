@@ -1,0 +1,10 @@
+{
+  "pytest": {
+    "passed": 178,
+    "failed": 0,
+    "elapsed_seconds": 28.05,
+    "environment": "Python 3.12, torch 2.14, local CPU",
+    "depth_tail_filter_tests": 10
+  },
+  "git_diff_check": "passed"
+}

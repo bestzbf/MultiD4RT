@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "command": [
+    "/data9/zbf/my_dfrt_multicamera4rc/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/multicamera4rc/test_syn4d.py",
+    "tests/multicamera4rc/test_syn4d_continuation.py",
+    "tests/multicamera4rc/test_extended_training.py"
+  ],
+  "output": "...................................                                      [100%]\n35 passed in 5.31s\n"
+}

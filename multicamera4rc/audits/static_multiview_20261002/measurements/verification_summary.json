@@ -1,0 +1,13 @@
+{
+  "local_tests": 199,
+  "remote_tests": 199,
+  "local_python": "3.12 / torch 2.14",
+  "remote_python": "3.10 / torch 2.10.0+cu128",
+  "native_gt_windows": 36,
+  "static_sequences": 1599,
+  "giant_forward_backward_windows": 18,
+  "passed": true,
+  "rollout_updates_verified": 222,
+  "rollout_resume_step": 15000,
+  "static_heldout_clips": 12
+}

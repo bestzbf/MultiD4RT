@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "data_config": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/tartan_filter_20261002/full_mixture_filtered.yaml",
+  "epoch_size": 11922876,
+  "coverage_windows": 5961438,
+  "sources": [
+    {
+      "name": "kubric_C2",
+      "sequences": 4752,
+      "frames": 142560,
+      "cameras": 2,
+      "max_times": 12
+    },
+    {
+      "name": "kubric_C3",
+      "sequences": 4752,
+      "frames": 142560,
+      "cameras": 3,
+      "max_times": 8
+    },
+    {
+      "name": "kubric_C4",
+      "sequences": 4752,
+      "frames": 142560,
+      "cameras": 4,
+      "max_times": 6
+    },
+    {
+      "name": "dynamic_replica",
+      "sequences": 966,
+      "frames": 289800,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "pointodyssey",
+      "sequences": 131,
+      "frames": 236883,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "vkitti2_Camera_0",
+      "sequences": 40,
+      "frames": 18560,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "vkitti2_Camera_1",
+      "sequences": 40,
+      "frames": 18560,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "tartanair_left",
+      "sequences": 354,
+      "frames": 297279,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "tartanair_right",
+      "sequences": 354,
+      "frames": 297279,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "hypersim",
+      "sequences": 614,
+      "frames": 59492,
+      "cameras": 1,
+      "max_times": 1
+    },
+    {
+      "name": "scannet",
+      "sequences": 1138,
+      "frames": 1777906,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "scannetpp",
+      "sequences": 812,
+      "frames": 690631,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "wildrgbd",
+      "sequences": 18692,
+      "frames": 6514594,
+      "cameras": 1,
+      "max_times": 8
+    },
+    {
+      "name": "blended",
+      "sequences": 475,
+      "frames": 109223,
+      "cameras": 1,
+      "max_times": 1
+    },
+    {
+      "name": "taskonomy",
+      "sequences": 510,
+      "frames": 4456268,
+      "cameras": 1,
+      "max_times": 1
+    }
+  ]
+}

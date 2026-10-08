@@ -1,0 +1,250 @@
+{
+  "passed": true,
+  "data_config": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/native_motion_stereo_20261002/full_mixture_native_motion_stereo.yaml",
+  "sources": [
+    {
+      "name": "kubric_C2",
+      "adapter": "kubric_multicam",
+      "sequences": 4752,
+      "frames": 142560,
+      "cameras": 2,
+      "num_times": 12,
+      "dense_kind": "kubric",
+      "weight": 1.0
+    },
+    {
+      "name": "kubric_C3",
+      "adapter": "kubric_multicam",
+      "sequences": 4752,
+      "frames": 142560,
+      "cameras": 3,
+      "num_times": 8,
+      "dense_kind": "kubric",
+      "weight": 1.0
+    },
+    {
+      "name": "kubric_C4",
+      "adapter": "kubric_multicam",
+      "sequences": 4752,
+      "frames": 142560,
+      "cameras": 4,
+      "num_times": 6,
+      "dense_kind": "kubric",
+      "weight": 1.0
+    },
+    {
+      "name": "dynamic_replica",
+      "adapter": "dynamic_replica",
+      "sequences": 966,
+      "frames": 289800,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "replica_flow",
+      "weight": 1.5
+    },
+    {
+      "name": "pointodyssey",
+      "adapter": "pointodyssey_tracks",
+      "sequences": 131,
+      "frames": 236883,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "pointodyssey_tracks",
+      "weight": 0.75
+    },
+    {
+      "name": "vkitti2_Camera_0",
+      "adapter": "vkitti2",
+      "sequences": 40,
+      "frames": 18560,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "vkitti_scene_flow",
+      "weight": 0.375
+    },
+    {
+      "name": "vkitti2_Camera_1",
+      "adapter": "vkitti2",
+      "sequences": 40,
+      "frames": 18560,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "vkitti_scene_flow",
+      "weight": 0.375
+    },
+    {
+      "name": "tartanair_left",
+      "adapter": "tartanair_v1_zip",
+      "sequences": 354,
+      "frames": 297279,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_right",
+      "adapter": "tartanair_v1_zip",
+      "sequences": 354,
+      "frames": 297279,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "hypersim",
+      "adapter": "hypersim_zip",
+      "sequences": 614,
+      "frames": 59492,
+      "cameras": 4,
+      "num_times": 1,
+      "dense_kind": "geometry",
+      "weight": 0.3
+    },
+    {
+      "name": "scannet",
+      "adapter": "mugen_h5",
+      "sequences": 1138,
+      "frames": 1777906,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "geometry",
+      "weight": 0.35
+    },
+    {
+      "name": "scannetpp",
+      "adapter": "mugen_h5",
+      "sequences": 812,
+      "frames": 690631,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "geometry",
+      "weight": 0.35
+    },
+    {
+      "name": "wildrgbd",
+      "adapter": "mugen_h5",
+      "sequences": 18692,
+      "frames": 6514594,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "geometry",
+      "weight": 0.35
+    },
+    {
+      "name": "blended",
+      "adapter": "mugen_h5",
+      "sequences": 475,
+      "frames": 109223,
+      "cameras": 8,
+      "num_times": 1,
+      "dense_kind": "geometry",
+      "weight": 0.2
+    },
+    {
+      "name": "taskonomy",
+      "adapter": "mugen_h5",
+      "sequences": 510,
+      "frames": 4456268,
+      "cameras": 8,
+      "num_times": 1,
+      "dense_kind": "geometry",
+      "weight": 0.2
+    },
+    {
+      "name": "vkitti2_stereo",
+      "adapter": "vkitti2_stereo",
+      "sequences": 40,
+      "frames": 18560,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "vkitti_scene_flow",
+      "weight": 0.75
+    },
+    {
+      "name": "tartanair_v1_stereo",
+      "adapter": "tartanair_v1_stereo",
+      "sequences": 354,
+      "frames": 297279,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.2
+    },
+    {
+      "name": "tartanair_v2_front",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 278,
+      "frames": 313128,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_v2_back",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 278,
+      "frames": 313128,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_v2_left",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 278,
+      "frames": 313128,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_v2_right",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 278,
+      "frames": 313128,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_v2_top",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 278,
+      "frames": 313128,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_v2_bottom",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 278,
+      "frames": 313128,
+      "cameras": 2,
+      "num_times": 6,
+      "dense_kind": "geometry",
+      "weight": 0.1
+    },
+    {
+      "name": "tartanair_v2_front_mono",
+      "adapter": "tartanair_v2_zip",
+      "sequences": 1050,
+      "frames": 1334841,
+      "cameras": 1,
+      "num_times": 8,
+      "dense_kind": "geometry",
+      "weight": 0.2
+    }
+  ],
+  "coverage_windows": 6496033,
+  "epoch_size": 12992066,
+  "sampler_cursor_compatible": false,
+  "reason": "new stereo/V2 pools change the coverage index; restart data cursor, retain optimizer/RNG/LR"
+}

@@ -1,0 +1,34 @@
+mode: mixture
+datasets:
+  - name: pointodyssey
+    root: /data_cos/hdu_datasets/PointOdyssey
+    weight: 0.32
+    adapter_kwargs:
+      require_tracks: true
+  - name: kubric
+    root: /data_cos/hdu_datasets/kubric
+    weight: 0.16
+  - name: dynamic_replica
+    root: /data_cos/hdu_datasets/Dynamic_Replica
+    weight: 0.12
+    val_split: valid
+  - name: blendedmvs
+    root: /data_cos/hdu_datasets/BlendedMVS
+    weight: 0.40
+    adapter_kwargs:
+      use_masked: false
+
+clip_len: 48
+img_size: 256
+num_queries: 2048
+use_augs: true
+boundary_ratio: 0.3
+t_tgt_eq_t_cam_ratio: 0.4
+seed: 42
+allow_track_fallback: true
+
+precompute_patches: false
+precompute_from_highres: false
+
+index_cache_dir: /data/zbf/openclaw/d4rt/.index_cache_4datasets_cos
+index_workers: 16

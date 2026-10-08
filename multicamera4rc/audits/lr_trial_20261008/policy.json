@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "policy": {
+    "start_step": 55500,
+    "end_step": 56000,
+    "multiplier": 1.5,
+    "warmup_steps": 100
+  },
+  "activation": {
+    "requires_accepted_boundary_retry": 0,
+    "max_geomean_ratio": 1.02,
+    "max_metric_ratio": 1.1,
+    "comparisons": [
+      "previous",
+      "best"
+    ]
+  },
+  "retention": {
+    "requires_original_quality_gate": true,
+    "max_geomean_ratio": 1.0,
+    "max_metric_ratio": 1.1,
+    "reference_step": 55500
+  },
+  "fallback": {
+    "resume_step": 55500,
+    "first_retry": "exact_checkpoint_lr_schedule",
+    "second_retry": "checkpoint_lr_times_0.5",
+    "max_quality_retries": 2
+  },
+  "preserves": [
+    "AdamW",
+    "RNG",
+    "data_cursor",
+    "loss_config",
+    "data_mixture",
+    "model_config",
+    "physical_gpus"
+  ],
+  "timestamp": "2026-10-08T17:34:26.278450+08:00"
+}

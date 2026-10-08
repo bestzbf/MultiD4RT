@@ -1,0 +1,493 @@
+{
+  "passed": true,
+  "run": "/data9/zbf/my_dfrt_multicamera4rc/outputs/full_dense_mixture_static_multiview_gpu45_20261002_135514",
+  "control_dir": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/jobs/full_dense_mixture_static_multiview_gpu45_20261002_135514",
+  "resume_step": 15000,
+  "restored_cursor": 10000,
+  "step": 15222,
+  "successful_updates": 222,
+  "skipped_updates": 0,
+  "all_losses_grad_norms_finite": true,
+  "static_layout_counts": {
+    "taskonomy": {
+      "4": 86,
+      "8": 81,
+      "3": 1
+    },
+    "hypersim": {
+      "4": 6,
+      "2": 6
+    },
+    "blended": {
+      "8": 6,
+      "4": 4
+    }
+  },
+  "examples": {
+    "taskonomy": {
+      "step": 15219,
+      "batch": {
+        "dataset": [
+          "taskonomy"
+        ],
+        "clip_id": [
+          "taskonomy/shelbyville"
+        ],
+        "input_hw": [
+          560,
+          560
+        ],
+        "observations": 4,
+        "times": 1,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -1.0535603761672974,
+          "depth_abs_rel": 0.02772148698568344,
+          "depth_mae_normalized": 0.030986037105321884,
+          "trajectory_epe_normalized": 0.04525691270828247,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 1204802.0,
+          "supervised_trajectory_pixels": 1204802.0
+        },
+        "scene_scale": [
+          2.2758309841156006
+        ],
+        "depth_filter": [
+          {
+            "max_depth": null,
+            "max_percentile": null,
+            "percentile_population": "all_pixels_including_zero",
+            "application_stage": "after_padding_before_track_generation",
+            "per_raw_frame_percentile_threshold": {
+              "14821": null,
+              "10503": null,
+              "15847": null,
+              "7246": null
+            },
+            "filtered_positive_pixels": 0,
+            "sanitized_pixels": 0
+          }
+        ],
+        "static_multiview": [
+          {
+            "selection": "packed_depth_covisibility",
+            "camera_choices": [
+              4,
+              8
+            ],
+            "actual_cameras": 4,
+            "available_neighbors": 16,
+            "view_indices": [
+              14821,
+              10503,
+              15847,
+              7246
+            ],
+            "time_idx": 0
+          }
+        ]
+      }
+    },
+    "hypersim": {
+      "step": 15205,
+      "batch": {
+        "dataset": [
+          "hypersim"
+        ],
+        "clip_id": [
+          "hypersim_zip/ai_004_008/cam_01"
+        ],
+        "input_hw": [
+          770,
+          1036
+        ],
+        "observations": 2,
+        "times": 1,
+        "decoded_sources": 2,
+        "metrics": {
+          "loss": -0.2578733563423157,
+          "depth_abs_rel": 0.09376566112041473,
+          "depth_mae_normalized": 0.20455893874168396,
+          "trajectory_epe_normalized": 0.21824483573436737,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 1572764.0,
+          "supervised_trajectory_pixels": 1572764.0
+        },
+        "scene_scale": [
+          2.5044443607330322
+        ],
+        "static_multiview": [
+          {
+            "selection": "renderer_depth_frustum",
+            "camera_choices": [
+              2,
+              4
+            ],
+            "actual_cameras": 2,
+            "available_neighbors": 67,
+            "view_indices": [
+              14,
+              49
+            ],
+            "time_idx": 0
+          }
+        ]
+      }
+    },
+    "blended": {
+      "step": 15215,
+      "batch": {
+        "dataset": [
+          "blended"
+        ],
+        "clip_id": [
+          "blended/5b08286b2775267d5b0634ba"
+        ],
+        "input_hw": [
+          420,
+          560
+        ],
+        "observations": 4,
+        "times": 1,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -1.3467228412628174,
+          "depth_abs_rel": 0.01121099479496479,
+          "depth_mae_normalized": 0.010027221404016018,
+          "trajectory_epe_normalized": 0.03702856972813606,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 897703.0,
+          "supervised_trajectory_pixels": 897703.0
+        },
+        "scene_scale": [
+          81.79359436035156
+        ],
+        "depth_filter": [
+          {
+            "max_depth": null,
+            "max_percentile": null,
+            "percentile_population": "all_pixels_including_zero",
+            "application_stage": "after_padding_before_track_generation",
+            "per_raw_frame_percentile_threshold": {
+              "110": null,
+              "35": null,
+              "103": null,
+              "140": null
+            },
+            "filtered_positive_pixels": 0,
+            "sanitized_pixels": 0
+          }
+        ],
+        "static_multiview": [
+          {
+            "selection": "packed_depth_covisibility",
+            "camera_choices": [
+              4,
+              8
+            ],
+            "actual_cameras": 4,
+            "available_neighbors": 10,
+            "view_indices": [
+              110,
+              35,
+              103,
+              140
+            ],
+            "time_idx": 0
+          }
+        ]
+      }
+    }
+  },
+  "first_step": {
+    "step": 15001,
+    "world_size": 2,
+    "supervision": "dense",
+    "input_hw": [
+      560,
+      560
+    ],
+    "rank_batches": [
+      {
+        "dataset": [
+          "taskonomy"
+        ],
+        "clip_id": [
+          "taskonomy/ooltewah"
+        ],
+        "input_hw": [
+          560,
+          560
+        ],
+        "observations": 4,
+        "times": 1,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -1.0686479806900024,
+          "depth_abs_rel": 0.027383163571357727,
+          "depth_mae_normalized": 0.018411176279187202,
+          "trajectory_epe_normalized": 0.037641022354364395,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 1194550.0,
+          "supervised_trajectory_pixels": 1194550.0
+        },
+        "scene_scale": [
+          4.867162704467773
+        ],
+        "depth_filter": [
+          {
+            "max_depth": null,
+            "max_percentile": null,
+            "percentile_population": "all_pixels_including_zero",
+            "application_stage": "after_padding_before_track_generation",
+            "per_raw_frame_percentile_threshold": {
+              "4397": null,
+              "12821": null,
+              "14611": null,
+              "14222": null
+            },
+            "filtered_positive_pixels": 0,
+            "sanitized_pixels": 0
+          }
+        ],
+        "static_multiview": [
+          {
+            "selection": "packed_depth_covisibility",
+            "camera_choices": [
+              4,
+              8
+            ],
+            "actual_cameras": 4,
+            "available_neighbors": 50,
+            "view_indices": [
+              4397,
+              12821,
+              14611,
+              14222
+            ],
+            "time_idx": 0
+          }
+        ]
+      },
+      {
+        "dataset": [
+          "taskonomy"
+        ],
+        "clip_id": [
+          "taskonomy/victorville"
+        ],
+        "input_hw": [
+          560,
+          560
+        ],
+        "observations": 8,
+        "times": 1,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -0.7369489073753357,
+          "depth_abs_rel": 0.05086356773972511,
+          "depth_mae_normalized": 0.0424947626888752,
+          "trajectory_epe_normalized": 0.08718956261873245,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 1191643.0,
+          "supervised_trajectory_pixels": 1191643.0
+        },
+        "scene_scale": [
+          3.8936245441436768
+        ],
+        "depth_filter": [
+          {
+            "max_depth": null,
+            "max_percentile": null,
+            "percentile_population": "all_pixels_including_zero",
+            "application_stage": "after_padding_before_track_generation",
+            "per_raw_frame_percentile_threshold": {
+              "7853": null,
+              "4778": null,
+              "4771": null,
+              "7766": null,
+              "7855": null,
+              "740": null,
+              "6547": null,
+              "4785": null
+            },
+            "filtered_positive_pixels": 0,
+            "sanitized_pixels": 0
+          }
+        ],
+        "static_multiview": [
+          {
+            "selection": "packed_depth_covisibility",
+            "camera_choices": [
+              4,
+              8
+            ],
+            "actual_cameras": 8,
+            "available_neighbors": 50,
+            "view_indices": [
+              7853,
+              4778,
+              4771,
+              7766,
+              7855,
+              740,
+              6547,
+              4785
+            ],
+            "time_idx": 0
+          }
+        ]
+      }
+    ],
+    "data_epoch": 0,
+    "optimizer_step_skipped": false,
+    "amp_dtype": "bfloat16",
+    "loss_profile": "dense",
+    "backbone_lr": 1.6713130411678292e-06,
+    "lr": 1.671313041167829e-05,
+    "loss": -0.9027984440326691,
+    "depth": 0.35101382434368134,
+    "camera": 0.009862744249403477,
+    "ray": 0.2359207421541214,
+    "trajectory": 0.06241529434919357,
+    "displacement": 0.0,
+    "visibility": 0.0,
+    "static": 0.0,
+    "confidence": -1.585098922252655,
+    "grad_norm": 26.899381637573242,
+    "depth_gradient": 0.02308794017881155,
+    "velocity": 0.0,
+    "supervised_source_pixels": 1193096.5,
+    "supervised_trajectory_pixels": 1193096.5,
+    "trajectory_epe_normalized": 0.062415292486548424,
+    "supervised_dynamic_pixels": 0.0,
+    "depth_mae_normalized": 0.0304529694840312,
+    "depth_abs_rel": 0.03912336565554142,
+    "base_epe_normalized": 0.06592972949147224,
+    "depth_confidence_mean": 23.18665313720703,
+    "depth_confidence_log_mean": 2.9061397314071655,
+    "depth_confidence_saturated_fraction": 0.0,
+    "camera_translation_epe_normalized": 0.040207523852586746,
+    "camera_rotation_degrees": 1.52863347530365
+  },
+  "last_step": {
+    "step": 15222,
+    "world_size": 2,
+    "supervision": "dense",
+    "input_hw": [
+      266,
+      266
+    ],
+    "rank_batches": [
+      {
+        "dataset": [
+          "kubric_C4"
+        ],
+        "clip_id": [
+          "kubric_multicam/scene_C_001106"
+        ],
+        "input_hw": [
+          266,
+          266
+        ],
+        "observations": 24,
+        "times": 6,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -3.266590118408203,
+          "depth_abs_rel": 0.007807148154824972,
+          "depth_mae_normalized": 0.006965180393308401,
+          "trajectory_epe_normalized": 0.011567099951207638,
+          "displacement_epe_dynamic_normalized": 0.00991055741906166,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 262144.0,
+          "supervised_trajectory_pixels": 1572864.0
+        },
+        "scene_scale": [
+          16.62263298034668
+        ]
+      },
+      {
+        "dataset": [
+          "kubric_C2"
+        ],
+        "clip_id": [
+          "kubric_multicam/scene_C_000324"
+        ],
+        "input_hw": [
+          266,
+          266
+        ],
+        "observations": 24,
+        "times": 12,
+        "decoded_sources": 4,
+        "metrics": {
+          "loss": -2.8172082901000977,
+          "depth_abs_rel": 0.024282369762659073,
+          "depth_mae_normalized": 0.01662549003958702,
+          "trajectory_epe_normalized": 0.014633599668741226,
+          "displacement_epe_dynamic_normalized": 0.0032926793210208416,
+          "depth_confidence_saturated_fraction": 0.0,
+          "supervised_source_pixels": 262144.0,
+          "supervised_trajectory_pixels": 3145728.0
+        },
+        "scene_scale": [
+          18.782024383544922
+        ]
+      }
+    ],
+    "data_epoch": 0,
+    "optimizer_step_skipped": false,
+    "amp_dtype": "bfloat16",
+    "loss_profile": "dense",
+    "backbone_lr": 1.6239750586015738e-06,
+    "lr": 1.623975058601574e-05,
+    "loss": -3.0418992042541504,
+    "depth": 0.5095015913248062,
+    "camera": 0.007302137790247798,
+    "ray": 0.20898889750242233,
+    "trajectory": 0.4232167899608612,
+    "displacement": 0.054011691361665726,
+    "visibility": 0.09731701388955116,
+    "static": 0.00014015377018949948,
+    "confidence": -4.299619436264038,
+    "grad_norm": 583.8980102539062,
+    "depth_gradient": 0.015498458407819271,
+    "velocity": 0.02945523150265217,
+    "supervised_source_pixels": 262144.0,
+    "supervised_trajectory_pixels": 2359296.0,
+    "trajectory_epe_normalized": 0.013100349809974432,
+    "displacement_epe_normalized": 0.0005570702196564525,
+    "trajectory_epe_dynamic_normalized": 0.01243826118297875,
+    "displacement_epe_dynamic_normalized": 0.006601618370041251,
+    "supervised_dynamic_pixels": 159252.0,
+    "depth_mae_normalized": 0.011795335216447711,
+    "depth_abs_rel": 0.016044758958742023,
+    "base_epe_normalized": 0.015878788195550442,
+    "velocity_epe_normalized": 0.0003435500475461595,
+    "velocity_epe_dynamic_normalized": 0.004380328580737114,
+    "depth_confidence_mean": 71.90013313293457,
+    "depth_confidence_log_mean": 4.006878733634949,
+    "depth_confidence_saturated_fraction": 0.0,
+    "motion_confidence_mean": 64.48932647705078,
+    "motion_confidence_log_mean": 3.9688204526901245,
+    "motion_confidence_saturated_fraction": 0.0,
+    "camera_translation_epe_normalized": 0.006735775154083967,
+    "camera_rotation_degrees": 0.7206248790025711,
+    "visibility_precision": 0.9667562246322632,
+    "visibility_recall": 0.980029433965683,
+    "visibility_f1": 0.9733368158340454
+  },
+  "lr_plan": {
+    "mode": "cosine",
+    "start_step": 5000,
+    "end_step": 25000,
+    "base_lrs": [
+      3e-06,
+      3e-05
+    ],
+    "warmup_steps": 200,
+    "min_ratio": 0.1
+  },
+  "recorded_at_utc": "2026-10-02T06:11:46.011387+00:00"
+}

@@ -1,0 +1,42 @@
+# Static scenes: distinct logical cameras at one common time, dense geometry.
+# For full training, use enable_static_multiview.py on the admitted mixture
+# so its manifests, source order and coverage cursor are preserved.
+image_mode: native
+supervision: dense
+sampling: coverage
+num_times: 1
+num_queries: 0
+epoch_size: 1000
+seed: 49
+include_visibility: true
+sources:
+  - name: blended
+    adapter: mugen_h5
+    root: /data7/mugen/blended_mvg.h5
+    split: train
+    cameras: [4, 8]
+    num_times: 1
+    view_mode: static_multiview
+    dense_kind: geometry
+    options:
+      dataset_name: blended
+      strip_padding: true
+      generate_static_tracks: false
+      prefer_precomputed_tracks: false
+      train_only_val_ratio: 0.05
+      verbose: false
+  - name: taskonomy
+    adapter: mugen_h5
+    root: /data7/mugen/taskonomy.h5
+    split: train
+    cameras: [4, 8]
+    num_times: 1
+    view_mode: static_multiview
+    dense_kind: geometry
+    options:
+      dataset_name: taskonomy
+      strip_padding: true
+      generate_static_tracks: false
+      prefer_precomputed_tracks: false
+      train_only_val_ratio: 0.05
+      verbose: false

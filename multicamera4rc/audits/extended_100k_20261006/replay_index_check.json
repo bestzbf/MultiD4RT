@@ -1,0 +1,740 @@
+{
+  "passed": true,
+  "sources": 23,
+  "source_summary": [
+    {
+      "name": "kubric_variable",
+      "sequences": 4752,
+      "weight": 28.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.0075
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.01125
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.01875
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.0225
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.015
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.0085
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.017
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.19216666666666665
+        },
+        {
+          "cameras": 2,
+          "num_times": 16,
+          "weight": 0.02125
+        },
+        {
+          "cameras": 2,
+          "num_times": 24,
+          "weight": 0.012750000000000001
+        },
+        {
+          "cameras": 3,
+          "num_times": 4,
+          "weight": 0.007000000000000001
+        },
+        {
+          "cameras": 3,
+          "num_times": 8,
+          "weight": 0.18766666666666665
+        },
+        {
+          "cameras": 3,
+          "num_times": 12,
+          "weight": 0.0245
+        },
+        {
+          "cameras": 3,
+          "num_times": 16,
+          "weight": 0.0175
+        },
+        {
+          "cameras": 4,
+          "num_times": 4,
+          "weight": 0.009
+        },
+        {
+          "cameras": 4,
+          "num_times": 6,
+          "weight": 0.18916666666666665
+        },
+        {
+          "cameras": 4,
+          "num_times": 8,
+          "weight": 0.0315
+        },
+        {
+          "cameras": 4,
+          "num_times": 12,
+          "weight": 0.027
+        },
+        {
+          "cameras": 5,
+          "num_times": 2,
+          "weight": 0.003
+        },
+        {
+          "cameras": 5,
+          "num_times": 4,
+          "weight": 0.0135
+        },
+        {
+          "cameras": 5,
+          "num_times": 6,
+          "weight": 0.0135
+        },
+        {
+          "cameras": 6,
+          "num_times": 2,
+          "weight": 0.0035000000000000005
+        },
+        {
+          "cameras": 6,
+          "num_times": 4,
+          "weight": 0.015750000000000004
+        },
+        {
+          "cameras": 6,
+          "num_times": 6,
+          "weight": 0.015750000000000004
+        },
+        {
+          "cameras": 7,
+          "num_times": 2,
+          "weight": 0.003
+        },
+        {
+          "cameras": 7,
+          "num_times": 4,
+          "weight": 0.0165
+        },
+        {
+          "cameras": 7,
+          "num_times": 6,
+          "weight": 0.010499999999999999
+        },
+        {
+          "cameras": 8,
+          "num_times": 2,
+          "weight": 0.0035000000000000005
+        },
+        {
+          "cameras": 8,
+          "num_times": 4,
+          "weight": 0.019250000000000003
+        },
+        {
+          "cameras": 8,
+          "num_times": 6,
+          "weight": 0.01225
+        },
+        {
+          "cameras": 9,
+          "num_times": 2,
+          "weight": 0.00375
+        },
+        {
+          "cameras": 9,
+          "num_times": 4,
+          "weight": 0.02125
+        },
+        {
+          "cameras": 10,
+          "num_times": 2,
+          "weight": 0.00375
+        },
+        {
+          "cameras": 10,
+          "num_times": 4,
+          "weight": 0.02125
+        }
+      ]
+    },
+    {
+      "name": "dynamic_replica_left",
+      "sequences": 483,
+      "weight": 9.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.75
+        }
+      ]
+    },
+    {
+      "name": "dynamic_replica_right",
+      "sequences": 483,
+      "weight": 3.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.75
+        }
+      ]
+    },
+    {
+      "name": "pointodyssey",
+      "sequences": 131,
+      "weight": 16.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.5
+        }
+      ]
+    },
+    {
+      "name": "vkitti2_Camera_0",
+      "sequences": 40,
+      "weight": 2.8000000000000003,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.5
+        }
+      ]
+    },
+    {
+      "name": "vkitti2_Camera_1",
+      "sequences": 40,
+      "weight": 2.8000000000000003,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.5
+        }
+      ]
+    },
+    {
+      "name": "tartanair_left",
+      "sequences": 354,
+      "weight": 0.8,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.3
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.2
+        }
+      ]
+    },
+    {
+      "name": "tartanair_right",
+      "sequences": 354,
+      "weight": 0.8,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.3
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.2
+        }
+      ]
+    },
+    {
+      "name": "hypersim",
+      "sequences": 614,
+      "weight": 4.0,
+      "layouts": []
+    },
+    {
+      "name": "scannet",
+      "sequences": 1138,
+      "weight": 3.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.3
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.2
+        }
+      ]
+    },
+    {
+      "name": "scannetpp",
+      "sequences": 812,
+      "weight": 3.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.3
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.2
+        }
+      ]
+    },
+    {
+      "name": "wildrgbd",
+      "sequences": 18692,
+      "weight": 3.0,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.3
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.2
+        }
+      ]
+    },
+    {
+      "name": "blended",
+      "sequences": 475,
+      "weight": 4.0,
+      "layouts": []
+    },
+    {
+      "name": "taskonomy",
+      "sequences": 510,
+      "weight": 2.0,
+      "layouts": []
+    },
+    {
+      "name": "vkitti2_stereo",
+      "sequences": 40,
+      "weight": 8.399999999999999,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v1_stereo",
+      "sequences": 354,
+      "weight": 2.4,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_front",
+      "sequences": 278,
+      "weight": 1.05,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_back",
+      "sequences": 278,
+      "weight": 1.05,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_left",
+      "sequences": 278,
+      "weight": 1.05,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_right",
+      "sequences": 278,
+      "weight": 1.05,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_top",
+      "sequences": 278,
+      "weight": 1.05,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_bottom",
+      "sequences": 278,
+      "weight": 1.05,
+      "layouts": [
+        {
+          "cameras": 2,
+          "num_times": 4,
+          "weight": 0.15
+        },
+        {
+          "cameras": 2,
+          "num_times": 6,
+          "weight": 0.2
+        },
+        {
+          "cameras": 2,
+          "num_times": 8,
+          "weight": 0.35
+        },
+        {
+          "cameras": 2,
+          "num_times": 12,
+          "weight": 0.3
+        }
+      ]
+    },
+    {
+      "name": "tartanair_v2_front_mono",
+      "sequences": 1050,
+      "weight": 0.7000000000000001,
+      "layouts": [
+        {
+          "cameras": 1,
+          "num_times": 8,
+          "weight": 0.1
+        },
+        {
+          "cameras": 1,
+          "num_times": 12,
+          "weight": 0.15
+        },
+        {
+          "cameras": 1,
+          "num_times": 16,
+          "weight": 0.25
+        },
+        {
+          "cameras": 1,
+          "num_times": 24,
+          "weight": 0.3
+        },
+        {
+          "cameras": 1,
+          "num_times": 32,
+          "weight": 0.2
+        }
+      ]
+    }
+  ],
+  "base_data_config": "/data8/zbf/multicamera4rc_runs/dome_recovery_20261005/data.yaml",
+  "config": "/data8/zbf/multicamera4rc_runs/extended_100k_20261005_165948UTC/motion_replay.yaml",
+  "sha256": "30e63cf15a923e42dadce02b0c9f2a71b3e65a8ff80f574e9d3e71b861a1a672",
+  "supervision": "dense",
+  "image_mode": "native",
+  "scope": "Existing admitted source pools and layouts retained; only family quotas change"
+}

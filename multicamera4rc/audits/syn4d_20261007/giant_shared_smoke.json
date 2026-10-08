@@ -1,0 +1,204 @@
+{
+  "passed": true,
+  "checkpoint": "/data8/zbf/multicamera4rc_runs/extended_100k_20261005_165948UTC/continuation_52000_54000_try0/step_00053000.pt",
+  "checkpoint_step": 53000,
+  "data_config": "/data8/zbf/multicamera4rc_runs/syn4d_activation_20261007/syn4d_only.json",
+  "production_layouts": false,
+  "memory_fraction": 0.29,
+  "loss_config": {
+    "weights": {
+      "depth": 1.0,
+      "camera": 1.0,
+      "ray": 1.0,
+      "trajectory": 1.0,
+      "displacement": 1.0,
+      "visibility": 0.1,
+      "static": 0.1,
+      "depth_gradient": 1.0,
+      "velocity": 1.0
+    },
+    "confidence_alpha": 0.2,
+    "regression_norm": "l2",
+    "foreground_weight": 10.0,
+    "visibility_projection_mask": false,
+    "regression_norms": {},
+    "unweighted_regression_weight": 0.0,
+    "foreground_fraction": null,
+    "motion_confidence_targets": [
+      "trajectory",
+      "displacement",
+      "velocity"
+    ],
+    "depth_gradient_scales": [
+      1
+    ],
+    "depth_gradient_confidence": true,
+    "camera_loss_mode": "matrix"
+  },
+  "native_resolution": true,
+  "no_query_chunking": true,
+  "optimizer_updated": false,
+  "samples": [
+    {
+      "source": "syn4d_v1",
+      "sequence": "syn4d_v1_stride_1/bigoffice_v1/seq_000000",
+      "cameras": 2,
+      "times": 2,
+      "stride": 5,
+      "input_shape": [
+        1,
+        4,
+        3,
+        728,
+        1288
+      ],
+      "raw_times": [
+        [
+          0,
+          5
+        ]
+      ],
+      "decoded_sources": [
+        [
+          3,
+          2,
+          1,
+          0
+        ]
+      ],
+      "loss": -0.6627203822135925,
+      "metrics": {
+        "loss": -0.6627203822135925,
+        "depth": 0.29273733496665955,
+        "camera": 0.026195595040917397,
+        "ray": 0.16671514511108398,
+        "trajectory": 0.42220842838287354,
+        "displacement": 0.0036695918533951044,
+        "visibility": 0.44859370589256287,
+        "static": 0.0007896242314018309,
+        "depth_gradient": 0.016927115619182587,
+        "velocity": 0.0008766984683461487,
+        "confidence": -1.636988639831543,
+        "supervised_source_pixels": 3638023.0,
+        "supervised_trajectory_pixels": 7211096.0,
+        "supervised_dynamic_pixels": 465434.0,
+        "trajectory_epe_normalized": 0.14783068001270294,
+        "trajectory_epe_temporal_normalized": 0.14831049740314484,
+        "trajectory_epe_dynamic_normalized": 0.10186471790075302,
+        "displacement_epe_normalized": 0.0007824552012607455,
+        "displacement_epe_temporal_normalized": 0.001564910402521491,
+        "displacement_epe_dynamic_normalized": 0.000596947327721864,
+        "depth_mae_normalized": 0.07521036267280579,
+        "depth_abs_rel": 0.06610799580812454,
+        "base_epe_normalized": 0.14735941588878632,
+        "velocity_epe_normalized": 0.0003129820979665965,
+        "velocity_epe_dynamic_normalized": 0.00023877892817836255,
+        "depth_confidence_mean": 8.496212005615234,
+        "depth_confidence_log_mean": 1.7500554323196411,
+        "depth_confidence_saturated_fraction": 0.0,
+        "motion_confidence_mean": 15.835835456848145,
+        "motion_confidence_log_mean": 2.1242620944976807,
+        "motion_confidence_saturated_fraction": 0.0,
+        "camera_translation_epe_normalized": 0.08125840127468109,
+        "camera_rotation_degrees": 2.8231887817382812,
+        "visibility_precision": 0.8189049363136292,
+        "visibility_recall": 0.9601929187774658,
+        "visibility_f1": 0.883938729763031
+      },
+      "grad_norm": 60.34579849243164,
+      "all_gradients_finite": true,
+      "motion_decoder_receives_gradient": true,
+      "dense_geometry_pixels": 3638023,
+      "trajectory_pixel_times": 7211096,
+      "dynamic_pixel_times": 465434,
+      "missing_meshes": [
+        {
+          "mask": "_00_body",
+          "path": "/data6/Syn4D/data/metadata/bedlam2_smpl_npz/it_4169_M/it_4169_M_2400.npz"
+        },
+        {
+          "mask": "_00_clothing",
+          "path": "/data6/Syn4D/data/metadata/b2_assetdata_download/clothing/npz"
+        }
+      ],
+      "peak_allocated_gib": 39.85717248916626,
+      "elapsed_seconds": 105.70301318215206
+    },
+    {
+      "source": "syn4d_sim",
+      "sequence": "syn4d_sim/post_sim/seq_000000",
+      "cameras": 2,
+      "times": 2,
+      "stride": 1,
+      "input_shape": [
+        1,
+        4,
+        3,
+        1036,
+        1036
+      ],
+      "raw_times": [
+        [
+          0,
+          1
+        ]
+      ],
+      "decoded_sources": [
+        [
+          3,
+          2,
+          1,
+          0
+        ]
+      ],
+      "loss": 0.44669169187545776,
+      "metrics": {
+        "loss": 0.44669169187545776,
+        "depth": 0.7908168435096741,
+        "camera": 0.06336554139852524,
+        "ray": 0.2875513434410095,
+        "trajectory": 0.3560839295387268,
+        "displacement": 0.004046253394335508,
+        "visibility": 0.44045746326446533,
+        "static": 0.0004013003781437874,
+        "depth_gradient": 0.009972836822271347,
+        "velocity": 0.005577670410275459,
+        "confidence": -1.1148086786270142,
+        "supervised_source_pixels": 4170065.0,
+        "supervised_trajectory_pixels": 8340007.0,
+        "supervised_dynamic_pixels": 1749170.0,
+        "trajectory_epe_normalized": 0.26430341601371765,
+        "trajectory_epe_temporal_normalized": 0.2643168568611145,
+        "trajectory_epe_dynamic_normalized": 0.14931879937648773,
+        "displacement_epe_normalized": 0.0007295389659702778,
+        "displacement_epe_temporal_normalized": 0.0014590783976018429,
+        "displacement_epe_dynamic_normalized": 0.0019562195520848036,
+        "depth_mae_normalized": 0.17189057171344757,
+        "depth_abs_rel": 0.24434995651245117,
+        "base_epe_normalized": 0.2642900347709656,
+        "velocity_epe_normalized": 0.0014590783976018429,
+        "velocity_epe_dynamic_normalized": 0.003912443295121193,
+        "depth_confidence_mean": 6.222358226776123,
+        "depth_confidence_log_mean": 1.5151526927947998,
+        "depth_confidence_saturated_fraction": 0.0,
+        "motion_confidence_mean": 4.220543384552002,
+        "motion_confidence_log_mean": 1.2770733833312988,
+        "motion_confidence_saturated_fraction": 0.0,
+        "camera_translation_epe_normalized": 0.23089107871055603,
+        "camera_rotation_degrees": 4.137404441833496,
+        "visibility_precision": 0.8301781415939331,
+        "visibility_recall": 0.9906463623046875,
+        "visibility_f1": 0.9033412337303162
+      },
+      "grad_norm": 55.71085739135742,
+      "all_gradients_finite": true,
+      "motion_decoder_receives_gradient": true,
+      "dense_geometry_pixels": 4170065,
+      "trajectory_pixel_times": 8340007,
+      "dynamic_pixel_times": 1749170,
+      "missing_meshes": [],
+      "peak_allocated_gib": 44.63804912567139,
+      "elapsed_seconds": 19.40353422705084
+    }
+  ]
+}

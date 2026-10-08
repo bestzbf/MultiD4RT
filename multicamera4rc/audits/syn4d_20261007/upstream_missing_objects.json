@@ -1,0 +1,78 @@
+{
+  "checked_at": "2026-10-07T08:02:54.300219+00:00",
+  "dataset_revision": "bb08d13faabc0649a4a938030025e9e2b32a6189",
+  "assets": [
+    {
+      "path": "data/metadata/new_weight_bone/000-021/91e56c85fd9a4c439d015d7e232ec987/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-021/91e56c85fd9a4c439d015d7e232ec987/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/cyber_bald/seq_000011"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-022/1f712c03b748426da77a36343d263913/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-022/1f712c03b748426da77a36343d263913/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/cyber_bald/seq_000013"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-005/64350a72ad11412b9725721d8b27d225/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-005/64350a72ad11412b9725721d8b27d225/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/hallway/seq_000007"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-080/810c966e8e704e848e5e2d6e78ec5783/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-080/810c966e8e704e848e5e2d6e78ec5783/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/hallway/seq_000013"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-082/4ca1501b0a4548afb35d26f44d3bbdb8/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-082/4ca1501b0a4548afb35d26f44d3bbdb8/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/hospital/seq_000015"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-030/510c266578f240bbb40d31c00e8dbc13/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-030/510c266578f240bbb40d31c00e8dbc13/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/office_bald/seq_000008"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-039/5e1b5352b67d402f97b3ccc5fe92bc06/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-039/5e1b5352b67d402f97b3ccc5fe92bc06/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/office_bald/seq_000013"
+      ],
+      "error_code": "EntryNotFound"
+    },
+    {
+      "path": "data/metadata/new_weight_bone/000-039/498a9ca0f5724c6da0fa7102a62f8783/vertices_sequence.npz",
+      "status": 404,
+      "url": "https://huggingface.co/datasets/Syn4D/Syn4D/resolve/bb08d13faabc0649a4a938030025e9e2b32a6189/data/metadata/new_weight_bone/000-039/498a9ca0f5724c6da0fa7102a62f8783/vertices_sequence.npz",
+      "affected_sequences": [
+        "syn4d_v1_stride_1/village/seq_000014"
+      ],
+      "error_code": "EntryNotFound"
+    }
+  ]
+}

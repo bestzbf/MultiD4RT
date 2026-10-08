@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "checkpoint": "/data9/zbf/my_dfrt_multicamera4rc/outputs/full_dense_mixture_gpu45_20261002_032608/step_00012500.pt",
+  "supervision": "dense",
+  "image_mode": "native",
+  "no_query_chunking": true,
+  "samples": 18,
+  "layouts": [
+    {
+      "source": "blended",
+      "cameras": 4,
+      "samples": 3,
+      "max_peak_allocated_gib": 14.872220039367676,
+      "loss_finite_and_gradients_finite": true,
+      "unknown_motion_masked": true,
+      "path": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/blended_C4_fused_shared_giant.json"
+    },
+    {
+      "source": "blended",
+      "cameras": 8,
+      "samples": 3,
+      "max_peak_allocated_gib": 22.404980659484863,
+      "loss_finite_and_gradients_finite": true,
+      "unknown_motion_masked": true,
+      "path": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/blended_C8_fused_shared_giant.json"
+    },
+    {
+      "source": "taskonomy",
+      "cameras": 4,
+      "samples": 3,
+      "max_peak_allocated_gib": 16.912415504455566,
+      "loss_finite_and_gradients_finite": true,
+      "unknown_motion_masked": true,
+      "path": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/taskonomy_C4_fused_shared_giant.json"
+    },
+    {
+      "source": "taskonomy",
+      "cameras": 8,
+      "samples": 3,
+      "max_peak_allocated_gib": 27.19774627685547,
+      "loss_finite_and_gradients_finite": true,
+      "unknown_motion_masked": true,
+      "path": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/taskonomy_C8_fused_shared_giant.json"
+    },
+    {
+      "source": "hypersim",
+      "cameras": 2,
+      "samples": 3,
+      "max_peak_allocated_gib": 19.456392288208008,
+      "loss_finite_and_gradients_finite": true,
+      "unknown_motion_masked": true,
+      "path": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/hypersim_C2_fused_shared_giant.json"
+    },
+    {
+      "source": "hypersim",
+      "cameras": 4,
+      "samples": 3,
+      "max_peak_allocated_gib": 33.04588079452515,
+      "loss_finite_and_gradients_finite": true,
+      "unknown_motion_masked": true,
+      "path": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/static_multiview_20261002/hypersim_C4_fused_shared_giant.json"
+    }
+  ]
+}

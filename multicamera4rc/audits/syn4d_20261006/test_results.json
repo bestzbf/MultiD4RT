@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "local_full_suite": {
+    "passed": 287,
+    "warnings": 1,
+    "seconds": 33.17
+  },
+  "remote_full_suite": {
+    "passed": 287,
+    "warnings": 1,
+    "seconds": 82.74,
+    "log": "/data9/zbf/syn4d_tests_final_20261006.log"
+  },
+  "final_adapter_tests_local": {
+    "passed": 16,
+    "seconds": 1.86
+  },
+  "final_adapter_tests_remote": {
+    "passed": 16,
+    "seconds": 5.76,
+    "log": "/data9/zbf/syn4d_tests_adapter_final_20261006.log"
+  },
+  "scope": "Full suites preceded the last MP4 index guard and geometry-only shard isolation; all 16 adapter tests rerun after those changes",
+  "warning": "Remote existing torch.jit.script DeprecationWarning; both full suites had one warning"
+}

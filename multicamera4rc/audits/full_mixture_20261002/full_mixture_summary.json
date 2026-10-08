@@ -1,0 +1,207 @@
+{
+  "sources": [
+    {
+      "name": "kubric_C2",
+      "sequences": 4752,
+      "frames": 142560,
+      "coverage_windows": 11880,
+      "validation_sequences": 0,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/kubric_C2_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "kubric_C3",
+      "sequences": 4752,
+      "frames": 142560,
+      "coverage_windows": 17820,
+      "validation_sequences": 0,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/kubric_C3_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "kubric_C4",
+      "sequences": 4752,
+      "frames": 142560,
+      "coverage_windows": 23760,
+      "validation_sequences": 0,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/kubric_C4_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "dynamic_replica",
+      "sequences": 966,
+      "frames": 289800,
+      "coverage_windows": 41538,
+      "validation_sequences": 0,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/dynamic_replica_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "pointodyssey",
+      "sequences": 131,
+      "frames": 236883,
+      "coverage_windows": 29675,
+      "validation_sequences": 0,
+      "exclusions": 1,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/pointodyssey_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "vkitti2_Camera_0",
+      "sequences": 40,
+      "frames": 18560,
+      "coverage_windows": 2670,
+      "validation_sequences": 10,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/vkitti2_Camera_0_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "vkitti2_Camera_1",
+      "sequences": 40,
+      "frames": 18560,
+      "coverage_windows": 2670,
+      "validation_sequences": 10,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/vkitti2_Camera_1_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "tartanair_left",
+      "sequences": 354,
+      "frames": 297279,
+      "coverage_windows": 37301,
+      "validation_sequences": 15,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/tartanair_left_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "tartanair_right",
+      "sequences": 354,
+      "frames": 297279,
+      "coverage_windows": 37301,
+      "validation_sequences": 15,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/tartanair_right_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "hypersim",
+      "sequences": 614,
+      "frames": 59492,
+      "coverage_windows": 59492,
+      "validation_sequences": 0,
+      "exclusions": 51,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/hypersim_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "scannet",
+      "sequences": 1138,
+      "frames": 1777906,
+      "coverage_windows": 222721,
+      "validation_sequences": 63,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/scannet_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "scannetpp",
+      "sequences": 812,
+      "frames": 690631,
+      "coverage_windows": 86692,
+      "validation_sequences": 43,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/scannetpp_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "wildrgbd",
+      "sequences": 18692,
+      "frames": 6514594,
+      "coverage_windows": 822427,
+      "validation_sequences": 984,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/wildrgbd_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "blended",
+      "sequences": 475,
+      "frames": 109223,
+      "coverage_windows": 109223,
+      "validation_sequences": 26,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/blended_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "taskonomy",
+      "sequences": 510,
+      "frames": 4456268,
+      "coverage_windows": 4456268,
+      "validation_sequences": 27,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/taskonomy_manifest.json",
+      "estimated_geometry": false,
+      "train_admitted": true
+    },
+    {
+      "name": "megadepth",
+      "sequences": 202,
+      "frames": 116586,
+      "coverage_windows": 116586,
+      "validation_sequences": 11,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/megadepth_manifest.json",
+      "estimated_geometry": true,
+      "train_admitted": false
+    },
+    {
+      "name": "co3d",
+      "sequences": 25857,
+      "frames": 2557538,
+      "coverage_windows": 2557538,
+      "validation_sequences": 1361,
+      "exclusions": 0,
+      "manifest": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/full_mixture_20261002/co3d_manifest.json",
+      "estimated_geometry": true,
+      "train_admitted": false
+    }
+  ],
+  "coverage_windows": 5961438,
+  "epoch_size": 11922876,
+  "sampling": "Each epoch includes every admitted frame window once, plus weighted extra windows to preserve dynamic supervision.",
+  "excluded_sources": {
+    "hm3d": "truncated H5",
+    "dtu": "test-only",
+    "tnt": "test-only/no depth",
+    "mapillary": "camera/view/time and label provenance not verified",
+    "dl3dv": "depth/pose label provenance not verified",
+    "waymo": "sparse LiDAR depth; dense GT unavailable in this pack",
+    "tartanair_v2": "different camera model not verified",
+    "vkitti_pack": "unverified version/duplicate native source",
+    "co3d": "estimated SfM/MVS depth; original quality scores/masks absent, not certified as native GT",
+    "megadepth": "estimated SfM/MVS depth; geometry candidate screened, not admitted as native GT"
+  },
+  "limitation": "This full structural screen does not certify every pixel offline. Every loaded pixel is masked; estimated SfM/MVS labels remain estimated geometry, not native motion GT."
+}

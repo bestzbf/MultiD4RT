@@ -1,0 +1,822 @@
+{
+  "stage": "sampled_consistent",
+  "dataset": "dynamic_replica",
+  "root": "/data5/d4rt_dataset/Dynamic_Replica",
+  "indexed_sequences": 483,
+  "sequences_with_tracks": 483,
+  "selected_sequences": [
+    "055693-3_obj_source_left",
+    "1e4e9c-3_obj_source_left",
+    "54a05e-3_obj_source_left",
+    "0a14a7-3_obj_source_left",
+    "2dbb82-3_obj_source_left",
+    "75bede-3_obj_source_left"
+  ],
+  "samples": [
+    {
+      "sequence": "055693-3_obj_source_left",
+      "frames": [
+        0,
+        74,
+        149,
+        224,
+        299
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 1.2529625426083157e-07,
+      "rotation_determinants": {
+        "count": 5,
+        "mean": 1.0000000380926952,
+        "p50": 1.000000036759454,
+        "p95": 1.0000001016396542,
+        "max": 1.0000001016642064
+      },
+      "depth_encoding": "uint16_ieee_float16_bits_camera_z",
+      "depth_unit": "dynamic_replica_world_units",
+      "track_count": 38122,
+      "valid_3d_fraction": 0.8847594564818215,
+      "visible_fraction": 0.55908399349457,
+      "finite_3d_given_valid": true,
+      "reprojection_px_given_valid": {
+        "count": 168644,
+        "mean": 7.77024130312601e-05,
+        "p50": 6.68578575820606e-05,
+        "p95": 0.00017581144400895832,
+        "max": 0.0006448816671689168
+      },
+      "reprojection_px_given_visible": {
+        "count": 106567,
+        "mean": 7.771088164782236e-05,
+        "p50": 6.58013214703278e-05,
+        "p95": 0.00017742893247259917,
+        "max": 0.0006448816671689168
+      },
+      "positive_z_given_visible": 1.0,
+      "world_motion_from_first_frame": {
+        "count": 168644,
+        "mean": 0.14929908140851916,
+        "p50": 0.0,
+        "p95": 0.8595101148936679,
+        "max": 1.590100031722724
+      },
+      "visible_depth_nearest_absolute_error": {
+        "count": 106567,
+        "mean": 0.0303573572699901,
+        "p50": 0.0017907315599741125,
+        "p95": 0.05731107205461229,
+        "max": 3.445252427517321
+      },
+      "visible_depth_nearest_relative_error": {
+        "count": 106567,
+        "mean": 0.015647143974253316,
+        "p50": 0.0006746853976741311,
+        "p95": 0.03208468477733218,
+        "max": 3.991395559876248
+      },
+      "visible_depth_3x3_relative_error": {
+        "count": 106567,
+        "mean": 0.002088171506070665,
+        "p50": 0.00035283265928029873,
+        "p95": 0.012110871943637322,
+        "max": 0.19192503470860126
+      },
+      "visible_depth_3x3_within_one_percent": 0.9306727223249224,
+      "bridge": {
+        "input_shape": [
+          5,
+          3,
+          728,
+          1288
+        ],
+        "camera_ids": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "query_time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "valid_depth_pixels": 4607999,
+        "valid_camera_observations": 5,
+        "sparse_query_count": 0
+      },
+      "checks": {
+        "pose_is_rotation": true,
+        "finite_valid_3d": true,
+        "track_projection_matches_2d": true,
+        "visible_vertices_have_positive_z": true,
+        "visible_vertex_depth_agrees": true,
+        "native_depth_available": true,
+        "same_camera_across_frames": true
+      },
+      "sample_passed": true
+    },
+    {
+      "sequence": "1e4e9c-3_obj_source_left",
+      "frames": [
+        0,
+        74,
+        149,
+        224,
+        299
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 9.146191715103669e-08,
+      "rotation_determinants": {
+        "count": 5,
+        "mean": 1.0000000179607098,
+        "p50": 1.0000000184345759,
+        "p95": 1.0000000576758306,
+        "max": 1.000000062758691
+      },
+      "depth_encoding": "uint16_ieee_float16_bits_camera_z",
+      "depth_unit": "dynamic_replica_world_units",
+      "track_count": 14368,
+      "valid_3d_fraction": 0.8798997772828507,
+      "visible_fraction": 0.653076280623608,
+      "finite_3d_given_valid": true,
+      "reprojection_px_given_valid": {
+        "count": 63212,
+        "mean": 5.4337430027660404e-05,
+        "p50": 4.834165262412396e-05,
+        "p95": 0.00011355806595937198,
+        "max": 0.0005931536419034629
+      },
+      "reprojection_px_given_visible": {
+        "count": 46917,
+        "mean": 5.401839511280621e-05,
+        "p50": 4.798938921564471e-05,
+        "p95": 0.00011297290650175231,
+        "max": 0.0005931536419034629
+      },
+      "positive_z_given_visible": 1.0,
+      "world_motion_from_first_frame": {
+        "count": 63212,
+        "mean": 0.15671163739317814,
+        "p50": 0.0,
+        "p95": 0.8715483252491513,
+        "max": 1.1195507544950725
+      },
+      "visible_depth_nearest_absolute_error": {
+        "count": 46917,
+        "mean": 0.03692968399509182,
+        "p50": 0.0012074130123380655,
+        "p95": 0.08711733713875641,
+        "max": 2.2385420141340484
+      },
+      "visible_depth_nearest_relative_error": {
+        "count": 46917,
+        "mean": 0.017663311061651178,
+        "p50": 0.0005204686748950505,
+        "p95": 0.04010353601012374,
+        "max": 1.803689816102216
+      },
+      "visible_depth_3x3_relative_error": {
+        "count": 46917,
+        "mean": 0.0014271386675649253,
+        "p50": 0.00029437340189238695,
+        "p95": 0.00837425617168151,
+        "max": 0.19634140959182883
+      },
+      "visible_depth_3x3_within_one_percent": 0.9614638617132383,
+      "bridge": {
+        "input_shape": [
+          5,
+          3,
+          728,
+          1288
+        ],
+        "camera_ids": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "query_time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "valid_depth_pixels": 4608000,
+        "valid_camera_observations": 5,
+        "sparse_query_count": 0
+      },
+      "checks": {
+        "pose_is_rotation": true,
+        "finite_valid_3d": true,
+        "track_projection_matches_2d": true,
+        "visible_vertices_have_positive_z": true,
+        "visible_vertex_depth_agrees": true,
+        "native_depth_available": true,
+        "same_camera_across_frames": true
+      },
+      "sample_passed": true
+    },
+    {
+      "sequence": "54a05e-3_obj_source_left",
+      "frames": [
+        0,
+        74,
+        149,
+        224,
+        299
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 3.764305325226758e-07,
+      "rotation_determinants": {
+        "count": 5,
+        "mean": 1.000000173706733,
+        "p50": 1.000000187446923,
+        "p95": 1.0000003702038076,
+        "max": 1.0000003803245028
+      },
+      "depth_encoding": "uint16_ieee_float16_bits_camera_z",
+      "depth_unit": "dynamic_replica_world_units",
+      "track_count": 27890,
+      "valid_3d_fraction": 0.9099533883112226,
+      "visible_fraction": 0.6300681247759053,
+      "finite_3d_given_valid": true,
+      "reprojection_px_given_valid": {
+        "count": 126893,
+        "mean": 4.996020719922325e-05,
+        "p50": 4.456989775927789e-05,
+        "p95": 0.00010291765840745196,
+        "max": 0.0005645802574618716
+      },
+      "reprojection_px_given_visible": {
+        "count": 87863,
+        "mean": 5.055726160159262e-05,
+        "p50": 4.5139284447302805e-05,
+        "p95": 0.000103309379643295,
+        "max": 0.0005645802574618716
+      },
+      "positive_z_given_visible": 1.0,
+      "world_motion_from_first_frame": {
+        "count": 126893,
+        "mean": 0.1010785166304853,
+        "p50": 0.0,
+        "p95": 0.6105465936457372,
+        "max": 0.9988203555685282
+      },
+      "visible_depth_nearest_absolute_error": {
+        "count": 87862,
+        "mean": 0.03605452870584605,
+        "p50": 0.0026884321988727145,
+        "p95": 0.0812687257599385,
+        "max": 4.434596267855598
+      },
+      "visible_depth_nearest_relative_error": {
+        "count": 87862,
+        "mean": 0.014260475903422236,
+        "p50": 0.0007707014288552366,
+        "p95": 0.029212678035808844,
+        "max": 5.336273099020878
+      },
+      "visible_depth_3x3_relative_error": {
+        "count": 87863,
+        "mean": 0.0016218922481659322,
+        "p50": 0.00034239690170075754,
+        "p95": 0.008203175975254712,
+        "max": 0.13407019155281455
+      },
+      "visible_depth_3x3_within_one_percent": 0.9620090367959209,
+      "bridge": {
+        "input_shape": [
+          5,
+          3,
+          728,
+          1288
+        ],
+        "camera_ids": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "query_time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "valid_depth_pixels": 4607961,
+        "valid_camera_observations": 5,
+        "sparse_query_count": 0
+      },
+      "checks": {
+        "pose_is_rotation": true,
+        "finite_valid_3d": true,
+        "track_projection_matches_2d": true,
+        "visible_vertices_have_positive_z": true,
+        "visible_vertex_depth_agrees": true,
+        "native_depth_available": true,
+        "same_camera_across_frames": true
+      },
+      "sample_passed": true
+    },
+    {
+      "sequence": "0a14a7-3_obj_source_left",
+      "frames": [
+        0,
+        74,
+        149,
+        224,
+        299
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 2.751752747887082e-07,
+      "rotation_determinants": {
+        "count": 5,
+        "mean": 1.000000116084675,
+        "p50": 1.0000000367518498,
+        "p95": 1.000000275557967,
+        "max": 1.0000002972723452
+      },
+      "depth_encoding": "uint16_ieee_float16_bits_camera_z",
+      "depth_unit": "dynamic_replica_world_units",
+      "track_count": 38081,
+      "valid_3d_fraction": 0.8540426984585489,
+      "visible_fraction": 0.5493763294031144,
+      "finite_3d_given_valid": true,
+      "reprojection_px_given_valid": {
+        "count": 162614,
+        "mean": 5.1117728969012234e-05,
+        "p50": 4.347734749947657e-05,
+        "p95": 0.00011529933079170832,
+        "max": 0.00038515408730652054
+      },
+      "reprojection_px_given_visible": {
+        "count": 104604,
+        "mean": 5.2323196232957184e-05,
+        "p50": 4.3565892621655485e-05,
+        "p95": 0.00012286740342933302,
+        "max": 0.00038515408730652054
+      },
+      "positive_z_given_visible": 1.0,
+      "world_motion_from_first_frame": {
+        "count": 162614,
+        "mean": 0.0384940193514093,
+        "p50": 0.0,
+        "p95": 0.21418513611725423,
+        "max": 1.029085422987104
+      },
+      "visible_depth_nearest_absolute_error": {
+        "count": 104602,
+        "mean": 0.03892331930646758,
+        "p50": 0.0019431936958984597,
+        "p95": 0.05853144162479769,
+        "max": 5.34973804699905
+      },
+      "visible_depth_nearest_relative_error": {
+        "count": 104602,
+        "mean": 0.012891276113411078,
+        "p50": 0.0005684574997564041,
+        "p95": 0.018568552230760274,
+        "max": 5.534202977186159
+      },
+      "visible_depth_3x3_relative_error": {
+        "count": 104604,
+        "mean": 0.0011223376545224984,
+        "p50": 0.00032122514068497513,
+        "p95": 0.0048787017697656835,
+        "max": 0.40249023595590167
+      },
+      "visible_depth_3x3_within_one_percent": 0.9841784252992237,
+      "bridge": {
+        "input_shape": [
+          5,
+          3,
+          728,
+          1288
+        ],
+        "camera_ids": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "query_time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "valid_depth_pixels": 4606771,
+        "valid_camera_observations": 5,
+        "sparse_query_count": 0
+      },
+      "checks": {
+        "pose_is_rotation": true,
+        "finite_valid_3d": true,
+        "track_projection_matches_2d": true,
+        "visible_vertices_have_positive_z": true,
+        "visible_vertex_depth_agrees": true,
+        "native_depth_available": true,
+        "same_camera_across_frames": true
+      },
+      "sample_passed": true
+    },
+    {
+      "sequence": "2dbb82-3_obj_source_left",
+      "frames": [
+        0,
+        74,
+        149,
+        224,
+        299
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 1.6643049338682658e-07,
+      "rotation_determinants": {
+        "count": 5,
+        "mean": 1.000000039725549,
+        "p50": 1.0000000542988658,
+        "p95": 1.0000001285001554,
+        "max": 1.0000001362866198
+      },
+      "depth_encoding": "uint16_ieee_float16_bits_camera_z",
+      "depth_unit": "dynamic_replica_world_units",
+      "track_count": 16120,
+      "valid_3d_fraction": 0.910409429280397,
+      "visible_fraction": 0.7376799007444169,
+      "finite_3d_given_valid": true,
+      "reprojection_px_given_valid": {
+        "count": 73379,
+        "mean": 7.852533278326156e-05,
+        "p50": 5.11712647028196e-05,
+        "p95": 0.00021945305311046526,
+        "max": 0.0011425182948625796
+      },
+      "reprojection_px_given_visible": {
+        "count": 59457,
+        "mean": 7.986858307501736e-05,
+        "p50": 5.1986613349791854e-05,
+        "p95": 0.00022086216495239522,
+        "max": 0.0011425182948625796
+      },
+      "positive_z_given_visible": 1.0,
+      "world_motion_from_first_frame": {
+        "count": 73379,
+        "mean": 0.035106794102034974,
+        "p50": 0.0,
+        "p95": 0.14943784548905314,
+        "max": 1.067074583055292
+      },
+      "visible_depth_nearest_absolute_error": {
+        "count": 59457,
+        "mean": 0.033785014104244615,
+        "p50": 0.001364162829005089,
+        "p95": 0.046840230787316944,
+        "max": 2.870040435065606
+      },
+      "visible_depth_nearest_relative_error": {
+        "count": 59457,
+        "mean": 0.014736049625776376,
+        "p50": 0.0004731808669590146,
+        "p95": 0.018504593266453564,
+        "max": 2.2456840985913518
+      },
+      "visible_depth_3x3_relative_error": {
+        "count": 59457,
+        "mean": 0.0012718481772659251,
+        "p50": 0.00028331923767913357,
+        "p95": 0.005277764919645935,
+        "max": 0.12948679495934962
+      },
+      "visible_depth_3x3_within_one_percent": 0.9752762500630708,
+      "bridge": {
+        "input_shape": [
+          5,
+          3,
+          728,
+          1288
+        ],
+        "camera_ids": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "query_time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "valid_depth_pixels": 4608000,
+        "valid_camera_observations": 5,
+        "sparse_query_count": 0
+      },
+      "checks": {
+        "pose_is_rotation": true,
+        "finite_valid_3d": true,
+        "track_projection_matches_2d": true,
+        "visible_vertices_have_positive_z": true,
+        "visible_vertex_depth_agrees": true,
+        "native_depth_available": true,
+        "same_camera_across_frames": true
+      },
+      "sample_passed": true
+    },
+    {
+      "sequence": "75bede-3_obj_source_left",
+      "frames": [
+        0,
+        74,
+        149,
+        224,
+        299
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "pose_finite": true,
+      "rotation_orthogonality_max": 7.960881376334328e-08,
+      "rotation_determinants": {
+        "count": 5,
+        "mean": 1.0000000121163302,
+        "p50": 0.9999999998540772,
+        "p95": 1.0000000534098172,
+        "max": 1.0000000584164417
+      },
+      "depth_encoding": "uint16_ieee_float16_bits_camera_z",
+      "depth_unit": "dynamic_replica_world_units",
+      "track_count": 29921,
+      "valid_3d_fraction": 0.8560876976036897,
+      "visible_fraction": 0.6486547909495004,
+      "finite_3d_given_valid": true,
+      "reprojection_px_given_valid": {
+        "count": 128075,
+        "mean": 6.054474313467374e-05,
+        "p50": 5.0727058760110165e-05,
+        "p95": 0.00014115018850588388,
+        "max": 0.0004119330324760852
+      },
+      "reprojection_px_given_visible": {
+        "count": 97042,
+        "mean": 5.869402729933069e-05,
+        "p50": 4.881452508974477e-05,
+        "p95": 0.0001380167256246913,
+        "max": 0.0004119330324760852
+      },
+      "positive_z_given_visible": 1.0,
+      "world_motion_from_first_frame": {
+        "count": 128075,
+        "mean": 0.15814366300098087,
+        "p50": 0.0,
+        "p95": 1.2617581302553385,
+        "max": 2.2997735381351276
+      },
+      "visible_depth_nearest_absolute_error": {
+        "count": 97038,
+        "mean": 0.029229354287191405,
+        "p50": 0.0014966742215314355,
+        "p95": 0.0624372068084694,
+        "max": 2.5367041514974638
+      },
+      "visible_depth_nearest_relative_error": {
+        "count": 97038,
+        "mean": 0.014112841174001215,
+        "p50": 0.0005901090274016717,
+        "p95": 0.02972327938533485,
+        "max": 2.3160746936983014
+      },
+      "visible_depth_3x3_relative_error": {
+        "count": 97042,
+        "mean": 0.001821012534460642,
+        "p50": 0.0003159873652462652,
+        "p95": 0.011670229504190254,
+        "max": 0.20420874001012332
+      },
+      "visible_depth_3x3_within_one_percent": 0.9411182786834567,
+      "bridge": {
+        "input_shape": [
+          5,
+          3,
+          728,
+          1288
+        ],
+        "camera_ids": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "query_time_indices": [
+          0,
+          74,
+          149,
+          224,
+          299
+        ],
+        "valid_depth_pixels": 4607659,
+        "valid_camera_observations": 5,
+        "sparse_query_count": 0
+      },
+      "checks": {
+        "pose_is_rotation": true,
+        "finite_valid_3d": true,
+        "track_projection_matches_2d": true,
+        "visible_vertices_have_positive_z": true,
+        "visible_vertex_depth_agrees": true,
+        "native_depth_available": true,
+        "same_camera_across_frames": true
+      },
+      "sample_passed": true
+    }
+  ],
+  "errors": [],
+  "gpu_used": false,
+  "native_tracks_densified": false,
+  "elapsed_seconds": 19.28943030210212,
+  "dense_geometry_available": true,
+  "dense_long_term_3d_trajectory_available": false,
+  "limitation": "Selected train sequences and five frames per sequence only; index completeness does not prove all labels accurate. Persistent mesh or particle tracks are not full image-pixel trajectories."
+}

@@ -1,0 +1,645 @@
+{
+  "passed": true,
+  "config": "/data8/zbf/multicamera4rc_runs/syn4d_activation_20261007/initial_mixture.json",
+  "config_sha256": "8917fe410c42b6df18bca1c05ecbb6427339994844e49862eedf7c430c3ed9f6",
+  "official_loader_sha256": "6c4ffd29625545ce4b1fca06e6e2c2dd401ed72c3e371432f0530dbdabd493b2",
+  "sources": [
+    {
+      "name": "syn4d_v1",
+      "sequences": 65,
+      "split_counts": {
+        "train": 52,
+        "test": 9,
+        "val": 4
+      },
+      "camera_count_histogram": {
+        "8": 65
+      },
+      "missing_mesh_masks": {
+        "_00_body": 65,
+        "_00_clothing": 65
+      },
+      "scenes": {
+        "arena": 20,
+        "bigoffice_v1": 5,
+        "brushify_bald": 20,
+        "cave_group": 20
+      },
+      "rejected": []
+    },
+    {
+      "name": "syn4d_sim",
+      "sequences": 256,
+      "split_counts": {
+        "train": 204,
+        "val": 25,
+        "test": 27
+      },
+      "camera_count_histogram": {
+        "4": 256
+      },
+      "missing_mesh_masks": {},
+      "scenes": {
+        "cave_sim": 32,
+        "downtown_sim": 32,
+        "japanese_sim": 32,
+        "post_sim": 32,
+        "space_sim": 32,
+        "temple_sim": 32,
+        "train_sim": 32,
+        "winter_sim": 32
+      },
+      "rejected": []
+    }
+  ],
+  "cases": [
+    {
+      "sequence": "syn4d_v1_stride_1/arena/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        18,
+        23,
+        28
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5518950,
+      "trajectory_pixel_times": 5365933,
+      "dynamic_pixel_times": 161619,
+      "max_displacement_m": 0.14714841544628143,
+      "missing_meshes": [
+        {
+          "mask": "_00_body",
+          "path": "/data6/Syn4D/data/metadata/bedlam2_smpl_npz/it_4529_M/it_4529_M_2400.npz"
+        },
+        {
+          "mask": "_00_clothing",
+          "path": "/data6/Syn4D/data/metadata/b2_assetdata_download/clothing/npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2751666,
+          "mean_error_m": 6.125284771738182e-07,
+          "p99_error_m": 8.238719383321198e-06,
+          "max_error_m": 2.5368735548719967e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2538588,
+          "mean_error_m": 2.6893928399343803e-06,
+          "p99_error_m": 7.85417822216448e-06,
+          "max_error_m": 4.540220689799492e-05,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 14.366
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/bigoffice_v1/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5460045,
+      "trajectory_pixel_times": 5390610,
+      "dynamic_pixel_times": 354108,
+      "max_displacement_m": 0.24831853806972504,
+      "missing_meshes": [
+        {
+          "mask": "_00_body",
+          "path": "/data6/Syn4D/data/metadata/bedlam2_smpl_npz/it_4169_M/it_4169_M_2400.npz"
+        },
+        {
+          "mask": "_00_clothing",
+          "path": "/data6/Syn4D/data/metadata/b2_assetdata_download/clothing/npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2631222,
+          "mean_error_m": 5.590090763682045e-07,
+          "p99_error_m": 2.505054726633002e-06,
+          "max_error_m": 8.993129675116587e-06,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2726064,
+          "mean_error_m": 7.4946619734132e-07,
+          "p99_error_m": 2.562612644893962e-06,
+          "max_error_m": 1.9268918881382688e-05,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 13.813
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/brushify_bald/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5322535,
+      "dynamic_pixel_times": 704563,
+      "max_displacement_m": 0.632053554058075,
+      "missing_meshes": [
+        {
+          "mask": "_00_body",
+          "path": "/data6/Syn4D/data/metadata/bedlam2_smpl_npz/it_4303_XL/it_4303_XL_2200.npz"
+        },
+        {
+          "mask": "_00_clothing",
+          "path": "/data6/Syn4D/data/metadata/b2_assetdata_download/clothing/npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2610336,
+          "mean_error_m": 0.00012757280718323527,
+          "p99_error_m": 0.0003025976643508553,
+          "max_error_m": 0.0010371583242969463,
+          "additional_valid_pixel_times": 124
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2608591,
+          "mean_error_m": 0.00016144679604827993,
+          "p99_error_m": 0.0003366792717397049,
+          "max_error_m": 0.0016694927061781462,
+          "additional_valid_pixel_times": 137
+        }
+      ],
+      "seconds": 58.784
+    },
+    {
+      "sequence": "syn4d_v1_stride_1/cave_group/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        720,
+        1280
+      ],
+      "padded_hw": [
+        728,
+        1288
+      ],
+      "physical_camera_ids": [
+        3,
+        4
+      ],
+      "depth_pixels": 5529600,
+      "trajectory_pixel_times": 5469216,
+      "dynamic_pixel_times": 263247,
+      "max_displacement_m": 0.6601048111915588,
+      "missing_meshes": [
+        {
+          "mask": "_00_body",
+          "path": "/data6/Syn4D/data/metadata/bedlam2_smpl_npz/nl_6795_XL/nl_6795_XL_2303.npz"
+        },
+        {
+          "mask": "_00_clothing",
+          "path": "/data6/Syn4D/data/metadata/b2_assetdata_download/clothing/npz"
+        }
+      ],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2727396,
+          "mean_error_m": 1.4197742003917154e-06,
+          "p99_error_m": 3.6364176983371463e-06,
+          "max_error_m": 0.0007659683718311498,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 2711628,
+          "mean_error_m": 1.5161375119515193e-06,
+          "p99_error_m": 4.001787890413151e-06,
+          "max_error_m": 0.0005641777733745204,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 8.307
+    },
+    {
+      "sequence": "syn4d_sim/cave_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291456,
+      "trajectory_pixel_times": 6291428,
+      "dynamic_pixel_times": 990037,
+      "max_displacement_m": 1.856789231300354,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145719,
+          "mean_error_m": 1.313150161883682e-06,
+          "p99_error_m": 3.6101541464375917e-06,
+          "max_error_m": 3.356627615450749e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145694,
+          "mean_error_m": 1.446306331314289e-06,
+          "p99_error_m": 3.959755336104001e-06,
+          "max_error_m": 0.00013148790029009682,
+          "additional_valid_pixel_times": 2
+        }
+      ],
+      "seconds": 14.391
+    },
+    {
+      "sequence": "syn4d_sim/downtown_sim/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6286628,
+      "trajectory_pixel_times": 6291407,
+      "dynamic_pixel_times": 1688403,
+      "max_displacement_m": 1.8681561946868896,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145695,
+          "mean_error_m": 5.821383713488908e-07,
+          "p99_error_m": 1.2127550432532797e-06,
+          "max_error_m": 0.0001821317631353932,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145695,
+          "mean_error_m": 6.521237326071426e-07,
+          "p99_error_m": 2.9865220885641424e-06,
+          "max_error_m": 0.0002757627802914698,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 14.702
+    },
+    {
+      "sequence": "syn4d_sim/japanese_sim/seq_000001",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6290790,
+      "trajectory_pixel_times": 6289952,
+      "dynamic_pixel_times": 865998,
+      "max_displacement_m": 0.6171067357063293,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3144225,
+          "mean_error_m": 3.474235363260177e-07,
+          "p99_error_m": 1.4465365124346055e-06,
+          "max_error_m": 1.0409909754128933e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145710,
+          "mean_error_m": 3.2585423947657096e-07,
+          "p99_error_m": 7.853819431949285e-07,
+          "max_error_m": 7.445303213356404e-05,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 11.669
+    },
+    {
+      "sequence": "syn4d_sim/post_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6280423,
+      "trajectory_pixel_times": 6270492,
+      "dynamic_pixel_times": 1436744,
+      "max_displacement_m": 1.4184894561767578,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3124802,
+          "mean_error_m": 7.395695712854018e-06,
+          "p99_error_m": 2.7314381531786175e-05,
+          "max_error_m": 0.0013715669804911321,
+          "additional_valid_pixel_times": 3
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145551,
+          "mean_error_m": 1.7768627862960956e-05,
+          "p99_error_m": 3.79592122578371e-05,
+          "max_error_m": 0.00012109303549701562,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 12.671
+    },
+    {
+      "sequence": "syn4d_sim/space_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291456,
+      "trajectory_pixel_times": 6291247,
+      "dynamic_pixel_times": 1062893,
+      "max_displacement_m": 1.0484628677368164,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145482,
+          "mean_error_m": 4.0452558340328096e-07,
+          "p99_error_m": 8.548374400903971e-07,
+          "max_error_m": 3.725933403427802e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145659,
+          "mean_error_m": 3.6336807545944376e-07,
+          "p99_error_m": 9.778931763829824e-07,
+          "max_error_m": 9.77348825340234e-06,
+          "additional_valid_pixel_times": 2
+        }
+      ],
+      "seconds": 12.955
+    },
+    {
+      "sequence": "syn4d_sim/temple_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6007064,
+      "trajectory_pixel_times": 5849654,
+      "dynamic_pixel_times": 883065,
+      "max_displacement_m": 1.416734218597412,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 2704518,
+          "mean_error_m": 5.567032792244829e-07,
+          "p99_error_m": 2.7457917054099766e-06,
+          "max_error_m": 8.084905137001616e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145020,
+          "mean_error_m": 4.914360139430824e-07,
+          "p99_error_m": 1.4197155855923802e-06,
+          "max_error_m": 0.00016680038969580675,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 14.107
+    },
+    {
+      "sequence": "syn4d_sim/train_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291453,
+      "trajectory_pixel_times": 6291292,
+      "dynamic_pixel_times": 1149921,
+      "max_displacement_m": 1.1629396677017212,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145668,
+          "mean_error_m": 3.220228312240105e-06,
+          "p99_error_m": 6.5680729438073914e-06,
+          "max_error_m": 2.983607665748318e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145542,
+          "mean_error_m": 2.479336158113155e-06,
+          "p99_error_m": 5.397537220271137e-06,
+          "max_error_m": 1.7194200759503346e-05,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 13.051
+    },
+    {
+      "sequence": "syn4d_sim/winter_sim/seq_000000",
+      "cameras": 2,
+      "times": 3,
+      "raw_frames": [
+        7,
+        12,
+        17
+      ],
+      "native_hw": [
+        1024,
+        1024
+      ],
+      "padded_hw": [
+        1036,
+        1036
+      ],
+      "physical_camera_ids": [
+        1,
+        3
+      ],
+      "depth_pixels": 6291456,
+      "trajectory_pixel_times": 6291432,
+      "dynamic_pixel_times": 1608645,
+      "max_displacement_m": 1.3118383884429932,
+      "missing_meshes": [],
+      "official_checks": [
+        {
+          "source_slot": 0,
+          "compared_pixel_times": 3145722,
+          "mean_error_m": 4.985628893110683e-06,
+          "p99_error_m": 1.0030599411604742e-05,
+          "max_error_m": 2.9808560965099533e-05,
+          "additional_valid_pixel_times": 0
+        },
+        {
+          "source_slot": 5,
+          "compared_pixel_times": 3145698,
+          "mean_error_m": 4.530178423259001e-06,
+          "p99_error_m": 9.837617483627031e-06,
+          "max_error_m": 5.219223517484149e-05,
+          "additional_valid_pixel_times": 0
+        }
+      ],
+      "seconds": 12.488
+    }
+  ]
+}

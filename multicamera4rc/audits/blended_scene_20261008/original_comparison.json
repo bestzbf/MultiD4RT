@@ -1,0 +1,604 @@
+{
+  "stage": "completed",
+  "source": "blended",
+  "reference": "53000",
+  "exclusion_policy": "diagnostic_only_no_cases_removed",
+  "scene_unit": "sequence identifier from physically held-out static manifests",
+  "evaluations": {
+    "53000": {
+      "path": "multicamera4rc/audits/blended_scene_20261008/original_evaluation_53000.json",
+      "sha256": "be73f51f0c11d541f84c4351e3cd48a584de12985eb7bde0c9e8b60ff54ce2f8",
+      "checkpoint": "/data8/zbf/multicamera4rc_runs/extended_100k_20261005_165948UTC/continuation_52000_54000_try0/step_00053000.pt",
+      "step": 53000,
+      "metrics_version": 2,
+      "plan_sha256": "50e56b4ee85f47c82a58625446552aeeeaeed7793a4aa0ebcc6bf71efc456cb3",
+      "model_config": {
+        "embed_dim": 1536,
+        "encoder_depth": 40,
+        "encoder_heads": 24,
+        "out_layers": [
+          19,
+          27,
+          33,
+          39
+        ],
+        "alt_start": 13,
+        "positional_image_size": 518,
+        "patch_size": 14,
+        "ffn_layer": "swiglufused",
+        "motion_depth": 4,
+        "motion_heads": 16,
+        "dpt_features": 256,
+        "dpt_channels": [
+          256,
+          512,
+          1024,
+          1024
+        ],
+        "decoder_memory": "target_time",
+        "time_origin": "clip_start",
+        "geometry_chunk_size": 8,
+        "attention_chunk_size": null,
+        "visibility_chunk_size": null,
+        "gradient_checkpointing": false
+      },
+      "amp_dtype": "bfloat16"
+    },
+    "55000": {
+      "path": "multicamera4rc/audits/blended_scene_20261008/original_evaluation_55000.json",
+      "sha256": "26c5aa519195be1a6f48ed8127d08564ee2ce815cdc14e83454575408945308a",
+      "checkpoint": "/data8/zbf/multicamera4rc_runs/syn4d_activation_20261007/continuation_54000_56000_try0/step_00055000.pt",
+      "step": 55000,
+      "metrics_version": 2,
+      "plan_sha256": "50e56b4ee85f47c82a58625446552aeeeaeed7793a4aa0ebcc6bf71efc456cb3",
+      "model_config": {
+        "embed_dim": 1536,
+        "encoder_depth": 40,
+        "encoder_heads": 24,
+        "out_layers": [
+          19,
+          27,
+          33,
+          39
+        ],
+        "alt_start": 13,
+        "positional_image_size": 518,
+        "patch_size": 14,
+        "ffn_layer": "swiglufused",
+        "motion_depth": 4,
+        "motion_heads": 16,
+        "dpt_features": 256,
+        "dpt_channels": [
+          256,
+          512,
+          1024,
+          1024
+        ],
+        "decoder_memory": "target_time",
+        "time_origin": "clip_start",
+        "geometry_chunk_size": 8,
+        "attention_chunk_size": null,
+        "visibility_chunk_size": null,
+        "gradient_checkpointing": false
+      },
+      "amp_dtype": "bfloat16"
+    },
+    "55500_replay1": {
+      "path": "multicamera4rc/audits/blended_scene_20261008/original_evaluation_55500_replay1.json",
+      "sha256": "02f5ffebe568e0f37b798abe37065baaf3727680124aaadf2008f0bdac3192b2",
+      "checkpoint": "/data8/zbf/multicamera4rc_runs/syn4d_replay_20261008/continuation_55000_55500_try1/latest.pt",
+      "step": 55500,
+      "metrics_version": 2,
+      "plan_sha256": "50e56b4ee85f47c82a58625446552aeeeaeed7793a4aa0ebcc6bf71efc456cb3",
+      "model_config": {
+        "embed_dim": 1536,
+        "encoder_depth": 40,
+        "encoder_heads": 24,
+        "out_layers": [
+          19,
+          27,
+          33,
+          39
+        ],
+        "alt_start": 13,
+        "positional_image_size": 518,
+        "patch_size": 14,
+        "ffn_layer": "swiglufused",
+        "motion_depth": 4,
+        "motion_heads": 16,
+        "dpt_features": 256,
+        "dpt_channels": [
+          256,
+          512,
+          1024,
+          1024
+        ],
+        "decoder_memory": "target_time",
+        "time_origin": "clip_start",
+        "geometry_chunk_size": 8,
+        "attention_chunk_size": null,
+        "visibility_chunk_size": null,
+        "gradient_checkpointing": false
+      },
+      "amp_dtype": "bfloat16"
+    }
+  },
+  "comparisons": {
+    "55000": {
+      "depth_abs_rel": {
+        "metric": "depth_abs_rel",
+        "scene_count": 2,
+        "clip_count": 4,
+        "scene_mean_before": 0.007262847269885242,
+        "scene_mean_after": 0.008973021642304957,
+        "scene_mean_ratio": 1.235468860747052,
+        "clip_mean_before": 0.007262847269885242,
+        "clip_mean_after": 0.008973021642304957,
+        "scene_median_before": 0.007262847269885242,
+        "scene_median_after": 0.008973021642304957,
+        "scene_ratio_median": 1.1761448620199992,
+        "scene_ratio_geomean": 1.1633947608681745,
+        "improved_scenes": 0,
+        "worsened_scenes": 2,
+        "scenes": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "clips": 2,
+            "before": 0.009757529944181442,
+            "after": 0.013161509297788143,
+            "delta": 0.003403979353606701,
+            "ratio": 1.348856664860818,
+            "signed_share_of_scene_mean_delta": 0.995214116321493
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "clips": 2,
+            "before": 0.004768164595589042,
+            "after": 0.004784533986821771,
+            "delta": 1.6369391232728958e-05,
+            "ratio": 1.0034330591791802,
+            "signed_share_of_scene_mean_delta": 0.004785883678507008
+          }
+        ],
+        "cases": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 4,
+            "views": [
+              39,
+              74,
+              72,
+              4
+            ],
+            "before": 0.007193214260041714,
+            "after": 0.009194444864988327,
+            "delta": 0.0020012306049466133,
+            "ratio": 1.278210898855529
+          },
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 8,
+            "views": [
+              39,
+              74,
+              72,
+              4,
+              21,
+              45,
+              63,
+              34
+            ],
+            "before": 0.01232184562832117,
+            "after": 0.01712857373058796,
+            "delta": 0.0048067281022667885,
+            "ratio": 1.390098062194413
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 4,
+            "views": [
+              28,
+              42,
+              29,
+              16
+            ],
+            "before": 0.005575541872531176,
+            "after": 0.005520353559404612,
+            "delta": -5.5188313126564026e-05,
+            "ratio": 0.9901017130911601
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 8,
+            "views": [
+              28,
+              42,
+              29,
+              16,
+              41,
+              27,
+              40,
+              30
+            ],
+            "before": 0.003960787318646908,
+            "after": 0.00404871441423893,
+            "delta": 8.792709559202194e-05,
+            "ratio": 1.022199398381749
+          }
+        ],
+        "leave_one_scene_out": [
+          {
+            "omitted_scene": "58970fd09a8c0314c5d0e383",
+            "remaining_scenes": 1,
+            "before": 0.009757529944181442,
+            "after": 0.013161509297788143,
+            "ratio": 1.348856664860818
+          },
+          {
+            "omitted_scene": "5b62647143840965efc0dbde",
+            "remaining_scenes": 1,
+            "before": 0.004768164595589042,
+            "after": 0.004784533986821771,
+            "ratio": 1.0034330591791802
+          }
+        ]
+      },
+      "base_epe_normalized": {
+        "metric": "base_epe_normalized",
+        "scene_count": 2,
+        "clip_count": 4,
+        "scene_mean_before": 0.022019203985109925,
+        "scene_mean_after": 0.022542312275618315,
+        "scene_mean_ratio": 1.0237569119602203,
+        "clip_mean_before": 0.022019203985109925,
+        "clip_mean_after": 0.022542312275618315,
+        "scene_median_before": 0.022019203985109925,
+        "scene_median_after": 0.022542312275618315,
+        "scene_ratio_median": 1.0175465371442975,
+        "scene_ratio_geomean": 1.0174366034915412,
+        "improved_scenes": 0,
+        "worsened_scenes": 2,
+        "scenes": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "clips": 2,
+            "before": 0.03116188757121563,
+            "after": 0.03217476047575474,
+            "delta": 0.0010128729045391083,
+            "ratio": 1.032503579965249,
+            "signed_share_of_scene_mean_delta": 0.9681292792690542
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "clips": 2,
+            "before": 0.012876520399004221,
+            "after": 0.012909864075481892,
+            "delta": 3.334367647767067e-05,
+            "ratio": 1.002589494323346,
+            "signed_share_of_scene_mean_delta": 0.031870720730945774
+          }
+        ],
+        "cases": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 4,
+            "views": [
+              39,
+              74,
+              72,
+              4
+            ],
+            "before": 0.027341298758983612,
+            "after": 0.028633464127779007,
+            "delta": 0.001292165368795395,
+            "ratio": 1.0472605701794186
+          },
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 8,
+            "views": [
+              39,
+              74,
+              72,
+              4,
+              21,
+              45,
+              63,
+              34
+            ],
+            "before": 0.03498247638344765,
+            "after": 0.03571605682373047,
+            "delta": 0.0007335804402828217,
+            "ratio": 1.0209699402707215
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 4,
+            "views": [
+              28,
+              42,
+              29,
+              16
+            ],
+            "before": 0.01257377676665783,
+            "after": 0.012643234804272652,
+            "delta": 6.945803761482239e-05,
+            "ratio": 1.0055240393482257
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 8,
+            "views": [
+              28,
+              42,
+              29,
+              16,
+              41,
+              27,
+              40,
+              30
+            ],
+            "before": 0.013179264031350613,
+            "after": 0.013176493346691132,
+            "delta": -2.7706846594810486e-06,
+            "ratio": 0.9997897693943387
+          }
+        ],
+        "leave_one_scene_out": [
+          {
+            "omitted_scene": "58970fd09a8c0314c5d0e383",
+            "remaining_scenes": 1,
+            "before": 0.03116188757121563,
+            "after": 0.03217476047575474,
+            "ratio": 1.032503579965249
+          },
+          {
+            "omitted_scene": "5b62647143840965efc0dbde",
+            "remaining_scenes": 1,
+            "before": 0.012876520399004221,
+            "after": 0.012909864075481892,
+            "ratio": 1.002589494323346
+          }
+        ]
+      }
+    },
+    "55500_replay1": {
+      "depth_abs_rel": {
+        "metric": "depth_abs_rel",
+        "scene_count": 2,
+        "clip_count": 4,
+        "scene_mean_before": 0.007262847269885242,
+        "scene_mean_after": 0.009330921340733767,
+        "scene_mean_ratio": 1.2847470136710175,
+        "clip_mean_before": 0.007262847269885242,
+        "clip_mean_after": 0.009330921340733767,
+        "scene_median_before": 0.007262847269885242,
+        "scene_median_after": 0.009330921340733767,
+        "scene_ratio_median": 1.2148209228936684,
+        "scene_ratio_geomean": 1.1976417959080896,
+        "improved_scenes": 0,
+        "worsened_scenes": 2,
+        "scenes": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "clips": 2,
+            "before": 0.009757529944181442,
+            "after": 0.013840069994330406,
+            "delta": 0.004082540050148964,
+            "ratio": 1.4183989261117709,
+            "signed_share_of_scene_mean_delta": 0.9870391268127814
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "clips": 2,
+            "before": 0.004768164595589042,
+            "after": 0.004821772687137127,
+            "delta": 5.360809154808521e-05,
+            "ratio": 1.011242919675566,
+            "signed_share_of_scene_mean_delta": 0.012960873187218573
+          }
+        ],
+        "cases": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 4,
+            "views": [
+              39,
+              74,
+              72,
+              4
+            ],
+            "before": 0.007193214260041714,
+            "after": 0.009266098961234093,
+            "delta": 0.002072884701192379,
+            "ratio": 1.2881722448762924
+          },
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 8,
+            "views": [
+              39,
+              74,
+              72,
+              4,
+              21,
+              45,
+              63,
+              34
+            ],
+            "before": 0.01232184562832117,
+            "after": 0.01841404102742672,
+            "delta": 0.006092195399105549,
+            "ratio": 1.4944223116302424
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 4,
+            "views": [
+              28,
+              42,
+              29,
+              16
+            ],
+            "before": 0.005575541872531176,
+            "after": 0.005601516924798489,
+            "delta": 2.5975052267313004e-05,
+            "ratio": 1.0046587493845724
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 8,
+            "views": [
+              28,
+              42,
+              29,
+              16,
+              41,
+              27,
+              40,
+              30
+            ],
+            "before": 0.003960787318646908,
+            "after": 0.004042028449475765,
+            "delta": 8.124113082885742e-05,
+            "ratio": 1.020511359053889
+          }
+        ],
+        "leave_one_scene_out": [
+          {
+            "omitted_scene": "58970fd09a8c0314c5d0e383",
+            "remaining_scenes": 1,
+            "before": 0.009757529944181442,
+            "after": 0.013840069994330406,
+            "ratio": 1.4183989261117709
+          },
+          {
+            "omitted_scene": "5b62647143840965efc0dbde",
+            "remaining_scenes": 1,
+            "before": 0.004768164595589042,
+            "after": 0.004821772687137127,
+            "ratio": 1.011242919675566
+          }
+        ]
+      },
+      "base_epe_normalized": {
+        "metric": "base_epe_normalized",
+        "scene_count": 2,
+        "clip_count": 4,
+        "scene_mean_before": 0.022019203985109925,
+        "scene_mean_after": 0.02212406974285841,
+        "scene_mean_ratio": 1.0047624681536806,
+        "clip_mean_before": 0.022019203985109925,
+        "clip_mean_after": 0.02212406974285841,
+        "scene_median_before": 0.022019203985109925,
+        "scene_median_after": 0.02212406974285841,
+        "scene_ratio_median": 0.9960941732540036,
+        "scene_ratio_geomean": 0.9958753766835821,
+        "improved_scenes": 1,
+        "worsened_scenes": 1,
+        "scenes": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "clips": 2,
+            "before": 0.03116188757121563,
+            "after": 0.03169073164463043,
+            "delta": 0.0005288440734148026,
+            "ratio": 1.016970861351265,
+            "signed_share_of_scene_mean_delta": 2.521528880205153
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "clips": 2,
+            "before": 0.012876520399004221,
+            "after": 0.012557407841086388,
+            "delta": -0.00031911255791783333,
+            "ratio": 0.9752174851567422,
+            "signed_share_of_scene_mean_delta": -1.5215288802051532
+          }
+        ],
+        "cases": [
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 4,
+            "views": [
+              39,
+              74,
+              72,
+              4
+            ],
+            "before": 0.027341298758983612,
+            "after": 0.028108593076467514,
+            "delta": 0.000767294317483902,
+            "ratio": 1.0280635650942438
+          },
+          {
+            "scene": "5b62647143840965efc0dbde",
+            "cameras": 8,
+            "views": [
+              39,
+              74,
+              72,
+              4,
+              21,
+              45,
+              63,
+              34
+            ],
+            "before": 0.03498247638344765,
+            "after": 0.03527287021279335,
+            "delta": 0.0002903938293457031,
+            "ratio": 1.0083011227153462
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 4,
+            "views": [
+              28,
+              42,
+              29,
+              16
+            ],
+            "before": 0.01257377676665783,
+            "after": 0.012307261116802692,
+            "delta": -0.00026651564985513687,
+            "ratio": 0.9788038506805797
+          },
+          {
+            "scene": "58970fd09a8c0314c5d0e383",
+            "cameras": 8,
+            "views": [
+              28,
+              42,
+              29,
+              16,
+              41,
+              27,
+              40,
+              30
+            ],
+            "before": 0.013179264031350613,
+            "after": 0.012807554565370083,
+            "delta": -0.0003717094659805298,
+            "ratio": 0.9717958859389786
+          }
+        ],
+        "leave_one_scene_out": [
+          {
+            "omitted_scene": "58970fd09a8c0314c5d0e383",
+            "remaining_scenes": 1,
+            "before": 0.03116188757121563,
+            "after": 0.03169073164463043,
+            "ratio": 1.016970861351265
+          },
+          {
+            "omitted_scene": "5b62647143840965efc0dbde",
+            "remaining_scenes": 1,
+            "before": 0.012876520399004221,
+            "after": 0.012557407841086388,
+            "ratio": 0.9752174851567422
+          }
+        ]
+      }
+    }
+  }
+}
