@@ -1,64 +1,92 @@
-# MultiCamera4RC
+# MultiD4RT
 
-基于 4RC 的同步、未知内外参多相机 4D 模型，输出几何重建、scene flow、三维轨迹与逐相机可见性。输入仅需 RGB、片段内相机 ID 和共享整数帧号；不要求 timestamp 或 GT 相机参数。
+**Multi-camera 4D Reconstruction and Tracking**
 
-**v0.3.0 是推理与评估发布版。** 保留原模型和 checkpoint 兼容行为，移除训练入口、优化器、损失函数、学习率控制与训练过程记录。完整历史快照仍在 [v0.2.0](https://github.com/bestzbf/MultiCamera4RC/releases/tag/v0.2.0)。预训练权重和数据集需要另行准备。
+MultiD4RT 从同步多相机 RGB 序列重建随时间变化的三维场景，输出稠密几何、scene flow、三维轨迹和逐相机可见性。输入只需要图像、相机身份和共享帧号，无需已知内外参或 timestamp。相机数量与序列长度可以变化。
 
-## 安装与运行
-
-```bash
-git clone --branch v0.3.0 https://github.com/bestzbf/MultiCamera4RC.git
-cd MultiCamera4RC
-python -m pip install -e '.[data,weights]'
-multicamera4rc --help
-```
-
-可以先在 CPU 上验证完整输入输出流程：
+## 安装
 
 ```bash
-multicamera4rc demo --output outputs/demo
-multicamera4rc adapter-demo --output outputs/adapter_demo
+git clone --branch v0.4.0 https://github.com/bestzbf/MultiD4RT.git
+cd MultiD4RT
+python -m pip install -e '.[weights]'
+multid4rt --help
 ```
 
-这两个 demo 使用随机初始化的 tiny 模型，只验证接口与张量形状，不能用于判断重建质量。
+## 模型输入与输出
 
-## 模型接口
+同步图像为 `[B,C,T,3,H,W]`，按相机优先展平为 `[B,S,3,H,W]`，其中 `S=C*T`。RGB 使用 `[0,1]` 浮点值或 uint8。保持图像比例，将高宽准备为 14 的倍数且均至少 28；推理默认不缩放。
 
-同步输入 `[B,C,T,3,H,W]` 按相机优先展平为 `[B,S,3,H,W]`，其中 `S=C*T`。相机数、时刻数可以变化，也支持缺失观察。
+- `camera_id [B,S]`：同一物理相机共享 ID，片段内一致即可。
+- `time_idx [B,S]`：同步相机共享帧号，保留抽帧间隔，例如 `0,5,10`。
+- `observation_valid [B,S]`：可选，用于屏蔽缺失观察。
+- `source_obs_idx [B,Q]`：选择哪些输入图作为轨迹的源图。
+- `query_time_idx [B,Tq]`：请求输出的目标帧号。
+
+例如 C2T3：
+
+```text
+观察下标     0   1   2   3   4   5
+camera_id    0   0   0   1   1   1
+time_idx     0   5  10   0   5  10
+```
+
+| 输出 | 维度 | 含义 |
+|---|---|---|
+| `depth` | `[B,S,H,W]` | 每张输入图的深度 |
+| `K` / `c2w` | `[B,S,3,3]` / `[B,S,4,4]` | 预测内参与相机位姿 |
+| `base_points` | `[B,S,H,W,3]` | 统一世界坐标中的基础点 |
+| `trajectory` | `[B,Q,Tq,H,W,3]` | 源图每个像素的三维轨迹 |
+| `displacement` | `[B,Q,Tq,H,W,3]` | 相对基础点的三维位移 |
+| `visibility` | `[B,Q,Tq,C,H,W]` | 每个目标时刻、相机中的可见性 |
+
+## 模型结构
+
+共享 encoder 先提取每张图的局部特征，再融合全部相机与时刻。相机身份通过同相机 attention bias 编码；共享帧编码和 time token 提供时间信息。
+
+几何分支预测深度、内参和位姿，反投影得到基础点 `P`。运动 decoder 使用全部输入观察的 patch 特征作为 KV，以目标时间和源到目标的时间差进行 AdaLN 调制，预测三维位移 `Δ`。最终轨迹为 `X(t)=P+Δ(t)`，源时刻严格满足 `Δ(t_source)=0`。可见性分支结合轨迹投影与目标图像特征输出逐相机可见性。
+
+giant 配置使用 patch14、1536 维 encoder 和 40 层；完整模块与中间张量维度见 [模型结构](docs/architecture.md)。
+
+## Python 接口
 
 ```python
 import torch
-from multicamera4rc import MultiCamera4RC, MultiCamera4RCConfig, pack_synchronized_images
+from multid4rt import MultiD4RT, MultiD4RTConfig, pack_synchronized_images
 
-model = MultiCamera4RC(MultiCamera4RCConfig.tiny()).eval()
-images, camera_id, time_idx = pack_synchronized_images(torch.rand(1, 2, 3, 3, 28, 42))
+model = MultiD4RT(MultiD4RTConfig.tiny()).eval()
+rgb = torch.rand(1, 2, 3, 3, 28, 42)
+inputs = pack_synchronized_images(rgb, frame_indices=[0, 5, 10])
+
 with torch.inference_mode():
-    pred = model(images, camera_id, time_idx, source_obs_idx=[0, 3])
+    pred = model(**inputs, source_obs_idx=[0, 3])
+
 print(pred['trajectory'].shape)  # [1,2,3,28,42,3]
 print(pred['visibility'].shape)  # [1,2,3,2,28,42]
 ```
 
-`H,W` 必须是 14 的倍数且均至少 28。原生适配器默认保留原始图像比例并补边；manifest 输入需要事先准备成相同、合法的大小，默认不 resize。
+tiny 示例使用随机权重检查接口。实际推理加载对应 checkpoint：
 
-主干继承 4RC/DINOv2；giant 为 patch14、1536 维、40 层。相机身份通过同相机 attention bias 编码，时间通过共享帧编码、time token 和 decoder AdaLN 进入网络。几何分支预测深度与相机，运动分支输出基础点加三维位移。新模型 decoder 的 KV 包含全部输入时刻和相机；加载旧 checkpoint 时保留其保存的时间与 KV 语义。
-
-## 推理与评估
-
-```bash
-multicamera4rc infer --manifest observations.json --checkpoint model.pt --output outputs/prediction --device cuda --amp --amp-dtype bfloat16
-multicamera4rc monocular --dataset scannet --roots /path/to/scans_test --output outputs/scannet --plan outputs/scannet/plan.json --audit-only
-multicamera4rc monocular --dataset scannet --roots /path/to/scans_test --output outputs/scannet --plan outputs/scannet/plan.json --checkpoint model.pt --device cuda
+```python
+model = MultiD4RT.from_checkpoint('model.pt').eval()
 ```
 
-安装后提供 `infer`、`evaluate`、`monocular`、`native-dynamic`、`static-multiview`、`demo`、`adapter-demo` 七个命令；各命令支持 `--help`。评估直接计算几何、运动及可见性指标，不依赖训练损失。
+`model.encode()` 的结果可供同一输入下多个源图/目标时间请求复用。`multid4rt.tasks.scene_flow` 提取同一物理点的世界位移，`sample_tracks` 查询源图像素的三维轨迹。
 
-- [模型结构与完整维度](docs/architecture.md)
-- [推理、manifest 和 checkpoint](docs/inference.md)
-- [原生数据适配与 GT 约定](docs/data.md)
-- [单目评估协议](docs/monocular-evaluation.md)
-- [Syn4D 数据适配](docs/syn4d.md)
-- [完整 55,500 步单目结果](benchmarks/results/monocular_55500/README.md)
-- [代码结构与验证](docs/development.md)
-- [发布检查记录](releases/v0.3.0/README.md)
+## 命令行推理
 
-第三方许可与来源见 [NOTICE](NOTICE)。本仓库未将上游组件重新声明为统一许可。
+准备图片与相机/时间标签组成的 JSON 或 JSONL manifest，然后运行：
+
+```bash
+multid4rt infer --manifest observations.json --checkpoint model.pt --output outputs/prediction --device cuda --amp --amp-dtype bfloat16
+```
+
+输出 `inference.json` 和各片段的 `.pt` 预测结果。manifest 格式、源图选择、目标帧与 checkpoint 配置见 [推理说明](docs/inference.md)。
+
+```bash
+multid4rt demo --output outputs/demo
+```
+
+CPU demo 用随机 tiny 权重验证输入输出流程。
+
+组件来源与许可见 [NOTICE](NOTICE)。

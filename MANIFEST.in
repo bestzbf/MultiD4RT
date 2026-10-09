@@ -1,8 +1,6 @@
 include README.md CHANGELOG.md NOTICE pyproject.toml .gitignore MANIFEST.in
 graft docs
-graft multicamera4rc
-graft scripts
+graft multid4rt
 graft tests
-graft benchmarks
 graft releases
 global-exclude __pycache__ *.py[cod] .DS_Store

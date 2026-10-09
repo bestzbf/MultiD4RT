@@ -1,0 +1,26 @@
+"""One installed entry point; task modules also retain their python -m API."""
+
+import argparse
+import importlib
+
+
+COMMANDS = {
+    "infer": "multid4rt.infer",
+    "demo": "multid4rt.demo",
+}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="MultiD4RT: multi-camera 4D reconstruction and tracking")
+    parser.add_argument("command", choices=COMMANDS)
+    parser.add_argument("arguments", nargs=argparse.REMAINDER,
+                        help="Pass --help after the command for its options")
+    args = parser.parse_args(argv)
+    result = importlib.import_module(COMMANDS[args.command]).main(args.arguments)
+    # Existing Python APIs return artifact Paths. Console entry points must
+    # return an exit status, not pass those Paths to sys.exit as errors.
+    return result if isinstance(result, int) else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,26 +1,21 @@
-MultiCamera4RC v0.3.0
-https://github.com/bestzbf/MultiCamera4RC
+MultiD4RT v0.4.0
+https://github.com/bestzbf/MultiD4RT
 
-This inference/evaluation release was curated from the v0.2.0 source
-snapshot exported from:
-https://github.com/bestzbf/my_dfrt
-Branch: codex/multicamera-4rc
-Commit: 404d4fdfe547574bb2cbfa6a283a1dae917c7a15
+MultiD4RT is this project's multi-camera 4D reconstruction and tracking
+model. The implementation uses 4RC-derived and DINOv2-derived components.
+Their original copyright, license and attribution notices remain intact.
+This release does not replace them with a single repository-wide license.
 
-Third-party components retain their existing copyright, license and
-attribution notices. This release does not replace those notices with a
-single license for the entire repository.
+See:
+  multid4rt/vendor/NOTICE
+  multid4rt/vendor/LICENSE.S-Lab
+  multid4rt/vendor/LICENSE.Apache-2.0
+  multid4rt/vendor/UPSTREAM.json
 
-For the 4RC-derived and DINOv2-derived components, see:
-  multicamera4rc/vendor/NOTICE
-  multicamera4rc/vendor/LICENSE.S-Lab
-  multicamera4rc/vendor/LICENSE.Apache-2.0
-  multicamera4rc/vendor/UPSTREAM.json
+Original development source:
+  https://github.com/bestzbf/my_dfrt
+  Branch: codex/multicamera-4rc
+  Commit: 404d4fdfe547574bb2cbfa6a283a1dae917c7a15
 
-Dataset adapter provenance is recorded in:
-  multicamera4rc/datasets/UPSTREAM.json
-
-The release validation and preserved-model provenance are recorded in:
-  releases/v0.3.0/validation.json
-
-The original full snapshot remains available at the v0.2.0 tag.
+Release provenance and verification:
+  releases/v0.4.0/validation.json

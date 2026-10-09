@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "multicamera4rc"
-version = "0.3.0"
-description = "4RC-based synchronized uncalibrated multi-camera 4D reconstruction and tracking"
+name = "multid4rt"
+version = "0.4.0"
+description = "MultiD4RT: multi-camera 4D reconstruction and tracking from synchronized RGB"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -17,25 +17,23 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/bestzbf/MultiCamera4RC"
-Documentation = "https://github.com/bestzbf/MultiCamera4RC/tree/main/docs"
-Issues = "https://github.com/bestzbf/MultiCamera4RC/issues"
+Repository = "https://github.com/bestzbf/MultiD4RT"
+Documentation = "https://github.com/bestzbf/MultiD4RT/tree/main/docs"
+Issues = "https://github.com/bestzbf/MultiD4RT/issues"
 
 [project.optional-dependencies]
-test = ["pytest>=8", "h5py>=3.10", "PyYAML>=6", "scipy>=1.10"]
+test = ["pytest>=8"]
 weights = ["safetensors>=0.4", "huggingface-hub>=0.25"]
-data = ["h5py>=3.10", "opencv-python-headless>=4.9", "PyYAML>=6", "lz4>=4.3", "safetensors>=0.4", "OpenEXR>=3.3"]
 
 [project.scripts]
-multicamera4rc = "multicamera4rc.__main__:main"
+multid4rt = "multid4rt.__main__:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
 [tool.setuptools.packages.find]
-include = ["multicamera4rc*"]
+include = ["multid4rt*"]
 
 [tool.setuptools.package-data]
-multicamera4rc = ["README.md", "configs/*.yaml"]
-"multicamera4rc.vendor" = ["LICENSE*", "NOTICE", "UPSTREAM.json"]
-"multicamera4rc.datasets" = ["UPSTREAM.json"]
+multid4rt = ["README.md"]
+"multid4rt.vendor" = ["LICENSE*", "NOTICE", "UPSTREAM.json"]

@@ -1,6 +1,6 @@
-# 模型结构、编码方式与维度
+# MultiD4RT：模型结构与维度
 
-[返回 README](../README.md) · 实现：[model.py](../multicamera4rc/model.py)、[config.py](../multicamera4rc/config.py)
+[返回 README](../README.md) · 实现：[model.py](../multid4rt/model.py)、[config.py](../multid4rt/config.py)
 
 本文对应当前分支的实际实现。新模型采用全部观察 KV 和片段相对时间编码；旧 checkpoint 的计算语义兼容行为见最后一节。
 
@@ -29,11 +29,11 @@
 
 输入相机可以移动：同 ID 只表示设备身份，不强制相机在所有时刻的外参相同。ID 在每个片段内有效即可，不需要全数据集统一的相机编号。观察 0 决定参考角色，重排其他观察并同步重排元数据，不改变对应输出的含义。
 
-`H,W` 必须是 14 的倍数且均至少 28；原始大小由数据桥接层补边，网络本体不偷偷 resize。GT 的 `K/c2w/depth/trajectory` 不进入 forward 参数。
+`H,W` 必须是 14 的倍数且均至少 28；图像由调用方保持比例准备并补边，网络本体不偷偷 resize；forward 不需要已知内外参。
 
 ## 2. 共享 encoder：相机和时间在这里怎样加入
 
-源码：[encoder.py](../multicamera4rc/encoder.py)、[embeddings.py](../multicamera4rc/embeddings.py)、[attention.py](../multicamera4rc/attention.py)。
+源码：[encoder.py](../multid4rt/encoder.py)、[embeddings.py](../multid4rt/embeddings.py)、[attention.py](../multid4rt/attention.py)。
 
 giant 使用 `D=1536`、40 层、24 heads、patch14。前 13 层（索引 0–12）按每张图执行 local attention，初始 patch embedding 为 `[B,S,L,D]`，含 CLS 时为 `[B,S,L+1,D]`。空间位置继承 4RC/DINO 的插值位置编码。
 
@@ -86,7 +86,7 @@ time   [B,S,2D]
 
 ## 3. 几何分支：从 RGB 到基础点
 
-源码：[geometry.py](../multicamera4rc/geometry.py)、[DualDPT](../multicamera4rc/vendor/heads/dualdpt.py)。
+源码：[geometry.py](../multid4rt/geometry.py)、[DualDPT](../multid4rt/vendor/heads/dualdpt.py)。
 
 四组 `[B,S,L,3072]` 分别 LayerNorm、转为空间网格，经 1×1 卷积投影到 `256/512/1024/1024` 通道，空间尺度依次为 `4Hp×4Wp`、`2Hp×2Wp`、`Hp×Wp`、`ceil(Hp/2)×ceil(Wp/2)`。DPT 逐级融合，特征宽度 256，最终 neck 为 128。
 
@@ -110,7 +110,7 @@ fx = (W/2) / tan(fov_w/2)     fy = (H/2) / tan(fov_h/2)
 cx = W/2 + W*principal_dx    cy = H/2 + H*principal_dy
 ```
 
-主点 offset 新增线性头零初始化，原 4RC 的 9 维头保留。每张观察独立输出 `K,c2w`，没有硬性跨时刻共享 K，也没有将预测的第一个 c2w 硬编码为单位阵；参考坐标约定通过输入角色及 GT 监督学习。
+主点 offset 新增线性头零初始化，原 4RC 的 9 维头保留。每张观察独立输出 `K,c2w`，没有硬性跨时刻共享 K，也没有将预测的第一个 c2w 硬编码为单位阵；输入参考角色与 checkpoint 决定参考坐标约定。
 
 基础点直接可微反投影：
 
@@ -120,11 +120,11 @@ P_s(u,v)   = R_c2w(s) x_cam(u,v) + t_c2w(s)
 P          [B,S,H,W,3]
 ```
 
-基础点采用 depth+K+c2w，ray 是辅助监督分支。轨迹损失可以反传到深度、相机头和 encoder。几何回归和相机计算在 float32 中执行。
+基础点采用 depth+K+c2w，ray 是辅助射线输出。轨迹与深度、相机头及 encoder 共用同一计算链。几何回归和相机计算在 float32 中执行。
 
 ## 4. 运动分支：全部观察 KV + 时间条件
 
-源码：[metadata.py](../multicamera4rc/metadata.py)、[motion.py](../multicamera4rc/motion.py)。
+源码：[metadata.py](../multid4rt/metadata.py)、[motion.py](../multid4rt/motion.py)。
 
 ### 全时刻 KV
 
@@ -196,7 +196,7 @@ X_s(t)    = P_s+Δ_s(t)
 
 VisibilityHead 对每个目标相机投影 `X_s(t)`，采样目标特征、预测深度/置信度，拼接：源 motion 特征 128 + 目标 patch 投影特征 128 + 4 个几何 cue（归一化投影坐标2、相对深度残差1、log-depth-confidence1）。共享 MLP `260→128→64→1` 输出 logit。
 
-投影坐标及几何 cue 停止梯度，源/目标特征保留梯度。输出 `visibility=sigmoid(logit)*projection_valid`；投影失败不自动生成负 GT，训练只对 GT 的独立有效 mask 计算可见性损失。`motion_confidence` 是回归可靠性，与遮挡概率不同。
+投影坐标及几何 cue 停止梯度，源/目标特征保留梯度。输出 `visibility=sigmoid(logit)*projection_valid`；投影无效位置由独立的 `projection_valid` 标记。`motion_confidence` 是回归可靠性，与遮挡概率不同。
 
 ## 6. 输出与下游接口
 
@@ -216,7 +216,7 @@ VisibilityHead 对每个目标相机投影 `X_s(t)`，采样目标特征、预�
 `ray/ray_conf/ray_list/ray_conf_list` 为上述低分辨率辅助输出。未提供 visibility 时，对应三个输出键不返回。
 
 ```python
-from multicamera4rc.tasks import scene_flow, sample_tracks
+from multid4rt.tasks import scene_flow, sample_tracks
 
 # 编码可在同一次推理的不同源/目标请求间复用。
 with torch.inference_mode():
@@ -227,7 +227,7 @@ with torch.inference_mode():
     # trajectory [B,N,Tq,3]；visibility [B,N,Tq,C]
 ```
 
-`scene_flow` 是同一个被跟踪物理点的世界位移，不是两个像素网格直接相减得到的 optical flow。源像素始终保留身份；若需要 t0 图像网格上的 flow，应选择 t0 源图。推理输出的场景尺度来自训练归一化约定，未知内外参的 RGB 重建不保证绝对米制尺度。
+`scene_flow` 是同一个被跟踪物理点的世界位移，不是两个像素网格直接相减得到的 optical flow。源像素始终保留身份；若需要 t0 图像网格上的 flow，应选择 t0 源图。推理输出的场景尺度由 checkpoint 决定，未知内外参的 RGB 重建不保证绝对米制尺度。
 
 `EncodedScene` 缓存只对应产生它的输入；图片或元数据变化时需要重新编码。
 
@@ -251,7 +251,7 @@ with torch.inference_mode():
 | 四源轨迹 | `[1,4,8,266,266,3]` |
 | 四源逐相机 visibility | `[1,4,8,4,266,266]` |
 
-padding 像素虽然有预测值，评估不作为有效 GT。该例用于说明维度，不承诺所有设备都能承载这一布局。
+padding 像素也会输出预测，使用结果时应排除这些位置。该例用于说明维度，不承诺所有设备都能承载这一布局。
 
 ## 8. 性能和断点兼容
 
@@ -266,12 +266,12 @@ padding 像素虽然有预测值，评估不作为有效 GT。该例用于说明
 
 | 加载方式 | KV 语义 |
 |---|---|
-| 新建 `MultiCamera4RCConfig()` / `tiny()` | `all_observations` |
+| 新建 `MultiD4RTConfig()` / `tiny()` | `all_observations` |
 | 原 4RC 权重初始化新模型 | 使用新模型指定配置，默认 `all_observations` |
 | 旧 native checkpoint，config 没有 memory 字段 | `target_time`，复现旧输出 |
 | 新 native checkpoint | 保存时的 scope |
 | 显式 CLI `--decoder-memory ...` 或传入 config | 按指定值切换，属于架构消融/迁移 |
 
-`target_time` 的 memory 是 `[B,U,C*L,D]`，cross-attention 使用 `[B*U,L+1,D]` 对 `[B*U,C*L,D]`。它仍可从 encoder 间接获得时间上下文，但直接 KV 只有当前目标时刻。两种模式的参数键/形状一致，可以加载同一份模型权重；参数能加载不代表迁移后预测数值或指标不变。切换前需重新检查实际显存和固定验证。
+`target_time` 的 memory 是 `[B,U,C*L,D]`，cross-attention 使用 `[B*U,L+1,D]` 对 `[B*U,C*L,D]`。它仍可从 encoder 间接获得时间上下文，但直接 KV 只有当前目标时刻。两种模式的参数键/形状一致，可以加载同一份模型权重；参数能加载不代表迁移后预测数值或指标不变。切换前需重新检查实际显存与输出。
 
-缺少 `time_origin` 的历史 native config 一律恢复为 `absolute`。新建模型默认 `clip_start`，推理/评估只有显式 `--time-origin clip_start` 才迁移旧模型。时间平移不变性已经过测试，但旧权重迁移后的绝对精度仍需微调与验证，不能把不变性测试当成收敛证明。
+缺少 `time_origin` 的历史 native config 一律恢复为 `absolute`。新建模型默认 `clip_start`，推理只有显式 `--time-origin clip_start` 才迁移旧模型。时间平移不变性经过测试；迁移旧权重后需要重新检查输出。
