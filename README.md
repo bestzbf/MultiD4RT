@@ -7,7 +7,7 @@ MultiD4RT 从同步多相机 RGB 序列重建随时间变化的三维场景，�
 ## 安装
 
 ```bash
-git clone --branch v0.5.0 https://github.com/bestzbf/MultiD4RT.git
+git clone --branch v0.5.1 https://github.com/bestzbf/MultiD4RT.git
 cd MultiD4RT
 python -m pip install -e '.[weights,viz]'
 multid4rt --help
@@ -113,5 +113,19 @@ multid4rt visualize --demo --mode multicamera --output outputs/viewer_demo --dev
 ```
 
 此示例使用随机 tiny 权重，仅验证流程。文件夹格式、视频输入、原图像素查询、预测复用和导出维度见 [可视化说明](docs/visualization.md)。
+
+## 真实数据实例
+
+打开 [examples/index.html](examples/index.html) 可查看已训练 giant 权重生成的五组精选重建：两组 Syn4D C2T4 人物动态场景、BlendedMVS C8T1 城市建筑、Hypersim C4T1 室内与 PointOdyssey C1T16 人物序列。每组附原始 RGB、交互式三维页面、PLY、轨迹与 scene flow，可直接离线打开。案例按展示质量筛选；具体输入与重新推理命令见[实例说明](examples/README.md)。
+
+| Syn4D · Temple 双相机动态 | Syn4D · Warehouse 双相机动态 |
+|---|---|
+| [![Syn4D Temple](examples/syn4d_temple_c2t4/preview.png)](examples/syn4d_temple_c2t4/viewer.html) | [![Syn4D Warehouse](examples/syn4d_warehouse_c2t4/preview.png)](examples/syn4d_warehouse_c2t4/viewer.html) |
+| **BlendedMVS · 城市建筑** | **Hypersim · 室内重建** |
+| [![BlendedMVS](examples/blended_city_c8t1/preview.png)](examples/blended_city_c8t1/viewer.html) | [![Hypersim](examples/hypersim_c4t1/preview.png)](examples/hypersim_c4t1/viewer.html) |
+| **PointOdyssey · 单相机人物追踪** | |
+| [![PointOdyssey](examples/pointodyssey_c1t16/preview.png)](examples/pointodyssey_c1t16/viewer.html) | |
+
+也可下载[完整实例包](https://github.com/bestzbf/MultiD4RT/releases/download/v0.5.1/multid4rt-real-examples-step56000.zip)，解压后打开 `examples/index.html`。GitHub 文件预览显示源码，交互页面请在本地浏览器中打开。
 
 组件来源与许可见 [NOTICE](NOTICE)。

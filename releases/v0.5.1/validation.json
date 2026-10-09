@@ -1,0 +1,366 @@
+{
+  "project": "MultiD4RT",
+  "version": "0.5.1",
+  "date": "2026-10-09",
+  "previous_release": "v0.5.0",
+  "tests": {
+    "passed": 79,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "visualization_tests": 13
+  },
+  "model": {
+    "unchanged_package_files": 61,
+    "changed_package_files": [
+      "multid4rt/assets/viewer.html",
+      "multid4rt/visualization.py"
+    ],
+    "core_network_and_vendor_bytes_unchanged": true,
+    "checkpoint_and_inference_bytes_unchanged": true,
+    "native_giant_checkpoint_step": 56000
+  },
+  "native_cuda": {
+    "verified": true,
+    "device": "NVIDIA B300 SXM6 AC",
+    "torch": "2.10.0+cu128",
+    "amp": "bfloat16",
+    "image_resolution": "original with patch padding only",
+    "calibration_inputs": false,
+    "ground_truth_inputs": false,
+    "query_chunking": false,
+    "all_prediction_tensors_finite": true,
+    "source_anchor_verified": true,
+    "cases": [
+      {
+        "name": "syn4d_temple_c2t4",
+        "sequence": "syn4d_v1_stride_1/temple_group/seq_000003",
+        "cameras": 2,
+        "frames": 4,
+        "native_hw": [
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ]
+        ],
+        "model_hw": [
+          728,
+          1288
+        ],
+        "inference_seconds": 2.4030715757980943,
+        "peak_allocated_gib": 23.150005340576172
+      },
+      {
+        "name": "syn4d_warehouse_c2t4",
+        "sequence": "syn4d_v1_stride_1/warehouse_group_static/seq_000005",
+        "cameras": 2,
+        "frames": 4,
+        "native_hw": [
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ],
+          [
+            720,
+            1280
+          ]
+        ],
+        "model_hw": [
+          728,
+          1288
+        ],
+        "inference_seconds": 5.538423681166023,
+        "peak_allocated_gib": 23.149900436401367
+      },
+      {
+        "name": "blended_city_c8t1",
+        "sequence": "58a41819156b87103d3e92a5",
+        "cameras": 8,
+        "frames": 1,
+        "native_hw": [
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            560
+          ]
+        ],
+        "model_hw": [
+          420,
+          560
+        ],
+        "inference_seconds": 5.966562606859952,
+        "peak_allocated_gib": 11.664177894592285
+      },
+      {
+        "name": "hypersim_c4t1",
+        "sequence": "ai_050_002/cam_00",
+        "cameras": 4,
+        "frames": 1,
+        "native_hw": [
+          [
+            768,
+            1024
+          ],
+          [
+            768,
+            1024
+          ],
+          [
+            768,
+            1024
+          ],
+          [
+            768,
+            1024
+          ]
+        ],
+        "model_hw": [
+          770,
+          1036
+        ],
+        "inference_seconds": 1.226642331108451,
+        "peak_allocated_gib": 14.340465068817139
+      },
+      {
+        "name": "pointodyssey_c1t16",
+        "sequence": "egobody_3rd",
+        "cameras": 1,
+        "frames": 16,
+        "native_hw": [
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ],
+          [
+            540,
+            960
+          ]
+        ],
+        "model_hw": [
+          546,
+          966
+        ],
+        "inference_seconds": 2.1301608672365546,
+        "peak_allocated_gib": 24.400230407714844
+      }
+    ]
+  },
+  "installed_wheel": {
+    "version": "0.5.1",
+    "outside_source": true,
+    "all_packaged_source_bytes_match": true,
+    "cpu_demo_passed": true,
+    "offline_viewer_passed": true,
+    "exact_display_point_budget_verified": 128,
+    "static_tracks_hidden_by_default": true
+  },
+  "browser": {
+    "passed": true,
+    "browser": "Chrome offline / SwiftShader",
+    "cases": [
+      {
+        "name": "syn4d_temple_c2t4",
+        "mode": "multicamera",
+        "cameras": 2,
+        "frames": 4,
+        "checkpoint_step": 56000,
+        "original_rgb_verified": true,
+        "exports_verified": true,
+        "controls_verified": true,
+        "javascript_errors": [],
+        "external_requests": []
+      },
+      {
+        "name": "syn4d_warehouse_c2t4",
+        "mode": "multicamera",
+        "cameras": 2,
+        "frames": 4,
+        "checkpoint_step": 56000,
+        "original_rgb_verified": true,
+        "exports_verified": true,
+        "controls_verified": true,
+        "javascript_errors": [],
+        "external_requests": []
+      },
+      {
+        "name": "blended_city_c8t1",
+        "mode": "multiview",
+        "cameras": 8,
+        "frames": 1,
+        "checkpoint_step": 56000,
+        "original_rgb_verified": true,
+        "exports_verified": true,
+        "controls_verified": true,
+        "javascript_errors": [],
+        "external_requests": []
+      },
+      {
+        "name": "hypersim_c4t1",
+        "mode": "multiview",
+        "cameras": 4,
+        "frames": 1,
+        "checkpoint_step": 56000,
+        "original_rgb_verified": true,
+        "exports_verified": true,
+        "controls_verified": true,
+        "javascript_errors": [],
+        "external_requests": []
+      },
+      {
+        "name": "pointodyssey_c1t16",
+        "mode": "monocular",
+        "cameras": 1,
+        "frames": 16,
+        "checkpoint_step": 56000,
+        "original_rgb_verified": true,
+        "exports_verified": true,
+        "controls_verified": true,
+        "javascript_errors": [],
+        "external_requests": []
+      }
+    ]
+  },
+  "examples": {
+    "cases": 5,
+    "input_images": 44,
+    "selection": "Curated from fixed held-out validation examples for demonstration; not aggregate metrics",
+    "full_resolution_rgb_hashes_verified": true,
+    "point_selection": "Fixed-seed uniform pixels without replacement; no GT or confidence mask",
+    "track_queries": "Visible subject pixels selected manually from RGB; no GT or prediction-error selection"
+  }
+}

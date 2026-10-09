@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "browser": "Chrome offline / SwiftShader",
+  "cases": [
+    {
+      "name": "syn4d_temple_c2t4",
+      "mode": "multicamera",
+      "cameras": 2,
+      "frames": 4,
+      "checkpoint_step": 56000,
+      "original_rgb_verified": true,
+      "exports_verified": true,
+      "controls_verified": true,
+      "javascript_errors": [],
+      "external_requests": []
+    },
+    {
+      "name": "syn4d_warehouse_c2t4",
+      "mode": "multicamera",
+      "cameras": 2,
+      "frames": 4,
+      "checkpoint_step": 56000,
+      "original_rgb_verified": true,
+      "exports_verified": true,
+      "controls_verified": true,
+      "javascript_errors": [],
+      "external_requests": []
+    },
+    {
+      "name": "blended_city_c8t1",
+      "mode": "multiview",
+      "cameras": 8,
+      "frames": 1,
+      "checkpoint_step": 56000,
+      "original_rgb_verified": true,
+      "exports_verified": true,
+      "controls_verified": true,
+      "javascript_errors": [],
+      "external_requests": []
+    },
+    {
+      "name": "hypersim_c4t1",
+      "mode": "multiview",
+      "cameras": 4,
+      "frames": 1,
+      "checkpoint_step": 56000,
+      "original_rgb_verified": true,
+      "exports_verified": true,
+      "controls_verified": true,
+      "javascript_errors": [],
+      "external_requests": []
+    },
+    {
+      "name": "pointodyssey_c1t16",
+      "mode": "monocular",
+      "cameras": 1,
+      "frames": 16,
+      "checkpoint_step": 56000,
+      "original_rgb_verified": true,
+      "exports_verified": true,
+      "controls_verified": true,
+      "javascript_errors": [],
+      "external_requests": []
+    }
+  ]
+}

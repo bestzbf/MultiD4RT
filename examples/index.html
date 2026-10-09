@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MultiD4RT · 精选重建实例</title>
+<style>
+:root{color-scheme:dark;--bg:#10151d;--panel:#18212e;--line:#2c394b;--text:#edf2f7;--muted:#a6b6cb;--accent:#82baff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px system-ui,-apple-system,sans-serif;line-height:1.6}main{max-width:1360px;margin:auto;padding:40px 28px}header{margin-bottom:30px}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:1.7px;text-transform:uppercase}h1{font-size:36px;letter-spacing:-1px;margin:7px 0 10px;line-height:1.2}header p{color:var(--muted);max-width:890px;margin:8px 0}.stamp{display:inline-block;background:#213954;border:1px solid #3b5c80;padding:5px 12px;border-radius:18px;color:#c0dfff;font-size:12px;margin:10px 6px 0 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}.preview{display:block;background:#17212e;overflow:hidden}.preview img{width:100%;height:auto;display:block;transition:transform .2s}.preview:hover img{transform:scale(1.015)}.info{padding:18px 22px 22px}.kind{color:var(--accent);font-size:12px;letter-spacing:.4px}h2{margin:5px 0 6px;font-size:23px}.description{color:var(--muted);font-size:14px;margin:0 0 16px}.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;margin-bottom:17px}.meta span{border:1px solid #3a4b63;border-radius:5px;padding:3px 8px;color:#c4d3e6}.links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}a{color:var(--accent);text-decoration:none}.primary{display:inline-block;background:#71b1ff;color:#0e2038;font-size:14px;font-weight:650;padding:7px 14px;border-radius:6px}.primary:hover{background:#a1cbff}.secondary{font-size:13px}footer{margin-top:28px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:13px}.notice{margin-top:18px;color:var(--muted);font-size:13px}.wide{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr;align-items:center}
+@media(max-width:760px){main{padding:25px 16px}.grid{grid-template-columns:1fr}h1{font-size:29px}.info{padding:16px}.links{gap:12px}.wide{grid-column:auto;display:block}}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">Multi-camera 4D Reconstruction and Tracking</div>
+<h1>MultiD4RT · 精选重建实例</h1>
+<p>五组真实 RGB 输入，展示双相机人物动态场景、多视角建筑与室内重建，以及单相机连续三维追踪。三维点、深度和相机位姿均由模型预测。</p>
+<span class="stamp">已训练 giant 权重 · step 56,000</span><span class="stamp">原始分辨率 · 保持宽高比</span><span class="stamp">离线交互页面</span>
+<p class="notice">点击打开实例：拖动旋转、滚轮缩放、播放时间；可切换相机、查看深度或点选源点添加轨迹。</p>
+</header>
+<section class="grid">
+<article class="card">
+<a class="preview" href="syn4d_temple_c2t4/viewer.html"><img src="syn4d_temple_c2t4/preview.png" alt="Syn4D temple 双相机人物重建与三维轨迹"></a>
+<div class="info"><div class="kind">同步双相机 / 人物动态与三维追踪</div><h2>Syn4D · Temple</h2><p class="description">两个视角共同观察人物与台阶场景，播放人物运动并查看同一源像素的三维轨迹。</p>
+<div class="meta"><span>C2 × T4</span><span>720 × 1280 原图</span><span>帧 101–116 / 间隔 5</span><span>30,000 个显示点</span></div>
+<div class="links"><a class="primary" href="syn4d_temple_c2t4/viewer.html">打开三维实例 ↗</a><a class="secondary" href="syn4d_temple_c2t4/inputs/observations.json">输入清单</a><a class="secondary" href="syn4d_temple_c2t4/provenance.json">推理记录</a></div></div>
+</article>
+<article class="card">
+<a class="preview" href="syn4d_warehouse_c2t4/viewer.html"><img src="syn4d_warehouse_c2t4/preview.png" alt="Syn4D warehouse 双相机场景重建与人物运动"></a>
+<div class="info"><div class="kind">同步双相机 / 人物与角色动态</div><h2>Syn4D · Warehouse</h2><p class="description">相邻同步视角中的人物、角色和仓库环境，可比较每个相机的几何并查看运动轨迹。</p>
+<div class="meta"><span>C2 × T4</span><span>720 × 1280 原图</span><span>帧 15–30 / 间隔 5</span><span>30,000 个显示点</span></div>
+<div class="links"><a class="primary" href="syn4d_warehouse_c2t4/viewer.html">打开三维实例 ↗</a><a class="secondary" href="syn4d_warehouse_c2t4/inputs/observations.json">输入清单</a><a class="secondary" href="syn4d_warehouse_c2t4/provenance.json">推理记录</a></div></div>
+</article>
+<article class="card">
+<a class="preview" href="blended_city_c8t1/viewer.html"><img src="blended_city_c8t1/preview.png" alt="BlendedMVS 八视角城市建筑重建"></a>
+<div class="info"><div class="kind">多视角单时刻重建 / 建筑与街道</div><h2>BlendedMVS · 城市建筑</h2><p class="description">八张静态照片重建建筑、树木与街道，查看各视角在共同坐标中的点云和预测相机位置。</p>
+<div class="meta"><span>C8 × T1</span><span>420 × 560 原图</span><span>8 个独立视角</span><span>50,000 个显示点</span></div>
+<div class="links"><a class="primary" href="blended_city_c8t1/viewer.html">打开三维实例 ↗</a><a class="secondary" href="blended_city_c8t1/inputs/observations.json">输入清单</a><a class="secondary" href="blended_city_c8t1/provenance.json">推理记录</a></div></div>
+</article>
+<article class="card">
+<a class="preview" href="hypersim_c4t1/viewer.html"><img src="hypersim_c4t1/preview.png" alt="Hypersim 四视角室内重建"></a>
+<div class="info"><div class="kind">多视角单时刻重建 / 室内空间</div><h2>Hypersim · 室内</h2><p class="description">四个视角重建室内墙面、家具和地面；可旋转观察结构，或切换单个视角查看预测深度。</p>
+<div class="meta"><span>C4 × T1</span><span>768 × 1024 原图</span><span>4 个独立视角</span><span>50,000 个显示点</span></div>
+<div class="links"><a class="primary" href="hypersim_c4t1/viewer.html">打开三维实例 ↗</a><a class="secondary" href="hypersim_c4t1/inputs/observations.json">输入清单</a><a class="secondary" href="hypersim_c4t1/provenance.json">推理记录</a></div></div>
+</article>
+<article class="card wide">
+<a class="preview" href="pointodyssey_c1t16/viewer.html"><img src="pointodyssey_c1t16/preview.png" alt="PointOdyssey 单相机十六帧人物追踪与房间重建"></a>
+<div class="info"><div class="kind">单相机动态重建 / 连续三维追踪</div><h2>PointOdyssey · 人物序列</h2><p class="description">在移动视角下重建房间与人物，播放 16 个目标帧并观察人物源像素的三维位置变化。</p>
+<div class="meta"><span>C1 × T16</span><span>540 × 960 原图</span><span>帧 30–75 / 间隔 3</span><span>25,000 个显示点</span></div>
+<div class="links"><a class="primary" href="pointodyssey_c1t16/viewer.html">打开三维实例 ↗</a><a class="secondary" href="pointodyssey_c1t16/inputs/observations.json">输入清单</a><a class="secondary" href="pointodyssey_c1t16/provenance.json">推理记录</a></div></div>
+</article>
+</section>
+<footer>每组包含原始 RGB、相机与帧号清单、离线三维页面、PLY、轨迹与 scene flow。显示点使用固定种子均匀取样，时间切换保持源点身份一致。三维单位由 checkpoint 决定。<br>案例按展示质量筛选；详细输入与重新推理命令见 <a href="README.md">实例说明</a> · <a href="../docs/visualization.md">可视化使用说明</a>。</footer>
+</main></body></html>

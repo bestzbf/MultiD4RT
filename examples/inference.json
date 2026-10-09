@@ -1,0 +1,662 @@
+{
+  "stage": "passed",
+  "checkpoint_step": 56000,
+  "checkpoint": "step_00056000.pt",
+  "config": {
+    "embed_dim": 1536,
+    "encoder_depth": 40,
+    "encoder_heads": 24,
+    "out_layers": [
+      19,
+      27,
+      33,
+      39
+    ],
+    "alt_start": 13,
+    "positional_image_size": 518,
+    "patch_size": 14,
+    "ffn_layer": "swiglufused",
+    "motion_depth": 4,
+    "motion_heads": 16,
+    "dpt_features": 256,
+    "dpt_channels": [
+      256,
+      512,
+      1024,
+      1024
+    ],
+    "decoder_memory": "target_time",
+    "time_origin": "clip_start",
+    "geometry_chunk_size": 8,
+    "attention_chunk_size": null,
+    "visibility_chunk_size": null,
+    "gradient_checkpointing": false
+  },
+  "device": "NVIDIA B300 SXM6 AC",
+  "torch": "2.10.0+cu128",
+  "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+  "network_inputs": [
+    "RGB",
+    "camera_id",
+    "time_idx",
+    "source_obs_idx",
+    "query_time_idx"
+  ],
+  "native_resolution": true,
+  "query_chunking": false,
+  "return_visibility": false,
+  "cases": [
+    {
+      "name": "syn4d_temple_c2t4",
+      "title": "Syn4D · Temple",
+      "sequence": "syn4d_v1_stride_1/temple_group/seq_000003",
+      "mode": "multicamera",
+      "cameras": 2,
+      "frames": 4,
+      "camera_ids": [
+        0,
+        1
+      ],
+      "time_idx": [
+        101,
+        106,
+        111,
+        116
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "model_hw": [
+        728,
+        1288
+      ],
+      "source_obs_idx": [
+        0,
+        4
+      ],
+      "input_rgb_exact_match": true,
+      "checkpoint_step": 56000,
+      "checkpoint_file": "step_00056000.pt",
+      "weights": "trained_native",
+      "model": "MultiD4RT giant",
+      "network_inputs": [
+        "RGB",
+        "camera_id",
+        "time_idx",
+        "source_obs_idx",
+        "query_time_idx"
+      ],
+      "inference_seconds": 2.4030715757980943,
+      "peak_allocated_gib": 23.150005340576172,
+      "displayed_source_points": 30000,
+      "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+      "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+      "held_out": true,
+      "input_sha256": {
+        "camera_0/frame_000101.png": "082abf25431bcbbb862363862f8900529d0b60c2561590c420ee35f07ec1337c",
+        "camera_0/frame_000106.png": "073b9a2db9d3215f1b08400449d609c10984bd8d56cedf51f36acd66ffd75b3f",
+        "camera_0/frame_000111.png": "040099bcb5849f4cf6dcae3eca6f243a64b229d757233dfe5b0bff2bd5e13232",
+        "camera_0/frame_000116.png": "bdb43cd4f96baf5320af3d9d58efeaf4e34b67e9c04d7b02d7278f69d6178860",
+        "camera_1/frame_000101.png": "c4bb77a2bbd159ca4c5bbb700a0d3c25b7678b0a904cc9bf4ef071f58517f563",
+        "camera_1/frame_000106.png": "50f61fce4ce9aca553a1606d899bf2908a9f803a81e42e63bbec2b8488dcdd2e",
+        "camera_1/frame_000111.png": "e9cd14f827d3e2c6518c9ef110db0fe9b7490d500344a2027a3ccee9d73376df",
+        "camera_1/frame_000116.png": "e239f98b38fb8df18a6a344fd21c8c210b469c80048dca3d80574ffa625893f5"
+      },
+      "display_max_points": 30000,
+      "display_sampling_seed": "9157 + observation",
+      "display_initial_camera": {
+        "eye": {
+          "x": 0.75,
+          "y": -0.85,
+          "z": -1.8
+        },
+        "up": {
+          "x": 0.001102257,
+          "y": -0.89880019,
+          "z": -0.43835714
+        }
+      },
+      "track_query_selection": "Visible subject pixels chosen manually in first RGB image; no GT or prediction-error selection",
+      "track_queries_file": "queries.json",
+      "display_up_source": {
+        "description": "Normal of three model-predicted floor pixels selected in first RGB image; display orientation only",
+        "source_observation": 0,
+        "pixels": [
+          [
+            1110,
+            460
+          ],
+          [
+            1160,
+            650
+          ],
+          [
+            630,
+            640
+          ]
+        ]
+      }
+    },
+    {
+      "name": "syn4d_warehouse_c2t4",
+      "title": "Syn4D · Warehouse",
+      "sequence": "syn4d_v1_stride_1/warehouse_group_static/seq_000005",
+      "mode": "multicamera",
+      "cameras": 2,
+      "frames": 4,
+      "camera_ids": [
+        2,
+        3
+      ],
+      "time_idx": [
+        15,
+        20,
+        25,
+        30
+      ],
+      "native_hw": [
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          720,
+          1280
+        ]
+      ],
+      "model_hw": [
+        728,
+        1288
+      ],
+      "source_obs_idx": [
+        0,
+        4
+      ],
+      "input_rgb_exact_match": true,
+      "checkpoint_step": 56000,
+      "checkpoint_file": "step_00056000.pt",
+      "weights": "trained_native",
+      "model": "MultiD4RT giant",
+      "network_inputs": [
+        "RGB",
+        "camera_id",
+        "time_idx",
+        "source_obs_idx",
+        "query_time_idx"
+      ],
+      "inference_seconds": 5.538423681166023,
+      "peak_allocated_gib": 23.149900436401367,
+      "displayed_source_points": 30000,
+      "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+      "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+      "held_out": true,
+      "input_sha256": {
+        "camera_2/frame_000015.png": "068323bfa54bfbe9aaaae956c3846a1afe7a29806948df471825a0684d47c65e",
+        "camera_2/frame_000020.png": "d464f7e2e3e22a9b3123971780d3f5a74739bec9c6d508f0698205f351b7d8b3",
+        "camera_2/frame_000025.png": "d3d9e9dfbd0b9414ba12c5a6d0d624746c1cc7b3beee5e6e269f3b2bfa9a7913",
+        "camera_2/frame_000030.png": "34546be0129da22c6bc821058c6a958c4ca4a989c1d3cbfa44e1cbd73bcf1822",
+        "camera_3/frame_000015.png": "16b2973bd6c0e82a1f48f7d9f795d8d353371659a2cfcc25ca135414934f8262",
+        "camera_3/frame_000020.png": "68eaca6669773ad7630dd0b969a0f3313eae846ced0040384f68941ef49c06ad",
+        "camera_3/frame_000025.png": "3d190d1070270372bfb4ae9142dc6f6cb0c053c98e8465ec641504c01fb98680",
+        "camera_3/frame_000030.png": "0a75bf24972e4b9a978729377df99bbbbc0e406d5754a050d8828b8a78e4be7d"
+      },
+      "display_max_points": 30000,
+      "display_sampling_seed": "9157 + observation",
+      "display_initial_camera": {
+        "eye": {
+          "x": 0.75,
+          "y": -0.85,
+          "z": -1.8
+        },
+        "up": {
+          "x": -1.7128e-05,
+          "y": -0.91735518,
+          "z": -0.39806977
+        }
+      },
+      "track_query_selection": "Visible subject pixels chosen manually in first RGB image; no GT or prediction-error selection",
+      "track_queries_file": "queries.json",
+      "display_up_source": {
+        "description": "Normal of three model-predicted floor pixels selected in first RGB image; display orientation only",
+        "source_observation": 0,
+        "pixels": [
+          [
+            1150,
+            350
+          ],
+          [
+            1150,
+            650
+          ],
+          [
+            650,
+            650
+          ]
+        ]
+      }
+    },
+    {
+      "name": "blended_city_c8t1",
+      "title": "BlendedMVS · City",
+      "sequence": "58a41819156b87103d3e92a5",
+      "mode": "multiview",
+      "cameras": 8,
+      "frames": 1,
+      "camera_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "time_idx": [
+        0
+      ],
+      "native_hw": [
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ],
+        [
+          420,
+          560
+        ]
+      ],
+      "model_hw": [
+        420,
+        560
+      ],
+      "source_obs_idx": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "input_rgb_exact_match": true,
+      "checkpoint_step": 56000,
+      "checkpoint_file": "step_00056000.pt",
+      "weights": "trained_native",
+      "model": "MultiD4RT giant",
+      "network_inputs": [
+        "RGB",
+        "camera_id",
+        "time_idx",
+        "source_obs_idx",
+        "query_time_idx"
+      ],
+      "inference_seconds": 5.966562606859952,
+      "peak_allocated_gib": 11.664177894592285,
+      "displayed_source_points": 50000,
+      "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+      "automatic_tracks": "uniform source pixels; no target labels",
+      "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+      "held_out": true,
+      "input_sha256": {
+        "camera_0/frame_000000.png": "a745168202fff79661fd412956c826a7baffa14b312e70fae1e0ddf3b8f39653",
+        "camera_1/frame_000000.png": "0c84706668513acb33867f809cf1747c8be5020045faaa748e165d3ef11bbe27",
+        "camera_2/frame_000000.png": "e9925423fb606927ee5cdb91530197e4edf38b04f078b04b2aa983f84d8407a0",
+        "camera_3/frame_000000.png": "5e1c49a462b69ee0d8825cc8e47383179ce4c3a99903aeb90e2c9b45f97eda79",
+        "camera_4/frame_000000.png": "c50400920fdb325735126e0d76710a7ea545cebd60c199b0363ba993978c2a9a",
+        "camera_5/frame_000000.png": "5ad8e97d90f152e2d4173b5ee5fd6c27d6773a0164ac98b7dee74345aae031d8",
+        "camera_6/frame_000000.png": "1a46b8c03c03e19343c6236ade16c22bacdb9e5ceea65366ac37f4b45c983901",
+        "camera_7/frame_000000.png": "acfa453400867907e434d6ba7d7369b654a3b6476eb49e13da8e54c528a4c3f8"
+      },
+      "display_max_points": 50000,
+      "display_sampling_seed": "9157 + observation",
+      "display_initial_camera": {
+        "eye": {
+          "x": 1,
+          "y": -0.9,
+          "z": -1.7
+        },
+        "up": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "original_view_indices": [
+        67,
+        65,
+        62,
+        70,
+        72,
+        68,
+        76,
+        63
+      ]
+    },
+    {
+      "name": "hypersim_c4t1",
+      "title": "Hypersim · Multi-view",
+      "sequence": "ai_050_002/cam_00",
+      "mode": "multiview",
+      "cameras": 4,
+      "frames": 1,
+      "camera_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "time_idx": [
+        0
+      ],
+      "native_hw": [
+        [
+          768,
+          1024
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          768,
+          1024
+        ]
+      ],
+      "model_hw": [
+        770,
+        1036
+      ],
+      "source_obs_idx": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_rgb_exact_match": true,
+      "checkpoint_step": 56000,
+      "checkpoint_file": "step_00056000.pt",
+      "weights": "trained_native",
+      "model": "MultiD4RT giant",
+      "network_inputs": [
+        "RGB",
+        "camera_id",
+        "time_idx",
+        "source_obs_idx",
+        "query_time_idx"
+      ],
+      "inference_seconds": 1.226642331108451,
+      "peak_allocated_gib": 14.340465068817139,
+      "displayed_source_points": 50000,
+      "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+      "automatic_tracks": "uniform source pixels; no target labels",
+      "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+      "held_out": true,
+      "input_sha256": {
+        "camera_0/frame_000000.png": "f4765b051fef34db51256086260e9f15056d67e2a401d6ca5f360b6af506dbed",
+        "camera_1/frame_000000.png": "cbab1b192967bcf97e8b3aeb1b3be9a61ab46b19f7ed67230ac2d080b7403476",
+        "camera_2/frame_000000.png": "c9c6c42252d49cc715f0336e5050c764c4b944dbaa0910b4a3494b7663b24cc9",
+        "camera_3/frame_000000.png": "e2e072b8ddc599238f05924cafc2512362aacb61a03c534aca72413353ccb4c0"
+      },
+      "display_max_points": 50000,
+      "display_sampling_seed": "9157 + observation",
+      "display_initial_camera": {
+        "eye": {
+          "x": 1,
+          "y": -0.9,
+          "z": -1.7
+        },
+        "up": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "original_view_indices": [
+        48,
+        47,
+        45,
+        54
+      ]
+    },
+    {
+      "name": "pointodyssey_c1t16",
+      "title": "PointOdyssey · 单相机动态追踪",
+      "sequence": "egobody_3rd",
+      "mode": "monocular",
+      "cameras": 1,
+      "frames": 16,
+      "camera_ids": [
+        0
+      ],
+      "time_idx": [
+        30,
+        33,
+        36,
+        39,
+        42,
+        45,
+        48,
+        51,
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75
+      ],
+      "native_hw": [
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ],
+        [
+          540,
+          960
+        ]
+      ],
+      "model_hw": [
+        546,
+        966
+      ],
+      "source_obs_idx": [
+        0
+      ],
+      "input_rgb_exact_match": true,
+      "checkpoint_step": 56000,
+      "checkpoint_file": "step_00056000.pt",
+      "weights": "trained_native",
+      "model": "MultiD4RT giant",
+      "network_inputs": [
+        "RGB",
+        "camera_id",
+        "time_idx",
+        "source_obs_idx",
+        "query_time_idx"
+      ],
+      "inference_seconds": 2.1301608672365546,
+      "peak_allocated_gib": 24.400230407714844,
+      "displayed_source_points": 25000,
+      "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+      "original_rgb_cache": "fixed native RGB example cache",
+      "input_sha256": {
+        "frame_000030.png": "589b92e692fc7cdac664f02d8eb62c37fa4dfd3d39c2898cfcf4745572452b17",
+        "frame_000033.png": "db3e43ab455ca9dc53c3606bddfbf1803de61d2d62fba6973193ab8b83d19494",
+        "frame_000036.png": "697289b3c437e8e007f3de53ddd2f4d9dc6120c79b4b693eaae8c234dd9760c3",
+        "frame_000039.png": "2e2e0b9f45ca5cf8552943642289bf1419361dc1c197bf03baa0f1aff0cf710d",
+        "frame_000042.png": "4f9383e9685374e93e14d6a95aaa327fe63dd3cd572447bd9ddb5dc09ed7e740",
+        "frame_000045.png": "692133821da341884ca002c95e51f2e85b9118c7f1238ee7cc451cad2db232a4",
+        "frame_000048.png": "bca16af360f298429468f94640bd355e62a8073334ecbc8c76d130f12fc595f8",
+        "frame_000051.png": "48ae239576c93b619f4779e7094fa6277c6e97128f0a0c9c33acf129484a114a",
+        "frame_000054.png": "4fbc13bb8c04a25ba3f8a6664b3a6fe0a2694bd7aec125e5c1e29c8f90b8f315",
+        "frame_000057.png": "5da96bb0f3975db3e3c437a86c7a6fecb1a8933f85a8b9544ee01f174e28fabc",
+        "frame_000060.png": "9ab45231ceb747a92b146e7fa2b2640bf5f7cb559254492917ae3e63bcd326da",
+        "frame_000063.png": "24c62f53bb9c4e6a6ba14b3964b8c3ccd2b516edfa1b36594f748706f49a84e5",
+        "frame_000066.png": "b691d731a5321da64767aaff89f08d58d24ef1a8f21dd4ce4ea2af59a9b7a357",
+        "frame_000069.png": "5642087eb9ac44098e9fd56bd232a5afd29f9155276190468bd1305b26bdb638",
+        "frame_000072.png": "03eabfd547600b961415fbb7c6fc3353bbdbf6b445f5aae6c20058c33fd099b3",
+        "frame_000075.png": "e29f47032e68d6b00e0c624e6af309d11faf578bfdddf9e5a9091382b5d14bfb"
+      },
+      "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+      "prediction_reused": true,
+      "display_max_points": 25000,
+      "display_sampling_seed": "9157 + observation",
+      "display_initial_camera": {
+        "eye": {
+          "x": 0.55,
+          "y": -0.4,
+          "z": -1.9
+        },
+        "up": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      },
+      "track_query_selection": "Visible subject pixels chosen manually in first RGB image; no GT or prediction-error selection",
+      "track_queries_file": "queries.json"
+    }
+  ],
+  "showcase_note": "Cases curated for demonstration; no aggregate benchmark score is reported."
+}
