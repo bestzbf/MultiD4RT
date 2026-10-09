@@ -7,6 +7,7 @@ import importlib
 COMMANDS = {
     "infer": "multid4rt.infer",
     "demo": "multid4rt.demo",
+    "visualize": "multid4rt.visualize",
 }
 
 

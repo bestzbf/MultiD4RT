@@ -7,15 +7,15 @@ MultiD4RT 从同步多相机 RGB 序列重建随时间变化的三维场景，�
 ## 安装
 
 ```bash
-git clone --branch v0.4.0 https://github.com/bestzbf/MultiD4RT.git
+git clone --branch v0.5.0 https://github.com/bestzbf/MultiD4RT.git
 cd MultiD4RT
-python -m pip install -e '.[weights]'
+python -m pip install -e '.[weights,viz]'
 multid4rt --help
 ```
 
 ## 模型输入与输出
 
-同步图像为 `[B,C,T,3,H,W]`，按相机优先展平为 `[B,S,3,H,W]`，其中 `S=C*T`。RGB 使用 `[0,1]` 浮点值或 uint8。保持图像比例，将高宽准备为 14 的倍数且均至少 28；推理默认不缩放。
+同步图像为 `[B,C,T,3,H,W]`，按相机优先展平为 `[B,S,3,H,W]`，其中 `S=C*T`。RGB 使用 `[0,1]` 浮点值或 uint8。保持图像比例，将高宽准备为 14 的倍数且均至少 28；基础 `infer` 命令默认不缩放。
 
 - `camera_id [B,S]`：同一物理相机共享 ID，片段内一致即可。
 - `time_idx [B,S]`：同步相机共享帧号，保留抽帧间隔，例如 `0,5,10`。
@@ -88,5 +88,30 @@ multid4rt demo --output outputs/demo
 ```
 
 CPU demo 用随机 tiny 权重验证输入输出流程。
+
+## 推理可视化
+
+同一个命令支持三种输入：
+
+```bash
+# 多相机 4D：每个相机一个子目录，使用共享帧号
+multid4rt visualize --input camera_sequences/ --mode multicamera --checkpoint model.pt --output outputs/multicamera --device cuda --amp
+
+# 多视角单时刻：一个目录中的图片代表不同相机
+multid4rt visualize --input scene_views/ --mode multiview --checkpoint model.pt --output outputs/multiview --device cuda --amp
+
+# 单相机动态重建 / 追踪：视频或连续帧目录
+multid4rt visualize --input video.mp4 --mode monocular --checkpoint model.pt --output outputs/monocular --device cuda --amp
+```
+
+打开输出目录中的 `viewer.html`，可以旋转三维场景、播放时间、切换相机、查看 RGB/深度和点选三维轨迹。页面离线可用，另导出 PLY、轨迹与 scene flow。可视化默认最多取 16 帧、等比例缩小至长边 518，使用 `--max-frames 0 --long-side 0` 保留全部帧和原始尺寸；补边像素会从显示与导出中排除。
+
+没有 checkpoint 时可先检查界面：
+
+```bash
+multid4rt visualize --demo --mode multicamera --output outputs/viewer_demo --device cpu
+```
+
+此示例使用随机 tiny 权重，仅验证流程。文件夹格式、视频输入、原图像素查询、预测复用和导出维度见 [可视化说明](docs/visualization.md)。
 
 组件来源与许可见 [NOTICE](NOTICE)。

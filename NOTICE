@@ -1,4 +1,4 @@
-MultiD4RT v0.4.0
+MultiD4RT v0.5.0
 https://github.com/bestzbf/MultiD4RT
 
 MultiD4RT is this project's multi-camera 4D reconstruction and tracking
@@ -18,4 +18,4 @@ Original development source:
   Commit: 404d4fdfe547574bb2cbfa6a283a1dae917c7a15
 
 Release provenance and verification:
-  releases/v0.4.0/validation.json
+  releases/v0.5.0/validation.json

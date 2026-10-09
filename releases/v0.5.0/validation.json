@@ -1,0 +1,216 @@
+{
+  "project": "MultiD4RT",
+  "package": "multid4rt",
+  "version": "0.5.0",
+  "date": "2026-10-09",
+  "scope": "model_rgb_inference_and_visualization",
+  "source": {
+    "previous_release": "v0.4.0",
+    "previous_commit": "a1e01f5e08c0f5bee68ecac6ece29d8c159d15f4"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.0",
+    "device": "CPU",
+    "cuda_verified": false
+  },
+  "tests": {
+    "passed": 78,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "visualization_tests": 12
+  },
+  "model_parity": {
+    "unchanged_files": 47,
+    "core_model_and_vendor_bytes_unchanged": true,
+    "checkpoint_and_base_inference_bytes_unchanged": true,
+    "all_prediction_tensors_bitwise_equal": true,
+    "comparison_checkpoint": "previous source random tiny native checkpoint",
+    "compared_tensors": 24
+  },
+  "installed_wheel": {
+    "version": "0.5.0",
+    "installed_outside_source": true,
+    "packaged_viewer_asset_matches": true,
+    "device": "CPU",
+    "cuda_verified": false,
+    "checks": [
+      {
+        "check": "root_help",
+        "passed": true
+      },
+      {
+        "check": "infer_help",
+        "passed": true
+      },
+      {
+        "check": "visualize_help",
+        "passed": true
+      },
+      {
+        "check": "demo_help",
+        "passed": true
+      },
+      {
+        "check": "multicamera_demo",
+        "passed": true
+      },
+      {
+        "check": "multiview_demo",
+        "passed": true
+      },
+      {
+        "check": "monocular_demo",
+        "passed": true
+      },
+      {
+        "check": "monocular_video",
+        "passed": true
+      },
+      {
+        "check": "synchronized_videos",
+        "passed": true
+      },
+      {
+        "check": "prediction_reuse",
+        "passed": true
+      },
+      {
+        "check": "prior_checkpoint_inference",
+        "passed": true
+      },
+      {
+        "check": "previous_source_prediction_all_tensors_bitwise_equal",
+        "passed": true,
+        "tensors": 24
+      }
+    ]
+  },
+  "browser": {
+    "browser": "Headless Chrome",
+    "webgl": "SwiftShader",
+    "offline": true,
+    "modes": [
+      {
+        "mode": "multicamera",
+        "cameras": 2,
+        "times": [
+          0,
+          5,
+          10
+        ],
+        "displayed_points": 1904,
+        "views": 2,
+        "webgl": 1,
+        "javascript_errors": [],
+        "external_requests": [],
+        "controls": "time/play/camera/depth/color/cloud/tracks/frusta/reset/click"
+      },
+      {
+        "mode": "multiview",
+        "cameras": 3,
+        "times": [
+          0
+        ],
+        "displayed_points": 2048,
+        "views": 3,
+        "webgl": 1,
+        "javascript_errors": [],
+        "external_requests": [],
+        "controls": "time/play/camera/depth/color/cloud/tracks/frusta/reset/click"
+      },
+      {
+        "mode": "monocular",
+        "cameras": 1,
+        "times": [
+          0,
+          5,
+          10
+        ],
+        "displayed_points": 1053,
+        "views": 1,
+        "webgl": 1,
+        "javascript_errors": [],
+        "external_requests": [],
+        "controls": "time/play/camera/depth/color/cloud/tracks/frusta/reset/click"
+      }
+    ]
+  },
+  "visualization": {
+    "inputs": [
+      "synchronized_image_folders",
+      "synchronized_videos",
+      "multiview_images",
+      "monocular_video",
+      "monocular_image_sequence",
+      "json_manifest",
+      "jsonl_manifest"
+    ],
+    "keep_aspect_ratio": true,
+    "exclude_padding": true,
+    "align_by_shared_frame_labels": true,
+    "preserve_manifest_reference_order": true,
+    "raw_pixel_query_mapping": true,
+    "prediction_reuse": true,
+    "default_sources": "first observation of each camera",
+    "outputs": [
+      "offline HTML",
+      "binary PLY",
+      "3D tracks NPZ",
+      "scene-flow NPZ",
+      "dense prediction PT"
+    ],
+    "quality_evaluation": false,
+    "example_weights": "random tiny"
+  },
+  "sha256": {
+    "multid4rt/attention.py": "332ab4208101cf0754676fa408825076b545cdf918e750c955d4158ba905f5e5",
+    "multid4rt/config.py": "58fdb8610ea80e26a7d829b42df7f710c8dac10fb167dc31bb69f99f02552109",
+    "multid4rt/embeddings.py": "cccb25133ccae6dece5267da444fc0ec5bb16f4ccf2775305f4ab939dc2c4378",
+    "multid4rt/encoder.py": "12c8c7b27da1617e5cf24c233be6c75d19dc6aaf41800c7a52ecd302ef068822",
+    "multid4rt/geometry.py": "60c3770552d9034720b9b1492411921f35519b976ff8ac37e481d00799df0cd3",
+    "multid4rt/metadata.py": "a81c80b366b5e712fe3b430e08a22aba54341f3e70fe7e938a9ab08f54af9f88",
+    "multid4rt/model.py": "c18f587d3ca2223776bc1c0b14331ec9e18929a0abd15c3b03d5a3196de0c671",
+    "multid4rt/motion.py": "9d7adffaa0c21bf530b08fa282bd38a071e84f924424fa1014cbf67f161c27ab",
+    "multid4rt/tasks.py": "b6d6820c7aa5484bc5ffddabea3ce40480e12df563d127e0f0073e01218c6b25",
+    "multid4rt/vendor/__init__.py": "9dab461215d8fef7661dba4a9b056af755d938714d5c89eaacff77e4e98f3383",
+    "multid4rt/vendor/dinov2/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "multid4rt/vendor/dinov2/dinov2.py": "fbe5bc41d89bc2d24485807506c6b432c4e882b506e54e97a3ae6a118adbb9f5",
+    "multid4rt/vendor/dinov2/layers/__init__.py": "321a97ffc00375d6d48569cbc851a38e7d2dc8bbdbfcffbee722c6c27783acda",
+    "multid4rt/vendor/dinov2/layers/attention.py": "11421cc66a6d15853e8e8e22ac094c07d845ae6b413ac95b2b9493b77435d5de",
+    "multid4rt/vendor/dinov2/layers/block.py": "9064e1750f46d110c05f76e3b9607fe54a8d30b27a8d11fa4340b5a2612a372c",
+    "multid4rt/vendor/dinov2/layers/drop_path.py": "80b5cc50297f3049d313c5659c1244901407bdac80cf424c5d7ed64ae79cd141",
+    "multid4rt/vendor/dinov2/layers/layer_scale.py": "23aba2710d7d425b5abd50c006edef9c9224360d6499171b6c1ec18ef73c0b00",
+    "multid4rt/vendor/dinov2/layers/mlp.py": "4f17c26120d04e4e4368b07a2396a977044b00d1dcbf1bbd1a9d3447be1aa6cf",
+    "multid4rt/vendor/dinov2/layers/patch_embed.py": "72f14d7b3daf3f545ba93c085b0a90f3b63efcf1a14f8d694dc77763c0607528",
+    "multid4rt/vendor/dinov2/layers/rope.py": "dcd09808cf03ceae7abfdcbe6805ee36990412b5308b09a86c4b51a040cff38b",
+    "multid4rt/vendor/dinov2/layers/swiglu_ffn.py": "f0e0bab6e9e835b81c53bd69616af43d254a91af4b119923160b7df1602b1562",
+    "multid4rt/vendor/dinov2/vision_transformer.py": "1a41fc78cfbc8cf0709b5028757a71557e699e0a859fd4834e6360865430f63e",
+    "multid4rt/vendor/heads/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "multid4rt/vendor/heads/cam_dec.py": "f7bc81d846b786e314c03eaaf809126505fa0c82eb5177b95eadbfad5beefd63",
+    "multid4rt/vendor/heads/dpt_head.py": "2665fa666abe6f6a3d5157d8d93fb7204c9edcad0d787b63328339626634f9ae",
+    "multid4rt/vendor/heads/dualdpt.py": "76ae4c5a05bcfe4614ca68eb50a24b8d6a1ac2a0b6d51d51424957c0b6be6f09",
+    "multid4rt/vendor/heads/head_act.py": "a6125296113ff97b8d7fc33a771429c786ef2300b277a14bb5a594b000f6fd17",
+    "multid4rt/vendor/heads/motiondecoder.py": "b10e8df250331047fdd54de1be12b8bc223d64ce10567d52261d224d2678f3b9",
+    "multid4rt/vendor/heads/utils.py": "2dce4c0dca1974a5250cc5d5d95bd3417e3ba9494978437a12d5ab6bbff4d4df",
+    "multid4rt/vendor/layers/__init__.py": "e3c28c7b775165b6844000eb69f44d104d6c3803ac7da5d59f6ac3ecfb46d9d8",
+    "multid4rt/vendor/layers/attention.py": "cd8baab0f75bf50db36b414bcf78f5112cba3daef6570105b2d67aed09d75c5e",
+    "multid4rt/vendor/layers/block.py": "c7c0f4e58cf0907b0462c73b4505f69f877880131e77a56e19e1faef96664848",
+    "multid4rt/vendor/layers/drop_path.py": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a",
+    "multid4rt/vendor/layers/layer_scale.py": "abb7bbfae152a9de2e6d0961ab5e75c79428e849281bfe50dd07b66b54b485d1",
+    "multid4rt/vendor/layers/mlp.py": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa",
+    "multid4rt/vendor/layers/patch_embed.py": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+    "multid4rt/vendor/layers/rope.py": "d9a0b426d54328077853b46c832a6a44724b256fe19ef4eeaece93b284b97715",
+    "multid4rt/vendor/layers/swiglu_ffn.py": "7b4319195ff93393985291e06cd0aff4e207007547ed6c1c9d7ee58e194031c8",
+    "multid4rt/vendor/layers/vision_transformer.py": "c1a3732e5bd8f177d2575634d038cf09a475eb4543f90608d772a8820c810b80",
+    "multid4rt/vendor/reference_view_selector.py": "bb9a2bb1f036b484abd82fb165e28ca3d990146f04345adfd5267ba955b85082",
+    "multid4rt/vendor/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "multid4rt/vendor/utils/attention.py": "8e8a3dd3aca75ce403bc1a2f7a0b2086cc516b221fcc394b888ebc5ddc9a8a33",
+    "multid4rt/vendor/utils/block.py": "b0ec438942816169a5215a3678b4bff72b3783472e35942337b4a1142555c57b",
+    "multid4rt/vendor/utils/geometry.py": "1443f8bae8be1c7708d412aaefef3fb0107a0d2d4fb67650284481785414a53e",
+    "multid4rt/vendor/utils/head_utils.py": "efed71ecd3b742d5969d1a938bbf34c9923d202dfd5232f204641c4674f0bd6b",
+    "multid4rt/vendor/utils/transform.py": "8444e26657b61356c5cfa9d9f3affeb9485e1a9750ef97cd3899c51ba86c0716",
+    "multid4rt/visibility.py": "4f8ccfe6125420421eaa787464510099e46e96ed0440f10a870efea3c2b0959b"
+  }
+}

@@ -28,7 +28,7 @@ class ModelOnly(importlib.abc.MetaPathFinder):
             raise ImportError('removed dependency: ' + fullname)
 sys.meta_path.insert(0, ModelOnly())
 from multid4rt.__main__ import main
-for arguments in (['--help'], ['infer', '--help'], ['demo', '--help']):
+for arguments in (['--help'], ['infer', '--help'], ['demo', '--help'], ['visualize', '--help']):
     try:
         main(arguments)
     except SystemExit as exc:

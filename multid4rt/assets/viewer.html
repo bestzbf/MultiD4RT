@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MultiD4RT · 4D Viewer</title>
+<style>
+:root{color-scheme:dark;--bg:#10151d;--panel:#18212e;--line:#2c394b;--text:#edf2f7;--muted:#9eafc5;--accent:#7ab7ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px system-ui,-apple-system,sans-serif}
+header{padding:22px 28px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
+h1{font-size:22px;letter-spacing:-.5px;margin:0 0 6px}.sub{color:var(--muted);font-size:13px}.badge{padding:7px 12px;background:#213954;color:#b8d9ff;border:1px solid #3b5c80;border-radius:20px;white-space:nowrap}
+main{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;padding:18px 24px}.viewport,.side{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+label{color:var(--muted);display:flex;align-items:center;gap:6px;font-size:12px}select,button{font:inherit;color:var(--text);background:#243246;border:1px solid #40526a;border-radius:6px;padding:6px 9px;cursor:pointer}button:hover{background:#324660}button:disabled{opacity:.4;cursor:default}input{accent-color:var(--accent)}
+#plot{height:calc(100vh - 268px);min-height:430px}.timeline{padding:16px;display:flex;align-items:center;gap:12px;border-top:1px solid var(--line)}#frame{flex:1;min-width:80px}#time{font-variant-numeric:tabular-nums;min-width:115px}.hint{color:var(--muted);font-size:12px;padding:0 16px 14px}.side-title{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}#views{padding:12px;display:grid;gap:12px;max-height:calc(100vh - 210px);overflow:auto}.view{margin:0}.view canvas{display:block;width:100%;border-radius:7px;background:#111820}.view figcaption{margin:6px 1px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+footer{padding:0 26px 18px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:18px}a{color:var(--accent);text-decoration:none}#status{margin-left:auto}#error{display:none;background:#5d2730;padding:14px 24px;white-space:pre-wrap}.check{white-space:nowrap}
+@media(max-width:900px){main{grid-template-columns:1fr;padding:12px}#plot{height:60vh;min-height:340px}#views{grid-template-columns:repeat(2,minmax(0,1fr));max-height:none}.side-title{padding:12px}header{padding:18px}footer{padding:0 16px 16px}}
+</style>
+<script>__PLOTLY_JS__</script>
+</head>
+<body>
+<header><div><h1>MultiD4RT <span style="font-weight:400;color:#9eafc5">/ 4D Viewer</span></h1><div id="description" class="sub"></div></div><div id="mode" class="badge"></div></header>
+<div id="error" role="alert"></div>
+<main>
+<section class="viewport">
+<div class="toolbar">
+<label>场景<select id="cloud"><option value="tracked">跟踪源点</option><option value="geometry">当前视角重建</option></select></label>
+<label>着色<select id="color"><option value="rgb">RGB</option><option value="camera">相机</option><option value="motion">三维位移</option></select></label>
+<label>相机<select id="camera"><option value="all">全部</option></select></label>
+<label class="check"><input id="tracks" type="checkbox" checked>轨迹</label>
+<label class="check"><input id="cameras" type="checkbox" checked>相机</label>
+<button id="reset" title="恢复视角">重置视角</button>
+</div>
+<div id="plot"></div>
+<div class="timeline"><button id="play" aria-label="播放时间序列">播放</button><input id="frame" type="range" min="0" max="0" value="0" step="1" aria-label="目标帧"><span id="time"></span></div>
+<div class="hint">拖动旋转，滚轮缩放。点选跟踪源点可添加该点的完整三维轨迹。<span id="track-count"></span></div>
+</section>
+<aside class="side"><div class="side-title"><span>当前输入视角</span><select id="image-kind" aria-label="图像类型"><option value="rgb">RGB + 轨迹投影</option><option value="depth">预测深度</option></select></div><div id="views"></div></aside>
+</main>
+<footer><span id="scope"></span><a id="ply-link" href="">当前重建 PLY</a><a id="tracked-link" href="">当前跟踪 PLY</a><a href="tracks.npz">点轨迹 NPZ</a><a href="scene_flow.npz">场景流 NPZ</a><span id="status">初始化…</span></footer>
+<script id="visual-data" type="application/json">__VISUAL_DATA__</script>
+<script>
+'use strict';
+const data=JSON.parse(document.getElementById('visual-data').textContent);
+const $=id=>document.getElementById(id);
+const colors=['#76b7ff','#ffba75','#70d3b1','#db9cfa','#f38a9e','#d7d979','#8fcfe8','#c0b4aa'];
+const state={frame:0,selected:[],playing:false,timer:null,rendering:false,pending:false};
+const config={responsive:true,displaylogo:false,scrollZoom:true,modeBarButtonsToRemove:['resetCameraLastSave3d']};
+const axis={showbackground:true,backgroundcolor:'#18212e',gridcolor:'#304056',zerolinecolor:'#455a73',showspikes:false};
+const defaultCamera={eye:{x:1.5,y:-1.8,z:-1.0},up:{x:0,y:-1,z:0}};
+const motionMax=data.surface.motion.reduce((max,frame)=>frame.reduce((m,v)=>Math.max(m,v||0),max),1e-8);
+const layout={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'#18212e',font:{color:'#d8e4f3'},showlegend:false,
+ scene:{xaxis:{...axis,title:{text:'X'}},yaxis:{...axis,title:{text:'Y'}},zaxis:{...axis,title:{text:'Z'}},aspectmode:'data',
+ camera:JSON.parse(JSON.stringify(defaultCamera))},uirevision:'scene'};
+function cameraColor(id){return colors[data.cameras.indexOf(id)%colors.length]||'#76b7ff';}
+function selectedCamera(){return $('camera').value==='all'?null:Number($('camera').value);}
+function coord(points,dim){return points.map(p=>p===null?null:p[dim]);}
+function scatter(points,extra){return {type:'scatter3d',x:coord(points,0),y:coord(points,1),z:coord(points,2),...extra};}
+function validPoint(point){return point&&point.every(Number.isFinite);}
+function fail(error){$('error').style.display='block';$('error').textContent=String(error);$('status').textContent='显示失败';}
+function allTracks(){
+ const tracks=data.tracks.points[0].map((_,k)=>({positions:data.tracks.points.map((p,t)=>data.tracks.valid[t][k]?p[k]:null),id:k}));
+ for(const k of state.selected) tracks.push({positions:data.surface.points.map((p,t)=>data.surface.valid[t][k]?p[k]:null),id:'+'+k});
+ return tracks;
+}
+function plotData(){
+ const t=state.frame, camera=selectedCamera(),tracked=$('cloud').value==='tracked';
+ const cloud=tracked?{points:data.surface.points[t],rgb:data.surface.rgb,camera_id:data.surface.camera_id}:data.geometry[t];
+ const ids=[];
+ for(let k=0;k<cloud.points.length;k++)if((camera===null||cloud.camera_id[k]===camera)&&(!tracked||data.surface.valid[t][k]))ids.push(k);
+ const points=ids.map(k=>cloud.points[k]);
+ let color=ids.map(k=>$('color').value==='camera'?cameraColor(cloud.camera_id[k]):`rgb(${cloud.rgb[k].join(',')})`);
+ let marker={size:2,color,opacity:.88};
+ if($('color').value==='motion'&&tracked){
+   color=ids.map(k=>data.surface.motion[t][k]||0);
+   marker={size:2,color,colorscale:'Turbo',cmin:0,cmax:motionMax,colorbar:{title:{text:'位移'},thickness:10},opacity:.88};
+ }
+ const traces=[scatter(points,{mode:'markers',marker,customdata:tracked?ids:ids.map(()=>-1),
+   hovertemplate:'X %{x:.3f}<br>Y %{y:.3f}<br>Z %{z:.3f}<extra></extra>'})];
+ if($('tracks').checked){
+   for(const track of allTracks()){
+     const line=track.positions;
+     traces.push(scatter(line,{mode:'lines',line:{color:colors[Number(String(track.id).replace('+',''))%colors.length],width:3},hoverinfo:'skip'}));
+     if(validPoint(line[t]))traces.push(scatter([line[t]],{mode:'markers',marker:{color:'#f7faff',size:4},hoverinfo:'skip'}));
+   }
+ }
+ if($('cameras').checked)for(const camera of data.frusta[t]){
+   if(selectedCamera()!==null&&selectedCamera()!==camera.camera_id)continue;
+   traces.push(scatter(camera.points,{mode:'lines',line:{color:cameraColor(camera.camera_id),width:4},hoverinfo:'skip'}));
+   traces.push(scatter([camera.center],{mode:'markers+text',marker:{color:cameraColor(camera.camera_id),size:5},text:['C'+camera.camera_id],textposition:'top center',hoverinfo:'skip'}));
+ }
+ $('scope').textContent=`${points.length.toLocaleString()} 个显示点 · ${data.settings.units}`;
+ return traces;
+}
+function project(point,view){
+ if(!validPoint(point)||!view.K.flat().every(Number.isFinite)||!view.c2w.flat().every(Number.isFinite))return null;
+ const R=view.c2w,p=point.map((x,i)=>x-R[i][3]);
+ const cam=[0,1,2].map(j=>p.reduce((sum,x,i)=>sum+x*R[i][j],0));
+ if(cam[2]<=1e-8)return null;
+ const pixel=view.K.map(row=>row.reduce((sum,x,j)=>sum+x*cam[j],0));
+ const u=pixel[0]/pixel[2],v=pixel[1]/pixel[2];
+ return u>=0&&v>=0&&u<view.content_hw[1]&&v<view.content_hw[0]?[u,v]:null;
+}
+function drawViews(){
+ const frame=state.frame,holder=$('views'),kind=$('image-kind').value;
+ holder.replaceChildren();
+ for(const view of data.views[frame]){
+   if(selectedCamera()!==null&&selectedCamera()!==view.camera_id)continue;
+   const figure=document.createElement('figure');figure.className='view';
+   const canvas=document.createElement('canvas'),caption=document.createElement('figcaption');
+   caption.textContent=`相机 ${view.camera_id} · t=${data.times[frame]}`;
+   figure.append(canvas,caption);holder.append(figure);
+   const image=new Image();image.onload=()=>{
+     canvas.width=image.width;canvas.height=image.height;
+     const context=canvas.getContext('2d');context.drawImage(image,0,0);
+     if(kind==='rgb'&&$('tracks').checked)for(const track of allTracks()){
+       const uv=project(track.positions[frame],view);if(!uv)continue;
+       const x=uv[0]/view.content_hw[1]*canvas.width,y=uv[1]/view.content_hw[0]*canvas.height;
+       context.beginPath();context.arc(x,y,3,0,Math.PI*2);context.fillStyle=colors[Number(String(track.id).replace('+',''))%colors.length];context.fill();
+       context.strokeStyle='#f5f9ff';context.lineWidth=1;context.stroke();
+     }
+   };image.src=view[kind];
+ }
+ if(!holder.children.length){const empty=document.createElement('p');empty.textContent='此时刻没有所选相机的输入图像。';holder.append(empty);}
+}
+async function render(){
+ if(state.rendering){state.pending=true;return;}
+ state.rendering=true;$('status').textContent='更新…';
+ try{
+   $('frame').value=state.frame;$('time').textContent=`t=${data.times[state.frame]} · ${state.frame+1}/${data.times.length}`;
+   const stem=`ply/frame_${String(state.frame).padStart(4,'0')}_t${data.times[state.frame]}`;
+   $('ply-link').href=stem+'_geometry.ply';$('tracked-link').href=stem+'_tracked.ply';
+   $('track-count').textContent=` ${data.tracks.queries.length+state.selected.length} 条轨迹`;
+   $('color').options[2].disabled=$('cloud').value!=='tracked';
+   if($('cloud').value!=='tracked'&&$('color').value==='motion')$('color').value='rgb';
+   await Plotly.react($('plot'),plotData(),layout,config);drawViews();$('status').textContent='就绪';
+ }catch(error){fail(error);}finally{
+   state.rendering=false;if(state.pending){state.pending=false;render();}
+ }
+}
+function setFrame(frame){state.frame=Math.max(0,Math.min(data.times.length-1,Number(frame)));render();}
+$('description').textContent=`${data.clip_id} · ${data.cameras.length} 个相机 · ${data.times.length} 个时刻`;
+if(data.settings.weights==='random_tiny')$('description').textContent+=' · 随机 tiny 示例，仅验证接口';
+$('mode').textContent={multicamera:'多相机 4D',multiview:'多视角单时刻重建',monocular:'单相机动态重建 / 追踪'}[data.mode];
+for(const camera of data.cameras){const option=document.createElement('option');option.value=camera;option.textContent='相机 '+camera;$('camera').append(option);}
+$('frame').max=data.times.length-1;$('frame').disabled=data.times.length===1;$('play').disabled=data.times.length===1;
+if(data.times.length===1)$('cloud').value='geometry';
+$('frame').addEventListener('input',event=>setFrame(event.target.value));
+for(const id of ['cloud','color','camera','tracks','cameras','image-kind'])$(id).addEventListener('change',render);
+$('play').addEventListener('click',()=>{
+ state.playing=!state.playing;$('play').textContent=state.playing?'暂停':'播放';
+ if(state.playing)state.timer=setInterval(()=>setFrame((state.frame+1)%data.times.length),400);
+ else clearInterval(state.timer);
+});
+$('reset').addEventListener('click',()=>Plotly.relayout($('plot'),{'scene.camera':JSON.parse(JSON.stringify(defaultCamera))}));
+Plotly.newPlot($('plot'),[],layout,config).then(()=>{
+ $('plot').on('plotly_click',event=>{
+   const point=event.points[0];
+   if(point.curveNumber!==0||$('cloud').value!=='tracked'||point.customdata<0)return;
+   const index=Number(point.customdata);
+   if(!state.selected.includes(index)&&state.selected.length<32){state.selected.push(index);render();}
+ });
+ render();
+ window.MultiD4RTViewer={data,state,setFrame,render};
+}).catch(fail);
+</script>
+</body>
+</html>
