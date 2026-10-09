@@ -1,0 +1,49 @@
+{
+  "clips": [
+    {
+      "id": "Syn4D \u00b7 Temple \u00b7 syn4d_v1_stride_1/temple_group/seq_000003 \u00b7 step 56,000",
+      "observations": [
+        {
+          "image": "camera_0/frame_000101.png",
+          "camera_id": 0,
+          "time_idx": 101
+        },
+        {
+          "image": "camera_0/frame_000106.png",
+          "camera_id": 0,
+          "time_idx": 106
+        },
+        {
+          "image": "camera_0/frame_000111.png",
+          "camera_id": 0,
+          "time_idx": 111
+        },
+        {
+          "image": "camera_0/frame_000116.png",
+          "camera_id": 0,
+          "time_idx": 116
+        },
+        {
+          "image": "camera_1/frame_000101.png",
+          "camera_id": 1,
+          "time_idx": 101
+        },
+        {
+          "image": "camera_1/frame_000106.png",
+          "camera_id": 1,
+          "time_idx": 106
+        },
+        {
+          "image": "camera_1/frame_000111.png",
+          "camera_id": 1,
+          "time_idx": 111
+        },
+        {
+          "image": "camera_1/frame_000116.png",
+          "camera_id": 1,
+          "time_idx": 116
+        }
+      ]
+    }
+  ]
+}
