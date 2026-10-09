@@ -1,0 +1,29 @@
+{
+  "clips": [
+    {
+      "id": "Hypersim \u00b7 Multi-view \u00b7 ai_050_002/cam_00 \u00b7 step 56,000",
+      "observations": [
+        {
+          "image": "camera_0/frame_000000.png",
+          "camera_id": 0,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_1/frame_000000.png",
+          "camera_id": 1,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_2/frame_000000.png",
+          "camera_id": 2,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_3/frame_000000.png",
+          "camera_id": 3,
+          "time_idx": 0
+        }
+      ]
+    }
+  ]
+}

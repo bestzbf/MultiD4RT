@@ -1,0 +1,40 @@
+{
+  "clip_id": "Hypersim \u00b7 Multi-view \u00b7 ai_050_002/cam_00 \u00b7 step 56,000",
+  "mode": "multiview",
+  "times": [
+    0
+  ],
+  "cameras": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "max_points": 50000,
+  "max_depth": null,
+  "source_observations": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "displayed_points": 50000,
+  "sampling": "uniform image pixels without replacement; seed 9157 + observation",
+  "units": "checkpoint world units",
+  "weights": "trained_native",
+  "checkpoint_step": 56000,
+  "model": "MultiD4RT giant",
+  "native_resolution": true,
+  "initial_camera": {
+    "eye": {
+      "x": 1,
+      "y": -0.9,
+      "z": -1.7
+    },
+    "up": {
+      "x": 0,
+      "y": -1,
+      "z": 0
+    }
+  }
+}
