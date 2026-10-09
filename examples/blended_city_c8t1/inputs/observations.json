@@ -1,0 +1,49 @@
+{
+  "clips": [
+    {
+      "id": "BlendedMVS \u00b7 City \u00b7 58a41819156b87103d3e92a5 \u00b7 step 56,000",
+      "observations": [
+        {
+          "image": "camera_0/frame_000000.png",
+          "camera_id": 0,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_1/frame_000000.png",
+          "camera_id": 1,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_2/frame_000000.png",
+          "camera_id": 2,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_3/frame_000000.png",
+          "camera_id": 3,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_4/frame_000000.png",
+          "camera_id": 4,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_5/frame_000000.png",
+          "camera_id": 5,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_6/frame_000000.png",
+          "camera_id": 6,
+          "time_idx": 0
+        },
+        {
+          "image": "camera_7/frame_000000.png",
+          "camera_id": 7,
+          "time_idx": 0
+        }
+      ]
+    }
+  ]
+}

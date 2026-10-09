@@ -1,0 +1,122 @@
+{
+  "name": "blended_city_c8t1",
+  "title": "BlendedMVS · City",
+  "sequence": "58a41819156b87103d3e92a5",
+  "mode": "multiview",
+  "cameras": 8,
+  "frames": 1,
+  "camera_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "time_idx": [
+    0
+  ],
+  "native_hw": [
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ],
+    [
+      420,
+      560
+    ]
+  ],
+  "model_hw": [
+    420,
+    560
+  ],
+  "source_obs_idx": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "input_rgb_exact_match": true,
+  "checkpoint_step": 56000,
+  "checkpoint_file": "step_00056000.pt",
+  "weights": "trained_native",
+  "model": "MultiD4RT giant",
+  "network_inputs": [
+    "RGB",
+    "camera_id",
+    "time_idx",
+    "source_obs_idx",
+    "query_time_idx"
+  ],
+  "inference_seconds": 5.966562606859952,
+  "peak_allocated_gib": 11.664177894592285,
+  "displayed_source_points": 50000,
+  "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+  "automatic_tracks": "uniform source pixels; no target labels",
+  "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+  "held_out": true,
+  "input_sha256": {
+    "camera_0/frame_000000.png": "a745168202fff79661fd412956c826a7baffa14b312e70fae1e0ddf3b8f39653",
+    "camera_1/frame_000000.png": "0c84706668513acb33867f809cf1747c8be5020045faaa748e165d3ef11bbe27",
+    "camera_2/frame_000000.png": "e9925423fb606927ee5cdb91530197e4edf38b04f078b04b2aa983f84d8407a0",
+    "camera_3/frame_000000.png": "5e1c49a462b69ee0d8825cc8e47383179ce4c3a99903aeb90e2c9b45f97eda79",
+    "camera_4/frame_000000.png": "c50400920fdb325735126e0d76710a7ea545cebd60c199b0363ba993978c2a9a",
+    "camera_5/frame_000000.png": "5ad8e97d90f152e2d4173b5ee5fd6c27d6773a0164ac98b7dee74345aae031d8",
+    "camera_6/frame_000000.png": "1a46b8c03c03e19343c6236ade16c22bacdb9e5ceea65366ac37f4b45c983901",
+    "camera_7/frame_000000.png": "acfa453400867907e434d6ba7d7369b654a3b6476eb49e13da8e54c528a4c3f8"
+  },
+  "display_max_points": 50000,
+  "display_sampling_seed": "9157 + observation",
+  "display_initial_camera": {
+    "eye": {
+      "x": 1,
+      "y": -0.9,
+      "z": -1.7
+    },
+    "up": {
+      "x": 0,
+      "y": -1,
+      "z": 0
+    }
+  },
+  "original_view_indices": [
+    67,
+    65,
+    62,
+    70,
+    72,
+    68,
+    76,
+    63
+  ]
+}
