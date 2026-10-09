@@ -47,7 +47,7 @@ const colors=['#76b7ff','#ffba75','#70d3b1','#db9cfa','#f38a9e','#d7d979','#8fcf
 const state={frame:0,selected:[],playing:false,timer:null,rendering:false,pending:false};
 const config={responsive:true,displaylogo:false,scrollZoom:true,modeBarButtonsToRemove:['resetCameraLastSave3d']};
 const axis={showbackground:true,backgroundcolor:'#18212e',gridcolor:'#304056',zerolinecolor:'#455a73',showspikes:false};
-const defaultCamera={eye:{x:1.5,y:-1.8,z:-1.0},up:{x:0,y:-1,z:0}};
+const defaultCamera=data.settings.initial_camera||{eye:{x:1.5,y:-1.8,z:-1.0},up:{x:0,y:-1,z:0}};
 const motionMax=data.surface.motion.reduce((max,frame)=>frame.reduce((m,v)=>Math.max(m,v||0),max),1e-8);
 const layout={margin:{l:0,r:0,b:0,t:0},paper_bgcolor:'#18212e',font:{color:'#d8e4f3'},showlegend:false,
  scene:{xaxis:{...axis,title:{text:'X'}},yaxis:{...axis,title:{text:'Y'}},zaxis:{...axis,title:{text:'Z'}},aspectmode:'data',
@@ -144,7 +144,7 @@ if(data.settings.weights==='random_tiny')$('description').textContent+=' · 随�
 $('mode').textContent={multicamera:'多相机 4D',multiview:'多视角单时刻重建',monocular:'单相机动态重建 / 追踪'}[data.mode];
 for(const camera of data.cameras){const option=document.createElement('option');option.value=camera;option.textContent='相机 '+camera;$('camera').append(option);}
 $('frame').max=data.times.length-1;$('frame').disabled=data.times.length===1;$('play').disabled=data.times.length===1;
-if(data.times.length===1)$('cloud').value='geometry';
+if(data.times.length===1){$('cloud').value='geometry';$('tracks').checked=false;}
 $('frame').addEventListener('input',event=>setFrame(event.target.value));
 for(const id of ['cloud','color','camera','tracks','cameras','image-kind'])$(id).addEventListener('change',render);
 $('play').addEventListener('click',()=>{

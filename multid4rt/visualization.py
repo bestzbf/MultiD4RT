@@ -23,6 +23,45 @@ def _pick(indices, limit):
     return indices[np.linspace(0, len(indices)-1, limit, dtype=np.int64)]
 
 
+def _allocate_points(capacities, limit):
+    """Split an exact point budget proportionally without exceeding capacity."""
+    capacities = np.asarray(capacities, dtype=np.int64)
+    total = int(capacities.sum())
+    if not total or not limit or total <= limit:
+        return capacities.copy()
+    quotas = capacities.astype(np.float64)*(limit/total)
+    allocated = np.floor(quotas).astype(np.int64)
+    remainder = limit-int(allocated.sum())
+    order = np.argsort(-(quotas-allocated), kind='stable')
+    allocated[order[:remainder]] += 1
+    return allocated
+
+
+def _sample_pixels(valid, observations, limit):
+    """Spread display samples over both image axes, preserving source slots.
+
+    A flat stride aliases a row-major image into diagonal stripes. Use
+    uniform sampling without replacement and a fixed seed instead; neither
+    prediction values nor full-resolution inference are changed.
+    """
+    capacities = [int(valid[source].sum()) for _, source in observations]
+    budgets = _allocate_points(capacities, limit)
+    selected = []
+    for (slot, source), capacity, budget in zip(observations, capacities, budgets):
+        if not budget:
+            continue
+        mask = valid[source]
+        if budget == capacity:
+            y, x = np.where(mask)
+        else:
+            rng = np.random.default_rng(9157+int(source))
+            chosen = rng.choice(np.flatnonzero(mask), int(budget), replace=False)
+            chosen.sort()
+            y, x = np.divmod(chosen, mask.shape[1])
+        selected.append(np.column_stack((np.full(len(x), slot), np.full(len(x), source), y, x)))
+    return np.concatenate(selected) if selected else np.empty((0, 4), np.int64)
+
+
 def _image_url(pixels, *, depth=False):
     image = Image.fromarray(pixels.astype(np.uint8))
     image.thumbnail((360, 240), Image.Resampling.LANCZOS)
@@ -89,13 +128,8 @@ def build_visualization(prediction, visual, *, max_points=20000, num_tracks=24, 
         valid &= depth <= max_depth
     sources = prediction['source_obs_idx'][0].cpu().numpy()
     source_valid = prediction['source_valid'][0].cpu().numpy()
-    candidates = []
-    for slot, source in enumerate(sources):
-        if source_valid[slot]:
-            y, x = np.where(valid[source])
-            candidates.append(np.column_stack((np.full(len(x), slot), np.full(len(x), source), y, x)))
-    pool = np.concatenate(candidates) if candidates else np.empty((0, 4), np.int64)
-    selected = _pick(pool, max_points)
+    active_sources = [(slot, source) for slot, source in enumerate(sources) if source_valid[slot]]
+    selected = _sample_pixels(valid, active_sources, max_points)
     if not len(selected):
         raise ValueError('no finite source points remain after display filtering')
     slots, source, y, x = selected.T
@@ -122,13 +156,8 @@ def build_visualization(prediction, visual, *, max_points=20000, num_tracks=24, 
     geometry, observations, frusta = [], [], []
     for frame in times:
         ids = np.flatnonzero(visual.time_idx[0].numpy() == frame)
-        entries = []
-        for index in ids:
-            yy, xx = np.where(valid[index])
-            entries.append(np.column_stack((np.full(len(xx), index), yy, xx)))
-        pool = np.concatenate(entries) if entries else np.empty((0, 3), np.int64)
-        display = _pick(pool, max_points)
-        si, yy, xx = display.T
+        display = _sample_pixels(valid, list(enumerate(ids)), max_points)
+        _, si, yy, xx = display.T
         geometry.append(dict(points=base[si, yy, xx], rgb=rgb[si, yy, xx],
                              camera_id=visual.camera_id[0].numpy()[si], confidence=confidence[si, yy, xx]))
         views, outlines = [], []
@@ -160,7 +189,8 @@ def build_visualization(prediction, visual, *, max_points=20000, num_tracks=24, 
                    tracks=dict(points=track_xyz, valid=track_valid, queries=query),
                    views=observations, frusta=frusta,
                    settings=dict(max_points=max_points, max_depth=max_depth, source_observations=sources.tolist(),
-                                 displayed_points=len(selected), units='checkpoint world units'))
+                                 displayed_points=len(selected), sampling='uniform image pixels without replacement; seed 9157 + observation',
+                                 units='checkpoint world units'))
     return payload
 
 

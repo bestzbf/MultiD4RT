@@ -1,0 +1,122 @@
+{
+  "name": "syn4d_temple_c2t4",
+  "title": "Syn4D · Temple",
+  "sequence": "syn4d_v1_stride_1/temple_group/seq_000003",
+  "mode": "multicamera",
+  "cameras": 2,
+  "frames": 4,
+  "camera_ids": [
+    0,
+    1
+  ],
+  "time_idx": [
+    101,
+    106,
+    111,
+    116
+  ],
+  "native_hw": [
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ]
+  ],
+  "model_hw": [
+    728,
+    1288
+  ],
+  "source_obs_idx": [
+    0,
+    4
+  ],
+  "input_rgb_exact_match": true,
+  "checkpoint_step": 56000,
+  "checkpoint_file": "step_00056000.pt",
+  "weights": "trained_native",
+  "model": "MultiD4RT giant",
+  "network_inputs": [
+    "RGB",
+    "camera_id",
+    "time_idx",
+    "source_obs_idx",
+    "query_time_idx"
+  ],
+  "inference_seconds": 2.4030715757980943,
+  "peak_allocated_gib": 23.150005340576172,
+  "displayed_source_points": 30000,
+  "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+  "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+  "held_out": true,
+  "input_sha256": {
+    "camera_0/frame_000101.png": "082abf25431bcbbb862363862f8900529d0b60c2561590c420ee35f07ec1337c",
+    "camera_0/frame_000106.png": "073b9a2db9d3215f1b08400449d609c10984bd8d56cedf51f36acd66ffd75b3f",
+    "camera_0/frame_000111.png": "040099bcb5849f4cf6dcae3eca6f243a64b229d757233dfe5b0bff2bd5e13232",
+    "camera_0/frame_000116.png": "bdb43cd4f96baf5320af3d9d58efeaf4e34b67e9c04d7b02d7278f69d6178860",
+    "camera_1/frame_000101.png": "c4bb77a2bbd159ca4c5bbb700a0d3c25b7678b0a904cc9bf4ef071f58517f563",
+    "camera_1/frame_000106.png": "50f61fce4ce9aca553a1606d899bf2908a9f803a81e42e63bbec2b8488dcdd2e",
+    "camera_1/frame_000111.png": "e9cd14f827d3e2c6518c9ef110db0fe9b7490d500344a2027a3ccee9d73376df",
+    "camera_1/frame_000116.png": "e239f98b38fb8df18a6a344fd21c8c210b469c80048dca3d80574ffa625893f5"
+  },
+  "display_max_points": 30000,
+  "display_sampling_seed": "9157 + observation",
+  "display_initial_camera": {
+    "eye": {
+      "x": 0.75,
+      "y": -0.85,
+      "z": -1.8
+    },
+    "up": {
+      "x": 0.001102257,
+      "y": -0.89880019,
+      "z": -0.43835714
+    }
+  },
+  "track_query_selection": "Visible subject pixels chosen manually in first RGB image; no GT or prediction-error selection",
+  "track_queries_file": "queries.json",
+  "display_up_source": {
+    "description": "Normal of three model-predicted floor pixels selected in first RGB image; display orientation only",
+    "source_observation": 0,
+    "pixels": [
+      [
+        1110,
+        460
+      ],
+      [
+        1160,
+        650
+      ],
+      [
+        630,
+        640
+      ]
+    ]
+  }
+}

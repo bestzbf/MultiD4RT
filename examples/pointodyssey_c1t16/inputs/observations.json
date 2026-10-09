@@ -1,0 +1,89 @@
+{
+  "clips": [
+    {
+      "id": "PointOdyssey · 单相机动态追踪 · egobody_3rd · step 56,000",
+      "observations": [
+        {
+          "image": "frame_000030.png",
+          "camera_id": 0,
+          "time_idx": 30
+        },
+        {
+          "image": "frame_000033.png",
+          "camera_id": 0,
+          "time_idx": 33
+        },
+        {
+          "image": "frame_000036.png",
+          "camera_id": 0,
+          "time_idx": 36
+        },
+        {
+          "image": "frame_000039.png",
+          "camera_id": 0,
+          "time_idx": 39
+        },
+        {
+          "image": "frame_000042.png",
+          "camera_id": 0,
+          "time_idx": 42
+        },
+        {
+          "image": "frame_000045.png",
+          "camera_id": 0,
+          "time_idx": 45
+        },
+        {
+          "image": "frame_000048.png",
+          "camera_id": 0,
+          "time_idx": 48
+        },
+        {
+          "image": "frame_000051.png",
+          "camera_id": 0,
+          "time_idx": 51
+        },
+        {
+          "image": "frame_000054.png",
+          "camera_id": 0,
+          "time_idx": 54
+        },
+        {
+          "image": "frame_000057.png",
+          "camera_id": 0,
+          "time_idx": 57
+        },
+        {
+          "image": "frame_000060.png",
+          "camera_id": 0,
+          "time_idx": 60
+        },
+        {
+          "image": "frame_000063.png",
+          "camera_id": 0,
+          "time_idx": 63
+        },
+        {
+          "image": "frame_000066.png",
+          "camera_id": 0,
+          "time_idx": 66
+        },
+        {
+          "image": "frame_000069.png",
+          "camera_id": 0,
+          "time_idx": 69
+        },
+        {
+          "image": "frame_000072.png",
+          "camera_id": 0,
+          "time_idx": 72
+        },
+        {
+          "image": "frame_000075.png",
+          "camera_id": 0,
+          "time_idx": 75
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "name": "hypersim_c4t1",
+  "title": "Hypersim · Multi-view",
+  "sequence": "ai_050_002/cam_00",
+  "mode": "multiview",
+  "cameras": 4,
+  "frames": 1,
+  "camera_ids": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "time_idx": [
+    0
+  ],
+  "native_hw": [
+    [
+      768,
+      1024
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      768,
+      1024
+    ]
+  ],
+  "model_hw": [
+    770,
+    1036
+  ],
+  "source_obs_idx": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "input_rgb_exact_match": true,
+  "checkpoint_step": 56000,
+  "checkpoint_file": "step_00056000.pt",
+  "weights": "trained_native",
+  "model": "MultiD4RT giant",
+  "network_inputs": [
+    "RGB",
+    "camera_id",
+    "time_idx",
+    "source_obs_idx",
+    "query_time_idx"
+  ],
+  "inference_seconds": 1.226642331108451,
+  "peak_allocated_gib": 14.340465068817139,
+  "displayed_source_points": 50000,
+  "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+  "automatic_tracks": "uniform source pixels; no target labels",
+  "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+  "held_out": true,
+  "input_sha256": {
+    "camera_0/frame_000000.png": "f4765b051fef34db51256086260e9f15056d67e2a401d6ca5f360b6af506dbed",
+    "camera_1/frame_000000.png": "cbab1b192967bcf97e8b3aeb1b3be9a61ab46b19f7ed67230ac2d080b7403476",
+    "camera_2/frame_000000.png": "c9c6c42252d49cc715f0336e5050c764c4b944dbaa0910b4a3494b7663b24cc9",
+    "camera_3/frame_000000.png": "e2e072b8ddc599238f05924cafc2512362aacb61a03c534aca72413353ccb4c0"
+  },
+  "display_max_points": 50000,
+  "display_sampling_seed": "9157 + observation",
+  "display_initial_camera": {
+    "eye": {
+      "x": 1,
+      "y": -0.9,
+      "z": -1.7
+    },
+    "up": {
+      "x": 0,
+      "y": -1,
+      "z": 0
+    }
+  },
+  "original_view_indices": [
+    48,
+    47,
+    45,
+    54
+  ]
+}

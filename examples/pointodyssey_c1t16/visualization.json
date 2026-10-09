@@ -1,0 +1,49 @@
+{
+  "clip_id": "PointOdyssey \u00b7 \u5355\u76f8\u673a\u52a8\u6001\u8ffd\u8e2a \u00b7 egobody_3rd \u00b7 step 56,000",
+  "mode": "monocular",
+  "times": [
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75
+  ],
+  "cameras": [
+    0
+  ],
+  "max_points": 25000,
+  "max_depth": null,
+  "source_observations": [
+    0
+  ],
+  "displayed_points": 25000,
+  "sampling": "uniform image pixels without replacement; seed 9157 + observation",
+  "units": "checkpoint world units",
+  "weights": "trained_native",
+  "checkpoint_step": 56000,
+  "model": "MultiD4RT giant",
+  "native_resolution": true,
+  "initial_camera": {
+    "eye": {
+      "x": 0.55,
+      "y": -0.4,
+      "z": -1.9
+    },
+    "up": {
+      "x": 0,
+      "y": -1,
+      "z": 0
+    }
+  }
+}

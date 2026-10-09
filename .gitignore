@@ -31,3 +31,7 @@ tmp/
 *.pkl
 *.pickle
 *.mp4
+
+# Small, published trajectory/flow exports for the real inference examples
+!examples/*/tracks.npz
+!examples/*/scene_flow.npz

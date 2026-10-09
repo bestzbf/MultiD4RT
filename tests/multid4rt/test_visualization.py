@@ -12,7 +12,7 @@ import torch
 
 from multid4rt.tasks import sample_tracks
 from multid4rt.visual_inputs import load_visual_input
-from multid4rt.visualization import build_visualization, export_visualization
+from multid4rt.visualization import build_visualization, export_visualization, _sample_pixels
 from multid4rt.visualize import main as visualize_main, make_visual_demo
 
 
@@ -147,6 +147,38 @@ def test_surface_identity_padding_and_raw_queries(tmp_path):
         build_visualization(pred, visual, queries=[[0,160,40]])
     with pytest.raises(ValueError, match='integer observation'):
         build_visualization(pred, visual, queries=[[.5,80,40]])
+
+
+def test_display_sampling_spans_both_axes_with_exact_budget_and_source_slots():
+    masks = np.zeros((3, 112, 224), dtype=bool)
+    masks[0, :100, :200] = True
+    masks[2, :50, :100] = True
+    masks[2, :20, :20] = False
+    samples = _sample_pixels(masks, [(1, 0), (4, 2)], 997)
+    assert samples.shape == (997, 4)
+    np.testing.assert_array_equal(samples, _sample_pixels(masks, [(1, 0), (4, 2)], 997))
+    assert len(np.unique(samples, axis=0)) == 997
+    assert set(samples[:, 0]) == {1, 4}
+    assert masks[samples[:, 1], samples[:, 2], samples[:, 3]].all()
+    for slot, source, h, w in [(1, 0, 100, 200), (4, 2, 50, 100)]:
+        selected = samples[samples[:, 0] == slot]
+        assert (selected[:, 1] == source).all()
+        assert selected[:, 2].min() <= h*.05 and selected[:, 2].max() >= h*.95-1
+        assert selected[:, 3].min() <= w*.05 and selected[:, 3].max() >= w*.95-1
+        occupied, _ = np.histogramdd(selected[:, 2:], bins=(5, 5), range=((0,h), (0,w)))
+        support, _ = np.histogramdd(np.column_stack(np.where(masks[source])), bins=(5,5),
+                                   range=((0,h), (0,w)))
+        assert (occupied[support > 0] > 0).all()
+        assert not occupied[support == 0].any()
+    full = _sample_pixels(masks, [(1, 0), (4, 2)], 0)
+    assert len(full) == masks.sum()
+    assert _sample_pixels(masks, [(1, 0), (4, 2)], 1).shape == (1, 4)
+    empty = _sample_pixels(masks, [], 10)
+    assert empty.shape == (0, 4)
+    # A flat linspace with 200 points in a 100x200 image produces a strong
+    # artificial diagonal: x tracks y instead of covering the image surface.
+    sparse = _sample_pixels(masks[:1], [(0, 0)], 200)
+    assert abs(np.corrcoef(sparse[:, 2], sparse[:, 3])[0, 1]) < .2
 
 
 def test_exports_use_predictions_and_escape_html(tmp_path):
