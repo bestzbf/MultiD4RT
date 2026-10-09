@@ -81,11 +81,8 @@ def make_demo_data(output):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="outputs/native_adapter_smoke")
-    parser.add_argument("--train-steps", type=int, default=2)
     args = parser.parse_args(argv)
-    if args.train_steps <= 0:
-        parser.error("train-steps must be positive")
-    from ..train import main as train_main
+    from ..demo import make_demo_checkpoint
     from ..infer import main as infer_main
     from .mixture import create_dataset, collate_adapter_samples
     output = Path(args.output).resolve()
@@ -98,9 +95,7 @@ def main(argv=None):
     print(json.dumps({"mixed_sources": batch["dataset_name"],
                       "images": list(batch["images"].shape),
                       "query_time_idx": batch["query_time_idx"].tolist()}))
-    checkpoint = train_main(["--data-config", str(config), "--output", str(output/"train"),
-        "--preset", "tiny", "--steps", str(args.train_steps), "--batch-size", "2",
-        "--source-count", "1", "--device", "cpu", "--cpu-threads", "1"])
+    checkpoint = make_demo_checkpoint(output/"tiny_random.pt")
     infer_main(["--data-config", str(config), "--checkpoint", str(checkpoint),
         "--output", str(output/"prediction"), "--device", "cpu", "--max-clips", "2",
         "--source-obs", "0", "--cpu-threads", "1"])

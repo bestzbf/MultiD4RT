@@ -17,9 +17,9 @@ from .checkpoint import config_from_checkpoint, read_checkpoint
 from .datasets.bridge import prepare_clip
 from .datasets.dense import DENSE_TARGET_VERSION, attach_kubric_dense_recipe, materialize_dense_targets
 from .datasets.mixture import create_dataset, collate_adapter_samples, read_data_config
-from .distributed import DistributedContext, resolve_amp_dtype
+from .runtime import EvaluationContext, resolve_amp_dtype
 from .metrics import METRICS_VERSION, dense_metrics
-from .losses import MultiCamera4RCLoss
+from .evaluation import evaluate_batch
 
 
 def make_validation_plan(dataset, *, seed=9157, scenes_per_variant=2):
@@ -112,7 +112,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if min(args.scenes_per_variant, args.source_count, args.cpu_threads) <= 0:
         parser.error("scene/source counts and CPU threads must be positive")
-    context = DistributedContext.initialize(args.device)
+    context = EvaluationContext.initialize(args.device)
     try:
         torch.set_num_threads(args.cpu_threads)
         data = read_data_config(args.data_config)
@@ -156,8 +156,6 @@ def main(argv=None):
             cfg = replace(cfg, gradient_checkpointing=False, attention_chunk_size=None, visibility_chunk_size=None)
             model = MultiCamera4RC(cfg)
             loading = model.load_4rc_weights(payload)
-            loss_config = payload.get("training_state", {}).get("loss_config")
-            criterion = MultiCamera4RCLoss(**loss_config) if loss_config else MultiCamera4RCLoss.dense()
             step = int(payload.get("step", 0))
             del payload
             model = model.to(context.device).eval()
@@ -175,10 +173,8 @@ def main(argv=None):
                 with torch.inference_mode():
                     target = materialize_dense_targets(batch, sources)
                     with torch.autocast(device_type=context.device.type, dtype=dtype):
-                        pred = model(batch["images"], batch["camera_id"], batch["time_idx"], batch["query_time_idx"],
-                                     sources, observation_valid=batch["observation_valid"])
-                    metrics = {key: float(value) for key, value in criterion(pred, target).items()}
-                    metrics.update({key: float(value) for key, value in dense_metrics(pred, target).items()})
+                        metrics = evaluate_batch(model, batch, sources, target, need_visibility="visibility" in target)
+                    metrics = {key: float(value) for key, value in metrics.items()}
                 record = dict(case=index, sequence=case["sequence"], variant=case["variant"],
                     layout=[source["cameras"], source["num_times"]], source_indices=sources.tolist()[0],
                     camera_ids=batch["camera_id"].tolist()[0], time_indices=batch["time_idx"].tolist()[0],
@@ -188,7 +184,7 @@ def main(argv=None):
                     record["syn4d"] = sample["syn4d"]
                 records.append(record)
                 print(json.dumps({"evaluation": label, "rank": context.rank, **record}), flush=True)
-                del pred, target, batch, sample
+                del target, batch, sample
             if context.distributed:
                 all_records = [None]*context.world_size
                 dist.all_gather_object(all_records, records)
@@ -197,7 +193,7 @@ def main(argv=None):
             if context.primary:
                 result["checkpoints"][label] = {"path": path, "step": step, "loading": loading,
                                                "model_config": cfg.to_dict(),
-                                               "loss_config": criterion.to_config(),
+                                               "metric_scope": "physical_errors_without_loss",
                                                "dense_target_version": DENSE_TARGET_VERSION,
                                                "kubric_background_policy": dataset.kubric_background_policy,
                                                "amp_dtype": str(dtype).removeprefix("torch."),

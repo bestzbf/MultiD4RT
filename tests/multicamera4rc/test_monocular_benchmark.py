@@ -71,7 +71,7 @@ def test_padding_is_removed_before_depth_and_calibration_resampling():
 
 def test_d4rt_depth_alignment_matches_legacy_per_frame_function():
     import ast
-    path = Path(__file__).resolve().parents[2]/'test/eval_sintel_checkpoint.py'
+    path = Path(__file__).resolve().parents[2]/'tests/fixtures/d4rt_depth_alignment.py'
     tree = ast.parse(path.read_text())
     function = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == '_per_frame_align_depth')
     namespace = {'torch': torch}

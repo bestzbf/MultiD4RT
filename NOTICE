@@ -1,7 +1,8 @@
-MultiCamera4RC v0.2.0
+MultiCamera4RC v0.3.0
 https://github.com/bestzbf/MultiCamera4RC
 
-This standalone source snapshot was exported from:
+This inference/evaluation release was curated from the v0.2.0 source
+snapshot exported from:
 https://github.com/bestzbf/my_dfrt
 Branch: codex/multicamera-4rc
 Commit: 404d4fdfe547574bb2cbfa6a283a1dae917c7a15
@@ -19,5 +20,7 @@ For the 4RC-derived and DINOv2-derived components, see:
 Dataset adapter provenance is recorded in:
   multicamera4rc/datasets/UPSTREAM.json
 
-The source provenance manifest for this snapshot is recorded in:
-  releases/v0.2.0/source_provenance.json
+The release validation and preserved-model provenance are recorded in:
+  releases/v0.3.0/validation.json
+
+The original full snapshot remains available at the v0.2.0 tag.

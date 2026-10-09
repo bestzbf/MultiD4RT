@@ -1,8 +1,0 @@
-{
-  "passed": true,
-  "tests": 211,
-  "seconds": 35.21,
-  "environment": "macOS Python3.12 PyTorch2.14",
-  "command": "python -m pytest tests/multicamera4rc -q",
-  "log_sha256": "720c2101c9039e628839cdf7c4d50e4878fa8c5898b325c0f547179103069647"
-}

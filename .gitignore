@@ -1,51 +1,28 @@
-# Claude Code
+# Local environments, editors and credentials
+.venv*/
+.codex/
 .claude/
-.codex
-claude_settings.json
-
-# Local editor state
 .vscode/
 .idea/
+.env
+.env.*
+.DS_Store
 
-# Python
+# Python and packaging
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
+*.egg-info/
+build/
+dist/
+.pytest_cache/
 
-# Core dumps
-core.*
-
-# Local backup/sync snapshots
-.backup*/
-.sync*/
-*.bak
-*.bak.*
-backups/
-.cleanup_quarantine_path
-
-# Local index caches
-.index_cache_*/
-
-# Local benchmark output
-bench_accel_*.json
-
-# Probe runtime artifacts (json/log/pid from tools/probe_clip_overlap.py etc.)
-probe_results/
-
-# Datasets
-datasets1/
-
-# Outputs
+# Local datasets, checkpoints and generated output
 outputs/
-vis_output/
 tmp/
-coscli_output/
-coscli.log
+.index_cache_*/
 *.log
-*.pth
 *.pt
+*.pth
 *.ckpt
 *.h5
 *.hdf5
@@ -53,46 +30,4 @@ coscli.log
 *.npz
 *.pkl
 *.pickle
-*.gif
 *.mp4
-# Bundled inference sample (overrides *.mp4 above) — used by README quick start.
-!test/examples/
-!test/examples/*.mp4
-
-# Config
-# configs/
-
-# Documentation (project-specific)
-# Project documentation is source and must remain trackable. Runtime reports
-# belong under outputs/ (ignored above), not under a blanket Markdown ignore.
-
-# Models
-# models/
-
-# Training scripts
-# train_*.sh
-# train_*.py
-# run_*.sh
-
-# Visualization
-# visualize_*.py
-
-# Analysis scripts
-analyze_*.py
-check_*.py
-
-# Losses
-# losses/
-
-# Utils
-# utils/
-
-# Subdirectories
-NeoVerse/
-
-# Local environments and package build products
-.venv*/
-*.egg-info/
-build/
-dist/
-.pytest_cache/

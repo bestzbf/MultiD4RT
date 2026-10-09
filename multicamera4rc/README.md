@@ -1,24 +1,9 @@
-# MultiCamera4RC 包
+# MultiCamera4RC Python package
 
-同步多相机、未知内外参的几何重建、scene flow 和三维追踪。当前项目的安装、最小输入示例及运行入口统一维护在[仓库 README](../README.md)。
+[项目入口](../README.md) · [模型与维度](../docs/architecture.md) · [推理](../docs/inference.md) · [数据与 GT](../docs/data.md)
 
-| 说明 | 入口 |
-|---|---|
-| 模型与完整维度 | [architecture.md](../docs/architecture.md) |
-| 数据、GT、采样比例 | [data.md](../docs/data.md) |
-| 训练、推理、断点、50k 课程 | [training.md](../docs/training.md) |
-| 模块职责与开发流程 | [development.md](../docs/development.md) |
-| 历史 GT/训练检查证据 | [audits](audits/) |
+安装包提供模型、权重兼容、原生数据读取和独立评估。CLI 命令为 `infer`、`evaluate`、`monocular`、`native-dynamic`、`static-multiview`、`demo`、`adapter-demo`。
 
-默认新模型使用 `decoder_memory=all_observations`。历史 native checkpoint 缺少此字段时恢复为 `target_time`；旧服务器任务使用旧模式。两者共享参数形状，但 attention 范围不同。明确切换才改变模型行为，详见模型文档的兼容说明。
+输入 RGB `[B,S,3,H,W]`、相机 ID `[B,S]` 和共享帧标签 `[B,S]`，支持可变相机数/时刻数。输出深度、相机参数、世界基础点、基础点加三维位移的轨迹和逐相机可见性。原生 checkpoint 保存的时间与 decoder KV 语义在加载时保留。
 
-稳定 Python 入口：
-
-```python
-from multicamera4rc import MultiCamera4RC, MultiCamera4RCConfig, pack_synchronized_images
-from multicamera4rc.checkpoint import config_from_checkpoint, save_checkpoint
-from multicamera4rc.datasets.mixture import create_dataset, collate_adapter_samples
-from multicamera4rc.tasks import scene_flow, sample_tracks
-```
-
-CLI：`python -m multicamera4rc --help`。所有训练、推理与验证入口都使用同一套 checkpoint 配置恢复语义。
+发布版不包含训练入口、训练损失、优化器恢复或学习率控制。tiny demo 使用随机权重检验推理接口；真实效果需要适配该模型的已训练 checkpoint。

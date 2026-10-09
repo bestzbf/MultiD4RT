@@ -1,0 +1,268 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-09",
+  "scope": "inference_and_evaluation",
+  "source": {
+    "repository": "https://github.com/bestzbf/my_dfrt",
+    "branch": "codex/multicamera-4rc",
+    "commit": "404d4fdfe547574bb2cbfa6a283a1dae917c7a15",
+    "previous_release": "v0.2.0",
+    "previous_release_commit": "24be2397bd246b86bc73eaa3047079aab287690d"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.0",
+    "device": "CPU",
+    "cuda_verified": false
+  },
+  "tests": {
+    "collected": 210,
+    "passed": 207,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 3,
+    "skip_reason": "Optional PyTorch3D backend comparison; native and SciPy checks pass."
+  },
+  "installed_wheel": {
+    "passed": true,
+    "run_outside_source": true,
+    "checks": [
+      {
+        "check": "root_help",
+        "passed": true
+      },
+      {
+        "check": "infer_help",
+        "passed": true
+      },
+      {
+        "check": "evaluate_help",
+        "passed": true
+      },
+      {
+        "check": "monocular_help",
+        "passed": true
+      },
+      {
+        "check": "native-dynamic_help",
+        "passed": true
+      },
+      {
+        "check": "static-multiview_help",
+        "passed": true
+      },
+      {
+        "check": "demo_help",
+        "passed": true
+      },
+      {
+        "check": "adapter-demo_help",
+        "passed": true
+      },
+      {
+        "check": "manifest_demo",
+        "passed": true
+      },
+      {
+        "check": "native_adapter_demo",
+        "passed": true
+      },
+      {
+        "check": "monocular_gt_audit",
+        "passed": true
+      },
+      {
+        "check": "monocular_geometry",
+        "passed": true
+      },
+      {
+        "check": "static_multiview_geometry",
+        "passed": true
+      },
+      {
+        "check": "renderer_dense_evaluation",
+        "passed": true
+      },
+      {
+        "check": "native_dynamic_evaluation",
+        "passed": true
+      }
+    ],
+    "training_module_imports_absent": true,
+    "weights": "random tiny checkpoint",
+    "purpose": "installation, data IO, shapes and evaluation integration"
+  },
+  "core_and_vendor": {
+    "files": 51,
+    "unchanged": true,
+    "sha256": {
+      "multicamera4rc/attention.py": "332ab4208101cf0754676fa408825076b545cdf918e750c955d4158ba905f5e5",
+      "multicamera4rc/config.py": "1fa8e9c030944d54cb6ca5716ba2e73e5548fd68ebe5daa59346f04516d72740",
+      "multicamera4rc/embeddings.py": "cccb25133ccae6dece5267da444fc0ec5bb16f4ccf2775305f4ab939dc2c4378",
+      "multicamera4rc/encoder.py": "12c8c7b27da1617e5cf24c233be6c75d19dc6aaf41800c7a52ecd302ef068822",
+      "multicamera4rc/geometry.py": "60c3770552d9034720b9b1492411921f35519b976ff8ac37e481d00799df0cd3",
+      "multicamera4rc/metadata.py": "a81c80b366b5e712fe3b430e08a22aba54341f3e70fe7e938a9ab08f54af9f88",
+      "multicamera4rc/model.py": "e03b43285fa597787b74f690e5b52c5754fd9cf121a0c9873d53e5ac88b16e72",
+      "multicamera4rc/motion.py": "9d7adffaa0c21bf530b08fa282bd38a071e84f924424fa1014cbf67f161c27ab",
+      "multicamera4rc/tasks.py": "230676ad3893e13016d2af4449e28f8faf660431299c2b7481a6c54d7e51f439",
+      "multicamera4rc/vendor/LICENSE.Apache-2.0": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "multicamera4rc/vendor/LICENSE.S-Lab": "65ef07028f39b26f515e3bfb3e5e57d0c1e9a065bf6d63b0a0d37423c6303444",
+      "multicamera4rc/vendor/NOTICE": "4b7010cee80c8ed7ecb49f515965deb7aab79eb28cebdd05b889ca51d9060f82",
+      "multicamera4rc/vendor/UPSTREAM.json": "e2dc6d1934f64b2a2c834ecd390d976bed11b39f0cbb9704c55178ec1d346066",
+      "multicamera4rc/vendor/__init__.py": "9dab461215d8fef7661dba4a9b056af755d938714d5c89eaacff77e4e98f3383",
+      "multicamera4rc/vendor/dinov2/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "multicamera4rc/vendor/dinov2/dinov2.py": "bf2f51a32f017799136b0600b2ad31a3e61f8cf28839996b6d3ac98dbc1407e0",
+      "multicamera4rc/vendor/dinov2/layers/__init__.py": "321a97ffc00375d6d48569cbc851a38e7d2dc8bbdbfcffbee722c6c27783acda",
+      "multicamera4rc/vendor/dinov2/layers/attention.py": "90926957ea9c7ec8f4dcb98f848d71cfe8a5956d2b204c465ac2dbfbee13f74c",
+      "multicamera4rc/vendor/dinov2/layers/block.py": "9064e1750f46d110c05f76e3b9607fe54a8d30b27a8d11fa4340b5a2612a372c",
+      "multicamera4rc/vendor/dinov2/layers/drop_path.py": "80b5cc50297f3049d313c5659c1244901407bdac80cf424c5d7ed64ae79cd141",
+      "multicamera4rc/vendor/dinov2/layers/layer_scale.py": "23aba2710d7d425b5abd50c006edef9c9224360d6499171b6c1ec18ef73c0b00",
+      "multicamera4rc/vendor/dinov2/layers/mlp.py": "4f17c26120d04e4e4368b07a2396a977044b00d1dcbf1bbd1a9d3447be1aa6cf",
+      "multicamera4rc/vendor/dinov2/layers/patch_embed.py": "72f14d7b3daf3f545ba93c085b0a90f3b63efcf1a14f8d694dc77763c0607528",
+      "multicamera4rc/vendor/dinov2/layers/rope.py": "dcd09808cf03ceae7abfdcbe6805ee36990412b5308b09a86c4b51a040cff38b",
+      "multicamera4rc/vendor/dinov2/layers/swiglu_ffn.py": "f0e0bab6e9e835b81c53bd69616af43d254a91af4b119923160b7df1602b1562",
+      "multicamera4rc/vendor/dinov2/vision_transformer.py": "1a41fc78cfbc8cf0709b5028757a71557e699e0a859fd4834e6360865430f63e",
+      "multicamera4rc/vendor/heads/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "multicamera4rc/vendor/heads/cam_dec.py": "f7bc81d846b786e314c03eaaf809126505fa0c82eb5177b95eadbfad5beefd63",
+      "multicamera4rc/vendor/heads/dpt_head.py": "2665fa666abe6f6a3d5157d8d93fb7204c9edcad0d787b63328339626634f9ae",
+      "multicamera4rc/vendor/heads/dualdpt.py": "93b1fb2e81fd9624749145cbb01fe6d64cb90fb6a445907203c11ea39aab8fd2",
+      "multicamera4rc/vendor/heads/head_act.py": "a6125296113ff97b8d7fc33a771429c786ef2300b277a14bb5a594b000f6fd17",
+      "multicamera4rc/vendor/heads/motiondecoder.py": "cfad1351800532029e55d1231ba659db113fca9e40517b0e171f53b6da894af0",
+      "multicamera4rc/vendor/heads/utils.py": "2dce4c0dca1974a5250cc5d5d95bd3417e3ba9494978437a12d5ab6bbff4d4df",
+      "multicamera4rc/vendor/layers/__init__.py": "e3c28c7b775165b6844000eb69f44d104d6c3803ac7da5d59f6ac3ecfb46d9d8",
+      "multicamera4rc/vendor/layers/attention.py": "b2357c24e0c76bb0fed1475f4543ed81653577007b6fc8cc583c5abd3179ec3a",
+      "multicamera4rc/vendor/layers/block.py": "c7c0f4e58cf0907b0462c73b4505f69f877880131e77a56e19e1faef96664848",
+      "multicamera4rc/vendor/layers/drop_path.py": "b9f8236e86054b9d9a71275efcad2a9ecaa1f86b529d4b8d6109ddb5e806f67a",
+      "multicamera4rc/vendor/layers/layer_scale.py": "abb7bbfae152a9de2e6d0961ab5e75c79428e849281bfe50dd07b66b54b485d1",
+      "multicamera4rc/vendor/layers/mlp.py": "255825c73b60a916dd00eb1e38aacbcdbf316e40d6a005efb46e245b7edb43aa",
+      "multicamera4rc/vendor/layers/patch_embed.py": "40da6add3d811198ea3e17cb99cdd4e5cda59e369efbbe3d18d89308618cf142",
+      "multicamera4rc/vendor/layers/rope.py": "d9a0b426d54328077853b46c832a6a44724b256fe19ef4eeaece93b284b97715",
+      "multicamera4rc/vendor/layers/swiglu_ffn.py": "7b4319195ff93393985291e06cd0aff4e207007547ed6c1c9d7ee58e194031c8",
+      "multicamera4rc/vendor/layers/vision_transformer.py": "c1a3732e5bd8f177d2575634d038cf09a475eb4543f90608d772a8820c810b80",
+      "multicamera4rc/vendor/reference_view_selector.py": "bb9a2bb1f036b484abd82fb165e28ca3d990146f04345adfd5267ba955b85082",
+      "multicamera4rc/vendor/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "multicamera4rc/vendor/utils/attention.py": "8e8a3dd3aca75ce403bc1a2f7a0b2086cc516b221fcc394b888ebc5ddc9a8a33",
+      "multicamera4rc/vendor/utils/block.py": "b0ec438942816169a5215a3678b4bff72b3783472e35942337b4a1142555c57b",
+      "multicamera4rc/vendor/utils/geometry.py": "1443f8bae8be1c7708d412aaefef3fb0107a0d2d4fb67650284481785414a53e",
+      "multicamera4rc/vendor/utils/head_utils.py": "efed71ecd3b742d5969d1a938bbf34c9923d202dfd5232f204641c4674f0bd6b",
+      "multicamera4rc/vendor/utils/transform.py": "8444e26657b61356c5cfa9d9f3affeb9485e1a9750ef97cd3899c51ba86c0716",
+      "multicamera4rc/visibility.py": "4f8ccfe6125420421eaa787464510099e46e96ed0440f10a870efea3c2b0959b"
+    }
+  },
+  "metric_implementation_parity": {
+    "ignore_only": "docstrings and type annotations",
+    "checks": [
+      {
+        "module": "multicamera4rc/metrics.py",
+        "baseline": "multicamera4rc/metrics.py",
+        "functions": [
+          "dense_metrics",
+          "native_track_metrics",
+          "rotation_error_degrees"
+        ],
+        "unchanged": true
+      },
+      {
+        "module": "multicamera4rc/metrics.py",
+        "baseline": "multicamera4rc/losses.py",
+        "functions": [
+          "_valid_mask",
+          "_resize_scalar"
+        ],
+        "unchanged": true
+      },
+      {
+        "module": "multicamera4rc/benchmarks/protocol.py",
+        "baseline": "scripts/monocular_protocol.py",
+        "functions": [
+          "align_depth_per_frame",
+          "frame_indices",
+          "geometry_metrics",
+          "geometry_on_eval_grid",
+          "load_clip",
+          "read_sintel_camera",
+          "read_sintel_depth",
+          "resize_intrinsics"
+        ],
+        "unchanged": true
+      },
+      {
+        "module": "multicamera4rc/benchmarks/camera.py",
+        "baseline": "utils/camera.py",
+        "functions": [
+          "_umeyama_native",
+          "_umeyama_pytorch3d",
+          "compute_relative_pose_error",
+          "estimate_camera_pose",
+          "estimate_intrinsics",
+          "project_points",
+          "sim3_alignment",
+          "umeyama_alignment",
+          "umeyama_alignment_batched",
+          "unproject_points"
+        ],
+        "unchanged": true
+      },
+      {
+        "module": "multicamera4rc/benchmarks/metrics.py",
+        "baseline": "utils/metrics.py",
+        "functions": [
+          "_apply_depth_scale_and_shift_alignment",
+          "_apply_depth_scale_only_alignment",
+          "_apply_sim3_alignment_to_poses",
+          "_flatten_valid_depth_values",
+          "_nan_metric_dict",
+          "_safe_acos_from_rotation_delta",
+          "compute_depth_metrics",
+          "compute_point_cloud_metrics",
+          "compute_pose_auc",
+          "compute_pose_metrics",
+          "compute_tracking_metrics",
+          "mean_shift_align_points",
+          "paired_coordinate_l1"
+        ],
+        "unchanged": true
+      },
+      {
+        "module": "multicamera4rc/evaluation.py",
+        "baseline": "scripts/build_full_dense_mixture.py",
+        "functions": [
+          "calibrated"
+        ],
+        "unchanged": true
+      }
+    ]
+  },
+  "frozen_benchmark": {
+    "checkpoint_step": 55500,
+    "total_scenes": 114,
+    "failed_scenes": 0,
+    "recomputed": false,
+    "scope": "monocular geometry only; not scene flow, tracking or multicamera quality",
+    "unchanged_sha256": {
+      "benchmarks/results/monocular_55500/per_scene.csv": "18e8d195ca09c4c993a4c87ca10d34a0b412662c9bc75031dc469e7fb7256bff",
+      "benchmarks/results/monocular_55500/scannet/evaluation.json": "7e2b126eafc07a9f642b7bbad5b3e7db32953aa491dd46b197c770dae307241c",
+      "benchmarks/results/monocular_55500/scannet/fixed_plan.json": "b4e5e7c7fce0c8252964d7b4826450922fe024b9b6711e7a114aa17955a0d836",
+      "benchmarks/results/monocular_55500/scannet/gt_audit.json": "bd078e4934caaff08c4d9cdb5e42aa17d3d15f63bd87d0b92b74613ca2dd286a",
+      "benchmarks/results/monocular_55500/sintel/evaluation.json": "d42ab610a26ad847176a21fc959ab2e11d57ad119d2b99d9fb2fd1835ce04058",
+      "benchmarks/results/monocular_55500/sintel/fixed_plan.json": "f2fe95542100c51b9444d7b2b7e8d45d2c0ac4257693ddaf3deb656401dff4c8",
+      "benchmarks/results/monocular_55500/sintel/gt_audit.json": "c50a086771a79760f45cc868b060853036d5f0a5151545789fcc46ffebd79f06",
+      "benchmarks/results/monocular_55500/sintel/gt_pose_motion_audit.json": "3faa4a75232d8fa57f362f4f44bfc3e0441fe4e3f23e552b619388d46fa9f597"
+    },
+    "summary_dataset_values_unchanged": true
+  },
+  "removed": [
+    "training CLI and optimizer/loss/recovery/LR controllers",
+    "training-only configurations and tests",
+    "duplicated legacy D4RT model, dataset and tool tree",
+    "training runtime audit history"
+  ],
+  "retained": [
+    "model and native checkpoint compatibility",
+    "inference CLI and tiny random inference demos",
+    "native data adapters and GT recipes",
+    "physical-error and monocular benchmark evaluators",
+    "frozen complete monocular results",
+    "third-party licenses and provenance"
+  ]
+}

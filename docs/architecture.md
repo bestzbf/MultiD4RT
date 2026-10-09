@@ -6,7 +6,7 @@
 
 ## 1. 输入约定
 
-设 `B` 为每卡 batch，`C` 为本片段相机数，`T` 为观测时刻数，完整同步输入有 `S=C*T` 个观察。`Q` 是选择解码的源图数，`Tq` 是请求输出的目标时刻数，`U` 是目标时刻与源时刻的并集长度。`H,W` 是补边后的大小，`p=14`，`Hp=H/p`，`Wp=W/p`，`L=Hp*Wp`，`D` 为 encoder 宽度。
+设 `B` 为 batch，`C` 为本片段相机数，`T` 为观测时刻数，完整同步输入有 `S=C*T` 个观察。`Q` 是选择解码的源图数，`Tq` 是请求输出的目标时刻数，`U` 是目标时刻与源时刻的并集长度。`H,W` 是补边后的大小，`p=14`，`Hp=H/p`，`Wp=W/p`，`L=Hp*Wp`，`D` 为 encoder 宽度。
 
 | 输入 | 维度 / 类型 | 含义 |
 |---|---|---|
@@ -27,7 +27,7 @@
 
 帧号 `5` 是标签，通过查表得到张量槽位，不能直接作为长度为 3 的时间轴下标。没有 timestamp 时直接使用共享整数帧号；不要将每台相机的展平序号当成时间。网络支持同片段中的缺失视角；当前任务假定同步数据，不做时钟偏移估计。
 
-输入相机可以移动：同 ID 只表示设备身份，不强制相机在所有时刻的外参相同。ID 在每个片段内有效即可，训练不需要全数据集统一的相机编号。观察 0 决定参考角色，重排其他观察并同步重排元数据，不改变对应输出的含义。
+输入相机可以移动：同 ID 只表示设备身份，不强制相机在所有时刻的外参相同。ID 在每个片段内有效即可，不需要全数据集统一的相机编号。观察 0 决定参考角色，重排其他观察并同步重排元数据，不改变对应输出的含义。
 
 `H,W` 必须是 14 的倍数且均至少 28；原始大小由数据桥接层补边，网络本体不偷偷 resize。GT 的 `K/c2w/depth/trajectory` 不进入 forward 参数。
 
@@ -93,7 +93,7 @@ time   [B,S,2D]
 深度与射线有独立的 fusion head：
 
 - 深度 neck 插值回 `H×W`，卷积 `128→32→2`，输出 `depth=exp(z)`、`depth_conf=1+exp(c)`，均 `[B,S,H,W]`。
-- ray 辅助分支输出 6 维世界射线信息及 confidence。四尺度为 `Hp×Wp`、`2Hp×2Wp`、`4Hp×4Wp`、`8Hp×8Wp`；`ray` 是最后尺度 `[B,S,8Hp,8Wp,6]`，**不是原图大小**，loss 负责对齐 GT 尺寸。
+- ray 辅助分支输出 6 维世界射线信息及 confidence。四尺度为 `Hp×Wp`、`2Hp×2Wp`、`4Hp×4Wp`、`8Hp×8Wp`；`ray` 是最后尺度 `[B,S,8Hp,8Wp,6]`，**不是原图大小**，下游使用时需要显式对齐分辨率。
 
 相机头使用最后 tap 的 camera token `[B,S,3072]`：
 
@@ -229,7 +229,7 @@ with torch.inference_mode():
 
 `scene_flow` 是同一个被跟踪物理点的世界位移，不是两个像素网格直接相减得到的 optical flow。源像素始终保留身份；若需要 t0 图像网格上的 flow，应选择 t0 源图。推理输出的场景尺度来自训练归一化约定，未知内外参的 RGB 重建不保证绝对米制尺度。
 
-训练中 `EncodedScene` 包含计算图，反传释放后不能跨 optimizer step 重用。
+`EncodedScene` 缓存只对应产生它的输入；图片或元数据变化时需要重新编码。
 
 ## 7. 一个具体 giant 维度例子
 
@@ -251,7 +251,7 @@ with torch.inference_mode():
 | 四源轨迹 | `[1,4,8,266,266,3]` |
 | 四源逐相机 visibility | `[1,4,8,4,266,266]` |
 
-padding 像素虽然有预测值，训练/评估不作为有效 GT。该例用于说明维度，不承诺所有设备都能承载这一布局。
+padding 像素虽然有预测值，评估不作为有效 GT。该例用于说明维度，不承诺所有设备都能承载这一布局。
 
 ## 8. 性能和断点兼容
 
@@ -259,8 +259,8 @@ padding 像素虽然有预测值，训练/评估不作为有效 GT。该例用�
 - encoder 的 global attention 计算规模仍随 `S*(L+2)` 的平方增长。全时刻 KV 更完整，同时增加 decoder attention 工作量。
 - CUDA 无 padding、BF16/FP16 且关闭 query 分块时，同相机 bias 等价分解为额外 Q/K 特征，允许 fused SDPA；不保证所有设备、dtype、mask 都使用 FlashAttention。
 - `attention_chunk_size=None`、`visibility_chunk_size=None` 关闭两种 query 分块。CLI `--no-query-chunking` 同时设置这两个值。
-- `geometry_chunk_size=8` 是 DualDPT 沿观察图批次的独立计算粒度，已变成显式配置；设为 `None` 才让几何 DPT 一次处理全部观察。`--no-query-chunking` 不改变这个设置。它不是像素抽样，也不减少几何监督。
-- 激活检查点用计算换显存，默认开启；与 query 分块不同。恢复时 `--no-checkpointing` 也生效。
+- `geometry_chunk_size=8` 是 DualDPT 沿观察图批次的独立计算粒度，已变成显式配置；设为 `None` 才让几何 DPT 一次处理全部观察。`--no-query-chunking` 不改变这个设置。它不减少实际处理的像素。
+- 配置保留激活检查点字段以兼容原权重；推理 CLI 禁用激活检查点。
 
 新 checkpoint 的 `format_version=2`，config 记录 `decoder_memory`、`time_origin` 与 `geometry_chunk_size`。所有官方入口通过 `config_from_checkpoint()` 恢复：
 
@@ -272,6 +272,6 @@ padding 像素虽然有预测值，训练/评估不作为有效 GT。该例用�
 | 新 native checkpoint | 保存时的 scope |
 | 显式 CLI `--decoder-memory ...` 或传入 config | 按指定值切换，属于架构消融/迁移 |
 
-`target_time` 的 memory 是 `[B,U,C*L,D]`，cross-attention 使用 `[B*U,L+1,D]` 对 `[B*U,C*L,D]`。它仍可从 encoder 间接获得时间上下文，但直接 KV 只有当前目标时刻。两种模式的参数键/形状一致，可恢复 AdamW；参数能加载不代表迁移后预测数值或指标不变。切换前需重新检查实际显存和固定验证。
+`target_time` 的 memory 是 `[B,U,C*L,D]`，cross-attention 使用 `[B*U,L+1,D]` 对 `[B*U,C*L,D]`。它仍可从 encoder 间接获得时间上下文，但直接 KV 只有当前目标时刻。两种模式的参数键/形状一致，可以加载同一份模型权重；参数能加载不代表迁移后预测数值或指标不变。切换前需重新检查实际显存和固定验证。
 
-缺少 `time_origin` 的历史 native config 一律恢复为 `absolute`。新建模型默认 `clip_start`，续训/推理/评估只有显式 `--time-origin clip_start` 才迁移旧模型。时间平移不变性已经过测试，但旧权重迁移后的绝对精度仍需微调与验证，不能把不变性测试当成收敛证明。
+缺少 `time_origin` 的历史 native config 一律恢复为 `absolute`。新建模型默认 `clip_start`，推理/评估只有显式 `--time-origin clip_start` 才迁移旧模型。时间平移不变性已经过测试，但旧权重迁移后的绝对精度仍需微调与验证，不能把不变性测试当成收敛证明。

@@ -5,7 +5,6 @@ import torch
 
 from multicamera4rc import MultiCamera4RC, MultiCamera4RCConfig
 from multicamera4rc.checkpoint import load_4rc_weights, save_checkpoint
-from multicamera4rc.losses import MultiCamera4RCLoss
 from multicamera4rc.tasks import sample_tracks, scene_flow
 
 
@@ -199,39 +198,6 @@ def test_nonreference_observation_permutation_preserves_geometry_and_source_trac
         output["visibility_logits"][:, restore][valid], full["visibility_logits"][valid],
         atol=7e-6, rtol=7e-5,
     )
-
-
-def test_trajectory_only_ground_truth_reaches_geometry_camera_principal_and_motion():
-    model = _model().train()
-    clip = _clip()
-    prediction = model(**clip, source_obs_idx=[1], return_visibility=False)
-    rows, columns = torch.meshgrid(torch.arange(28).float(), torch.arange(28).float(), indexing="ij")
-    truth = torch.stack((columns / 28, rows / 28, torch.full_like(rows, 2.0)), -1)
-    truth = truth[None, None, None].expand(1, 1, 3, 28, 28, 3).clone()
-    truth[:, :, :, :, :, 2] += torch.tensor([0.0, 0.1, 0.2])[None, None, :, None, None]
-    criterion = MultiCamera4RCLoss(
-        depth_weight=0, camera_weight=0, ray_weight=0, trajectory_weight=1,
-        displacement_weight=0, visibility_weight=0, static_weight=0, confidence_alpha=0,
-    )
-    losses = criterion(prediction, {"trajectory": truth})
-    assert torch.isfinite(losses["loss"]) and losses["trajectory"] > 0
-    losses["loss"].backward()
-    branches = {
-        "encoder": model.backbone.pretrained.patch_embed.proj.weight,
-        "depth": model.head.scratch.output_conv2[-1].weight,
-        "camera_translation": model.cam_dec.fc_t.weight,
-        "camera_rotation": model.cam_dec.fc_qvec.weight,
-        "camera_focal": model.cam_dec.fc_fov[0].weight,
-        "principal": model.cam_dec.fc_principal.weight,
-        "motion_decoder": model.motion_decoder.cross_blocks[0].attn.toq.weight,
-        "motion_head": model.track_head.projects[0].weight,
-        "target_time": model.target_projection.weight,
-        "relative_time": model.delta_projection.weight,
-    }
-    for name, parameter in branches.items():
-        assert parameter.grad is not None, name
-        assert torch.isfinite(parameter.grad).all(), name
-        assert parameter.grad.abs().sum() > 0, name
 
 
 def _extension_key(key):

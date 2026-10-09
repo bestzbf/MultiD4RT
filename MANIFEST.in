@@ -1,15 +1,8 @@
 include README.md CHANGELOG.md NOTICE pyproject.toml .gitignore MANIFEST.in
-include train*.py train*.sh
-graft configs
-graft datasets
 graft docs
-graft losses
-graft models
 graft multicamera4rc
 graft scripts
-graft test
 graft tests
-graft tools
-graft utils
+graft benchmarks
 graft releases
 global-exclude __pycache__ *.py[cod] .DS_Store

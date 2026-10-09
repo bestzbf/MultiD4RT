@@ -14,7 +14,6 @@ from multicamera4rc.data import collate_multicamera
 from multicamera4rc.datasets.adapters.base import h5_read_frame_slice
 from multicamera4rc.datasets.bridge import prepare_clip
 from multicamera4rc.datasets.registry import create_adapter, list_datasets
-from multicamera4rc.losses import MultiCamera4RCLoss
 
 
 def _camera_fixture():
@@ -164,28 +163,6 @@ def test_required_authoritative_tracks_do_not_fall_back_to_static(tmp_path):
     _write_mugen(path, tracks=False)
     with pytest.raises(RuntimeError, match="precomputed tracks"):
         _mugen_adapter(path).load_clip("moving", [0, 5, 10])
-
-
-@pytest.mark.parametrize("loader", ["kubric", "mugen"])
-def test_native_reader_bridge_supervision_reaches_backward(tmp_path, loader):
-    torch.set_num_threads(1)
-    if loader == "kubric":
-        _write_kubric(tmp_path / "scene.h5")
-        clip = _kubric_adapter(tmp_path).load_clip("scene", [0, 5, 10, 0, 5, 10])
-    else:
-        path = tmp_path / "pointodyssey.h5"
-        _write_mugen(path)
-        clip = _mugen_adapter(path).load_clip("moving", [0, 5, 10])
-    batch = collate_multicamera([prepare_clip(clip, image_size=(28, 42), num_queries=12)])
-    model = MultiCamera4RC(MultiCamera4RCConfig.tiny())
-    output = model(batch["images"], batch["camera_id"], batch["time_idx"], batch["query_time_idx"], source_obs_idx=torch.arange(batch["images"].shape[1]), return_visibility=True)
-    terms = MultiCamera4RCLoss()(output, batch["targets"])
-    loss = terms["loss"]
-    assert torch.isfinite(loss)
-    assert "sparse_trajectory" in terms and "sparse_visibility" in terms
-    loss.backward()
-    assert model.backbone.frame_projection.weight.grad is not None
-    assert all(torch.isfinite(parameter.grad).all() for parameter in model.parameters() if parameter.grad is not None)
 
 
 def _spawn_read_mugen(adapter, result):

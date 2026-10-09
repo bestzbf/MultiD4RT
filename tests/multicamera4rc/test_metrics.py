@@ -7,7 +7,6 @@ import torch
 
 from multicamera4rc.evaluate import summarize_records
 from multicamera4rc.metrics import dense_metrics, native_track_metrics, rotation_error_degrees
-from multicamera4rc.train import _sparse_supervised_queries
 
 
 @pytest.mark.parametrize("degrees", [0., .01, .1, .5, 1., 2., 5., 90., 179.9, 180.])
@@ -57,13 +56,6 @@ def test_native_metrics_omit_unknown_motion_instead_of_reporting_zero_error():
     metrics = native_track_metrics(sampled, target)
     assert not any("epe" in key for key in metrics)
     assert metrics["native_track_queries"] == 0
-
-
-def test_source_selection_respects_explicit_query_validity():
-    targets = dict(sparse_queries=torch.tensor([[[0., 1., 1.], [1., 1., 1.]]]),
-                   sparse_trajectory=torch.ones(1, 2, 2, 3),
-                   sparse_query_valid=torch.tensor([[False, True]]))
-    assert _sparse_supervised_queries(targets, 0).tolist() == [False, True]
 
 
 def test_dense_dynamic_velocity_includes_anchor_to_moving_endpoint():

@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "b300_tests": 220,
-  "b300_log": "/data9/zbf/my_dfrt_multicamera4rc/outputs/training_preflight/variable_ct_20261003/tests_final.log",
-  "macos_full_tests": 220,
-  "macos_additional_targeted_tests": 8
-}

@@ -1,10 +1,10 @@
 # 参考 D4RT 的单目几何评估
 
-[返回 README](../README.md) · [训练与验证](training.md)
+[返回 README](../README.md) · [推理与权重](inference.md)
 
-`scripts/evaluate_monocular.py` 将仓库旧 D4RT 的 Sintel / ScanNet 数据及误差计算适配到 MultiCamera4RC。它加载 native checkpoint 保存的架构及时间语义，以 `camera_id=0`、真实抽取帧索引、RGB 作为输入。内外参和深度只用于评估，全部有效评估像素参与深度与点云评分，没有置信度筛选或 4,096 查询采样。
+`multicamera4rc/benchmarks/monocular.py` 将仓库旧 D4RT 的 Sintel / ScanNet 数据及误差计算适配到 MultiCamera4RC。它加载 native checkpoint 保存的架构及时间语义，以 `camera_id=0`、真实抽取帧索引、RGB 作为输入。内外参和深度只用于评估，全部有效评估像素参与深度与点云评分，没有置信度筛选或 4,096 查询采样。
 
-已完成的实测见 [2026-10-08 / 55,500 步报告](../multicamera4rc/audits/monocular_benchmark_20261008/README.md)：ScanNet 100/100、Sintel 14/14，零失败，保留固定计划及全部逐场景误差。
+已完成的实测见 [2026-10-08 / 55,500 步报告](../benchmarks/results/monocular_55500/README.md)：ScanNet 100/100、Sintel 14/14，零失败，保留固定计划及全部逐场景误差。
 
 ## 范围与输入
 
@@ -17,7 +17,7 @@
 
 ## 指标定义
 
-复用 `utils/metrics.py` 和 `utils/camera.py` 的误差函数，深度逐帧对齐函数与旧 Sintel 评估器逐值测试一致。旧部分 summary 的文字称作 global sequence alignment，但现有评估函数实际执行逐帧拟合，本入口按实际代码记录。
+复用 `multicamera4rc/benchmarks/metrics.py` 和 `multicamera4rc/benchmarks/camera.py` 的误差函数，深度逐帧对齐函数与旧 Sintel 评估器逐值测试一致。旧部分 summary 的文字称作 global sequence alignment，但现有评估函数实际执行逐帧拟合，本入口按实际代码记录。
 
 | 指标 | 定义及单位 |
 | --- | --- |
@@ -34,7 +34,7 @@
 
 相机直接使用当前模型的 `c2w` head；旧 D4RT 是用点查询及刚体 Umeyama 估计相机。这里复用误差定义，但不将新模型的 head 输出伪装成旧模型的查询解码输出。这个入口评估深度、逐帧点云与相机几何，没有调用 motion decoder；scene flow / 长期三维追踪使用各自的动态评估入口。
 
-旧 translation-direction 误差函数在 GT 零平移时仍归一化零向量，得到约 90°，而该方向实际上无定义。Sintel 的 `bandage_1/2` 各 47 个相邻对属于这一情况；`ambush_2/7` 也存在微米量级的近零平移。正式 AUC 保留旧函数，须结合 [GT 运动审计](../multicamera4rc/audits/monocular_benchmark_20261008/sintel/gt_pose_motion_audit.json) 解读。Sim3 轨迹对齐也可能将静止 GT 的预测轨迹缩成点，ATE/RPE-T 不能单独说明这类片段的位姿质量。
+旧 translation-direction 误差函数在 GT 零平移时仍归一化零向量，得到约 90°，而该方向实际上无定义。Sintel 的 `bandage_1/2` 各 47 个相邻对属于这一情况；`ambush_2/7` 也存在微米量级的近零平移。正式 AUC 保留旧函数，须结合 [GT 运动审计](../benchmarks/results/monocular_55500/sintel/gt_pose_motion_audit.json) 解读。Sim3 轨迹对齐也可能将静止 GT 的预测轨迹缩成点，ATE/RPE-T 不能单独说明这类片段的位姿质量。
 
 汇总先计算每场景完整 clip 的指标，再对场景等权平均；不能把若干困难场景排除后仍标成 test100。报告包含全部固定帧索引、输入尺寸、逐场景误差、峰值显存、完整 checkpoint 配置与计划指纹；任何失败或缺失场景都会把最终状态标为 `failed`。
 
@@ -43,7 +43,7 @@
 先核验正式计划的所有样本：
 
 ```bash
-python -m scripts.evaluate_monocular \
+python -m multicamera4rc monocular \
   --dataset scannet \
   --roots /data4/d4rt_dataset/scannet/scans_test \
           /data4/d4rt_dataset/scannet/invalid_scenes/scans_test \
@@ -56,7 +56,7 @@ python -m scripts.evaluate_monocular \
 再用完全相同的计划推理：
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python -m scripts.evaluate_monocular \
+CUDA_VISIBLE_DEVICES=0 python -m multicamera4rc monocular \
   --dataset scannet \
   --roots /data4/d4rt_dataset/scannet/scans_test \
           /data4/d4rt_dataset/scannet/invalid_scenes/scans_test \

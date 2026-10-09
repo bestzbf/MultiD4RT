@@ -21,8 +21,6 @@ from multicamera4rc.datasets.mixture import (
 )
 from multicamera4rc.datasets.registry import create_adapter
 from multicamera4rc.infer import main as infer_main
-from multicamera4rc.losses import MultiCamera4RCLoss
-from multicamera4rc.train import _sources, main as train_main
 
 from test_adapter_bridge import _clip
 from test_native_loaders import _write_kubric, _write_mugen
@@ -82,65 +80,6 @@ def test_native_mixture_retains_time_gaps_and_pads_only_missing_observations(tmp
     assert not target["sparse_visibility_valid"][0, :, :, 1].any()
     assert target["depth_valid"][1].all()
     assert target["camera_valid"][1].all()
-
-
-@pytest.mark.parametrize("source_count", [0, 1])
-def test_mixed_native_batch_forward_loss_and_backward_are_finite(tmp_path, source_count):
-    torch.set_num_threads(1)
-    torch.manual_seed(0)
-    dataset = create_dataset(_write_configuration(tmp_path))
-    batch = collate_adapter_samples([dataset[0], dataset[1]])
-    source = _sources(batch, source_count)
-    model = MultiCamera4RC(MultiCamera4RCConfig.tiny())
-    prediction = model(batch["images"], batch["camera_id"], batch["time_idx"],
-                       batch["query_time_idx"], source,
-                       observation_valid=batch["observation_valid"])
-    terms = MultiCamera4RCLoss()(prediction, batch["targets"])
-    assert torch.isfinite(terms["loss"])
-    assert "sparse_trajectory" in terms and "sparse_visibility" in terms
-    if source_count == 0:
-        assert not prediction["source_valid"][0, 3:].any()
-        assert not prediction["trajectory"][0, 3:].any()
-    terms["loss"].backward()
-    assert all(torch.isfinite(parameter.grad).all() for parameter in model.parameters() if parameter.grad is not None)
-
-
-def test_native_data_config_trains_resumes_and_exports_both_camera_layouts(tmp_path):
-    config = _write_configuration(tmp_path)
-    first_path = train_main([
-        "--data-config", str(config), "--output", str(tmp_path / "train"),
-        "--preset", "tiny", "--device", "cpu", "--steps", "1",
-        "--batch-size", "2", "--source-count", "1", "--cpu-threads", "1",
-        "--attention-chunk-size", "8",
-    ])
-    first = torch.load(first_path, weights_only=True)
-    assert first["step"] == 1 and first["optimizer"]["state"]
-    assert first["config"]["attention_chunk_size"] == 8
-    resumed_path = train_main([
-        "--data-config", str(config), "--output", str(tmp_path / "resumed"),
-        "--resume", str(first_path), "--device", "cpu", "--steps", "2",
-        "--batch-size", "2", "--source-count", "1", "--cpu-threads", "1",
-        "--no-query-chunking",
-    ])
-    resumed = torch.load(resumed_path, weights_only=True)
-    assert resumed["step"] == 2
-    assert resumed["config"]["attention_chunk_size"] is None
-    assert resumed["config"]["visibility_chunk_size"] is None
-    assert resumed["config"]["embed_dim"] == first["config"]["embed_dim"] == 64
-    assert not torch.equal(first["model"]["track_head.scratch.output_conv2.2.weight"],
-                           resumed["model"]["track_head.scratch.output_conv2.2.weight"])
-    infer_main([
-        "--data-config", str(config), "--checkpoint", str(resumed_path),
-        "--output", str(tmp_path / "predictions"), "--device", "cpu",
-        "--max-clips", "2", "--source-obs", "0", "--cpu-threads", "1",
-    ])
-    for index, cameras in enumerate((1, 2)):
-        payload = torch.load(tmp_path / "predictions" / f"clip_{index:06d}.pt", weights_only=True)
-        assert payload["trajectory"].shape == (1, 1, 3, 28, 42, 3)
-        assert payload["visibility"].shape == (1, 1, 3, cameras, 28, 42)
-        assert payload["query_time_idx"].tolist() == [[0, 5, 10]]
-        assert torch.isfinite(payload["trajectory"]).all()
-        assert not payload["displacement"][:, :, 0].any()
 
 
 def test_native_dataset_with_open_parent_h5_can_spawn_dataloader_worker(tmp_path):

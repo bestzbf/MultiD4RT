@@ -16,7 +16,6 @@ from multicamera4rc.datasets.bridge import prepare_clip
 from multicamera4rc.datasets.dense import materialize_dense_targets
 from multicamera4rc.datasets.mixture import collate_adapter_samples, create_dataset, read_data_config
 from multicamera4rc.datasets.syn4d_dense import attach_syn4d_dense_recipe, _depth_visibility
-from multicamera4rc.losses import MultiCamera4RCLoss
 
 
 def _csv(path, rows):
@@ -203,19 +202,6 @@ def test_supplied_bedlam_mesh_enables_body_motion_with_correct_start_frame(tmp_p
     assert [v['mask'] for v in sample['syn4d']['missing_meshes']] == ['_00_clothing']
 
 
-def test_nonreference_frames_do_not_create_zero_motion_labels_and_sources_prefer_gt(tmp_path):
-    from multicamera4rc.train import _sources
-    _fixture(tmp_path)
-    _, _, batch = _batch(tmp_path, frame_policy='all', C=1)
-    assert batch['query_time_idx'].tolist() == [list(range(6))]
-    target = materialize_dense_targets(batch, torch.tensor([[1]]))
-    assert not target['displacement_valid'][0, 0, :, 10, 15].any()
-    assert target['trajectory_valid'][0, 0, 1, 10, 15]
-    for _ in range(6):
-        source = _sources(batch, 1, prefer_motion=True)
-        assert int(source[0, 0]) in (0, 5)
-
-
 def test_degenerate_or_distant_surface_is_unknown_motion(tmp_path):
     _fixture(tmp_path)
     _, _, batch = _batch(tmp_path, C=1)
@@ -238,38 +224,6 @@ def test_visibility_keeps_hidden_3d_and_masks_missing_target_depth(tmp_path):
     target = materialize_dense_targets(batch, torch.tensor([[0]]))
     assert target['trajectory_valid'][0, 0, 1, 10, 15]
     assert not target['visibility_valid'][0, 0, 1, 0, 10, 15]
-
-
-@pytest.mark.parametrize('missing_object', [False, True])
-def test_unknown_motion_and_padding_receive_no_loss_gradient(tmp_path, missing_object):
-    _fixture(tmp_path)
-    if missing_object:
-        (tmp_path/'data/metadata/new_weight_bone/fixture/object/vertices_sequence.npz').unlink()
-    _, _, batch = _batch(tmp_path)
-    source = torch.tensor([[0, 2]])
-    target = materialize_dense_targets(batch, source)
-    if missing_object:
-        assert target['depth_valid'][0, 0, 10, 15]
-        assert target['trajectory_valid'][0, 0, 0, 10, 15]
-        assert not target['trajectory_valid'][0, 0, 1, 10, 15]
-        assert not target['displacement_valid'][0, 0, :, 10, 15].any()
-        assert not target['static_mask'][0, 0, 10, 15]
-    pred = {k: (target[k] + .01).detach().requires_grad_() for k in ('depth', 'ray', 'K', 'c2w', 'trajectory', 'displacement')}
-    pred.update(depth_conf=torch.full_like(target['depth'], 2., requires_grad=True),
-                ray_conf=torch.full_like(target['depth'], 2., requires_grad=True),
-                motion_confidence=torch.full_like(target['trajectory_valid'], 2., dtype=torch.float32, requires_grad=True),
-                query_time_idx=batch['query_time_idx'], source_time_idx=torch.tensor([[0, 0]]),
-                observation_valid=batch['observation_valid'], source_valid=torch.tensor([[True, True]]),
-                visibility_logits=torch.zeros_like(target['visibility'], dtype=torch.float32, requires_grad=True),
-                projection_valid=torch.ones_like(target['visibility']))
-    loss = MultiCamera4RCLoss.dense()(pred, target)['loss']
-    loss.backward()
-    for key in ('trajectory', 'displacement', 'depth'):
-        assert torch.isfinite(pred[key].grad).all()
-        assert not pred[key].grad[~target[key + '_valid']].any()
-    assert not pred['displacement'].grad[0, 0, :, 3, 3].any()
-    if missing_object:
-        assert not pred['displacement'].grad[0, 0, :, 10, 15].any()
 
 
 def test_variable_camera_counts_collate_and_mixture_plans(tmp_path):
@@ -336,23 +290,6 @@ def test_metadata_paths_are_relative_to_config_and_camera_sequences_must_agree(t
         adapter.load_clip(adapter.sequences[0], [0, 0], layout_num_cameras=2)
 
 
-def test_syn4d_training_forward_backward_checkpoint(tmp_path, capsys):
-    from multicamera4rc.train import main
-    _fixture(tmp_path)
-    config = dict(image_mode='native', supervision='dense', num_times=2, epoch_size=2,
-                  sources=[dict(adapter='syn4d', root=str(tmp_path), split='all', cameras=2)])
-    path = tmp_path / 'train.json'; path.write_text(json.dumps(config))
-    checkpoint = main(['--data-config', str(path), '--output', str(tmp_path / 'train'), '--preset', 'tiny',
-                       '--device', 'cpu', '--steps', '1', '--source-count', '2', '--no-query-chunking',
-                       '--prefer-motion-sources', '--cpu-threads', '1'])
-    saved = torch.load(checkpoint, weights_only=False)
-    assert saved['step'] == 1 and saved['training_state']['optimizer_updates'] == 1
-    logs = [json.loads(v) for v in capsys.readouterr().out.splitlines() if v.startswith('{"step"')]
-    assert logs[0]['supervised_trajectory_pixels'] > 0
-    assert not logs[0]['optimizer_step_skipped']
-    assert logs[0]['rank_batches'][0]['syn4d'][0]['missing_meshes']
-
-
 def test_fixed_evaluation_case_uses_syn4d_recipe_and_raw_frame_ids(tmp_path):
     from multicamera4rc.evaluate import prepare_renderer_case
     _fixture(tmp_path)
@@ -363,54 +300,3 @@ def test_fixed_evaluation_case_uses_syn4d_recipe_and_raw_frame_ids(tmp_path):
     assert sample['query_time_idx'].tolist() == [0,5]
     assert 'dense_syn4d_vertices' in sample['targets']
     assert 'dense_object_R' not in sample['targets']
-
-
-def test_mixture_builder_preserves_relative_old_weights_and_does_not_mutate_base():
-    from scripts.build_syn4d_mixture import integrate
-    base = dict(supervision='dense', sampling='balanced_coverage', image_mode='native',
-                sources=[dict(adapter='kubric_multicam', root='/old', weight=35),
-                         dict(adapter='mugen_h5', root='/other', weight=65)])
-    config = integrate(base, '/data6/Syn4D', fraction=.1, v1_fraction=.7)
-    weights = [s['weight'] for s in config['sources']]
-    assert weights == pytest.approx([.315, .585, .07, .03])
-    assert sum(weights) == pytest.approx(1)
-    assert base['sources'][0]['weight'] == 35 and len(base['sources']) == 2
-    with pytest.raises(ValueError, match='already includes'):
-        integrate(config, '/data6/Syn4D')
-    stride1 = integrate(base, '/data6/Syn4D', v1_subset='syn4d_v1_stride_1', v1_strides=(1,2,5))
-    assert stride1['sources'][-2]['options']['subsets'] == ['syn4d_v1_stride_1']
-    assert stride1['sources'][-2]['strides'] == [1,2,5]
-    assert stride1['sources'][-1]['strides'] == [1]
-    with pytest.raises(ValueError, match='exactly one'):
-        integrate(base, '/data6/Syn4D', v1_subset=['syn4d_v1_stride_1', 'syn4d_v1_stride_5'])
-
-
-def test_scene_extraction_is_atomic_and_rejects_path_escape(tmp_path, monkeypatch):
-    import io
-    import tarfile
-    from scripts.prepare_syn4d import extract_scene
-    archive = tmp_path / 'scene.tar.zst'; archive.write_bytes(b'completed test archive')
-
-    def process_for(member_name):
-        buf = io.BytesIO()
-        with tarfile.open(fileobj=buf, mode='w') as tar:
-            info = tarfile.TarInfo('scene/ground_truth/meta_exr_csv'); info.type = tarfile.DIRTYPE
-            tar.addfile(info)
-            item = tarfile.TarInfo(member_name); item.size = 2
-            tar.addfile(item, io.BytesIO(b'{}'))
-        class Process:
-            stdout = io.BytesIO(buf.getvalue())
-            stderr = io.BytesIO()
-            def poll(self): return 0
-            def wait(self): return 0
-        return Process()
-
-    monkeypatch.setattr('scripts.prepare_syn4d.subprocess.Popen', lambda *a, **k: process_for('../escape'))
-    with pytest.raises(ValueError, match='outside scene'):
-        extract_scene(archive)
-    assert not (tmp_path / 'scene').exists() and not (tmp_path.parent / 'escape').exists()
-    monkeypatch.setattr('scripts.prepare_syn4d.subprocess.Popen', lambda *a, **k: process_for('scene/ground_truth/meta_exr_csv/camera.json'))
-    report = extract_scene(archive)
-    assert report['status'] == 'ready'
-    assert (tmp_path / 'scene/.syn4d_ready.json').is_file()
-    assert extract_scene(archive)['status'] == 'existing_preserved'

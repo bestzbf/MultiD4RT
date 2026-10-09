@@ -1,4 +1,4 @@
-"""Reproducible CPU integration smoke with independent synthetic supervision."""
+"""CPU inference smoke with random tiny weights and analytic sample images."""
 
 import argparse
 import json
@@ -9,7 +9,15 @@ from PIL import Image
 import torch
 
 from .infer import main as infer_main
-from .train import main as train_main
+from . import MultiCamera4RC, MultiCamera4RCConfig
+from .checkpoint import save_checkpoint
+
+
+def make_demo_checkpoint(path):
+    torch.manual_seed(0)
+    model = MultiCamera4RC(MultiCamera4RCConfig.tiny(gradient_checkpointing=False)).eval()
+    save_checkpoint(path, model)
+    return Path(path)
 
 
 def make_demo_dataset(output):
@@ -54,15 +62,10 @@ def make_demo_dataset(output):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True)
-    parser.add_argument("--train-steps", type=int, default=2)
     args = parser.parse_args(argv)
-    if args.train_steps <= 0:
-        parser.error("train-steps must be positive")
     output = Path(args.output)
     manifest = make_demo_dataset(output/"data")
-    checkpoint = train_main(["--manifest", str(manifest), "--output", str(output/"training"),
-                             "--preset", "tiny", "--device", "cpu", "--steps", str(args.train_steps),
-                             "--source-count", "2", "--cpu-threads", "2", "--save-every", "1"])
+    checkpoint = make_demo_checkpoint(output/"tiny_random.pt")
     infer_main(["--manifest", str(manifest), "--checkpoint", str(checkpoint),
                 "--output", str(output/"prediction"), "--device", "cpu", "--cpu-threads", "2"])
     prediction = torch.load(output/"prediction"/"clip_000000.pt", weights_only=True)
@@ -70,7 +73,7 @@ def main(argv=None):
     for source, slot in enumerate([0, 1, 2, 0, 1, 2]):
         assert torch.count_nonzero(prediction["displacement"][:, source, slot]) == 0
     assert torch.isfinite(prediction["trajectory"]).all()
-    print(json.dumps({"smoke": "passed", "checkpoint": str(checkpoint)}))
+    print(json.dumps({"smoke": "passed", "checkpoint": str(checkpoint), "weights": "random_tiny", "purpose": "inference_io_only"}))
 
 
 if __name__ == "__main__":

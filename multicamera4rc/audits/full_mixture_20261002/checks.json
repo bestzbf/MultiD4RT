@@ -1,7 +1,0 @@
-{
-  "pytest_command": "python -m pytest tests/multicamera4rc -q",
-  "passed": 168,
-  "failed": 0,
-  "elapsed_seconds": 24.33,
-  "diff_check": "passed"
-}

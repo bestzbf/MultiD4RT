@@ -1,8 +1,31 @@
 """Confidence-independent measurements of geometry and native trajectories."""
 
 import torch
+from torch.nn import functional as F
 
-from .losses import _resize_scalar, _valid_mask
+
+def _resize_scalar(value, size, *, mask=False):
+    if value.shape[-2:] == size:
+        return value.bool() if mask else value
+    leading = value.shape[:-2]
+    image = value.reshape(-1, 1, *value.shape[-2:]).float()
+    resized = (F.interpolate(image, size=size, mode="nearest") if mask
+               else F.interpolate(image, size=size, mode="bilinear", align_corners=False))
+    result = resized.reshape(*leading, *size)
+    return result.bool() if mask else result.to(value.dtype)
+
+
+def _valid_mask(target, supplied, *, vector=False):
+    finite = torch.isfinite(target).all(-1) if vector else torch.isfinite(target)
+    if supplied is None:
+        return finite
+    mask = supplied.to(device=target.device, dtype=torch.bool)
+    if vector and mask.shape == target.shape:
+        mask = mask.all(-1)
+    try:
+        return finite & torch.broadcast_to(mask, finite.shape)
+    except RuntimeError as exc:
+        raise ValueError(f"valid mask {tuple(mask.shape)} cannot cover target {tuple(finite.shape)}") from exc
 
 
 METRICS_VERSION = 2
@@ -23,7 +46,7 @@ def rotation_error_degrees(predicted, target):
 
 @torch.no_grad()
 def native_track_metrics(sampled, target):
-    """Measure native particle tracks using the loss's existing bilinear samples.
+    """Measure native particle tracks using existing bilinear samples.
 
     No second grid sampling pass, confidence weighting or zero-motion labels
     are introduced. Temporal metrics exclude the source-time identity query.

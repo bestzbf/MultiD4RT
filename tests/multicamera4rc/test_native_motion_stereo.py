@@ -17,8 +17,6 @@ from multicamera4rc.datasets.bridge import prepare_clip
 from multicamera4rc.datasets.dense import materialize_dense_targets
 from multicamera4rc.datasets.mixture import collate_adapter_samples
 from multicamera4rc.datasets.partial_dense import attach_partial_dense_recipe, vkitti_pairs
-from multicamera4rc.losses import MultiCamera4RCLoss
-from multicamera4rc.train import _TrainingStep
 
 
 def particles():
@@ -48,23 +46,6 @@ def test_all_native_tracks_retain_occluded_xyz_and_shared_scale():
     assert target["sparse_trajectory_valid"][0, occluded, 1].all()
     assert not target["sparse_visibility"][0, occluded, 1].any()
     assert target["sparse_visibility_valid"][0, occluded, 1].all()
-
-
-def test_tracks_with_no_visibility_loss_still_train_motion_and_velocity():
-    torch.set_num_threads(1)
-    c = particles(); s = prepare_clip(c, image_mode="native", num_queries=0,
-                                      all_track_queries=True, include_visibility=False)
-    attach_partial_dense_recipe(c, s, kind="pointodyssey_tracks", image_mode="native")
-    b = collate_adapter_samples([s]); source = torch.tensor([[0, 2]])
-    t = materialize_dense_targets(b, source)
-    t.pop("sparse_visibility"); t.pop("sparse_visibility_valid")
-    model = MultiCamera4RC(MultiCamera4RCConfig.tiny())
-    loss, metrics = _TrainingStep(model, MultiCamera4RCLoss.dense())(b["images"], b["camera_id"],
-        b["time_idx"], b["query_time_idx"], source, b["observation_valid"], t, False)
-    assert metrics["sparse_velocity"] > 0 and metrics["native_track_queries"] == 14
-    loss.backward()
-    assert any(p.grad is not None and p.grad.abs().sum() > 0 for p in model.motion_decoder.parameters())
-    assert all(torch.isfinite(p.grad).all() for p in model.parameters() if p.grad is not None)
 
 
 def test_variable_native_track_counts_collate_without_dropping_labels():

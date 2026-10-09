@@ -16,8 +16,6 @@ from multicamera4rc.datasets.dense import materialize_dense_targets
 from multicamera4rc.datasets.mixture import create_dataset, collate_adapter_samples
 from multicamera4rc.datasets.partial_dense import attach_partial_dense_recipe
 from multicamera4rc.datasets.static_views import select_static_views
-from multicamera4rc.losses import MultiCamera4RCLoss
-from multicamera4rc.train import _TrainingStep
 
 
 def configuration(tmp_path, count=10, choices=None, pairs=True):
@@ -173,23 +171,3 @@ def test_renderer_depth_frustum_rejects_nonoverlapping_view():
     views,info=select_static_views(adapter,'scene',[0,1,2],0,(4,),random.Random(0))
     assert views==[0,2] and info['actual_cameras']==2
     assert info['selection']=='renderer_depth_frustum' and info['available_neighbors']==1
-
-
-def test_static_c8_updates_camera_fusion_with_finite_dense_gradients(tmp_path,monkeypatch):
-    torch.set_num_threads(1)
-    dataset=create_dataset(configuration(tmp_path,choices=8))
-    batch=collate_adapter_samples([dataset[0]])
-    source=torch.tensor([[0,2,4,6]])
-    target=materialize_dense_targets(batch,source)
-    model=MultiCamera4RC(MultiCamera4RCConfig.tiny(attention_chunk_size=None,visibility_chunk_size=None))
-    def forbidden(*args,**kwargs): raise AssertionError('one-time geometry cannot train temporal motion')
-    monkeypatch.setattr(model.motion_decoder,'forward',forbidden)
-    loss,metrics=_TrainingStep(model,MultiCamera4RCLoss.dense())(batch['images'],batch['camera_id'],batch['time_idx'],
-        batch['query_time_idx'],source,batch['observation_valid'],target,False)
-    loss.backward()
-    assert torch.isfinite(loss)
-    assert metrics['displacement']==metrics['velocity']==metrics['static']==0
-    assert all(torch.isfinite(p.grad).all() for p in model.parameters() if p.grad is not None)
-    relations=[p.grad for n,p in model.named_parameters() if n.endswith('camera_relation_weight') and p.grad is not None]
-    assert relations and any(g.abs().sum()>0 for g in relations)
-    assert all(p.grad is None for p in model.motion_decoder.parameters())

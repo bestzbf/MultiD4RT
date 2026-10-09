@@ -44,7 +44,7 @@ class MultiCameraManifestDataset(Dataset):
         if not observations:
             raise ValueError(f"clip {index} has no observations")
         if self.image_size is not None and self.load_targets and record.get("targets"):
-            raise ValueError("resize training images and all pixel-coordinate labels together before creating a manifest")
+            raise ValueError("resize images and all pixel-coordinate labels together before creating a manifest")
         images, camera_id, time_idx, valid = [], [], [], []
         for observation in observations:
             with Image.open(self._path(observation["image"])) as image:

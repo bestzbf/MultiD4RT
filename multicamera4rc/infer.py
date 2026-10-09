@@ -10,7 +10,7 @@ import torch
 from . import MultiCamera4RC, MultiCamera4RCConfig
 from .data import MultiCameraManifestDataset, collate_multicamera
 from .checkpoint import config_from_checkpoint, read_checkpoint
-from .distributed import resolve_amp_dtype
+from .runtime import resolve_amp_dtype
 
 
 def _cpu_payload(value):

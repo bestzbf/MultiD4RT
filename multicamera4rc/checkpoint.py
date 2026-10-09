@@ -1,4 +1,4 @@
-"""Load original 4RC weights or native multi-camera training checkpoints."""
+"""Load original 4RC weights or compatible native multi-camera checkpoints."""
 
 from collections.abc import Mapping
 from pathlib import Path
@@ -94,14 +94,12 @@ def load_4rc_weights(model, checkpoint, strict_base=True):
                 unexpected=unexpected)
 
 
-def save_checkpoint(path, model, optimizer=None, step=0, **metadata):
+def save_checkpoint(path, model, step=0, **metadata):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     data = dict(architecture="multicamera4rc", format_version=2,
                 model=model.state_dict(), config=model.config.to_dict(), step=int(step),
                 **metadata)
-    if optimizer is not None:
-        data["optimizer"] = optimizer.state_dict()
     temporary = path.with_name(path.name+".tmp")
     torch.save(data, temporary)
     temporary.replace(path)

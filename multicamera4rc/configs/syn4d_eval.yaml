@@ -8,13 +8,13 @@ epoch_size: 100
 sources:
   - adapter: syn4d
     name: syn4d_v1
-    root: /data6/Syn4D
+    root: /path/to/Syn4D
     split: train
     cameras: 2
     options: {subsets: [syn4d_v1_stride_5], frame_policy: reference, missing_mesh: mask}
   - adapter: syn4d
     name: syn4d_sim
-    root: /data6/Syn4D
+    root: /path/to/Syn4D
     split: train
     cameras: 2
     options: {subsets: [syn4d_sim], frame_policy: reference, missing_mesh: mask}

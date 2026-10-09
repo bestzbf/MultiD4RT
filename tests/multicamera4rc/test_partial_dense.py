@@ -16,8 +16,6 @@ from multicamera4rc.datasets.bridge import prepare_clip
 from multicamera4rc.datasets.dense import materialize_dense_targets
 from multicamera4rc.datasets.mixture import create_dataset, collate_adapter_samples
 from multicamera4rc.datasets.partial_dense import attach_partial_dense_recipe, replica_pairs, vkitti_pairs
-from multicamera4rc.losses import MultiCamera4RCLoss
-from multicamera4rc.train import _TrainingStep
 
 
 def clip(T=3, shape=(27, 39)):
@@ -29,30 +27,6 @@ def clip(T=3, shape=(27, 39)):
         intrinsics=np.repeat(np.array([[20., 0, (w-1)/2], [0, 20., (h-1)/2], [0, 0, 1.]])[None], T, 0),
         extrinsics=np.repeat(np.eye(4)[None], T, 0),
         metadata={"frame_indices": list(range(T)), "extrinsics_convention": "w2c", "pixel_coordinates": "array_index_v1"})
-
-
-def test_geometry_only_masks_unknown_motion_and_bypasses_motion_decoder(monkeypatch):
-    torch.set_num_threads(1)
-    c = clip(); c.depths[1][0, 0] = 0
-    s = prepare_clip(c, image_mode="native", num_queries=0)
-    attach_partial_dense_recipe(c, s, kind="geometry", image_mode="native")
-    b = collate_adapter_samples([s]); source = torch.tensor([[0, 1, 2]])
-    target = materialize_dense_targets(b, source)
-    assert not target["displacement_valid"].any() and not target["static_mask"].any()
-    assert "visibility" not in target and not any(k.startswith("sparse_") for k in target)
-    assert target["trajectory_valid"].sum() == 3*27*39-1
-    assert target["source_pixel_valid"].sum() == 3*27*39-1
-    assert not target["trajectory_valid"][0, 0, 1].any()
-    model = MultiCamera4RC(MultiCamera4RCConfig.tiny())
-    def unexpected(*args, **kwargs): raise AssertionError("unknown motion must not require a decoder forward")
-    monkeypatch.setattr(model.motion_decoder, "forward", unexpected)
-    loss, terms = _TrainingStep(model, MultiCamera4RCLoss.dense())(b["images"], b["camera_id"], b["time_idx"],
-        b["query_time_idx"], source, b["observation_valid"], target, False)
-    assert terms["displacement"] == terms["velocity"] == terms["static"] == 0
-    loss.backward()
-    assert any(p.grad is not None for p in model.head.parameters())
-    assert all(p.grad is None for p in model.motion_decoder.parameters())
-    assert all(torch.isfinite(p.grad).all() for p in model.parameters() if p.grad is not None)
 
 
 def test_native_vkitti_scene_flow_removes_camera_motion_and_keeps_hidden_endpoint(tmp_path):
@@ -231,26 +205,6 @@ def test_invalid_dense_retry_fails_when_time_bucket_has_no_valid_clip(tmp_path):
                  options=dict(verbose=False, train_only_val_ratio=0.))]))
     with pytest.raises(RuntimeError, match="No replacement dense clip with num_times=1"):
         dataset[0]
-
-
-def test_ddp_dense_geometry_and_renderer_motion_can_change_unused_heads(tmp_path):
-    import h5py
-    from test_dense_supervision import _scene
-    from test_native_loaders import _write_mugen
-    from test_distributed_training import _torchrun
-    kubric = tmp_path/"kubric"; kubric.mkdir(); _scene(kubric)
-    packed = tmp_path/"packed.h5"; _write_mugen(packed)
-    config = dict(image_mode="native", supervision="dense", num_times=3, num_queries=0, epoch_size=8,
-        include_visibility=False, seed=0, sources=[
-            dict(adapter="kubric_multicam", root=str(kubric), split="all", cameras=2,
-                 options=dict(verbose=False, depth_is_ray_distance=False)),
-            dict(adapter="mugen_h5", root=str(packed), options=dict(verbose=False, train_only_val_ratio=0.))])
-    path = tmp_path/"mix.json"; path.write_text(json.dumps(config))
-    records, logs = _torchrun(tmp_path, path, tmp_path/"train", 3, no_query_chunking=True)
-    assert records[0]["digest"] == records[1]["digest"]
-    assert all(r["all_finite"] for r in records)
-    assert any({row[0] for row in record["layouts"]} == {1, 2} for record in records)
-    assert all(not log["optimizer_step_skipped"] for log in logs)
 
 
 def test_single_camera_attention_matches_bias_forward_and_gradients():

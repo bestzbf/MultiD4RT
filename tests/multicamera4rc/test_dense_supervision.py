@@ -1,4 +1,4 @@
-"""Renderer-derived dense labels, scale/gauge consistency and full-pixel losses."""
+"""Renderer-derived dense labels and full-pixel scale/gauge consistency."""
 
 import numpy as np
 import json
@@ -9,7 +9,6 @@ from multicamera4rc.datasets.adapters.base import UnifiedClip
 from multicamera4rc.datasets.bridge import prepare_clip
 from multicamera4rc.datasets.dense import attach_kubric_dense_recipe, materialize_dense_targets
 from multicamera4rc.datasets.mixture import collate_adapter_samples
-from multicamera4rc.losses import MultiCamera4RCLoss
 
 
 def _scene(tmp_path, *, rotate=False, include_visibility=True):
@@ -133,44 +132,6 @@ def test_dense_occlusion_does_not_remove_world_position_supervision(tmp_path):
     assert target["visibility"][0, 0, :, :, 6, 10].all()
 
 
-def test_dense_loss_updates_a_pixel_outside_the_old_sparse_pool_and_logs_no_sparse_terms(tmp_path):
-    _, _, batch = _scene(tmp_path)
-    target = materialize_dense_targets(batch, torch.tensor([[0]]))
-    pred = {k: target[k].clone().requires_grad_() for k in ("depth", "ray", "K", "c2w", "trajectory", "displacement")}
-    pred.update(depth_conf=torch.ones_like(target["depth"]), ray_conf=torch.ones_like(target["depth"]),
-                motion_confidence=torch.ones_like(target["trajectory_valid"], dtype=torch.float32),
-                query_time_idx=batch["query_time_idx"], source_time_idx=torch.tensor([[0]]),
-                observation_valid=batch["observation_valid"], source_valid=torch.tensor([[True]]),
-                visibility_logits=torch.zeros_like(target["visibility"], dtype=torch.float32, requires_grad=True),
-                projection_valid=torch.zeros_like(target["visibility"]))
-    with torch.no_grad():
-        pred["trajectory"][0, 0, 2, 6, 10, 0] += .3
-        pred["displacement"][0, 0, 2, 6, 10, 0] += .3
-    terms = MultiCamera4RCLoss.dense()(pred, target)
-    assert not any(k.startswith("sparse_") for k in terms)
-    assert terms["trajectory"] > 0 and terms["velocity"] > 0
-    terms["loss"].backward()
-    assert pred["trajectory"].grad[0, 0, 2, 6, 10].abs().sum() > 0
-    assert pred["visibility_logits"].grad.abs().sum() > 0  # GT masks determine supervision.
-    assert not pred["trajectory"].grad[..., 27:, :, :].any()
-    assert all(torch.isfinite(v.grad).all() for v in pred.values() if isinstance(v, torch.Tensor) and v.grad is not None)
-
-
-def test_velocity_uses_frame_gaps_and_sorts_target_times():
-    times = torch.tensor([[5, 0, 2]])
-    truth = torch.zeros(1, 1, 3, 2, 2, 3)
-    truth[..., 0] = times[:, None, :, None, None].float()
-    estimate = (3*truth).requires_grad_()
-    pred = {"displacement": estimate, "query_time_idx": times, "source_time_idx": torch.tensor([[0]])}
-    target = {"displacement": truth, "displacement_valid": torch.ones(truth.shape[:-1], dtype=torch.bool)}
-    loss = MultiCamera4RCLoss(depth_weight=0, camera_weight=0, trajectory_weight=0,
-                             displacement_weight=0, velocity_weight=1, regression_norm="l2")(pred, target)
-    torch.testing.assert_close(loss["velocity"], torch.tensor(2.))
-    torch.testing.assert_close(loss["loss"], torch.tensor(2.))
-    loss["loss"].backward()
-    assert estimate.grad.abs().sum() > 0
-
-
 def _ground_and_dome_scene(tmp_path, *, policy="auto"):
     import h5py
     clip, _, _ = _scene(tmp_path)
@@ -231,30 +192,6 @@ def test_dome_mask_uses_world_plane_preserves_distant_objects_and_all_target_mas
     assert batch['targets']['depth_valid'][0,0,0,0]  # materialization does not mutate raw targets
 
 
-def test_dome_pixels_receive_no_gradient_from_any_dense_task(tmp_path):
-    _, _, batch = _ground_and_dome_scene(tmp_path)
-    target = materialize_dense_targets(batch, torch.tensor([[0,3]]))
-    pred = {k:(target[k]+.01).detach().requires_grad_() for k in
-            ('depth','ray','K','c2w','trajectory','displacement')}
-    pred.update(depth_conf=torch.full_like(target['depth'],2.,requires_grad=True),
-                ray_conf=torch.full_like(target['depth'],2.,requires_grad=True),
-                motion_confidence=torch.full_like(target['trajectory_valid'],2.,dtype=torch.float32,requires_grad=True),
-                query_time_idx=batch['query_time_idx'],source_time_idx=torch.tensor([[0,0]]),
-                observation_valid=batch['observation_valid'],source_valid=torch.tensor([[True,True]]),
-                visibility_logits=torch.zeros_like(target['visibility'],dtype=torch.float32,requires_grad=True),
-                projection_valid=torch.ones_like(target['visibility']))
-    loss = MultiCamera4RCLoss.dense()(pred,target)['loss']
-    loss.backward()
-    masks={'depth':target['depth_valid'],'ray':target['ray_valid'],
-           'trajectory':target['trajectory_valid'],'displacement':target['displacement_valid'],
-           'depth_conf':target['depth_valid'],'ray_conf':target['ray_valid'],
-           'motion_confidence':target['trajectory_valid'],'visibility_logits':target['visibility_valid']}
-    for key,valid in masks.items():
-        assert torch.isfinite(pred[key].grad).all(), key
-        assert not pred[key].grad[~valid].any(), key
-        assert pred[key].grad[valid].abs().sum()>0, key
-
-
 def test_explicit_legacy_policy_and_unknown_schema_are_recordable(tmp_path):
     clip, _, batch = _ground_and_dome_scene(tmp_path,policy='all')
     target = materialize_dense_targets(batch,torch.tensor([[0]]))
@@ -266,39 +203,3 @@ def test_explicit_legacy_policy_and_unknown_schema_are_recordable(tmp_path):
     sample = prepare_clip(clip,num_queries=0,image_mode='native')
     with pytest.raises(ValueError,match='audited'):
         attach_kubric_dense_recipe(clip,sample,image_mode='native',background_policy='objects_ground')
-
-
-@pytest.mark.parametrize("profile", ["auto", "dense_balanced"])
-def test_real_adapter_dense_training_forward_backward_and_checkpoint(tmp_path, capsys, profile):
-    from multicamera4rc.train import main as train_main
-    _scene(tmp_path)
-    config = {"image_mode": "native", "supervision": "dense", "num_queries": 0,
-              "num_times": 3, "epoch_size": 2,
-              "sources": [{"adapter": "kubric_multicam", "root": str(tmp_path),
-                           "split": "all", "cameras": 2,
-                           "options": {"depth_is_ray_distance": False, "verbose": False}}]}
-    path = tmp_path/"dense.json"
-    path.write_text(json.dumps(config))
-    checkpoint = train_main(["--data-config", str(path), "--output", str(tmp_path/"train"),
-                             "--preset", "tiny", "--device", "cpu", "--steps", "1",
-                              "--source-count", "1", "--no-query-chunking", "--cpu-threads", "1", "--loss-profile", profile])
-    payload = torch.load(checkpoint, weights_only=False)
-    assert payload["step"] == 1
-    assert payload["training_state"]["supervision"] == "dense"
-    assert payload["training_state"]["scene_normalized"]
-    assert payload["training_state"]["loss_profile"] == ("dense" if profile == "auto" else profile)
-    assert payload["training_state"]["loss_config"]
-    records = [json.loads(s) for s in capsys.readouterr().out.splitlines() if s.startswith('{"step"')]
-    assert records[0]["supervised_source_pixels"] == 27*39
-    assert records[0]["supervised_trajectory_pixels"] == 3*27*39
-    assert not any(k.startswith("sparse_") for k in records[0])
-    if profile == "dense_balanced":
-        resumed_path = train_main(["--data-config", str(path), "--output", str(tmp_path/"resumed"),
-            "--resume", str(checkpoint), "--device", "cpu", "--steps", "2", "--source-count", "1",
-            "--cpu-threads", "1", "--override-lr", "--lr", "3e-5", "--backbone-lr", "3e-6",
-            "--lr-schedule", "cosine"])
-        resumed = torch.load(resumed_path, weights_only=True)
-        assert resumed["training_state"]["loss_config"] == payload["training_state"]["loss_config"]
-        assert resumed["training_state"]["loss_profile"] == profile
-        assert resumed["optimizer"]["param_groups"][1]["lr"] == 3e-5
-        assert resumed["training_state"]["optimizer_updates"] == 2
