@@ -1,0 +1,122 @@
+{
+  "name": "syn4d_warehouse_c2t4",
+  "title": "Syn4D · Warehouse",
+  "sequence": "syn4d_v1_stride_1/warehouse_group_static/seq_000005",
+  "mode": "multicamera",
+  "cameras": 2,
+  "frames": 4,
+  "camera_ids": [
+    2,
+    3
+  ],
+  "time_idx": [
+    15,
+    20,
+    25,
+    30
+  ],
+  "native_hw": [
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ],
+    [
+      720,
+      1280
+    ]
+  ],
+  "model_hw": [
+    728,
+    1288
+  ],
+  "source_obs_idx": [
+    0,
+    4
+  ],
+  "input_rgb_exact_match": true,
+  "checkpoint_step": 56000,
+  "checkpoint_file": "step_00056000.pt",
+  "weights": "trained_native",
+  "model": "MultiD4RT giant",
+  "network_inputs": [
+    "RGB",
+    "camera_id",
+    "time_idx",
+    "source_obs_idx",
+    "query_time_idx"
+  ],
+  "inference_seconds": 5.538423681166023,
+  "peak_allocated_gib": 23.149900436401367,
+  "displayed_source_points": 30000,
+  "point_filter": "finite positive-depth content pixels; fixed-seed uniform sampling without replacement; no GT or confidence masks",
+  "selection": "Curated from held-out validation cases by reconstruction and visual quality; not an aggregate benchmark",
+  "held_out": true,
+  "input_sha256": {
+    "camera_2/frame_000015.png": "068323bfa54bfbe9aaaae956c3846a1afe7a29806948df471825a0684d47c65e",
+    "camera_2/frame_000020.png": "d464f7e2e3e22a9b3123971780d3f5a74739bec9c6d508f0698205f351b7d8b3",
+    "camera_2/frame_000025.png": "d3d9e9dfbd0b9414ba12c5a6d0d624746c1cc7b3beee5e6e269f3b2bfa9a7913",
+    "camera_2/frame_000030.png": "34546be0129da22c6bc821058c6a958c4ca4a989c1d3cbfa44e1cbd73bcf1822",
+    "camera_3/frame_000015.png": "16b2973bd6c0e82a1f48f7d9f795d8d353371659a2cfcc25ca135414934f8262",
+    "camera_3/frame_000020.png": "68eaca6669773ad7630dd0b969a0f3313eae846ced0040384f68941ef49c06ad",
+    "camera_3/frame_000025.png": "3d190d1070270372bfb4ae9142dc6f6cb0c053c98e8465ec641504c01fb98680",
+    "camera_3/frame_000030.png": "0a75bf24972e4b9a978729377df99bbbbc0e406d5754a050d8828b8a78e4be7d"
+  },
+  "display_max_points": 30000,
+  "display_sampling_seed": "9157 + observation",
+  "display_initial_camera": {
+    "eye": {
+      "x": 0.75,
+      "y": -0.85,
+      "z": -1.8
+    },
+    "up": {
+      "x": -1.7128e-05,
+      "y": -0.91735518,
+      "z": -0.39806977
+    }
+  },
+  "track_query_selection": "Visible subject pixels chosen manually in first RGB image; no GT or prediction-error selection",
+  "track_queries_file": "queries.json",
+  "display_up_source": {
+    "description": "Normal of three model-predicted floor pixels selected in first RGB image; display orientation only",
+    "source_observation": 0,
+    "pixels": [
+      [
+        1150,
+        350
+      ],
+      [
+        1150,
+        650
+      ],
+      [
+        650,
+        650
+      ]
+    ]
+  }
+}

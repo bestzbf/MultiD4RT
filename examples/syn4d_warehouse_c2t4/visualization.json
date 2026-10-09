@@ -1,0 +1,39 @@
+{
+  "clip_id": "Syn4D \u00b7 Warehouse \u00b7 syn4d_v1_stride_1/warehouse_group_static/seq_000005 \u00b7 step 56,000",
+  "mode": "multicamera",
+  "times": [
+    15,
+    20,
+    25,
+    30
+  ],
+  "cameras": [
+    2,
+    3
+  ],
+  "max_points": 30000,
+  "max_depth": null,
+  "source_observations": [
+    0,
+    4
+  ],
+  "displayed_points": 30000,
+  "sampling": "uniform image pixels without replacement; seed 9157 + observation",
+  "units": "checkpoint world units",
+  "weights": "trained_native",
+  "checkpoint_step": 56000,
+  "model": "MultiD4RT giant",
+  "native_resolution": true,
+  "initial_camera": {
+    "eye": {
+      "x": 0.75,
+      "y": -0.85,
+      "z": -1.8
+    },
+    "up": {
+      "x": -1.7128e-05,
+      "y": -0.91735518,
+      "z": -0.39806977
+    }
+  }
+}

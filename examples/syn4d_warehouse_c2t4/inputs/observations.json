@@ -1,0 +1,49 @@
+{
+  "clips": [
+    {
+      "id": "Syn4D \u00b7 Warehouse \u00b7 syn4d_v1_stride_1/warehouse_group_static/seq_000005 \u00b7 step 56,000",
+      "observations": [
+        {
+          "image": "camera_2/frame_000015.png",
+          "camera_id": 2,
+          "time_idx": 15
+        },
+        {
+          "image": "camera_2/frame_000020.png",
+          "camera_id": 2,
+          "time_idx": 20
+        },
+        {
+          "image": "camera_2/frame_000025.png",
+          "camera_id": 2,
+          "time_idx": 25
+        },
+        {
+          "image": "camera_2/frame_000030.png",
+          "camera_id": 2,
+          "time_idx": 30
+        },
+        {
+          "image": "camera_3/frame_000015.png",
+          "camera_id": 3,
+          "time_idx": 15
+        },
+        {
+          "image": "camera_3/frame_000020.png",
+          "camera_id": 3,
+          "time_idx": 20
+        },
+        {
+          "image": "camera_3/frame_000025.png",
+          "camera_id": 3,
+          "time_idx": 25
+        },
+        {
+          "image": "camera_3/frame_000030.png",
+          "camera_id": 3,
+          "time_idx": 30
+        }
+      ]
+    }
+  ]
+}
