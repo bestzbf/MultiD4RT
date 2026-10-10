@@ -13,6 +13,49 @@ python -m pip install -e '.[weights,viz]'
 multid4rt --help
 ```
 
+## 预训练权重
+
+[魔搭模型仓库：binfengzou/MultiD4RT](https://modelscope.cn/models/binfengzou/MultiD4RT) 提供 **60k giant** 推理权重，适用于多相机 4D、多视角单时刻与单目动态输入。
+
+| 项目 | 内容 |
+|---|---|
+| 权重文件 | `multid4rt_giant_step60000.pt` |
+| 模型 | giant：patch14、1536 维、40 层 encoder |
+| 格式 / 大小 | 原始 FP32，6.11 GB；包含模型参数与配置 |
+| 兼容版本 | MultiD4RT v0.5.1 |
+| SHA256 | `1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0` |
+
+下载到项目的 `weights/` 目录：
+
+```bash
+python -m pip install 'modelscope>=1.35.1'
+```
+
+```python
+from modelscope.hub.file_download import model_file_download
+
+checkpoint = model_file_download(
+    'binfengzou/MultiD4RT',
+    file_path='multid4rt_giant_step60000.pt',
+    local_dir='weights',
+)
+print(checkpoint)
+```
+
+加载真实权重或直接运行可视化：
+
+```python
+from multid4rt import MultiD4RT
+
+model = MultiD4RT.from_checkpoint('weights/multid4rt_giant_step60000.pt').eval().cuda()
+```
+
+```bash
+multid4rt visualize --input camera_sequences/ --mode multicamera --checkpoint weights/multid4rt_giant_step60000.pt --output outputs/multicamera --device cuda --amp --amp-dtype bfloat16
+```
+
+`from_checkpoint()` 自动恢复权重保存的配置。该 60k 权重使用 `decoder_memory=target_time`、`time_origin=clip_start`：encoder 融合全部输入观察，运动 decoder 的 KV 来自目标时刻的有效相机。复现该权重的输出时保持这些设置。魔搭仓库附模型配置、校验值和导出验证记录；1,106 个状态张量与原始 checkpoint 完全一致，并通过真实双相机 RGB 的 CUDA 推理检查。
+
 ## 模型输入与输出
 
 同步图像为 `[B,C,T,3,H,W]`，按相机优先展平为 `[B,S,3,H,W]`，其中 `S=C*T`。RGB 使用 `[0,1]` 浮点值或 uint8。保持图像比例，将高宽准备为 14 的倍数且均至少 28；基础 `infer` 命令默认不缩放。
@@ -44,7 +87,7 @@ time_idx     0   5  10   0   5  10
 
 共享 encoder 先提取每张图的局部特征，再融合全部相机与时刻。相机身份通过同相机 attention bias 编码；共享帧编码和 time token 提供时间信息。
 
-几何分支预测深度、内参和位姿，反投影得到基础点 `P`。运动 decoder 使用全部输入观察的 patch 特征作为 KV，以目标时间和源到目标的时间差进行 AdaLN 调制，预测三维位移 `Δ`。最终轨迹为 `X(t)=P+Δ(t)`，源时刻严格满足 `Δ(t_source)=0`。可见性分支结合轨迹投影与目标图像特征输出逐相机可见性。
+几何分支预测深度、内参和位姿，反投影得到基础点 `P`。新建模型的运动 decoder 默认使用全部输入观察的 patch 特征作为 KV，以目标时间和源到目标的时间差进行 AdaLN 调制，预测三维位移 `Δ`；加载 checkpoint 时使用其保存的 KV 范围。最终轨迹为 `X(t)=P+Δ(t)`，源时刻严格满足 `Δ(t_source)=0`。可见性分支结合轨迹投影与目标图像特征输出逐相机可见性。
 
 giant 配置使用 patch14、1536 维 encoder 和 40 层；完整模块与中间张量维度见 [模型结构](docs/architecture.md)。
 
@@ -116,7 +159,7 @@ multid4rt visualize --demo --mode multicamera --output outputs/viewer_demo --dev
 
 ## 真实数据实例
 
-打开 [examples/index.html](examples/index.html) 可查看已训练 giant 权重生成的五组精选重建：两组 Syn4D C2T4 人物动态场景、BlendedMVS C8T1 城市建筑、Hypersim C4T1 室内与 PointOdyssey C1T16 人物序列。每组附原始 RGB、交互式三维页面、PLY、轨迹与 scene flow，可直接离线打开。案例按展示质量筛选；具体输入与重新推理命令见[实例说明](examples/README.md)。
+打开 [examples/index.html](examples/index.html) 可查看 step 56,000 giant 权重生成的五组精选重建：两组 Syn4D C2T4 人物动态场景、BlendedMVS C8T1 城市建筑、Hypersim C4T1 室内与 PointOdyssey C1T16 人物序列。每组附原始 RGB、交互式三维页面、PLY、轨迹与 scene flow，可直接离线打开。案例按展示质量筛选；具体输入与重新推理命令见[实例说明](examples/README.md)。
 
 | Syn4D · Temple 双相机动态 | Syn4D · Warehouse 双相机动态 |
 |---|---|
