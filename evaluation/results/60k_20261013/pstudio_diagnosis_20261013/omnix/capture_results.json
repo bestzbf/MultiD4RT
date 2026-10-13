@@ -1,0 +1,350 @@
+{
+  "stage": "passed",
+  "loading": {
+    "strict": true,
+    "loaded_tensors": 1119,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "network_config": {
+      "backbone_args": {
+        "name": "vitg",
+        "out_layers": [
+          19,
+          27,
+          33,
+          39
+        ],
+        "alt_start": 13,
+        "qknorm_start": 13,
+        "rope_start": 13,
+        "cat_token": true,
+        "use_time_embed": true,
+        "time_embed_start_idx": 13,
+        "freeze_backbone_layers": -1,
+        "checkpointing_prepare": false,
+        "checkpointing_start_idx": null
+      },
+      "head_args": {
+        "dim_in": 3072,
+        "output_dim": 2,
+        "features": 256,
+        "out_channels": [
+          256,
+          512,
+          1024,
+          1024
+        ]
+      },
+      "cam_args": {
+        "cam_dec": {
+          "dim_in": 3072
+        }
+      },
+      "st_mod_args": {
+        "feature_dim": 3072,
+        "embed_dim": 512,
+        "feature_level": 4,
+        "patch_size": 14,
+        "detach_pts3d": true,
+        "detach_feats": false,
+        "resize_factor": 1,
+        "dynamic_topk": 0.2,
+        "weight_dynamic_score": false,
+        "weight_dynamic_score_detach": true,
+        "scale_time_embed": true,
+        "use_time_embed_feat": false,
+        "motion_dim": 9,
+        "spatial_temporal_feature_idx": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "temporal_attn_layer_idx": [],
+        "mask_attn_layer_idx": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "weight_dynamic_score_alpha": 0.3,
+        "scale_time_embed_by_sp_adaln": false,
+        "use_time_embed": true,
+        "num_block": 8,
+        "spatial_attn_layer_idx": [],
+        "cross_attn_layer_idx": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "use_checkpointing": false
+      },
+      "offset_head_args": {
+        "dim_in": 3072,
+        "patch_size": 14,
+        "motion_field_num_level": 4,
+        "motion_dim": 9,
+        "pred_offset_num_level": 4,
+        "num_point": 9,
+        "use_checkpointing": false,
+        "resize_factor": 1,
+        "use_motion_max_pooling": true,
+        "pred_conf": true
+      },
+      "trajectory_mod_args": {
+        "num_point": 9,
+        "patch_size": 14,
+        "fixed_offset_level": [],
+        "ms_deform_level": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "interpolate_dynamic_mask": true,
+        "use_checkpointing": false,
+        "detach_pts3d": false,
+        "use_w_dynamic": true,
+        "w_dynamic_st": true,
+        "resize_factor": 1,
+        "use_time_info": true
+      },
+      "pts3d_mode": "ray",
+      "pretrain": false
+    },
+    "source": "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013/official/OmniX",
+    "da3_source": "/data9/zbf/omega_trace_dense_v10_multicam_omnix/third_party/depth-anything-3",
+    "deform_reference_max_error": 2.384185791015625e-07,
+    "kernel_substitutions": [
+      "FA3 to PyTorch SDPA",
+      "upstream MSDeformAttn grid_sample reference"
+    ],
+    "runner_sha256": "088b7c4c9ace9a256ee4d2d602ee85470f481adba32792febd6cb51319e5c1e8",
+    "method": "omnix",
+    "checkpoint": "/data9/zbf/omega_trace_dense_v10_multicam_omnix/pretrained/omnix/eccv_release.ckpt",
+    "checkpoint_sha256": "871638d02bf8591ccb24de9da28bf862a0c1fa10a8640442e76cb58face343ed",
+    "parameters": 1326418202,
+    "torch": "2.11.0+cu128",
+    "numpy": "1.26.4"
+  },
+  "records": [
+    {
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.3650099403578529,
+        "epe_m": 0.05013314330847426,
+        "global_scale": 4.318999401336242,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "989fdf2db8ea7dd1ecd23a2c96e86665d13167018171cb6e615d193d49febbbd",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 11.008555033244193,
+      "K0": [
+        [
+          388.1848449707031,
+          0.0,
+          252.0
+        ],
+        [
+          0.0,
+          393.9667663574219,
+          147.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 0.005679965019226074
+    },
+    {
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.08581560283687942,
+        "epe_m": 0.1214245440241753,
+        "global_scale": 4.4210661673459235,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "45638503836b45c8e3b1f119101fa36812ebc269ac3209895aa1d5f9c7fafffc",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 1.331375422887504,
+      "K0": [
+        [
+          328.1962585449219,
+          0.0,
+          252.0
+        ],
+        [
+          0.0,
+          333.5162353515625,
+          147.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 0.006273984909057617
+    },
+    {
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.061279870392871603,
+        "epe_m": 0.18575224082699535,
+        "global_scale": 4.244400583659746,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e1044b17ec8e2899596710bd1bfd2896d7aee076ca423d5e0f672e44900fb615",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 1.3083190359175205,
+      "K0": [
+        [
+          385.0567932128906,
+          0.0,
+          252.0
+        ],
+        [
+          0.0,
+          390.94268798828125,
+          147.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 0.005654335021972656
+    },
+    {
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.38985637342908436,
+        "epe_m": 0.07371625503721602,
+        "global_scale": 4.640548909842484,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "61ee577d1735b702bf466e68cfbd71035d611722bb238c6982961303036292bf",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 1.3218723312020302,
+      "K0": [
+        [
+          343.69146728515625,
+          0.0,
+          252.0
+        ],
+        [
+          0.0,
+          349.3253173828125,
+          147.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 0.006010591983795166
+    }
+  ],
+  "metric_eval_short_side": 256
+}

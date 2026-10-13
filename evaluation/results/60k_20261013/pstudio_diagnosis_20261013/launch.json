@@ -1,0 +1,91 @@
+[
+  {
+    "name": "cached",
+    "pid": 776890,
+    "command": [
+      "/data6/benchmarks/runtime/eval_env/bin/python",
+      "-u",
+      "-m",
+      "evaluation.diagnose_pstudio",
+      "--campaign",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013",
+      "--output",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013/pstudio_diagnosis_20261013/cached",
+      "--method",
+      "cached"
+    ]
+  },
+  {
+    "name": "60k",
+    "pid": 776891,
+    "command": [
+      "/data6/benchmarks/runtime/eval_env/bin/python",
+      "-u",
+      "-m",
+      "evaluation.diagnose_pstudio",
+      "--campaign",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013",
+      "--output",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013/pstudio_diagnosis_20261013/60k",
+      "--method",
+      "multid4rt",
+      "--checkpoint",
+      "/data9/zbf/multid4rt_modelscope_release_20261010/model/multid4rt_giant_step60000.pt",
+      "--device",
+      "cuda:0",
+      "--variants",
+      "standard",
+      "native_resolution",
+      "patch_resize"
+    ]
+  },
+  {
+    "name": "67k",
+    "pid": 776892,
+    "command": [
+      "/data6/benchmarks/runtime/eval_env/bin/python",
+      "-u",
+      "-m",
+      "evaluation.diagnose_pstudio",
+      "--campaign",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013",
+      "--output",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013/pstudio_diagnosis_20261013/67k",
+      "--method",
+      "multid4rt",
+      "--checkpoint",
+      "/data8/zbf/multicamera4rc_runs/loader_recovery_20261012/continued_training_loopback/continuation_66000_68000_try0/step_00067000.pt",
+      "--allow-latest",
+      "--device",
+      "cuda:1",
+      "--variants",
+      "standard",
+      "native_resolution",
+      "patch_resize"
+    ]
+  },
+  {
+    "name": "omnix",
+    "pid": 776893,
+    "command": [
+      "/data6/benchmarks/runtime/eval_env/bin/python",
+      "-u",
+      "-m",
+      "evaluation.diagnose_pstudio",
+      "--campaign",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013",
+      "--output",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013/pstudio_diagnosis_20261013/omnix",
+      "--method",
+      "omnix",
+      "--checkpoint",
+      "/data9/zbf/omega_trace_dense_v10_multicam_omnix/pretrained/omnix/eccv_release.ckpt",
+      "--omnix-runner",
+      "/data6/benchmarks/evaluation/multid4rt60k_comparison_20261013/code/evaluation/native_omnix.py",
+      "--device",
+      "cuda:6",
+      "--variants",
+      "standard"
+    ]
+  }
+]

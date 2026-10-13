@@ -1,0 +1,23 @@
+{
+  "stage": "passed",
+  "modules": [
+    {
+      "module": "model",
+      "normalized_executable_ast_equal": true,
+      "training_sha256": "e03b43285fa597787b74f690e5b52c5754fd9cf121a0c9873d53e5ac88b16e72",
+      "release_sha256": "c18f587d3ca2223776bc1c0b14331ec9e18929a0abd15c3b03d5a3196de0c671"
+    },
+    {
+      "module": "config",
+      "normalized_executable_ast_equal": true,
+      "training_sha256": "1fa8e9c030944d54cb6ca5716ba2e73e5548fd68ebe5daa59346f04516d72740",
+      "release_sha256": "58fdb8610ea80e26a7d829b42df7f710c8dac10fb167dc31bb69f99f02552109"
+    }
+  ],
+  "identical_bytes": [
+    "geometry.py",
+    "motion.py",
+    "visibility.py"
+  ],
+  "note": "Model/config differ only in class names and docstrings; geometry/motion/visibility hashes match the live training source. Saved execution config is restored from each checkpoint."
+}

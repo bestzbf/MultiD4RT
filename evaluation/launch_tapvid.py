@@ -23,6 +23,8 @@ def collect(plan, directory, method, partitions):
             raise ValueError(f'Incomplete partition: {method}/{index}')
         if report['contract']['plan_sha256'] != fingerprint(plan):
             raise ValueError('Partition used a different benchmark plan')
+        if report['contract'].get('metric_eval_short_side')!=256:
+            raise ValueError('Partition omitted the official scoring resolution')
         records.extend(report['records'])
         contracts.append(report['contract'])
     expected = {case['id'] for case in plan['cases']}
@@ -89,9 +91,17 @@ def main():
     truth[..., 2] = np.abs(truth[..., 2]) + 3
     visible = np.ones((16,8), dtype=bool)
     for factor in [1., .25]:
-        result = score(scorer, truth * factor, truth, visible, np.array([256.,256.,128.,128.]))
+        result = score(scorer, truth * factor, truth, visible, np.array([256.,256.,128.,128.]), [256,256])
         if result['apd3d'] != 1. or result['epe_m'] > 1e-6:
             raise ValueError('Official scorer preflight failed')
+    # An identity check cannot detect a missing resolution normalization.
+    # This 8 mm lateral error is outside the raw 360p one-pixel threshold,
+    # and inside the official short-side-256 one-pixel threshold.
+    constant=np.zeros((16,8,3),dtype=np.float32);constant[...,2]=3
+    offset=constant.copy();offset[...,0]=.008
+    check=score(scorer,offset,constant,visible,np.array([500.,500.,320.,180.]),[360,640])
+    if check['apd3d']!=1.:
+        raise ValueError('Official evaluation-resolution regression check failed')
     status.update(stage='running', requested_cases=len(plan['cases']),
                   plan_sha256=fingerprint(plan), scorer_check='passed; not model inference')
     processes = []
@@ -143,6 +153,7 @@ def main():
     if a != b:
         raise ValueError('The two methods received different RGB inputs')
     comparison = dict(stage='passed', protocol=plan['schema'], subset=args.subset, split=args.split,
+        metric_eval_short_side=256,
         clips=len(plan['cases']), sequences=len(outputs['multid4rt']['by_sequence']),
         plan_sha256=fingerprint(plan), identical_rgb=True,
         methods={method:report['mean_metrics'] for method,report in outputs.items()})

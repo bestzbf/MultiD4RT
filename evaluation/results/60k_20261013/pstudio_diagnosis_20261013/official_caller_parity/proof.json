@@ -1,0 +1,58 @@
+{
+  "stage": "passed",
+  "official_caller_sha256": "13763ad46d4ffb2bb014c61c6ec7f908a2e6e278cfaa91d9c6849f5c176eaa38",
+  "executed_unchanged_official_function_bodies": [
+    "evaluate_data_source",
+    "get_average_over_metrics",
+    "get_jpeg_byte_hw",
+    "get_new_hw_with_given_smallest_side_length"
+  ],
+  "new_model_forwards": 0,
+  "records": [
+    {
+      "id": "nonzero_resolution_regression",
+      "official_caller_apd3d": 1.0,
+      "adapter_apd3d": 1.0
+    },
+    {
+      "id": "multid4rt_tennis_18_0000",
+      "official_caller_apd3d": 0.0,
+      "adapter_apd3d": 0.0
+    },
+    {
+      "id": "omnix_tennis_18_0000",
+      "official_caller_apd3d": 0.3650099403578529,
+      "adapter_apd3d": 0.3650099403578529
+    },
+    {
+      "id": "multid4rt_juggle_26_0048",
+      "official_caller_apd3d": 0.03437352245862884,
+      "adapter_apd3d": 0.03437352245862884
+    },
+    {
+      "id": "omnix_juggle_26_0048",
+      "official_caller_apd3d": 0.08581560283687942,
+      "adapter_apd3d": 0.08581560283687942
+    },
+    {
+      "id": "multid4rt_boxes_18_0096",
+      "official_caller_apd3d": 0.0,
+      "adapter_apd3d": 0.0
+    },
+    {
+      "id": "omnix_boxes_18_0096",
+      "official_caller_apd3d": 0.061279870392871603,
+      "adapter_apd3d": 0.061279870392871603
+    },
+    {
+      "id": "multid4rt_softball_16_0128",
+      "official_caller_apd3d": 0.0144524236983842,
+      "adapter_apd3d": 0.0144524236983842
+    },
+    {
+      "id": "omnix_softball_16_0128",
+      "official_caller_apd3d": 0.38985637342908436,
+      "adapter_apd3d": 0.38985637342908436
+    }
+  ]
+}

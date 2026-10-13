@@ -45,12 +45,13 @@ def build_plan(manifest, root, subset, split, long_side):
                 cases.append(dict(id=name.removesuffix('.npz') + f'_{start:04d}',
                                   path=str(path), sequence=name, start=start, frames=16,
                                   point_ids=ids, sha256=checksum))
-    return dict(schema='omnix16-first-visible-v1', subset=subset, split=split,
+    return dict(schema='omnix16-first-visible-v2', subset=subset, split=split,
                 long_side=long_side, frames=16, cases=cases, short_tails=tails,
                 empty_query_clips=empty, source_commit=manifest['commit'],
                 query='every GT-visible point at the first frame of each 16-frame clip; supplied XY only',
                 camera='local coordinates using predicted target c2w; no GT pose registration',
-                scoring='official depth-adaptive APD3D; median scale on GT-visible camera-coordinate norms',
+                metric_eval_short_side=256,
+                scoring='official depth-adaptive APD3D; scoring intrinsics at short side 256; median scale on GT-visible camera-coordinate norms',
                 epe='same clip-wide median scale, then mean Euclidean error at GT-visible point-times, meters',
                 visibility='APD ignores predicted occlusion; no AJ/OA reported for OmniX without an official occlusion predictor')
 
@@ -95,11 +96,23 @@ def predict(model, method, images, raw_xy, metadata, start, device):
     return local.cpu().numpy()
 
 
-def score(official, predicted, truth, visible, intrinsics):
+def metric_intrinsics(intrinsics, raw_hw):
+    """Match evaluate_model.py: evaluation resolution means short side 256.
+
+    This camera is only used for distance thresholds. The camera-coordinate
+    XYZ in meters and the model's RGB/input camera remain unchanged.
+    """
+    if len(raw_hw)!=2 or min(raw_hw)<=0:
+        raise ValueError('Original image dimensions are required for scoring')
+    return np.asarray(intrinsics,dtype=np.float64)*(256/min(raw_hw))
+
+
+def score(official, predicted, truth, visible, intrinsics, raw_hw):
     # APD does not require a predicted occlusion classifier. Treat all predicted
     # points as visible here for BOTH methods; never feed GT as model visibility.
+    scoring_intrinsics=metric_intrinsics(intrinsics,raw_hw)
     result = official.compute_tapvid3d_metrics(~visible, truth,
-        np.zeros_like(visible, dtype=bool), predicted, intrinsics,
+        np.zeros_like(visible, dtype=bool), predicted, scoring_intrinsics,
         order='t n', scaling='median')
     gt_norm = np.sqrt(np.maximum(1e-12, np.square(truth).sum(-1)))
     pred_norm = np.sqrt(np.maximum(1e-12, np.square(predicted).sum(-1)))
@@ -111,7 +124,7 @@ def score(official, predicted, truth, visible, intrinsics):
     # Independently verify the explicitly computed scale against the official
     # result, without depending on the scorer's internal temporary variables.
     check = official.compute_tapvid3d_metrics(~visible, truth,
-        np.zeros_like(visible, dtype=bool), scaled, intrinsics,
+        np.zeros_like(visible, dtype=bool), scaled, scoring_intrinsics,
         order='t n', scaling='none')
     np.testing.assert_allclose(result['average_pts_within_thresh'],
                                check['average_pts_within_thresh'], rtol=0, atol=1e-12)
@@ -152,6 +165,8 @@ def main():
         plan = json.loads(args.plan.read_text())
         if any(plan[k] != getattr(args,k) for k in ['subset','split','long_side']):
             raise ValueError('Requested evaluation differs from frozen plan')
+        if plan.get('metric_eval_short_side')!=256:
+            raise ValueError('Legacy scoring plan: migrate with evaluation.rescore_tapvid_resolution')
     else:
         plan = build_plan(manifest, args.root, args.subset, args.split, args.long_side)
         write_json(args.plan, plan)
@@ -163,6 +178,8 @@ def main():
     selected_cases = [case for index,case in enumerate(plan['cases'])
                       if index % args.partitions == args.partition_index]
     contract = dict(plan_sha256=fingerprint(plan), loading=loading,
+        metric_eval_short_side=256,
+        official_caller_sha256=digest(Path(__file__).parent/'references/tapvid3d_evaluate_model.py'),
         partitions=args.partitions, partition_index=args.partition_index,
         memory_fraction=args.memory_fraction,
         scorer_sha256=digest(args.official_metrics),
@@ -254,7 +271,7 @@ def main():
             inference_seconds = time.monotonic() - inference_began
             np.savez_compressed(args.output / (case['id'] + '.npz'),
                                 tracks_XYZ=prediction, point_ids=points, start=start)
-            values = score(official, prediction, truth, visible, intrinsics)
+            values = score(official, prediction, truth, visible, intrinsics, metadata['raw_hw'])
             row = dict(id=case['id'], sequence=case['sequence'], metrics=values, input=metadata,
                        seconds=time.monotonic() - began,
                        inference_seconds=inference_seconds,

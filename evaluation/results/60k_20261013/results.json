@@ -1,6 +1,6 @@
 {
   "stage": "passed",
-  "created_utc": "2026-10-13T03:34:09.226328+00:00",
+  "created_utc": "2026-10-13T04:58:46.241497+00:00",
   "rows": [
     {
       "dataset": "PStudio · 单相机",
@@ -8,9 +8,9 @@
       "unit": "%",
       "direction": "↑",
       "samples": "106 视频 / 954 × T16",
-      "multid4rt": 3.2822691410173936,
-      "omnix": 13.965723532330735,
-      "protocol": "RGB + 2D 查询；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均"
+      "multid4rt": 6.644546936620841,
+      "omnix": 21.309646125639002,
+      "protocol": "RGB + 2D 查询；评分内参按原图短边 256 归一化；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均"
     },
     {
       "dataset": "PStudio · 单相机",
@@ -319,13 +319,13 @@
   ],
   "error_diagnostics": {
     "multid4rt": {
-      "source_apd3d": 0.03494961883756613,
+      "source_apd3d": 0.06963047568872657,
       "source_epe_m": 0.22507372692872596,
       "future_epe_m": 0.22726417947132413,
       "future_displacement_error_m": 0.047976042450013814
     },
     "omnix": {
-      "source_apd3d": 0.13434331443845068,
+      "source_apd3d": 0.20692525710612802,
       "source_epe_m": 0.13050878439185984,
       "future_epe_m": 0.12776713517764832,
       "future_displacement_error_m": 0.042590633313755046
@@ -340,6 +340,7 @@
     "d4rt": "https://d4rt-paper.github.io/"
   },
   "limitations": [
+    "PStudio APD 已修复：此前漏掉官方 evaluate_model.py 的短边 256 内参归一化，旧 APD 作废并归档；模型预测、查询、GT、EPE 和其他数据集指标没有改变。",
     "这是共同预处理和明确固定协议下的发布权重重跑；OmniX 的论文专用完整评测 wrapper 未发布，不能把论文表值直接当作这里的基线。",
     "D4RT 官方页面未找到可运行模型代码/权重；未将 OpenD4RT 等非官方复现冒充官方 D4RT。",
     "N3DV 是新视角渲染任务；本轮没有把几何/追踪输出转换成 PSNR、SSIM、LPIPS，未运行渲染对比。",

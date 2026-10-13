@@ -1,0 +1,1908 @@
+{
+  "stage": "passed",
+  "records": [
+    {
+      "source_epe_m": 0.30268312851438645,
+      "source_xy_epe_m": 0.2693084052255495,
+      "source_z_mae_m": 0.11514112580409896,
+      "source_depth_abs_rel": 0.047986147211932784,
+      "oracle_source_intrinsics_epe_m": 0.11939670619023723,
+      "oracle_source_depth_epe_m": 0.31508387885279415,
+      "source_depth_abs_rel_source_scale": 0.022260245930932336,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.05555308170197068,
+      "fitted_source_intrinsics": {
+        "fx": 268.4596152372365,
+        "fy": 264.22913956349623,
+        "cx": 250.7584445353959,
+        "cy": 145.53587775000662
+      },
+      "fitted_focal_ratio": [
+        0.6624584118032474,
+        0.6525535697527476
+      ],
+      "fitted_principal_error_px": [
+        1.7582320353959062,
+        0.1474444166732667
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0013818553898708654,
+        0.0007891015841713841
+      ],
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.29435379256564553,
+        "global_scale": 5.652001189793044,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.6624969931810576,
+        0.6525543652429734
+      ],
+      "actual_head_principal_error_px": [
+        1.7523814941406215,
+        0.14725697428383455
+      ],
+      "fitted_to_head_focal_max_relative_error": 5.8236306288539375e-05
+    },
+    {
+      "source_epe_m": 0.27933170551513564,
+      "source_xy_epe_m": 0.2382794946746293,
+      "source_z_mae_m": 0.11326274738235396,
+      "source_depth_abs_rel": 0.04749411660773672,
+      "oracle_source_intrinsics_epe_m": 0.11795691949277788,
+      "oracle_source_depth_epe_m": 0.28284114305632363,
+      "source_depth_abs_rel_source_scale": 0.023041039525085856,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.05715532973663221,
+      "fitted_source_intrinsics": {
+        "fx": 365.9053400777373,
+        "fy": 340.17561187251425,
+        "cx": 319.8526089680056,
+        "cy": 179.89125703436838
+      },
+      "fitted_focal_ratio": [
+        0.711048076326734,
+        0.6627572285186208
+      ],
+      "fitted_principal_error_px": [
+        3.52694230133892,
+        -4.537742965631651
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0011254252148285714,
+        0.000823647593498288
+      ],
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.26577795481920125,
+        "global_scale": 5.462905295013485,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.7110696519065172,
+        0.662758985475981
+      ],
+      "actual_head_principal_error_px": [
+        3.5231187337239476,
+        -4.538115600585968
+      ],
+      "fitted_to_head_focal_max_relative_error": 3.0342428094520812e-05
+    },
+    {
+      "source_epe_m": 0.22819831946326433,
+      "source_xy_epe_m": 0.19967852035140976,
+      "source_z_mae_m": 0.09761620855793282,
+      "source_depth_abs_rel": 0.0404944828318542,
+      "oracle_source_intrinsics_epe_m": 0.10123835565378707,
+      "oracle_source_depth_epe_m": 0.23418042414172607,
+      "source_depth_abs_rel_source_scale": 0.015566307631911101,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.03904076874585795,
+      "fitted_source_intrinsics": {
+        "fx": 299.55777885895316,
+        "fy": 299.35963758668896,
+        "cx": 250.02652145908434,
+        "cy": 138.37573048885483
+      },
+      "fitted_focal_ratio": [
+        0.7391971051245304,
+        0.749875237257843
+      ],
+      "fitted_principal_error_px": [
+        1.0263089590843322,
+        -4.95793617781186
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0012329936857716026,
+        0.0013448557360102654
+      ],
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.21966961658596829,
+        "global_scale": 5.405892274015861,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.7392366183724915,
+        0.74987473238516
+      ],
+      "actual_head_principal_error_px": [
+        1.020981958007809,
+        -4.958208902994812
+      ],
+      "fitted_to_head_focal_max_relative_error": 5.345142134327574e-05
+    },
+    {
+      "source_epe_m": 0.20391216516817945,
+      "source_xy_epe_m": 0.19575493093278018,
+      "source_z_mae_m": 0.0378770126033328,
+      "source_depth_abs_rel": 0.016622471395564536,
+      "oracle_source_intrinsics_epe_m": 0.03834913458222359,
+      "oracle_source_depth_epe_m": 0.19227225088051578,
+      "source_depth_abs_rel_source_scale": 0.01663831335213344,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.03837303673532461,
+      "fitted_source_intrinsics": {
+        "fx": 248.81977667185032,
+        "fy": 246.9935175393355,
+        "cx": 251.54106550915134,
+        "cy": 145.90771921101046
+      },
+      "fitted_focal_ratio": [
+        0.586188792732238,
+        0.5823673144042594
+      ],
+      "fitted_principal_error_px": [
+        1.6008405091513112,
+        0.9821006924919118
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0008812300210439516,
+        0.0005919067326219343
+      ],
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.010591016548463356,
+        "epe_m": 0.2081663889377427,
+        "global_scale": 7.456133877328585,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.5861951596693806,
+        0.5823684597328811
+      ],
+      "actual_head_principal_error_px": [
+        1.600897436523411,
+        0.9819589961298902
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.086146317941239e-05
+    },
+    {
+      "source_epe_m": 0.24445359525973442,
+      "source_xy_epe_m": 0.22582069786398976,
+      "source_z_mae_m": 0.05627889393825552,
+      "source_depth_abs_rel": 0.024512718946379394,
+      "oracle_source_intrinsics_epe_m": 0.05682599652725143,
+      "oracle_source_depth_epe_m": 0.22780879745076224,
+      "source_depth_abs_rel_source_scale": 0.023876851609851948,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.05550401738511902,
+      "fitted_source_intrinsics": {
+        "fx": 328.2240056988555,
+        "fy": 304.76418062866844,
+        "cx": 321.1396807549168,
+        "cy": 180.45523792557222
+      },
+      "fitted_focal_ratio": [
+        0.6089386202461095,
+        0.5668800830120627
+      ],
+      "fitted_principal_error_px": [
+        3.6203474215834603,
+        -3.3870954077611373
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0006652508058703554,
+        0.0005313558839755401
+      ],
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.016548463356974,
+        "epe_m": 0.2485631355326605,
+        "global_scale": 8.15596959100584,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.6089443262626447,
+        0.5668818046337326
+      ],
+      "actual_head_principal_error_px": [
+        3.620406656901025,
+        -3.3874077962239824
+      ],
+      "fitted_to_head_focal_max_relative_error": 9.370341900072354e-06
+    },
+    {
+      "source_epe_m": 0.27629810965848123,
+      "source_xy_epe_m": 0.2514002030275071,
+      "source_z_mae_m": 0.05857244061386783,
+      "source_depth_abs_rel": 0.025446348470634882,
+      "oracle_source_intrinsics_epe_m": 0.05938271337046241,
+      "oracle_source_depth_epe_m": 0.24878325963826636,
+      "source_depth_abs_rel_source_scale": 0.026495911434708065,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.06180040618628361,
+      "fitted_source_intrinsics": {
+        "fx": 230.50543764652411,
+        "fy": 232.61140435153527,
+        "cx": 252.37224081068427,
+        "cy": 139.4861498595235
+      },
+      "fitted_focal_ratio": [
+        0.5430424623780261,
+        0.556291916039615
+      ],
+      "fitted_principal_error_px": [
+        2.4320158106842484,
+        -3.3912205108468925
+      ],
+      "fitted_reprojection_rmse_px": [
+        1.1168357433026193,
+        0.42037413065512846
+      ],
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.008463356973995272,
+        "epe_m": 0.275844598257416,
+        "global_scale": 8.256353386063308,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.5467834681962492,
+        0.557371736424389
+      ],
+      "actual_head_principal_error_px": [
+        2.4103609374999735,
+        -3.458882821542261
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.006841841489034328
+    },
+    {
+      "source_epe_m": 0.3325766561794398,
+      "source_xy_epe_m": 0.27162896768851086,
+      "source_z_mae_m": 0.15571991569202778,
+      "source_depth_abs_rel": 0.050789392475402255,
+      "oracle_source_intrinsics_epe_m": 0.169094042522105,
+      "oracle_source_depth_epe_m": 0.3453518344113356,
+      "source_depth_abs_rel_source_scale": 0.03518853539877909,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.1150956094531277,
+      "fitted_source_intrinsics": {
+        "fx": 316.95196650425896,
+        "fy": 311.1675884385322,
+        "cx": 249.6143132115281,
+        "cy": 144.9971412696924
+      },
+      "fitted_focal_ratio": [
+        0.7821194862504,
+        0.768475123381018
+      ],
+      "fitted_principal_error_px": [
+        0.6141007115280956,
+        -0.3912920636409467
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0013174474156092252,
+        0.000698063988518254
+      ],
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.33113464825818156,
+        "global_scale": 4.433005713910442,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.7821275411023896,
+        0.7684719173913399
+      ],
+      "actual_head_principal_error_px": [
+        0.612046411132809,
+        -0.39121043294272795
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.0298642569517291e-05
+    },
+    {
+      "source_epe_m": 0.15775881184340215,
+      "source_xy_epe_m": 0.10752945840715476,
+      "source_z_mae_m": 0.09436398155529568,
+      "source_depth_abs_rel": 0.030375063040091927,
+      "oracle_source_intrinsics_epe_m": 0.10203623330863414,
+      "oracle_source_depth_epe_m": 0.13281477263291303,
+      "source_depth_abs_rel_source_scale": 0.026591643693014665,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.08878017344269701,
+      "fitted_source_intrinsics": {
+        "fx": 469.1772569127984,
+        "fy": 438.64822239843437,
+        "cx": 319.49599603169287,
+        "cy": 179.77030168675537
+      },
+      "fitted_focal_ratio": [
+        0.9117319411441864,
+        0.8546094135647694
+      ],
+      "fitted_principal_error_px": [
+        3.1703293650261912,
+        -4.658698313244656
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0007358721422628068,
+        0.0004713298959799695
+      ],
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.017415957877683273,
+        "epe_m": 0.1577998671314602,
+        "global_scale": 4.333819210326882,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.9117329282793978,
+        0.854607216544588
+      ],
+      "actual_head_principal_error_px": [
+        3.1698777669270726,
+        -4.6586447753906555
+      ],
+      "fitted_to_head_focal_max_relative_error": 2.5707952597819883e-06
+    },
+    {
+      "source_epe_m": 0.2577081159570984,
+      "source_xy_epe_m": 0.11788696430428613,
+      "source_z_mae_m": 0.19131033478687826,
+      "source_depth_abs_rel": 0.0628456854451362,
+      "oracle_source_intrinsics_epe_m": 0.207117630310219,
+      "oracle_source_depth_epe_m": 0.1948876230488271,
+      "source_depth_abs_rel_source_scale": 0.04951426380747697,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.16279764148475498,
+      "fitted_source_intrinsics": {
+        "fx": 350.9685798556602,
+        "fy": 353.98127506292235,
+        "cx": 249.83846583442792,
+        "cy": 138.31474797647465
+      },
+      "fitted_focal_ratio": [
+        0.8660598272800207,
+        0.8866986704103544
+      ],
+      "fitted_principal_error_px": [
+        0.8382533344279182,
+        -5.018918690192038
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0018190119964828998,
+        0.0008046437128632027
+      ],
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2567507255264276,
+        "global_scale": 4.433448870010091,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.8660738022173178,
+        0.8866966506521171
+      ],
+      "actual_head_principal_error_px": [
+        0.835465600585934,
+        -5.018893107096375
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.6135965851038492e-05
+    },
+    {
+      "source_epe_m": 0.2583603913980559,
+      "source_xy_epe_m": 0.21044076856076224,
+      "source_z_mae_m": 0.1343023159930218,
+      "source_depth_abs_rel": 0.04074340876835948,
+      "oracle_source_intrinsics_epe_m": 0.13549387943548175,
+      "oracle_source_depth_epe_m": 0.2245463003452191,
+      "source_depth_abs_rel_source_scale": 0.0292259846840931,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.09664083621294593,
+      "fitted_source_intrinsics": {
+        "fx": 232.47229359767698,
+        "fy": 230.39421170956408,
+        "cx": 252.3019609966377,
+        "cy": 146.27489915427782
+      },
+      "fitted_focal_ratio": [
+        0.6201177326398577,
+        0.6152112870053555
+      ],
+      "fitted_principal_error_px": [
+        2.914298496637713,
+        2.4873843394630057
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.003497596101663937,
+        0.0051209926384019324
+      ],
+      "method": "60k",
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.005385996409335727,
+        "epe_m": 0.233578487241884,
+        "global_scale": 5.3568759433427235,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.620232464005857,
+        0.6152164999595111
+      ],
+      "actual_head_principal_error_px": [
+        2.9083274902343987,
+        2.486990800419562
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.00018498123309818038
+    },
+    {
+      "source_epe_m": 0.2502380557968072,
+      "source_xy_epe_m": 0.2012812708594782,
+      "source_z_mae_m": 0.13776979125891808,
+      "source_depth_abs_rel": 0.04178060728429848,
+      "oracle_source_intrinsics_epe_m": 0.13916575392304353,
+      "oracle_source_depth_epe_m": 0.2153530198002448,
+      "source_depth_abs_rel_source_scale": 0.0344509012996313,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.11417003036156051,
+      "fitted_source_intrinsics": {
+        "fx": 310.56597184450993,
+        "fy": 287.6425938988492,
+        "cx": 321.88047628928524,
+        "cy": 180.7998880908848
+      },
+      "fitted_focal_ratio": [
+        0.6523901294234626,
+        0.6059290390667684
+      ],
+      "fitted_principal_error_px": [
+        5.062809622618602,
+        -1.599778575781869
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0034854598603013725,
+        0.0009278327002384243
+      ],
+      "method": "60k",
+      "id": "softball_16_0128",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.007360861759425494,
+        "epe_m": 0.23744829550831983,
+        "global_scale": 5.434186197134813,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.6524695726926886,
+        0.6059286201206298
+      ],
+      "actual_head_principal_error_px": [
+        5.057821614583361,
+        -1.5996483561197863
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.00012175781454148993
+    },
+    {
+      "source_epe_m": 0.25097912192909166,
+      "source_xy_epe_m": 0.20291392521763577,
+      "source_z_mae_m": 0.13225829986383283,
+      "source_depth_abs_rel": 0.040082868598944825,
+      "oracle_source_intrinsics_epe_m": 0.13338312435907854,
+      "oracle_source_depth_epe_m": 0.21910343461761506,
+      "source_depth_abs_rel_source_scale": 0.028207529273015102,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.09337776798094384,
+      "fitted_source_intrinsics": {
+        "fx": 237.76491469237442,
+        "fy": 238.092775703536,
+        "cx": 252.03864880707454,
+        "cy": 139.28207991534626
+      },
+      "fitted_focal_ratio": [
+        0.6342357513601687,
+        0.6448508216483001
+      ],
+      "fitted_principal_error_px": [
+        2.650986307074561,
+        -2.4732163809500207
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.004401158594903624,
+        0.0023720812085887633
+      ],
+      "method": "60k",
+      "id": "softball_16_0128",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.006822262118491922,
+        "epe_m": 0.2215924747992326,
+        "global_scale": 5.053972002128606,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.6343569456581876,
+        0.6448499889724331
+      ],
+      "actual_head_principal_error_px": [
+        2.6448234619140862,
+        -2.4732528392650295
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.00019105063615731943
+    },
+    {
+      "source_epe_m": 0.3013792977927701,
+      "source_xy_epe_m": 0.2714677348630731,
+      "source_z_mae_m": 0.1080730395613948,
+      "source_depth_abs_rel": 0.04511290494404607,
+      "oracle_source_intrinsics_epe_m": 0.11216110000688688,
+      "oracle_source_depth_epe_m": 0.3149121391919486,
+      "source_depth_abs_rel_source_scale": 0.02195850296406705,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.05488464165347521,
+      "fitted_source_intrinsics": {
+        "fx": 269.1141409252026,
+        "fy": 264.35626037131846,
+        "cx": 250.64714093977398,
+        "cy": 145.38883254036193
+      },
+      "fitted_focal_ratio": [
+        0.664073537591725,
+        0.6528675136919788
+      ],
+      "fitted_principal_error_px": [
+        1.6469284397739727,
+        0.00039920702857898505
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0012923232808628709,
+        0.0007550786701820811
+      ],
+      "method": "67k",
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2977917528245337,
+        "global_scale": 5.744889683109563,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.6641085421033212,
+        0.6528682719030026
+      ],
+      "actual_head_principal_error_px": [
+        1.641587426757809,
+        0.0001927652994595519
+      ],
+      "fitted_to_head_focal_max_relative_error": 5.2709021759023145e-05
+    },
+    {
+      "source_epe_m": 0.3031310283784653,
+      "source_xy_epe_m": 0.2608744348964461,
+      "source_z_mae_m": 0.12385968167323674,
+      "source_depth_abs_rel": 0.051891200685784004,
+      "oracle_source_intrinsics_epe_m": 0.12897923806396872,
+      "oracle_source_depth_epe_m": 0.31161899613229826,
+      "source_depth_abs_rel_source_scale": 0.02365955546921323,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.058698813440050644,
+      "fitted_source_intrinsics": {
+        "fx": 354.6184416775175,
+        "fy": 328.83452196502634,
+        "cx": 320.0878053355938,
+        "cy": 179.88111445763258
+      },
+      "fitted_focal_ratio": [
+        0.6891147331471386,
+        0.6406616136269688
+      ],
+      "fitted_principal_error_px": [
+        3.7621386689271503,
+        -4.547885542367453
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0011481554381846532,
+        0.0007669893642428428
+      ],
+      "method": "67k",
+      "id": "tennis_18_0000",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2983558063681977,
+        "global_scale": 5.61848677422302,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.6891340603404039,
+        0.6406636580036547
+      ],
+      "actual_head_principal_error_px": [
+        3.7585923665364476,
+        -4.548277954101593
+      ],
+      "fitted_to_head_focal_max_relative_error": 2.804562185743098e-05
+    },
+    {
+      "source_epe_m": 0.23433340649382323,
+      "source_xy_epe_m": 0.2053873810820741,
+      "source_z_mae_m": 0.09859482871717942,
+      "source_depth_abs_rel": 0.04099058663930924,
+      "oracle_source_intrinsics_epe_m": 0.10232245177956825,
+      "oracle_source_depth_epe_m": 0.2415227428611232,
+      "source_depth_abs_rel_source_scale": 0.01573800209563015,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.03936154188658576,
+      "fitted_source_intrinsics": {
+        "fx": 296.46177559765,
+        "fy": 296.71723579524803,
+        "cx": 250.2092560077193,
+        "cy": 138.37555554732668
+      },
+      "fitted_focal_ratio": [
+        0.7315573213842158,
+        0.7432562030879024
+      ],
+      "fitted_principal_error_px": [
+        1.2090435077192865,
+        -4.958111119340003
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0011589403187554231,
+        0.0011568533261003225
+      ],
+      "method": "67k",
+      "id": "tennis_18_0000",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2292183684831419,
+        "global_scale": 5.5423464312919615,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.7315924544472051,
+        0.7432555622895308
+      ],
+      "actual_head_principal_error_px": [
+        1.204209497070309,
+        -4.95831571451825
+      ],
+      "fitted_to_head_focal_max_relative_error": 4.8022724640994774e-05
+    },
+    {
+      "source_epe_m": 0.19313250998767087,
+      "source_xy_epe_m": 0.18514476045619727,
+      "source_z_mae_m": 0.03845504213834057,
+      "source_depth_abs_rel": 0.01695640031899906,
+      "oracle_source_intrinsics_epe_m": 0.038943774954824845,
+      "oracle_source_depth_epe_m": 0.1813930428785939,
+      "source_depth_abs_rel_source_scale": 0.01691057589026586,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.03883149096196497,
+      "fitted_source_intrinsics": {
+        "fx": 255.39799371831037,
+        "fy": 253.4354057306579,
+        "cx": 251.24856374859658,
+        "cy": 145.6824004112663
+      },
+      "fitted_focal_ratio": [
+        0.601686263071505,
+        0.5975561548363791
+      ],
+      "fitted_principal_error_px": [
+        1.3083387485965545,
+        0.756781892747739
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0007859502689312775,
+        0.0005986344840375568
+      ],
+      "method": "67k",
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.010023640661938534,
+        "epe_m": 0.19936379437814916,
+        "global_scale": 7.505328101381102,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.601694749767486,
+        0.5975567754502844
+      ],
+      "actual_head_principal_error_px": [
+        1.3083406738280985,
+        0.7566934932002027
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.410465353779422e-05
+    },
+    {
+      "source_epe_m": 0.23542769119755838,
+      "source_xy_epe_m": 0.21781538623383026,
+      "source_z_mae_m": 0.056037486750182205,
+      "source_depth_abs_rel": 0.024512943012586982,
+      "oracle_source_intrinsics_epe_m": 0.056630019451752535,
+      "oracle_source_depth_epe_m": 0.221020164807061,
+      "source_depth_abs_rel_source_scale": 0.023819852167528445,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.05514192445692611,
+      "fitted_source_intrinsics": {
+        "fx": 333.66163998988657,
+        "fy": 309.54438635980773,
+        "cx": 320.900282446652,
+        "cy": 180.23490335686105
+      },
+      "fitted_focal_ratio": [
+        0.6190268083892443,
+        0.5757715590906923
+      ],
+      "fitted_principal_error_px": [
+        3.38094911331865,
+        -3.6074299764723037
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0006270270519003791,
+        0.0005725439910836438
+      ],
+      "method": "67k",
+      "id": "juggle_26_0048",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.016595744680851062,
+        "epe_m": 0.24201513704589434,
+        "global_scale": 8.39459372256432,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.6190330579115821,
+        0.5757736904731918
+      ],
+      "actual_head_principal_error_px": [
+        3.3809962565104,
+        -3.6077752278646074
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.0095619705552394e-05
+    },
+    {
+      "source_epe_m": 0.25694418499196964,
+      "source_xy_epe_m": 0.23514519232953804,
+      "source_z_mae_m": 0.05412823530432479,
+      "source_depth_abs_rel": 0.023610638164065213,
+      "oracle_source_intrinsics_epe_m": 0.0549280021597851,
+      "oracle_source_depth_epe_m": 0.23096245696442647,
+      "source_depth_abs_rel_source_scale": 0.0236328156467012,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.054979038869634,
+      "fitted_source_intrinsics": {
+        "fx": 239.89315445475881,
+        "fy": 241.6242142867765,
+        "cx": 251.95692612230755,
+        "cy": 139.1811735530822
+      },
+      "fitted_focal_ratio": [
+        0.5651587686296337,
+        0.577846118516288
+      ],
+      "fitted_principal_error_px": [
+        2.0167011223075235,
+        -3.6961968172881825
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.8480756935066717,
+        0.23242589982460787
+      ],
+      "method": "67k",
+      "id": "juggle_26_0048",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.011536643026004729,
+        "epe_m": 0.2529621684753509,
+        "global_scale": 7.973003329979589,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.5677526644854006,
+        0.5784488302403181
+      ],
+      "actual_head_principal_error_px": [
+        1.993963842773411,
+        -3.732472909432886
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.004568707498921354
+    },
+    {
+      "source_epe_m": 0.2525058932200022,
+      "source_xy_epe_m": 0.2027184558131799,
+      "source_z_mae_m": 0.12042182152335493,
+      "source_depth_abs_rel": 0.03959134070263697,
+      "oracle_source_intrinsics_epe_m": 0.13099369421810664,
+      "oracle_source_depth_epe_m": 0.25233993147957323,
+      "source_depth_abs_rel_source_scale": 0.030432053318232066,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.09884127818995558,
+      "fitted_source_intrinsics": {
+        "fx": 336.14647425448027,
+        "fy": 331.1461596168168,
+        "cx": 249.81164787976903,
+        "cy": 145.009640370319
+      },
+      "fitted_focal_ratio": [
+        0.8294843873299164,
+        0.8178152073796493
+      ],
+      "fitted_principal_error_px": [
+        0.8114353797690228,
+        -0.37879296301434806
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0013963855716814808,
+        0.0006889369185431412
+      ],
+      "method": "67k",
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.25093602962099076,
+        "global_scale": 4.580647302026711,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.8294928465783256,
+        0.8178129193412231
+      ],
+      "actual_head_principal_error_px": [
+        0.8093578124999965,
+        -0.37878977864585295
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.0198096878299978e-05
+    },
+    {
+      "source_epe_m": 0.1479508167090365,
+      "source_xy_epe_m": 0.10222391859417937,
+      "source_z_mae_m": 0.08747992542740735,
+      "source_depth_abs_rel": 0.028153599344316996,
+      "oracle_source_intrinsics_epe_m": 0.09464189497448647,
+      "oracle_source_depth_epe_m": 0.12629745388831556,
+      "source_depth_abs_rel_source_scale": 0.02493910443477304,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.08337226087938707,
+      "fitted_source_intrinsics": {
+        "fx": 471.6482722661957,
+        "fy": 438.9184785733128,
+        "cx": 319.77468155974765,
+        "cy": 179.80714941135818
+      },
+      "fitted_focal_ratio": [
+        0.9165337587761284,
+        0.8551359481757209
+      ],
+      "fitted_principal_error_px": [
+        3.449014893080971,
+        -4.621850588641848
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0006880679784344434,
+        0.00047309419010691986
+      ],
+      "method": "67k",
+      "id": "boxes_18_0096",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.02956662616443904,
+        "epe_m": 0.14800534626590534,
+        "global_scale": 4.385038050273897,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.9165352066342487,
+        0.8551340630456705
+      ],
+      "actual_head_principal_error_px": [
+        3.4484727376301976,
+        -4.621825317382843
+      ],
+      "fitted_to_head_focal_max_relative_error": 2.204484807366569e-06
+    },
+    {
+      "source_epe_m": 0.164764656597672,
+      "source_xy_epe_m": 0.06728735378921094,
+      "source_z_mae_m": 0.134150884436004,
+      "source_depth_abs_rel": 0.043945674449398266,
+      "oracle_source_intrinsics_epe_m": 0.14492520684066307,
+      "oracle_source_depth_epe_m": 0.09036130251501383,
+      "source_depth_abs_rel_source_scale": 0.03860850991891513,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.12710215544839365,
+      "fitted_source_intrinsics": {
+        "fx": 379.4178631290984,
+        "fy": 381.22995549535193,
+        "cx": 250.01891766397242,
+        "cy": 138.3439338357876
+      },
+      "fitted_focal_ratio": [
+        0.9362620697946278,
+        0.9549547348182165
+      ],
+      "fitted_principal_error_px": [
+        1.0187051639724132,
+        -4.989732830879092
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0015810516721630056,
+        0.0007263869919221769
+      ],
+      "method": "67k",
+      "id": "boxes_18_0096",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.05706763872012961,
+        "epe_m": 0.164069760112888,
+        "global_scale": 4.386809193494911,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.9362755089819724,
+        0.9549531155974488
+      ],
+      "actual_head_principal_error_px": [
+        1.016190698242184,
+        -4.989733561197937
+      ],
+      "fitted_to_head_focal_max_relative_error": 1.4353881112705302e-05
+    },
+    {
+      "source_epe_m": 0.261653310330944,
+      "source_xy_epe_m": 0.2188166138088102,
+      "source_z_mae_m": 0.12833046104938461,
+      "source_depth_abs_rel": 0.03892093164839966,
+      "oracle_source_intrinsics_epe_m": 0.12951181764787775,
+      "oracle_source_depth_epe_m": 0.2332324878814559,
+      "source_depth_abs_rel_source_scale": 0.027978672532957913,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.09262694468785522,
+      "fitted_source_intrinsics": {
+        "fx": 229.37626951494332,
+        "fy": 227.3272486382469,
+        "cx": 252.3091772862803,
+        "cy": 146.18154242585462
+      },
+      "fitted_focal_ratio": [
+        0.6118591165068495,
+        0.6070217136462753
+      ],
+      "fitted_principal_error_px": [
+        2.921514786280312,
+        2.394027611039803
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.004330785381489817,
+        0.00529609198304264
+      ],
+      "method": "67k",
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.004398563734290844,
+        "epe_m": 0.2419535953989193,
+        "global_scale": 5.448484563445781,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.6119890313685054,
+        0.6070269466404565
+      ],
+      "actual_head_principal_error_px": [
+        2.9147361816406487,
+        2.393576493778937
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.0002122829903754564
+    },
+    {
+      "source_epe_m": 0.25965908700276613,
+      "source_xy_epe_m": 0.2152025045039158,
+      "source_z_mae_m": 0.13407837943499834,
+      "source_depth_abs_rel": 0.04065315529181164,
+      "oracle_source_intrinsics_epe_m": 0.1354575524683685,
+      "oracle_source_depth_epe_m": 0.2304143790568547,
+      "source_depth_abs_rel_source_scale": 0.033331027991013375,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.11051321020839432,
+      "fitted_source_intrinsics": {
+        "fx": 302.8844305546931,
+        "fy": 280.05771093718386,
+        "cx": 322.09423972681134,
+        "cy": 180.78112286108473
+      },
+      "fitted_focal_ratio": [
+        0.6362539066220017,
+        0.5899512216576681
+      ],
+      "fitted_principal_error_px": [
+        5.276573060144699,
+        -1.6185438055819361
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.0037033866525659244,
+        0.0009173435470478428
+      ],
+      "method": "67k",
+      "id": "softball_16_0128",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.006373429084380611,
+        "epe_m": 0.2510307483246804,
+        "global_scale": 5.513514267837609,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.636334038716987,
+        0.589950638452746
+      ],
+      "actual_head_principal_error_px": [
+        5.271475179036486,
+        -1.6184014078775988
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.00012592772052055778
+    },
+    {
+      "source_epe_m": 0.2522743202495668,
+      "source_xy_epe_m": 0.20973788665957954,
+      "source_z_mae_m": 0.12493950049302253,
+      "source_depth_abs_rel": 0.0378634184331315,
+      "oracle_source_intrinsics_epe_m": 0.1260010685112119,
+      "oracle_source_depth_epe_m": 0.22607860265930696,
+      "source_depth_abs_rel_source_scale": 0.02566469457428041,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.08500090959288965,
+      "fitted_source_intrinsics": {
+        "fx": 235.6242205364784,
+        "fy": 235.47042876930405,
+        "cx": 252.02602165416522,
+        "cy": 139.1793121805971
+      },
+      "fitted_focal_ratio": [
+        0.6285254691339047,
+        0.637748453379504
+      ],
+      "fitted_principal_error_px": [
+        2.6383591541652436,
+        -2.5759841156991854
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.004268623467759942,
+        0.002511618300003317
+      ],
+      "method": "67k",
+      "id": "softball_16_0128",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.005655296229802514,
+        "epe_m": 0.22840828754170217,
+        "global_scale": 5.114621261756866,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.6286407017997728,
+        0.6377471300985421
+      ],
+      "actual_head_principal_error_px": [
+        2.6324333251953362,
+        -2.5760360423900295
+      ],
+      "fitted_to_head_focal_max_relative_error": 0.00018330449418579864
+    },
+    {
+      "source_epe_m": 0.06265193843129631,
+      "source_xy_epe_m": 0.015745318036293046,
+      "source_z_mae_m": 0.06022468456823438,
+      "source_depth_abs_rel": 0.024646494082270865,
+      "oracle_source_intrinsics_epe_m": 0.06250532271999336,
+      "oracle_source_depth_epe_m": 0.015933894151194918,
+      "source_depth_abs_rel_source_scale": 0.01709076577891414,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.043089802616359064,
+      "fitted_source_intrinsics": {
+        "fx": 386.31374904058225,
+        "fy": 388.8832463161538,
+        "cx": 252.6565481716513,
+        "cy": 145.29195917870473
+      },
+      "fitted_focal_ratio": [
+        0.9532785496285165,
+        0.960405619985229
+      ],
+      "fitted_principal_error_px": [
+        3.6563356716513056,
+        -0.09647415462862341
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.32781851246467136,
+        0.32322985047964253
+      ],
+      "method": "omnix",
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.269715043074884,
+        "epe_m": 0.05013314330847426,
+        "global_scale": 4.318999401336242,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "actual_head_focal_ratio": [
+        0.9578957179765529,
+        0.9729601367024965
+      ],
+      "actual_head_principal_error_px": [
+        2.9997874999999965,
+        1.611566666666647
+      ]
+    },
+    {
+      "source_epe_m": 0.11849624023178157,
+      "source_xy_epe_m": 0.095618197149812,
+      "source_z_mae_m": 0.06327202143650508,
+      "source_depth_abs_rel": 0.02841590713000313,
+      "oracle_source_intrinsics_epe_m": 0.06444979798137318,
+      "oracle_source_depth_epe_m": 0.08328285543112351,
+      "source_depth_abs_rel_source_scale": 0.02742348319222309,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.0623790907621792,
+      "fitted_source_intrinsics": {
+        "fx": 330.647865443163,
+        "fy": 330.07859158807037,
+        "cx": 252.29329128581773,
+        "cy": 144.65241810561542
+      },
+      "fitted_focal_ratio": [
+        0.778965706247846,
+        0.7782673198897674
+      ],
+      "fitted_principal_error_px": [
+        2.353066285817704,
+        -0.27320041290312247
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.19940875683767356,
+        0.4377802201105848
+      ],
+      "method": "omnix",
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.025768321513002363,
+        "epe_m": 0.1214245440241753,
+        "global_scale": 4.4210661673459235,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "actual_head_focal_ratio": [
+        0.7731900219065274,
+        0.7863726798456401
+      ],
+      "actual_head_principal_error_px": [
+        2.0597749999999735,
+        2.0743814814814527
+      ]
+    },
+    {
+      "source_epe_m": 0.18937788416639997,
+      "source_xy_epe_m": 0.06337554640662911,
+      "source_z_mae_m": 0.17320957701945783,
+      "source_depth_abs_rel": 0.05644431544398529,
+      "oracle_source_intrinsics_epe_m": 0.18667143211135376,
+      "oracle_source_depth_epe_m": 0.04162670271738631,
+      "source_depth_abs_rel_source_scale": 0.05420188367127534,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.17847639494999473,
+      "fitted_source_intrinsics": {
+        "fx": 384.14461126493103,
+        "fy": 384.3866286922388,
+        "cx": 252.5563878944661,
+        "cy": 145.78315457570764
+      },
+      "fitted_focal_ratio": [
+        0.9479259249345919,
+        0.9493005469900769
+      ],
+      "fitted_principal_error_px": [
+        3.556175394466095,
+        0.3947212423742883
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.4592541080771346,
+        0.21910901832988705
+      ],
+      "method": "omnix",
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.03207776427703524,
+        "epe_m": 0.18575224082699535,
+        "global_scale": 4.244400583659746,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "actual_head_focal_ratio": [
+        0.950176850475057,
+        0.9654917206971506
+      ],
+      "actual_head_principal_error_px": [
+        2.9997874999999965,
+        1.611566666666647
+      ]
+    },
+    {
+      "source_epe_m": 0.07028954309066077,
+      "source_xy_epe_m": 0.02543678198810028,
+      "source_z_mae_m": 0.05901220785884222,
+      "source_depth_abs_rel": 0.01770074938500133,
+      "oracle_source_intrinsics_epe_m": 0.0594401240401896,
+      "oracle_source_depth_epe_m": 0.02413364624948046,
+      "source_depth_abs_rel_source_scale": 0.015613767325649092,
+      "oracle_source_intrinsics_source_scale_epe_m": 0.052398658638214746,
+      "fitted_source_intrinsics": {
+        "fx": 344.0265445654857,
+        "fy": 341.89105458290067,
+        "cx": 252.26481135586425,
+        "cy": 145.57545213522482
+      },
+      "fitted_focal_ratio": [
+        0.9176876843357551,
+        0.9129362849215763
+      ],
+      "fitted_principal_error_px": [
+        2.8771488558642773,
+        1.787937320410009
+      ],
+      "fitted_reprojection_rmse_px": [
+        0.14309261443270907,
+        0.14915198386540532
+      ],
+      "method": "omnix",
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.3,
+        "epe_m": 0.07371625503721602,
+        "global_scale": 4.640548909842484,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "actual_head_focal_ratio": [
+        0.9167938687325218,
+        0.9327876620509434
+      ],
+      "actual_head_principal_error_px": [
+        2.6123375000000237,
+        3.212485185185187
+      ]
+    }
+  ],
+  "means": {
+    "60k/standard": {
+      "clips": 4,
+      "apd3d": 0.0039942532394497705,
+      "epe_m": 0.26680832925086345,
+      "focal_ratio": [
+        0.6627630394896712,
+        0.6546528105816765
+      ]
+    },
+    "60k/native_resolution": {
+      "clips": 4,
+      "apd3d": 0.010331320748520691,
+      "epe_m": 0.22739731324791043,
+      "focal_ratio": [
+        0.7210541197853122,
+        0.6725441566937329
+      ]
+    },
+    "60k/patch_resize": {
+      "clips": 4,
+      "apd3d": 0.0038214047731217984,
+      "epe_m": 0.2434643537922611,
+      "focal_ratio": [
+        0.6966127086110616,
+        0.7096982771085248
+      ]
+    },
+    "67k/standard": {
+      "clips": 4,
+      "apd3d": 0.003605551099057344,
+      "epe_m": 0.24751129305564823,
+      "focal_ratio": [
+        0.6768212924544095,
+        0.6688162283337417
+      ]
+    },
+    "67k/native_resolution": {
+      "clips": 4,
+      "apd3d": 0.013133949982417679,
+      "epe_m": 0.23485175950116943,
+      "focal_ratio": [
+        0.7152590909008055,
+        0.6653805124938157
+      ]
+    },
+    "67k/patch_resize": {
+      "clips": 4,
+      "apd3d": 0.018564894493984213,
+      "epe_m": 0.21866464615327075,
+      "focal_ratio": [
+        0.7160653324285877,
+        0.72860115955646
+      ]
+    },
+    "omnix/standard": {
+      "clips": 4,
+      "apd3d": 0.1568902822162304,
+      "epe_m": 0.10775654579921523,
+      "focal_ratio": [
+        0.8995141147726647,
+        0.9144030498240576
+      ]
+    }
+  },
+  "identity_cases": 28,
+  "cache_parity": [
+    {
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "max_xyz_error": 3.5762786865234375e-07,
+      "apd_delta": 0.0,
+      "epe_delta_m": 5.555257576173034e-08,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "max_xyz_error": 2.086162567138672e-07,
+      "apd_delta": 0.0,
+      "epe_delta_m": 5.098086774957267e-08,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "max_xyz_error": 1.3709068298339844e-06,
+      "apd_delta": 0.0,
+      "epe_delta_m": 1.015364501921745e-07,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "60k",
+      "id": "softball_16_0128",
+      "max_xyz_error": 1.0728836059570312e-06,
+      "apd_delta": 0.0,
+      "epe_delta_m": 3.4918180569221136e-09,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "omnix",
+      "id": "tennis_18_0000",
+      "max_xyz_error": 5.066394805908203e-06,
+      "apd_delta": 0.0,
+      "epe_delta_m": 4.961143484014108e-07,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "omnix",
+      "id": "juggle_26_0048",
+      "max_xyz_error": 4.172325134277344e-07,
+      "apd_delta": 0.0,
+      "epe_delta_m": 3.0173650286680065e-08,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "omnix",
+      "id": "boxes_18_0096",
+      "max_xyz_error": 5.364418029785156e-07,
+      "apd_delta": 0.0,
+      "epe_delta_m": 3.04277690266197e-08,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    },
+    {
+      "method": "omnix",
+      "id": "softball_16_0128",
+      "max_xyz_error": 4.172325134277344e-07,
+      "apd_delta": 0.0,
+      "epe_delta_m": 1.4056990946254011e-08,
+      "note": "Query affine float64-vs-float32 rounding; original benchmark cache unchanged"
+    }
+  ],
+  "geometry_controls": [
+    {
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.29435379256564553,
+        "global_scale": 5.652001189793044,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.26043737574552683,
+        "epe_m": 0.05623354691726658,
+        "global_scale": 5.845648244904489,
+        "queries": 102,
+        "visible_point_times": 1509
+      }
+    },
+    {
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.26577795481920125,
+        "global_scale": 5.462905295013485,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.281245858184228,
+        "epe_m": 0.06308744443226542,
+        "global_scale": 5.631044746825213,
+        "queries": 102,
+        "visible_point_times": 1509
+      }
+    },
+    {
+      "method": "60k",
+      "id": "tennis_18_0000",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.21966961658596829,
+        "global_scale": 5.405892274015861,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.31915175612988733,
+        "epe_m": 0.04400688880008397,
+        "global_scale": 5.5526001365630435,
+        "queries": 102,
+        "visible_point_times": 1509
+      }
+    },
+    {
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.010591016548463356,
+        "epe_m": 0.2081663889377427,
+        "global_scale": 7.456133877328585,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.28576832151300235,
+        "epe_m": 0.04881478102641299,
+        "global_scale": 7.560384324840735,
+        "queries": 265,
+        "visible_point_times": 4230
+      }
+    },
+    {
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.016548463356974,
+        "epe_m": 0.2485631355326605,
+        "global_scale": 8.15596959100584,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.22903073286052011,
+        "epe_m": 0.06868676911956527,
+        "global_scale": 8.307547317897928,
+        "queries": 265,
+        "visible_point_times": 4230
+      }
+    },
+    {
+      "method": "60k",
+      "id": "juggle_26_0048",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.008463356973995272,
+        "epe_m": 0.275844598257416,
+        "global_scale": 8.256353386063308,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.2580614657210402,
+        "epe_m": 0.07539199857325003,
+        "global_scale": 8.4181783555266,
+        "queries": 265,
+        "visible_point_times": 4230
+      }
+    },
+    {
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.33113464825818156,
+        "global_scale": 4.433005713910442,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.2115836371000405,
+        "epe_m": 0.11343612795862976,
+        "global_scale": 4.624560244858096,
+        "queries": 309,
+        "visible_point_times": 4938
+      }
+    },
+    {
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.017415957877683273,
+        "epe_m": 0.1577998671314602,
+        "global_scale": 4.333819210326882,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.27812879708383964,
+        "epe_m": 0.09002238949331669,
+        "global_scale": 4.38791935294014,
+        "queries": 309,
+        "visible_point_times": 4938
+      }
+    },
+    {
+      "method": "60k",
+      "id": "boxes_18_0096",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.2567507255264276,
+        "global_scale": 4.433448870010091,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.15172134467395706,
+        "epe_m": 0.16684439321860428,
+        "global_scale": 4.550949174053139,
+        "queries": 309,
+        "visible_point_times": 4938
+      }
+    },
+    {
+      "method": "60k",
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.005385996409335727,
+        "epe_m": 0.233578487241884,
+        "global_scale": 5.3568759433427235,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.1888689407540395,
+        "epe_m": 0.10302243030019229,
+        "global_scale": 5.4160300986904515,
+        "queries": 156,
+        "visible_point_times": 2228
+      }
+    },
+    {
+      "method": "60k",
+      "id": "softball_16_0128",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.007360861759425494,
+        "epe_m": 0.23744829550831983,
+        "global_scale": 5.434186197134813,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.18491921005385997,
+        "epe_m": 0.10812879700925364,
+        "global_scale": 5.503568510517367,
+        "queries": 156,
+        "visible_point_times": 2228
+      }
+    },
+    {
+      "method": "60k",
+      "id": "softball_16_0128",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.006822262118491922,
+        "epe_m": 0.2215924747992326,
+        "global_scale": 5.053972002128606,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.20583482944344703,
+        "epe_m": 0.09569260774639851,
+        "global_scale": 5.1117788568868745,
+        "queries": 156,
+        "visible_point_times": 2228
+      }
+    },
+    {
+      "method": "67k",
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.2977917528245337,
+        "global_scale": 5.744889683109563,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.27143803843605036,
+        "epe_m": 0.05464594048921129,
+        "global_scale": 5.941341097316309,
+        "queries": 102,
+        "visible_point_times": 1509
+      }
+    },
+    {
+      "method": "67k",
+      "id": "tennis_18_0000",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.2983558063681977,
+        "global_scale": 5.61848677422302,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.2726308813783963,
+        "epe_m": 0.06446621032954447,
+        "global_scale": 5.828543782076786,
+        "queries": 102,
+        "visible_point_times": 1509
+      }
+    },
+    {
+      "method": "67k",
+      "id": "tennis_18_0000",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.2292183684831419,
+        "global_scale": 5.5423464312919615,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.3220675944333996,
+        "epe_m": 0.04443288697843003,
+        "global_scale": 5.6981859122036065,
+        "queries": 102,
+        "visible_point_times": 1509
+      }
+    },
+    {
+      "method": "67k",
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.010023640661938534,
+        "epe_m": 0.19936379437814916,
+        "global_scale": 7.505328101381102,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.2594326241134752,
+        "epe_m": 0.05173828925351748,
+        "global_scale": 7.618276549573713,
+        "queries": 265,
+        "visible_point_times": 4230
+      }
+    },
+    {
+      "method": "67k",
+      "id": "juggle_26_0048",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.016595744680851062,
+        "epe_m": 0.24201513704589434,
+        "global_scale": 8.39459372256432,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.21494089834515365,
+        "epe_m": 0.06964365977306305,
+        "global_scale": 8.54304843114146,
+        "queries": 265,
+        "visible_point_times": 4230
+      }
+    },
+    {
+      "method": "67k",
+      "id": "juggle_26_0048",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.011536643026004729,
+        "epe_m": 0.2529621684753509,
+        "global_scale": 7.973003329979589,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.2479905437352246,
+        "epe_m": 0.07173470833016134,
+        "global_scale": 8.116094627802918,
+        "queries": 265,
+        "visible_point_times": 4230
+      }
+    },
+    {
+      "method": "67k",
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.0,
+        "epe_m": 0.25093602962099076,
+        "global_scale": 4.580647302026711,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.25585257189145405,
+        "epe_m": 0.09715263741827423,
+        "global_scale": 4.723850662329352,
+        "queries": 309,
+        "visible_point_times": 4938
+      }
+    },
+    {
+      "method": "67k",
+      "id": "boxes_18_0096",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.02956662616443904,
+        "epe_m": 0.14800534626590534,
+        "global_scale": 4.385038050273897,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.26913730255164037,
+        "epe_m": 0.0847392122813559,
+        "global_scale": 4.43768097523655,
+        "queries": 309,
+        "visible_point_times": 4938
+      }
+    },
+    {
+      "method": "67k",
+      "id": "boxes_18_0096",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.05706763872012961,
+        "epe_m": 0.164069760112888,
+        "global_scale": 4.386809193494911,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.19607128392061565,
+        "epe_m": 0.13301587407327536,
+        "global_scale": 4.424828846777596,
+        "queries": 309,
+        "visible_point_times": 4938
+      }
+    },
+    {
+      "method": "67k",
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "original": {
+        "apd3d": 0.004398563734290844,
+        "epe_m": 0.2419535953989193,
+        "global_scale": 5.448484563445781,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.19488330341113105,
+        "epe_m": 0.10041202109311205,
+        "global_scale": 5.512727462463282,
+        "queries": 156,
+        "visible_point_times": 2228
+      }
+    },
+    {
+      "method": "67k",
+      "id": "softball_16_0128",
+      "variant": "native_resolution",
+      "original": {
+        "apd3d": 0.006373429084380611,
+        "epe_m": 0.2510307483246804,
+        "global_scale": 5.513514267837609,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.1813285457809695,
+        "epe_m": 0.10736631376424026,
+        "global_scale": 5.586782427608983,
+        "queries": 156,
+        "visible_point_times": 2228
+      }
+    },
+    {
+      "method": "67k",
+      "id": "softball_16_0128",
+      "variant": "patch_resize",
+      "original": {
+        "apd3d": 0.005655296229802514,
+        "epe_m": 0.22840828754170217,
+        "global_scale": 5.114621261756866,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "oracle_source_K_same_official_scaling": {
+        "apd3d": 0.22082585278276481,
+        "epe_m": 0.09036886701830522,
+        "global_scale": 5.176144253357551,
+        "queries": 156,
+        "visible_point_times": 2228
+      }
+    }
+  ],
+  "note": "Four fixed clips selected by indices 0,318,636,953 before looking at metrics. Not a full 67k benchmark. Oracle K controls are diagnostic GT interventions, not published scores."
+}

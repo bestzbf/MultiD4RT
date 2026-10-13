@@ -1,5 +1,5 @@
 {
-  "schema": "omnix16-first-visible-v1",
+  "schema": "omnix16-first-visible-v2",
   "subset": "pstudio",
   "split": "full_eval",
   "long_side": 504,
@@ -220428,7 +220428,8 @@
   "source_commit": "730cda1c730877cfedbe01bf87fb1cadb78a565d",
   "query": "every GT-visible point at the first frame of each 16-frame clip; supplied XY only",
   "camera": "local coordinates using predicted target c2w; no GT pose registration",
-  "scoring": "official depth-adaptive APD3D; median scale on GT-visible camera-coordinate norms",
+  "scoring": "official depth-adaptive APD3D; scoring intrinsics at short side 256; median scale on GT-visible camera-coordinate norms",
   "epe": "same clip-wide median scale, then mean Euclidean error at GT-visible point-times, meters",
-  "visibility": "APD ignores predicted occlusion; no AJ/OA reported for OmniX without an official occlusion predictor"
+  "visibility": "APD ignores predicted occlusion; no AJ/OA reported for OmniX without an official occlusion predictor",
+  "metric_eval_short_side": 256
 }

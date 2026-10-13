@@ -1,19 +1,20 @@
 {
   "stage": "passed",
-  "protocol": "omnix16-first-visible-v1",
+  "protocol": "omnix16-first-visible-v2",
   "subset": "pstudio",
   "split": "full_eval",
   "clips": 954,
   "sequences": 106,
-  "plan_sha256": "65e8be23835ff25914ed06a6f8f9b19cad9efb3e71db49f4669512e68f7277fd",
+  "plan_sha256": "05b31b3c4d63fb3902cfe1e672baaf8c06882af70fb368046d666a716633b898",
   "identical_rgb": true,
+  "metric_eval_short_side": 256,
   "methods": {
     "multid4rt": {
-      "apd3d": 0.03282269141017394,
+      "apd3d": 0.06644546936620842,
       "epe_m": 0.22712876622312508
     },
     "omnix": {
-      "apd3d": 0.13965723532330734,
+      "apd3d": 0.21309646125639004,
       "epe_m": 0.12793988031138873
     }
   }

@@ -1,0 +1,49 @@
+{
+  "loading": {
+    "step": 67000,
+    "config": {
+      "embed_dim": 1536,
+      "encoder_depth": 40,
+      "encoder_heads": 24,
+      "out_layers": [
+        19,
+        27,
+        33,
+        39
+      ],
+      "alt_start": 13,
+      "positional_image_size": 518,
+      "patch_size": 14,
+      "ffn_layer": "swiglufused",
+      "motion_depth": 4,
+      "motion_heads": 16,
+      "dpt_features": 256,
+      "dpt_channels": [
+        256,
+        512,
+        1024,
+        1024
+      ],
+      "decoder_memory": "target_time",
+      "time_origin": "clip_start",
+      "geometry_chunk_size": 8,
+      "attention_chunk_size": null,
+      "visibility_chunk_size": null,
+      "gradient_checkpointing": false
+    },
+    "strict": true,
+    "checkpoint": "/data8/zbf/multicamera4rc_runs/loader_recovery_20261012/continued_training_loopback/continuation_66000_68000_try0/step_00067000.pt",
+    "checkpoint_sha256": "9a782ffcafc94c994932e1bfbad893c2ad9f3991b23590cf23e860610b6e064c"
+  },
+  "cases": [
+    "tennis_18_0000",
+    "juggle_26_0048",
+    "boxes_18_0096",
+    "softball_16_0128"
+  ],
+  "variants": [
+    "standard",
+    "native_resolution",
+    "patch_resize"
+  ]
+}

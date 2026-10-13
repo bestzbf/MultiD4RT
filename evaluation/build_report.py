@@ -18,12 +18,14 @@ def main():
     mv=json.loads((root/'multiview46/comparison.json').read_text())
     if any(r['stage']!='passed' or not r['identical_rgb'] for r in [sintel,tap,mv]):
         raise ValueError('All full paired comparisons must pass before publishing tables')
+    if tap.get('metric_eval_short_side')!=256:
+        raise ValueError('PStudio report predates the official scoring-resolution correction')
     rows=[]
     def add(dataset,metric,unit,direction,counts,values,protocol):
         rows.append(dict(dataset=dataset,metric=metric,unit=unit,direction=direction,samples=counts,
             multid4rt=values['multid4rt'],omnix=values['omnix'],protocol=protocol))
     add('PStudio · 单相机','APD3D','%', '↑','106 视频 / 954 × T16',
-        {m:100*v['apd3d'] for m,v in tap['methods'].items()},'RGB + 2D 查询；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均')
+        {m:100*v['apd3d'] for m,v in tap['methods'].items()},'RGB + 2D 查询；评分内参按原图短边 256 归一化；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均')
     add('PStudio · 单相机','EPE','m','↓','106 视频 / 954 × T16',
         {m:v['epe_m'] for m,v in tap['methods'].items()},'预测目标相机坐标；与 APD 相同尺度，GT 可见点欧氏误差；视频宏平均')
     for title,key,unit,scale,direction in [
@@ -81,6 +83,7 @@ def main():
                      mvtracker='https://github.com/ethz-vlg/mvtracker',depth='https://github.com/Luo-Yihang/4RC',
                      evo='https://github.com/MichaelGrupp/evo',d4rt='https://d4rt-paper.github.io/'),
         limitations=[
+            'PStudio APD 已修复：此前漏掉官方 evaluate_model.py 的短边 256 内参归一化，旧 APD 作废并归档；模型预测、查询、GT、EPE 和其他数据集指标没有改变。',
             '这是共同预处理和明确固定协议下的发布权重重跑；OmniX 的论文专用完整评测 wrapper 未发布，不能把论文表值直接当作这里的基线。',
             'D4RT 官方页面未找到可运行模型代码/权重；未将 OpenD4RT 等非官方复现冒充官方 D4RT。',
             'N3DV 是新视角渲染任务；本轮没有把几何/追踪输出转换成 PSNR、SSIM、LPIPS，未运行渲染对比。',
@@ -89,12 +92,13 @@ def main():
             'OmniX 的内存适配保留全部输入、attention、原目标槽和时间语义；实际 C2T4/C4T8/C4T24 与原完整输出差异为 0；40 个已完成预测通过逐数组与评分一致性核验复用。'])
     (root/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     with (root/'metrics.csv').open('w',newline='') as stream:
-        writer=csv.DictWriter(stream,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+        writer=csv.DictWriter(stream,fieldnames=list(rows[0]),lineterminator='\n');writer.writeheader();writer.writerows(rows)
     payload=json.dumps(result,ensure_ascii=False).replace('</','<\\/')
     template='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MultiD4RT 60k · 共同协议评测</title>
 <style>body{margin:0;background:#10141b;color:#e5eaf2;font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1240px;margin:40px auto;padding:0 28px}h1{font-size:30px;margin:0 0 8px}h2{font-size:21px;margin-top:34px}.sub,small{color:#a4b0c4}a{color:#87bcff}.tag{display:inline-block;background:#163c2e;color:#91e3b9;border-radius:20px;padding:4px 12px;margin:12px 6px 18px 0}select{background:#19212d;color:white;border:1px solid #344458;border-radius:8px;padding:8px 14px;margin:10px 0}table{width:100%;border-collapse:collapse;background:#151d28;border-radius:10px;overflow:hidden}td,th{padding:10px 13px;border-bottom:1px solid #293647;text-align:left}th{font-weight:600;color:#b8c6d9}td.num{text-align:right;font-variant-numeric:tabular-nums}.win{color:#a5e6bd;font-weight:650}.note{background:#172233;border-left:3px solid #5c9ee5;padding:14px 18px;margin:18px 0}.protocol{font-size:12px;color:#a9b6c9}details{margin:20px 0}li{margin:8px 0}.links{display:flex;gap:18px;flex-wrap:wrap}.scroll{overflow:auto}footer{margin:36px 0;color:#8e9bb0;font-size:12px}@media(max-width:700px){main{padding:0 14px}h1{font-size:23px}td,th{padding:8px;min-width:70px}}</style>
 <main><h1>MultiD4RT 60k · 与 OmniX 共同协议评测</h1><div class="sub">固定发布权重 · 相同 RGB、查询、GT 和评分器 · 2026-10-13</div><span class="tag">PStudio 106/106 视频</span><span class="tag">多相机 46/46 序列</span><span class="tag">相机数量 24/24 实测组合</span>
 <p>本页比较真实推理结果。多相机测试的输入条件包含标定坐标对齐与给定三维查询，单目 PStudio 使用二维查询；这两个条件单独解读。</p>
+<div class="note">PStudio APD 已修正官方评分内参归一化：以原图短边 256 计算距离阈值。旧 APD 作废；两种模型的全部原始预测保持不变。<a href="tapvid16_pstudio_full_eval/resolution_correction.json">修复核验</a> · <a href="pstudio_diagnosis_20261013/diagnosis.md">PStudio 原因与真实网络干预实验</a></div>
 <div class="links"><a href="metrics.csv">下载指标 CSV</a><a href="results.json">完整汇总 JSON</a><a href="multiview46/comparison.json">多相机核验与结果</a><a href="source/omnix_queries_bounded_parity.json">OmniX 原输出一致性核验</a></div>
 <h2>完整测试集对照</h2><label>评测项 <select id="dataset"><option value="">全部</option></select></label><div class="scroll"><table><thead><tr><th>数据与指标</th><th>样本</th><th>MultiD4RT 60k</th><th>OmniX release</th><th>协议</th></tr></thead><tbody id="metrics"></tbody></table></div>
 <h2>相机数量诊断 · 固定三场景，T8</h2><p class="sub">固定首帧三维查询及四个参考视角的 GT 可见性，只增加输入 RGB 相机。以下为 any 组均值；完整官方 MV-Kubric 表使用 dynamic-static-mean 组。</p><div class="scroll"><table><thead><tr><th>相机数量</th><th>60k Δavg ↑</th><th>OmniX Δavg ↑</th><th>60k MTE ↓</th><th>OmniX MTE ↓</th></tr></thead><tbody id="cameras"></tbody></table></div><small>MTE 单位为原始 Kubric 场景单位 ×100；诊断不替代完整 30 序列测试。</small>

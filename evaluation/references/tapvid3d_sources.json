@@ -5,7 +5,8 @@
     "tapnet/tapvid3d/evaluation/metrics.py": "f83836ce6e6abc91c1902d9069eb63f9059d7f1e9dc220278bec386a319fbd30",
     "tapnet/tapvid3d/splits/tapvid3d_splits.py": "d2b9e5b9fd8a8442038cd8c56938d20b9264dca6cbbc33ff4c4e1f4f02ff94df",
     "tapnet/tapvid3d/annotation_generation/gcs_utils.py": "2a18b092612381591f1440b575a8730cbc501d138b344eeaa255cbe2a4ba9a3f",
-    "tapnet/tapvid3d/annotation_generation/generate_pstudio.py": "5d4812efc7d3b5239762479f6dbcb9f37253769339dbc04cee623d34d94752f7"
+    "tapnet/tapvid3d/annotation_generation/generate_pstudio.py": "5d4812efc7d3b5239762479f6dbcb9f37253769339dbc04cee623d34d94752f7",
+    "tapnet/tapvid3d/evaluation/evaluate_model.py": "13763ad46d4ffb2bb014c61c6ec7f908a2e6e278cfaa91d9c6849f5c176eaa38"
   },
   "full_eval": [
     "tennis_18.npz",

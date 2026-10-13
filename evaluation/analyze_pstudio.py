@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from .common import load_module,write_json
+from .run_tapvid import metric_intrinsics
 
 
 def main():
@@ -40,7 +41,7 @@ def main():
                 epe=np.linalg.norm(scaled-truth,axis=-1)
                 displacement_error=np.linalg.norm((scaled-scaled[:1])-(truth-truth[:1]),axis=-1)
                 source_apd=scorer.compute_tapvid3d_metrics(~visible[:1],truth[:1],
-                    np.zeros_like(visible[:1]),scaled[:1],k,order='t n',scaling='none')['average_pts_within_thresh']
+                    np.zeros_like(visible[:1]),scaled[:1],metric_intrinsics(k,row['input']['raw_hw']),order='t n',scaling='none')['average_pts_within_thresh']
                 rows.append(dict(id=case['id'],sequence=sequence,source_apd3d=float(np.mean(source_apd)),
                     source_epe_m=float(epe[0].mean()),future_epe_m=float(epe[1:][visible[1:]].mean()),
                     future_displacement_error_m=float(displacement_error[1:][visible[1:]].mean())))

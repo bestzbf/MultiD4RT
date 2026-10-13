@@ -1,0 +1,691 @@
+{
+  "stage": "passed",
+  "loading": {
+    "strict": true,
+    "tensors": 1106,
+    "step": 60000,
+    "config": {
+      "embed_dim": 1536,
+      "encoder_depth": 40,
+      "encoder_heads": 24,
+      "out_layers": [
+        19,
+        27,
+        33,
+        39
+      ],
+      "alt_start": 13,
+      "positional_image_size": 518,
+      "patch_size": 14,
+      "ffn_layer": "swiglufused",
+      "motion_depth": 4,
+      "motion_heads": 16,
+      "dpt_features": 256,
+      "dpt_channels": [
+        256,
+        512,
+        1024,
+        1024
+      ],
+      "decoder_memory": "target_time",
+      "time_origin": "clip_start",
+      "geometry_chunk_size": 8,
+      "attention_chunk_size": null,
+      "visibility_chunk_size": null,
+      "gradient_checkpointing": false
+    },
+    "method": "multid4rt",
+    "checkpoint": "/data9/zbf/multid4rt_modelscope_release_20261010/model/multid4rt_giant_step60000.pt",
+    "checkpoint_sha256": "1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0",
+    "parameters": 1527388286,
+    "torch": "2.11.0+cu128",
+    "numpy": "1.26.4"
+  },
+  "records": [
+    {
+      "id": "tennis_18_0000",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.29435379256564553,
+        "global_scale": 5.652001189793044,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "989fdf2db8ea7dd1ecd23a2c96e86665d13167018171cb6e615d193d49febbbd",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 19.857712521683425,
+      "K0": [
+        [
+          268.4752502441406,
+          0.0,
+          250.75259399414062
+        ],
+        [
+          0.0,
+          264.2294616699219,
+          145.5356903076172
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 5.960464477539063e-08
+    },
+    {
+      "id": "tennis_18_0000",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.26577795481920125,
+        "global_scale": 5.462905295013485,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          360,
+          640
+        ],
+        "padded_hw": [
+          364,
+          644
+        ],
+        "rgb_sha256": "989fdf2db8ea7dd1ecd23a2c96e86665d13167018171cb6e615d193d49febbbd",
+        "variant": "native_resolution",
+        "query_affine_scale": [
+          1,
+          1
+        ],
+        "query_affine_offset": [
+          0,
+          0
+        ]
+      },
+      "seconds": 0.8274698969908059,
+      "K0": [
+        [
+          365.91644287109375,
+          0.0,
+          319.8487854003906
+        ],
+        [
+          0.0,
+          340.176513671875,
+          179.89088439941406
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 8.940696716308594e-08
+    },
+    {
+      "id": "tennis_18_0000",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.0007952286282306162,
+        "epe_m": 0.21966961658596829,
+        "global_scale": 5.405892274015861,
+        "queries": 102,
+        "visible_point_times": 1509
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          280,
+          504
+        ],
+        "padded_hw": [
+          280,
+          504
+        ],
+        "rgb_sha256": "989fdf2db8ea7dd1ecd23a2c96e86665d13167018171cb6e615d193d49febbbd",
+        "variant": "patch_resize",
+        "query_affine_scale": [
+          0.7875,
+          0.7777777777777778
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.1111111111111111
+        ]
+      },
+      "seconds": 0.6466815988533199,
+      "K0": [
+        [
+          299.57379150390625,
+          0.0,
+          250.0211944580078
+        ],
+        [
+          0.0,
+          299.35943603515625,
+          138.37545776367188
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 2.9802322387695312e-08
+    },
+    {
+      "id": "juggle_26_0048",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.03437352245862884,
+        "epe_m": 0.2081663889377427,
+        "global_scale": 7.456133877328585,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "45638503836b45c8e3b1f119101fa36812ebc269ac3209895aa1d5f9c7fafffc",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 0.36099403304979205,
+      "K0": [
+        [
+          248.82247924804688,
+          0.0,
+          251.54112243652344
+        ],
+        [
+          0.0,
+          246.99400329589844,
+          145.90757751464844
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 5.960464477539063e-08
+    },
+    {
+      "id": "juggle_26_0048",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.030638297872340424,
+        "epe_m": 0.2485631355326605,
+        "global_scale": 8.15596959100584,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          360,
+          640
+        ],
+        "padded_hw": [
+          364,
+          644
+        ],
+        "rgb_sha256": "45638503836b45c8e3b1f119101fa36812ebc269ac3209895aa1d5f9c7fafffc",
+        "variant": "native_resolution",
+        "query_affine_scale": [
+          1,
+          1
+        ],
+        "query_affine_offset": [
+          0,
+          0
+        ]
+      },
+      "seconds": 0.5479764500632882,
+      "K0": [
+        [
+          328.2270812988281,
+          0.0,
+          321.1397399902344
+        ],
+        [
+          0.0,
+          304.7651062011719,
+          180.45492553710938
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 5.960464477539063e-08
+    },
+    {
+      "id": "juggle_26_0048",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.019858156028368792,
+        "epe_m": 0.275844598257416,
+        "global_scale": 8.256353386063308,
+        "queries": 265,
+        "visible_point_times": 4230
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          280,
+          504
+        ],
+        "padded_hw": [
+          280,
+          504
+        ],
+        "rgb_sha256": "45638503836b45c8e3b1f119101fa36812ebc269ac3209895aa1d5f9c7fafffc",
+        "variant": "patch_resize",
+        "query_affine_scale": [
+          0.7875,
+          0.7777777777777778
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.1111111111111111
+        ]
+      },
+      "seconds": 0.36578195868059993,
+      "K0": [
+        [
+          232.0933837890625,
+          0.0,
+          252.3505859375
+        ],
+        [
+          0.0,
+          233.06292724609375,
+          139.41848754882812
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 0.0011747144162654877
+    },
+    {
+      "id": "boxes_18_0096",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.33113464825818156,
+        "global_scale": 4.433005713910442,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e1044b17ec8e2899596710bd1bfd2896d7aee076ca423d5e0f672e44900fb615",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 0.3451031814329326,
+      "K0": [
+        [
+          316.9552307128906,
+          0.0,
+          249.6122589111328
+        ],
+        [
+          0.0,
+          311.1662902832031,
+          144.99722290039062
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 1.1920928955078125e-07
+    },
+    {
+      "id": "boxes_18_0096",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.08550020251113812,
+        "epe_m": 0.1577998671314602,
+        "global_scale": 4.333819210326882,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          360,
+          640
+        ],
+        "padded_hw": [
+          364,
+          644
+        ],
+        "rgb_sha256": "e1044b17ec8e2899596710bd1bfd2896d7aee076ca423d5e0f672e44900fb615",
+        "variant": "native_resolution",
+        "query_affine_scale": [
+          1,
+          1
+        ],
+        "query_affine_offset": [
+          0,
+          0
+        ]
+      },
+      "seconds": 0.5491637559607625,
+      "K0": [
+        [
+          469.1777648925781,
+          0.0,
+          319.49554443359375
+        ],
+        [
+          0.0,
+          438.6470947265625,
+          179.77035522460938
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 1.1920928955078125e-07
+    },
+    {
+      "id": "boxes_18_0096",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2567507255264276,
+        "global_scale": 4.433448870010091,
+        "queries": 309,
+        "visible_point_times": 4938
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          280,
+          504
+        ],
+        "padded_hw": [
+          280,
+          504
+        ],
+        "rgb_sha256": "e1044b17ec8e2899596710bd1bfd2896d7aee076ca423d5e0f672e44900fb615",
+        "variant": "patch_resize",
+        "query_affine_scale": [
+          0.7875,
+          0.7777777777777778
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.1111111111111111
+        ]
+      },
+      "seconds": 0.3660017494112253,
+      "K0": [
+        [
+          350.9742431640625,
+          0.0,
+          249.83567810058594
+        ],
+        [
+          0.0,
+          353.98046875,
+          138.3147735595703
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 1.1920928955078125e-07
+    },
+    {
+      "id": "softball_16_0128",
+      "variant": "standard",
+      "metrics": {
+        "apd3d": 0.0144524236983842,
+        "epe_m": 0.233578487241884,
+        "global_scale": 5.3568759433427235,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "61ee577d1735b702bf466e68cfbd71035d611722bb238c6982961303036292bf",
+        "query_affine_scale": [
+          0.7875,
+          0.7888888888888889
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.10555555555555557
+        ]
+      },
+      "seconds": 0.34538143780082464,
+      "K0": [
+        [
+          232.5153045654297,
+          0.0,
+          252.29598999023438
+        ],
+        [
+          0.0,
+          230.3961639404297,
+          146.27450561523438
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 1.1920928955078125e-07
+    },
+    {
+      "id": "softball_16_0128",
+      "variant": "native_resolution",
+      "metrics": {
+        "apd3d": 0.028725314183123872,
+        "epe_m": 0.23744829550831983,
+        "global_scale": 5.434186197134813,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          360,
+          640
+        ],
+        "padded_hw": [
+          364,
+          644
+        ],
+        "rgb_sha256": "61ee577d1735b702bf466e68cfbd71035d611722bb238c6982961303036292bf",
+        "variant": "native_resolution",
+        "query_affine_scale": [
+          1,
+          1
+        ],
+        "query_affine_offset": [
+          0,
+          0
+        ]
+      },
+      "seconds": 0.5477275070734322,
+      "K0": [
+        [
+          310.6037902832031,
+          0.0,
+          321.87548828125
+        ],
+        [
+          0.0,
+          287.64239501953125,
+          180.80001831054688
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 1.1920928955078125e-07
+    },
+    {
+      "id": "softball_16_0128",
+      "variant": "patch_resize",
+      "metrics": {
+        "apd3d": 0.03007181328545781,
+        "epe_m": 0.2215924747992326,
+        "global_scale": 5.053972002128606,
+        "queries": 156,
+        "visible_point_times": 2228
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          280,
+          504
+        ],
+        "padded_hw": [
+          280,
+          504
+        ],
+        "rgb_sha256": "61ee577d1735b702bf466e68cfbd71035d611722bb238c6982961303036292bf",
+        "variant": "patch_resize",
+        "query_affine_scale": [
+          0.7875,
+          0.7777777777777778
+        ],
+        "query_affine_offset": [
+          -0.10625000000000001,
+          -0.1111111111111111
+        ]
+      },
+      "seconds": 0.3762084310874343,
+      "K0": [
+        [
+          237.8103485107422,
+          0.0,
+          252.03248596191406
+        ],
+        [
+          0.0,
+          238.09246826171875,
+          139.28204345703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_z_depth_max_difference": 1.7881393432617188e-07
+    }
+  ],
+  "metric_eval_short_side": 256
+}

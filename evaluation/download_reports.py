@@ -21,6 +21,11 @@ for folder in [p/'sintel16',p/'tapvid16_pstudio_full_eval']:
  for method in ['multid4rt','omnix']:
   f=folder/method/'results.json'
   if f.exists():paths.append((f,str(f.relative_to(p))))
+for f in (p/'tapvid16_pstudio_full_eval/legacy_raw_intrinsics').rglob('*.json'):
+ paths.append((f,str(f.relative_to(p))))
+for suffix in ['*.json','*.md','*.png']:
+ for f in (p/'pstudio_diagnosis_20261013').rglob(suffix):
+  paths.append((f,str(f.relative_to(p))))
 for method in ['multid4rt','omnix']:
  folder=p/'multiview46'/method
  for name in ['run.json','progress.json','cache_migration.json','score/results.json','score/per_sequence.csv']:

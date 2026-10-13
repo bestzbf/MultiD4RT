@@ -1,0 +1,7695 @@
+{
+  "stage": "partition_complete",
+  "requested_cases": 954,
+  "partition_cases": 238,
+  "requested_sequences": 106,
+  "contract": {
+    "plan_sha256": "65e8be23835ff25914ed06a6f8f9b19cad9efb3e71db49f4669512e68f7277fd",
+    "loading": {
+      "strict": true,
+      "tensors": 1106,
+      "step": 60000,
+      "config": {
+        "embed_dim": 1536,
+        "encoder_depth": 40,
+        "encoder_heads": 24,
+        "out_layers": [
+          19,
+          27,
+          33,
+          39
+        ],
+        "alt_start": 13,
+        "positional_image_size": 518,
+        "patch_size": 14,
+        "ffn_layer": "swiglufused",
+        "motion_depth": 4,
+        "motion_heads": 16,
+        "dpt_features": 256,
+        "dpt_channels": [
+          256,
+          512,
+          1024,
+          1024
+        ],
+        "decoder_memory": "target_time",
+        "time_origin": "clip_start",
+        "geometry_chunk_size": 8,
+        "attention_chunk_size": null,
+        "visibility_chunk_size": null,
+        "gradient_checkpointing": false
+      },
+      "method": "multid4rt",
+      "checkpoint": "/data9/zbf/multid4rt_modelscope_release_20261010/model/multid4rt_giant_step60000.pt",
+      "checkpoint_sha256": "1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0",
+      "parameters": 1527388286,
+      "torch": "2.11.0+cu128",
+      "numpy": "1.26.4"
+    },
+    "partitions": 4,
+    "partition_index": 3,
+    "memory_fraction": 0.21,
+    "scorer_sha256": "f83836ce6e6abc91c1902d9069eb63f9059d7f1e9dc220278bec386a319fbd30",
+    "implementation": {
+      "run_tapvid.py": "1bc210aafc3f1c00868cd08b2593dcd3f251df16fe72fafc782700dcb04ec4c8",
+      "common.py": "039281cfa273d283beca7f39d2ca5497466a1bf2c1a4f3a64154c4b70c1cc129",
+      "native_omnix.py": "088b7c4c9ace9a256ee4d2d602ee85470f481adba32792febd6cb51319e5c1e8"
+    }
+  },
+  "records": [
+    {
+      "id": "tennis_18_0048",
+      "sequence": "tennis_18.npz",
+      "metrics": {
+        "apd3d": 0.0006631299734748011,
+        "epe_m": 0.34569511316646356,
+        "global_scale": 6.066055076700025,
+        "queries": 209,
+        "visible_point_times": 3016
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4d70475664ac32698e3323d2ea4d508033241a3d386167a61dbd78992ec0c935"
+      },
+      "seconds": 0.20061205234378576,
+      "inference_seconds": 0.0014654360711574554,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_18_0112",
+      "sequence": "tennis_18.npz",
+      "metrics": {
+        "apd3d": 0.0011114541525162089,
+        "epe_m": 0.24816859861127738,
+        "global_scale": 6.144174157222054,
+        "queries": 220,
+        "visible_point_times": 3239
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7d5930e02951b1d7d878516a3ac1895d5d1eb97fffc80899dab14b2ca67b45b9"
+      },
+      "seconds": 0.09872209606692195,
+      "inference_seconds": 0.0013714679516851902,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_24_0032",
+      "sequence": "tennis_24.npz",
+      "metrics": {
+        "apd3d": 0.20797011207970115,
+        "epe_m": 0.10561436281310276,
+        "global_scale": 6.066380857435246,
+        "queries": 226,
+        "visible_point_times": 3212
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3124e722fa40a1d00defd4ac99cf5641e2d723162ecc339bd88cbd204fe0e063"
+      },
+      "seconds": 0.12085392605513334,
+      "inference_seconds": 0.0013379980809986591,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_24_0096",
+      "sequence": "tennis_24.npz",
+      "metrics": {
+        "apd3d": 0.11762760901012606,
+        "epe_m": 0.10187844724827644,
+        "global_scale": 5.292356253883632,
+        "queries": 310,
+        "visible_point_times": 4839
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e5b41744f23940c57c5d3818a89e3bdc04ebb7852479ee9feeb6e543e6c23d8c"
+      },
+      "seconds": 0.1331895599141717,
+      "inference_seconds": 0.0014378787018358707,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_11_0016",
+      "sequence": "tennis_11.npz",
+      "metrics": {
+        "apd3d": 0.03358395989974937,
+        "epe_m": 0.16000975846136986,
+        "global_scale": 5.037322462039283,
+        "queries": 89,
+        "visible_point_times": 1197
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7c6235c4846b260620eb2c2c631b6cc409027e3bcb6fb855c24364744b69108d"
+      },
+      "seconds": 0.12269570725038648,
+      "inference_seconds": 0.001292321365326643,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_11_0080",
+      "sequence": "tennis_11.npz",
+      "metrics": {
+        "apd3d": 0.0068669527896995704,
+        "epe_m": 0.20577820098548105,
+        "global_scale": 5.232293204450461,
+        "queries": 185,
+        "visible_point_times": 2796
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "80b0ec61eae7bea820e802167492f2aac04be6e6b3477155ef7eef02a6a9ff6b"
+      },
+      "seconds": 0.11463016597554088,
+      "inference_seconds": 0.0013320688158273697,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_20_0000",
+      "sequence": "boxes_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.34205478175860593,
+        "global_scale": 4.214225828651128,
+        "queries": 308,
+        "visible_point_times": 3999
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3ca74aaf751a41547256f218282eaf1bc48456e61479c3f5f6ac2c3a6de3608a"
+      },
+      "seconds": 0.11585234897211194,
+      "inference_seconds": 0.0014596981927752495,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_20_0064",
+      "sequence": "boxes_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.19456843130370963,
+        "global_scale": 4.057185697086656,
+        "queries": 436,
+        "visible_point_times": 6896
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b46546d60c3143ec53300cd25f45dc6199f54c6d3e2480ba4ff7fd3ba0f2bcb4"
+      },
+      "seconds": 0.10963367996737361,
+      "inference_seconds": 0.0014441348612308502,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_20_0128",
+      "sequence": "boxes_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.20273384520530605,
+        "global_scale": 3.8387163166756997,
+        "queries": 423,
+        "visible_point_times": 6607
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ba89e58f2c2daf492dfbabb338149e1afffa058e327fc2e9a3e8efa2ca7a9ff1"
+      },
+      "seconds": 0.10093144606798887,
+      "inference_seconds": 0.001427945215255022,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_17_0048",
+      "sequence": "juggle_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.18705941726062586,
+        "global_scale": 5.202994093474129,
+        "queries": 204,
+        "visible_point_times": 3038
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3bde6c4e57d6573fe1c32846815d114e7675b824ac210ae19f9412b6570319d1"
+      },
+      "seconds": 0.10532473865896463,
+      "inference_seconds": 0.0013099629431962967,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_17_0112",
+      "sequence": "juggle_17.npz",
+      "metrics": {
+        "apd3d": 0.0037829457364341084,
+        "epe_m": 0.15882750796738213,
+        "global_scale": 4.3508478241809625,
+        "queries": 204,
+        "visible_point_times": 3225
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b3d114db5e727ca4ba9d0b454f64aa72997bdd1ba163a8342ddfcae34b1bb937"
+      },
+      "seconds": 0.10104255098849535,
+      "inference_seconds": 0.001261620782315731,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_25_0032",
+      "sequence": "basketball_25.npz",
+      "metrics": {
+        "apd3d": 0.017701149425287353,
+        "epe_m": 0.10830616167505978,
+        "global_scale": 4.534610965018334,
+        "queries": 281,
+        "visible_point_times": 4350
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "fb0d682109f69d8d2fd0a3f9d3fdc8619df7423493107ca59f0ad8159a2d27fe"
+      },
+      "seconds": 0.11915081506595016,
+      "inference_seconds": 0.001348310150206089,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_25_0096",
+      "sequence": "basketball_25.npz",
+      "metrics": {
+        "apd3d": 0.023886063072227872,
+        "epe_m": 0.10829031364036797,
+        "global_scale": 5.727382093116089,
+        "queries": 309,
+        "visible_point_times": 4915
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a3a988587ad3f0911686a60a57452fabbd8ba5f552806ac51243a19eee900f80"
+      },
+      "seconds": 0.1153521528467536,
+      "inference_seconds": 0.0014068381860852242,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_26_0016",
+      "sequence": "basketball_26.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.6001944108664693,
+        "global_scale": 6.188253381452516,
+        "queries": 83,
+        "visible_point_times": 1073
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "882bbe24b489e58115f5bdc028c466a381ab8ca039739fa281412d40e544aae7"
+      },
+      "seconds": 0.12082079192623496,
+      "inference_seconds": 0.001134063582867384,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_26_0080",
+      "sequence": "basketball_26.npz",
+      "metrics": {
+        "apd3d": 0.002445302445302445,
+        "epe_m": 0.21393375540327322,
+        "global_scale": 6.803001151803266,
+        "queries": 104,
+        "visible_point_times": 1554
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d35520b82c4b0995804cd4ad26edf0da8e7dfa775c9af340a71018e8ea584a1c"
+      },
+      "seconds": 0.11633824603632092,
+      "inference_seconds": 0.0012364289723336697,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_12_0000",
+      "sequence": "basketball_12.npz",
+      "metrics": {
+        "apd3d": 0.00384900074019245,
+        "epe_m": 0.233783449504817,
+        "global_scale": 4.726095978955511,
+        "queries": 90,
+        "visible_point_times": 1351
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "82e971c03a00f0f4836868c6f98b3550be166a70efd14e3b11bdf0e01fd2a095"
+      },
+      "seconds": 0.13460082421079278,
+      "inference_seconds": 0.001260607037693262,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_12_0064",
+      "sequence": "basketball_12.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.43124251562241656,
+        "global_scale": 5.10635154733779,
+        "queries": 132,
+        "visible_point_times": 1939
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "75c42c527926ea90c43603c011b1b1a5824c35da21d1226a7322a70b44312f05"
+      },
+      "seconds": 0.12787196598947048,
+      "inference_seconds": 0.0011090259067714214,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_12_0128",
+      "sequence": "basketball_12.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3343110992013859,
+        "global_scale": 4.820795914633662,
+        "queries": 137,
+        "visible_point_times": 2039
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "42b74ca042a91e19b61e0a4688cf5a82b04377906aece74df11f71cf96b3984a"
+      },
+      "seconds": 0.1470448449254036,
+      "inference_seconds": 0.00131282489746809,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_11_0048",
+      "sequence": "softball_11.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2641038040258264,
+        "global_scale": 5.07144359726734,
+        "queries": 272,
+        "visible_point_times": 4276
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e2a0fa280b63c2d7bc0f5210f77877832969638364a8f5952383c160f9a8646e"
+      },
+      "seconds": 0.15062066772952676,
+      "inference_seconds": 0.0015022298321127892,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_11_0112",
+      "sequence": "softball_11.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2984879988688619,
+        "global_scale": 4.939264747625257,
+        "queries": 172,
+        "visible_point_times": 2646
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "feb69179133964613d55af2a7fabada1e63e816c812afe82dbdc775b4fa9c8a6"
+      },
+      "seconds": 0.16933681722730398,
+      "inference_seconds": 0.0016743829473853111,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_17_0032",
+      "sequence": "football_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.34739725327192017,
+        "global_scale": 4.4703692272842845,
+        "queries": 41,
+        "visible_point_times": 647
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "964d57e02951159f0333a6ea6dbd63c4d41b670f62ccddf3af8c43368f13134e"
+      },
+      "seconds": 0.1932732672430575,
+      "inference_seconds": 0.0013140058144927025,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_17_0096",
+      "sequence": "football_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2769871202785285,
+        "global_scale": 4.680929562974612,
+        "queries": 74,
+        "visible_point_times": 1143
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4c48071e4920c601778b79f3e2322872352dce52af0330eca643439446710fd2"
+      },
+      "seconds": 0.18669311376288533,
+      "inference_seconds": 0.0016257469542324543,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_28_0016",
+      "sequence": "softball_28.npz",
+      "metrics": {
+        "apd3d": 0.002589695171297545,
+        "epe_m": 0.15813846364082115,
+        "global_scale": 4.85814701792268,
+        "queries": 245,
+        "visible_point_times": 3707
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b53f524c207df785e6252c04968cfacadf838acdd00df697f981e9efc50a4c21"
+      },
+      "seconds": 0.20298367971554399,
+      "inference_seconds": 0.0020167301408946514,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_28_0080",
+      "sequence": "softball_28.npz",
+      "metrics": {
+        "apd3d": 0.00031338138514572234,
+        "epe_m": 0.23309187366405906,
+        "global_scale": 4.482789017086691,
+        "queries": 221,
+        "visible_point_times": 3191
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "badb8d7a6a7ddd7f9830e190349b696b570db226109149953065cd4104b27f41"
+      },
+      "seconds": 0.1513857520185411,
+      "inference_seconds": 0.0015669530257582664,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_5_0000",
+      "sequence": "football_5.npz",
+      "metrics": {
+        "apd3d": 0.0014252696456086285,
+        "epe_m": 0.2018294094882217,
+        "global_scale": 5.475923791193285,
+        "queries": 334,
+        "visible_point_times": 5192
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b49db98c696cefe4714d6957a8b91d7bd090123e5057e2d27df8a254fea7770f"
+      },
+      "seconds": 0.18446118384599686,
+      "inference_seconds": 0.0020258300937712193,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_5_0064",
+      "sequence": "football_5.npz",
+      "metrics": {
+        "apd3d": 0.0076327632763276325,
+        "epe_m": 0.11386010597698534,
+        "global_scale": 4.664615103731705,
+        "queries": 350,
+        "visible_point_times": 5555
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e219240c916ad559484b4c7f20ba9d0fd2f01103049bcf4350bf525877160a69"
+      },
+      "seconds": 0.16331126587465405,
+      "inference_seconds": 0.0019462830387055874,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_5_0128",
+      "sequence": "football_5.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.1713547256357062,
+        "global_scale": 5.495052336934141,
+        "queries": 360,
+        "visible_point_times": 5523
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5b9766a93d816ee67ec9c7ebb2a708eb976872abb036d1d75602e1d3186d1274"
+      },
+      "seconds": 0.13874083198606968,
+      "inference_seconds": 0.0015688412822782993,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_27_0048",
+      "sequence": "softball_27.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2247034531334298,
+        "global_scale": 5.896894055870909,
+        "queries": 91,
+        "visible_point_times": 1456
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e75677b6e486024d038980b805b2210c81d0343971d7c92becce85c2f0fa6c89"
+      },
+      "seconds": 0.16584607493132353,
+      "inference_seconds": 0.001347952987998724,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_27_0112",
+      "sequence": "softball_27.npz",
+      "metrics": {
+        "apd3d": 0.02378048780487805,
+        "epe_m": 0.17445089363551308,
+        "global_scale": 6.062413370954071,
+        "queries": 41,
+        "visible_point_times": 656
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "18e0349e973937b2d9a698d497dbe76416acfd07c76236b87b0d2cad4950d0c1"
+      },
+      "seconds": 0.15035817585885525,
+      "inference_seconds": 0.0015972210094332695,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_7_0032",
+      "sequence": "tennis_7.npz",
+      "metrics": {
+        "apd3d": 0.19016846175089755,
+        "epe_m": 0.08444039994969173,
+        "global_scale": 4.713824080565267,
+        "queries": 237,
+        "visible_point_times": 3621
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "17161d10ec3027fb61ade5fb4dbff15eac7a7f03e3277d16dfc58f3331598130"
+      },
+      "seconds": 0.15489118732511997,
+      "inference_seconds": 0.0014932602643966675,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_7_0096",
+      "sequence": "tennis_7.npz",
+      "metrics": {
+        "apd3d": 0.057565415244596144,
+        "epe_m": 0.17559022867519966,
+        "global_scale": 5.274804912778175,
+        "queries": 238,
+        "visible_point_times": 3516
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "576889be1e224eb414f11472ac6690d612fd8242998414e468f6f0c84ea618b4"
+      },
+      "seconds": 0.12214382691308856,
+      "inference_seconds": 0.0014622374437749386,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_13_0016",
+      "sequence": "tennis_13.npz",
+      "metrics": {
+        "apd3d": 0.09900332225913622,
+        "epe_m": 0.12404422112078312,
+        "global_scale": 4.494215426132475,
+        "queries": 75,
+        "visible_point_times": 903
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "229a8547d4675f198f54faafe61feffa22fd5809a49105b0000f8302b221306f"
+      },
+      "seconds": 0.1436674422584474,
+      "inference_seconds": 0.0015126392245292664,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_13_0080",
+      "sequence": "tennis_13.npz",
+      "metrics": {
+        "apd3d": 0.10341951626355297,
+        "epe_m": 0.0936196870755316,
+        "global_scale": 4.592222656606793,
+        "queries": 234,
+        "visible_point_times": 3597
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "43a8f81f2c7f0e165871115d6c71d875a770a516fab4f96321b861d8b0a4a481"
+      },
+      "seconds": 0.14667544327676296,
+      "inference_seconds": 0.0016415058635175228,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_24_0000",
+      "sequence": "juggle_24.npz",
+      "metrics": {
+        "apd3d": 0.09880304678998912,
+        "epe_m": 0.08318443938915811,
+        "global_scale": 5.0794712169042295,
+        "queries": 405,
+        "visible_point_times": 6433
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0fb4a380fe646b972d9e93297a01c5b13f71773417cb40ae86f0bf79e0b56bf4"
+      },
+      "seconds": 0.15567030012607574,
+      "inference_seconds": 0.001815833617001772,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_24_0064",
+      "sequence": "juggle_24.npz",
+      "metrics": {
+        "apd3d": 0.12302848146557892,
+        "epe_m": 0.09243365955940948,
+        "global_scale": 5.0022875480686775,
+        "queries": 447,
+        "visible_point_times": 6987
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "59391231cdd84f8ddf0141f16dfa7ff859754daf6f9b11b8d9dce2ee653c9708"
+      },
+      "seconds": 0.18733580224215984,
+      "inference_seconds": 0.0022224923595786095,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_24_0128",
+      "sequence": "juggle_24.npz",
+      "metrics": {
+        "apd3d": 0.26191631291691936,
+        "epe_m": 0.07473469725042647,
+        "global_scale": 5.281710750870318,
+        "queries": 443,
+        "visible_point_times": 6596
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a87874da384d24a502b0b7e6f289cfdf9fda7c4db8a2f1a83b753a9c3f4d6fdf"
+      },
+      "seconds": 0.16788776498287916,
+      "inference_seconds": 0.0019267727620899677,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_14_0048",
+      "sequence": "boxes_14.npz",
+      "metrics": {
+        "apd3d": 7.6103500761035e-05,
+        "epe_m": 0.41130481818711606,
+        "global_scale": 4.962632065996436,
+        "queries": 330,
+        "visible_point_times": 5256
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "721c28d369eebf1f344f7c8cfb7a8dcc761d8d93bc6174f6a49db3d80cfa0dda"
+      },
+      "seconds": 0.17319076182320714,
+      "inference_seconds": 0.0019813203252851963,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_14_0112",
+      "sequence": "boxes_14.npz",
+      "metrics": {
+        "apd3d": 0.0019406605710020526,
+        "epe_m": 0.4692867398680522,
+        "global_scale": 5.353328083804935,
+        "queries": 335,
+        "visible_point_times": 5359
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f8db4e00e7df95a32862340ba904f722113171c2e237efb2183061b918cea28c"
+      },
+      "seconds": 0.13386530568823218,
+      "inference_seconds": 0.0018364312127232552,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_21_0032",
+      "sequence": "juggle_21.npz",
+      "metrics": {
+        "apd3d": 0.012524590163934427,
+        "epe_m": 0.15902129566679135,
+        "global_scale": 5.144818183428247,
+        "queries": 394,
+        "visible_point_times": 6100
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0ddf1810599ca4b3e88af1267a0927ee42e06a6cd48c8d44cd5527c83c7b5bac"
+      },
+      "seconds": 0.17147995764389634,
+      "inference_seconds": 0.0019021900370717049,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_21_0096",
+      "sequence": "juggle_21.npz",
+      "metrics": {
+        "apd3d": 0.0015360983102918587,
+        "epe_m": 0.1633852562435765,
+        "global_scale": 4.993992274162751,
+        "queries": 378,
+        "visible_point_times": 5859
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a3e0016492723207df3881707e24c10ffeaee9b1dd748c94b8475581a96f157d"
+      },
+      "seconds": 0.15265564201399684,
+      "inference_seconds": 0.0020124088041484356,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_11_0016",
+      "sequence": "basketball_11.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.28334748937361426,
+        "global_scale": 4.389358738919566,
+        "queries": 61,
+        "visible_point_times": 742
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c52997f39b8567e0f3c2f8c913f7b96e205325a027fc013419cb7f29dad6229e"
+      },
+      "seconds": 0.18220315733924508,
+      "inference_seconds": 0.0018688938580453396,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_11_0080",
+      "sequence": "basketball_11.npz",
+      "metrics": {
+        "apd3d": 0.0021551724137931034,
+        "epe_m": 0.208440806156732,
+        "global_scale": 4.601057116701545,
+        "queries": 61,
+        "visible_point_times": 928
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2b274d7763f16802f03dfbc710ed0c142bf83c5f8ebb73675eef002b54e174eb"
+      },
+      "seconds": 0.16625355603173375,
+      "inference_seconds": 0.0015165223740041256,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_22_0000",
+      "sequence": "basketball_22.npz",
+      "metrics": {
+        "apd3d": 0.0002224694104560623,
+        "epe_m": 0.3454142977758045,
+        "global_scale": 4.516093610791301,
+        "queries": 61,
+        "visible_point_times": 899
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6a5f7c2f24688f18380055ff43c2991e2f60551292b4d92f553015f2488b3cb6"
+      },
+      "seconds": 0.16563618276268244,
+      "inference_seconds": 0.0015984941273927689,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_22_0064",
+      "sequence": "basketball_22.npz",
+      "metrics": {
+        "apd3d": 0.1165296803652968,
+        "epe_m": 0.1778664746141693,
+        "global_scale": 4.669759879915481,
+        "queries": 72,
+        "visible_point_times": 1095
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "abd54c75bafda272a44e963253b8fad135e90d63f0aa54f40396804f61cf1991"
+      },
+      "seconds": 0.16799646895378828,
+      "inference_seconds": 0.0017488929443061352,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_22_0128",
+      "sequence": "basketball_22.npz",
+      "metrics": {
+        "apd3d": 0.03388625592417062,
+        "epe_m": 0.18401125928124604,
+        "global_scale": 4.594293608476601,
+        "queries": 67,
+        "visible_point_times": 844
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d797361070329c135cfe0616e369c4618046b5d77db1a674b8bbdc333678da50"
+      },
+      "seconds": 0.16756201768293977,
+      "inference_seconds": 0.0017164209857583046,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_23_0048",
+      "sequence": "juggle_23.npz",
+      "metrics": {
+        "apd3d": 0.09603977979044576,
+        "epe_m": 0.11613288938775342,
+        "global_scale": 5.062037214119432,
+        "queries": 359,
+        "visible_point_times": 5631
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4ff45ad4652e277f92d061a7bffbc439979db7d64d9351fc7068018c364c36d0"
+      },
+      "seconds": 0.18008678406476974,
+      "inference_seconds": 0.002175296191126108,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_23_0112",
+      "sequence": "juggle_23.npz",
+      "metrics": {
+        "apd3d": 0.027117327117327124,
+        "epe_m": 0.14798695872244602,
+        "global_scale": 5.181042114164266,
+        "queries": 340,
+        "visible_point_times": 5148
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "662342eb6a4a6e0b59678a1bb15679e8e81e805db9d6f3b52b4a57d3c762d8a1"
+      },
+      "seconds": 0.14463333832100034,
+      "inference_seconds": 0.001611962914466858,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_24_0032",
+      "sequence": "football_24.npz",
+      "metrics": {
+        "apd3d": 0.09444163719050025,
+        "epe_m": 0.09225012894510853,
+        "global_scale": 4.777409371976905,
+        "queries": 257,
+        "visible_point_times": 3958
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4936bca9586043731b05d6b1bd2f229098903323f4909706c2aa9f16cfc15006"
+      },
+      "seconds": 0.1760386941023171,
+      "inference_seconds": 0.0017520692199468613,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_24_0096",
+      "sequence": "football_24.npz",
+      "metrics": {
+        "apd3d": 0.2755582377791189,
+        "epe_m": 0.06302526613121107,
+        "global_scale": 5.189999255166042,
+        "queries": 225,
+        "visible_point_times": 3314
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "11f04de39ccf082386d1db10776673d3f5f747b6f865dd1df33e4b9eb976fbdc"
+      },
+      "seconds": 0.1685896459966898,
+      "inference_seconds": 0.001939364243298769,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_29_0016",
+      "sequence": "tennis_29.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.4642644483847404,
+        "global_scale": 5.508906975425377,
+        "queries": 122,
+        "visible_point_times": 1707
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "64f06ef64c522119cc9d3818b3caf8f50f82c1adae0ceb593a2f21f58f8b8279"
+      },
+      "seconds": 0.1689388989470899,
+      "inference_seconds": 0.0015371330082416534,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_29_0080",
+      "sequence": "tennis_29.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.41490260669396106,
+        "global_scale": 5.479875091423609,
+        "queries": 271,
+        "visible_point_times": 3976
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "60ce80a6d16fe8ed58f47d2df844ef2ccaa9184a99af4a736de1c51f9d8e8035"
+      },
+      "seconds": 0.14616172993555665,
+      "inference_seconds": 0.00133138382807374,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_2_0000",
+      "sequence": "football_2.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.22023122703232476,
+        "global_scale": 4.130956474032419,
+        "queries": 72,
+        "visible_point_times": 1087
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ef3d3aac9249edbcef515b873e66da365aed4bb4bef91cb7a65d962efe90f6bf"
+      },
+      "seconds": 0.15389339020475745,
+      "inference_seconds": 0.001446641981601715,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_2_0064",
+      "sequence": "football_2.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.38776203088937466,
+        "global_scale": 3.841401101913082,
+        "queries": 131,
+        "visible_point_times": 1978
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8af3caf68d48e38386c198e9067351c41fdbdbf4bde199e2e37bd9317d5aafd9"
+      },
+      "seconds": 0.15376198198646307,
+      "inference_seconds": 0.0016246638260781765,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_2_0128",
+      "sequence": "football_2.npz",
+      "metrics": {
+        "apd3d": 0.000264026402640264,
+        "epe_m": 0.23124158535557593,
+        "global_scale": 4.443722776477999,
+        "queries": 141,
+        "visible_point_times": 1515
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e220ecb0a2af23d80667fbea59a068fdf506aa7bb79b369bee4fe300f694a6f5"
+      },
+      "seconds": 0.1456694109365344,
+      "inference_seconds": 0.0011755749583244324,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_12_0048",
+      "sequence": "juggle_12.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.29882925249825454,
+        "global_scale": 5.515184432231388,
+        "queries": 339,
+        "visible_point_times": 5321
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "38c41179bab3266b236dd178b0278b7665174e7094d7c1c53fad7d1ea4d1ba26"
+      },
+      "seconds": 0.15884358482435346,
+      "inference_seconds": 0.0017330837436020374,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_12_0112",
+      "sequence": "juggle_12.npz",
+      "metrics": {
+        "apd3d": 0.006955234924158342,
+        "epe_m": 0.204091786668022,
+        "global_scale": 5.833878663333418,
+        "queries": 343,
+        "visible_point_times": 5406
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ae6aedddbe47bafb858a2fb5d5ab261354597d4a608f98f21fa0306181c4180c"
+      },
+      "seconds": 0.15748452534899116,
+      "inference_seconds": 0.001450641080737114,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_12_0032",
+      "sequence": "tennis_12.npz",
+      "metrics": {
+        "apd3d": 0.10003083564600679,
+        "epe_m": 0.13166515622346736,
+        "global_scale": 5.407360837476233,
+        "queries": 212,
+        "visible_point_times": 3243
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9fbc1abca56a3c0e5fcae8424ecad85769402476575d9d60f75e35c426553db6"
+      },
+      "seconds": 0.13742031063884497,
+      "inference_seconds": 0.0014979280531406403,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_12_0096",
+      "sequence": "tennis_12.npz",
+      "metrics": {
+        "apd3d": 0.00724399078037537,
+        "epe_m": 0.2703618036659396,
+        "global_scale": 6.080832843991475,
+        "queries": 195,
+        "visible_point_times": 3037
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7a1de45169aab0c4dca727a6a8cb363e7f7aa71aed2de81c7645497db86d1a1a"
+      },
+      "seconds": 0.16313000209629536,
+      "inference_seconds": 0.0018794545903801918,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_6_0016",
+      "sequence": "tennis_6.npz",
+      "metrics": {
+        "apd3d": 0.06686567164179105,
+        "epe_m": 0.14738140502230748,
+        "global_scale": 4.534260834596599,
+        "queries": 147,
+        "visible_point_times": 1675
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5eb9681331ae3a3bd1766a96ae84323c472c7863ec03f90fbe3dcad2c3605d09"
+      },
+      "seconds": 0.17146542575210333,
+      "inference_seconds": 0.0017280071042478085,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_6_0080",
+      "sequence": "tennis_6.npz",
+      "metrics": {
+        "apd3d": 0.1272656855151046,
+        "epe_m": 0.12280775811127079,
+        "global_scale": 4.846101532556135,
+        "queries": 166,
+        "visible_point_times": 2582
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "da4b3bab7f56f19bf1c0a12bbeff16bd30ffa42e91e71837ae17f1a2b85062de"
+      },
+      "seconds": 0.1830624989233911,
+      "inference_seconds": 0.0017319857142865658,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_27_0000",
+      "sequence": "tennis_27.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3302715761105669,
+        "global_scale": 6.622459670070875,
+        "queries": 12,
+        "visible_point_times": 185
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d8e7c5dd8de6e3df3b8772498faaeb448ee4f288f34104c25af9968298fa1fb6"
+      },
+      "seconds": 0.17848642962053418,
+      "inference_seconds": 0.001447711605578661,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_27_0064",
+      "sequence": "tennis_27.npz",
+      "metrics": {
+        "apd3d": 0.0007898894154818325,
+        "epe_m": 0.30964155150458417,
+        "global_scale": 6.250012188369702,
+        "queries": 100,
+        "visible_point_times": 1266
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "dcbf3879ea3f938ade16ced24602d2bdcaa53e90269e844dbd242a7fa1a11a9c"
+      },
+      "seconds": 0.15482945926487446,
+      "inference_seconds": 0.001415289007127285,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_27_0128",
+      "sequence": "tennis_27.npz",
+      "metrics": {
+        "apd3d": 0.01936619718309859,
+        "epe_m": 0.23642013055929462,
+        "global_scale": 6.592645389767673,
+        "queries": 119,
+        "visible_point_times": 1704
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ca6e7c7b1e07e91738cf0831357a7ce556da73e318a194e43df238712d5f6975"
+      },
+      "seconds": 0.14759080577641726,
+      "inference_seconds": 0.00151431979611516,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_8_0048",
+      "sequence": "boxes_8.npz",
+      "metrics": {
+        "apd3d": 0.08639005812788134,
+        "epe_m": 0.2711555001804971,
+        "global_scale": 4.946376524300141,
+        "queries": 313,
+        "visible_point_times": 4989
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2919cd91893c4b76d6f31b5cf97474700036e4a5eb284b126dfdf8eff64cdc03"
+      },
+      "seconds": 0.17332087783142924,
+      "inference_seconds": 0.0015848218463361263,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_8_0112",
+      "sequence": "boxes_8.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.5587461518148402,
+        "global_scale": 5.930570742824945,
+        "queries": 322,
+        "visible_point_times": 5150
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "34140854f9de23f2a2ae89e084ab1f82b5a5d5fdf4d2d20f15ebe6b3621be3fe"
+      },
+      "seconds": 0.16936607798561454,
+      "inference_seconds": 0.0019775251857936382,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_22_0032",
+      "sequence": "softball_22.npz",
+      "metrics": {
+        "apd3d": 0.00435747427879766,
+        "epe_m": 0.14228522045370562,
+        "global_scale": 4.591003406560994,
+        "queries": 321,
+        "visible_point_times": 4957
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "eebd1a854af3b81781aa82fdf4507a32bc58c3883f39d6e2d0c82aa2d0beac0d"
+      },
+      "seconds": 0.19029455725103617,
+      "inference_seconds": 0.001934615895152092,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_22_0096",
+      "sequence": "softball_22.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3398352836956379,
+        "global_scale": 5.455570236828452,
+        "queries": 309,
+        "visible_point_times": 4530
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e4d44141c64a6670c6aa584607d85d2a78461d7b24cf046c027bd43cb8a88774"
+      },
+      "seconds": 0.16787516418844461,
+      "inference_seconds": 0.001902756281197071,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_24_0016",
+      "sequence": "boxes_24.npz",
+      "metrics": {
+        "apd3d": 0.003510414228879008,
+        "epe_m": 0.16023630446934864,
+        "global_scale": 5.323171576760344,
+        "queries": 271,
+        "visible_point_times": 4273
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7f1c714e147f9d06e89314ea0b88a4665e963ca2db3bf0e86721d6ff19735d52"
+      },
+      "seconds": 0.17815704084932804,
+      "inference_seconds": 0.0017286930233240128,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_24_0080",
+      "sequence": "boxes_24.npz",
+      "metrics": {
+        "apd3d": 0.000927310798683817,
+        "epe_m": 0.0943315550983813,
+        "global_scale": 4.567319564510243,
+        "queries": 418,
+        "visible_point_times": 6686
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f9bbe6ef7b17d5cc497bc3ff222eebeeb400ecfb70f25851265473050e5ee5a1"
+      },
+      "seconds": 0.17708386899903417,
+      "inference_seconds": 0.001963188871741295,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_23_0000",
+      "sequence": "boxes_23.npz",
+      "metrics": {
+        "apd3d": 0.04724759318686744,
+        "epe_m": 0.2050723552348722,
+        "global_scale": 4.611137193851006,
+        "queries": 287,
+        "visible_point_times": 4051
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "79b4114b1ecb57fb322d24609807b6b548d81b41711b7f909d6a8c9870399bb1"
+      },
+      "seconds": 0.18730489676818252,
+      "inference_seconds": 0.0016560712829232216,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_23_0064",
+      "sequence": "boxes_23.npz",
+      "metrics": {
+        "apd3d": 0.013210227272727273,
+        "epe_m": 0.27930650311176464,
+        "global_scale": 4.885586343097993,
+        "queries": 354,
+        "visible_point_times": 5632
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "04da413d0923cddf3400db6e917f93e730168e83beaa837f3e5e9461697c0a70"
+      },
+      "seconds": 0.15123505983501673,
+      "inference_seconds": 0.0018839063122868538,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_23_0128",
+      "sequence": "boxes_23.npz",
+      "metrics": {
+        "apd3d": 0.017278936680819642,
+        "epe_m": 0.21883306768196464,
+        "global_scale": 4.7877694579709775,
+        "queries": 353,
+        "visible_point_times": 5417
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2a89d03f48c6d55a199c9c9de30b4ca52e805056431f50c92833a53792c7ac8b"
+      },
+      "seconds": 0.17136933282017708,
+      "inference_seconds": 0.0021019247360527515,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_9_0048",
+      "sequence": "tennis_9.npz",
+      "metrics": {
+        "apd3d": 0.003208852005532503,
+        "epe_m": 0.23088850278769416,
+        "global_scale": 6.116289014397966,
+        "queries": 246,
+        "visible_point_times": 3615
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "adf43b842e5e6ddefa985ac00f234fc6c589ebd9b9edd80195ac08c68260ddc3"
+      },
+      "seconds": 0.15404236502945423,
+      "inference_seconds": 0.001775491051375866,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_9_0112",
+      "sequence": "tennis_9.npz",
+      "metrics": {
+        "apd3d": 0.019117276166456493,
+        "epe_m": 0.21262888446129824,
+        "global_scale": 7.393017475168075,
+        "queries": 271,
+        "visible_point_times": 3965
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e73ae756457e381c50d7e31982d84efdb98698821f37d2875da53a360e632557"
+      },
+      "seconds": 0.13005564268678427,
+      "inference_seconds": 0.0014166710898280144,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_11_0032",
+      "sequence": "juggle_11.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2609860696566267,
+        "global_scale": 5.317812714765615,
+        "queries": 220,
+        "visible_point_times": 3355
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "27c484b6c2fc81307a352cd289474af2b7056843f3b8ab69b4ad5cab1861bccc"
+      },
+      "seconds": 0.14664144488051534,
+      "inference_seconds": 0.0017188149504363537,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_11_0096",
+      "sequence": "juggle_11.npz",
+      "metrics": {
+        "apd3d": 0.00011245431543435479,
+        "epe_m": 0.22741303775781666,
+        "global_scale": 5.110480895843989,
+        "queries": 229,
+        "visible_point_times": 3557
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "28bbddb649f9a9714aacfc33fd6ca37c1607122f0cbe5036f0922e3b212def61"
+      },
+      "seconds": 0.14417153364047408,
+      "inference_seconds": 0.0012599038891494274,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_1_0016",
+      "sequence": "tennis_1.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2216933399983772,
+        "global_scale": 4.876585175142159,
+        "queries": 210,
+        "visible_point_times": 2870
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3a2cd73866812257d01f5cf50ab4d9e3dcf2f28f3507a4824f376de91bb1cd1f"
+      },
+      "seconds": 0.1620697001926601,
+      "inference_seconds": 0.001463207881897688,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_1_0080",
+      "sequence": "tennis_1.npz",
+      "metrics": {
+        "apd3d": 0.02503030303030303,
+        "epe_m": 0.20644283442561043,
+        "global_scale": 5.104283372598037,
+        "queries": 243,
+        "visible_point_times": 3300
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b131c2a2fa00d4ba70026c978ca67c2c70de34560778b7b3f26ab99ab78d4031"
+      },
+      "seconds": 0.1487395539879799,
+      "inference_seconds": 0.001915082335472107,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_26_0000",
+      "sequence": "juggle_26.npz",
+      "metrics": {
+        "apd3d": 0.003210526315789474,
+        "epe_m": 0.2085702119038247,
+        "global_scale": 10.366693761514703,
+        "queries": 239,
+        "visible_point_times": 3800
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b2e06dbf53046037bf29e1cc149e09bc227334a48e1a412f3c657752a31aaf4f"
+      },
+      "seconds": 0.171395068988204,
+      "inference_seconds": 0.0014793379232287407,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_26_0064",
+      "sequence": "juggle_26.npz",
+      "metrics": {
+        "apd3d": 0.009745559289486318,
+        "epe_m": 0.21837378583513023,
+        "global_scale": 9.918450080889446,
+        "queries": 264,
+        "visible_point_times": 4166
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "98845413e7e834a6e46f8e7615c81c860fefbdd6b01955e6ed03f29ec162fc70"
+      },
+      "seconds": 0.13555017672479153,
+      "inference_seconds": 0.0014260760508477688,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_26_0128",
+      "sequence": "juggle_26.npz",
+      "metrics": {
+        "apd3d": 0.0007604562737642585,
+        "epe_m": 0.36945295575567816,
+        "global_scale": 6.534153971886735,
+        "queries": 266,
+        "visible_point_times": 4208
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "986eb2b8e296bbe8349895fc1bd81baa6d6a2d4395ec1f3b93a2c3c10eb5c7e9"
+      },
+      "seconds": 0.13972841994836926,
+      "inference_seconds": 0.00140076270326972,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_3_0048",
+      "sequence": "boxes_3.npz",
+      "metrics": {
+        "apd3d": 0.12009854239375899,
+        "epe_m": 0.09879773694713466,
+        "global_scale": 4.303274699406835,
+        "queries": 310,
+        "visible_point_times": 4871
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9cfa437ca8e7db46ee1da7bb6bb1a29e06bc2f2743a4812044f383b1f05c861d"
+      },
+      "seconds": 0.15741361677646637,
+      "inference_seconds": 0.0015440438874065876,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_3_0112",
+      "sequence": "boxes_3.npz",
+      "metrics": {
+        "apd3d": 0.10555321834244846,
+        "epe_m": 0.1177347999351646,
+        "global_scale": 4.47063170188546,
+        "queries": 300,
+        "visible_point_times": 4754
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3274963f3dcce28c758f3378e971d84e50e57603ce01e96584971e8588e2787b"
+      },
+      "seconds": 0.12677009403705597,
+      "inference_seconds": 0.0013714530505239964,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_20_0032",
+      "sequence": "football_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.36025249980896185,
+        "global_scale": 5.432207549593277,
+        "queries": 176,
+        "visible_point_times": 2792
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a1cc8a5c92f0be1766cba3fd2854cb3e13be6b4c74cf91a8d32ce6b225a145be"
+      },
+      "seconds": 0.16792374989017844,
+      "inference_seconds": 0.001809614710509777,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_20_0096",
+      "sequence": "football_20.npz",
+      "metrics": {
+        "apd3d": 0.014292430653502585,
+        "epe_m": 0.17094562168921884,
+        "global_scale": 5.243174358315289,
+        "queries": 275,
+        "visible_point_times": 4254
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "fdff8fadcab93faaa30818d832924b297621a42991b822fc31e2b6b010eb7dc7"
+      },
+      "seconds": 0.1495502730831504,
+      "inference_seconds": 0.0017678868025541306,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_18_0016",
+      "sequence": "softball_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.33442866562580564,
+        "global_scale": 5.847044301541897,
+        "queries": 244,
+        "visible_point_times": 3542
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "642746b6ac7d73f3eff7a5edb80b628a87fbe4559ea3cdd82dde729248c1b081"
+      },
+      "seconds": 0.17066737497225404,
+      "inference_seconds": 0.001967412419617176,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_18_0080",
+      "sequence": "softball_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.48613420225630266,
+        "global_scale": 5.713510681367468,
+        "queries": 250,
+        "visible_point_times": 3903
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3e5b66cf6b1f893050d6b02219163c0dc011c750c4f68d6063a4a2a77fbd5ebb"
+      },
+      "seconds": 0.15591991506516933,
+      "inference_seconds": 0.001754291821271181,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_27_0000",
+      "sequence": "juggle_27.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.41108517229604363,
+        "global_scale": 5.795571710558796,
+        "queries": 207,
+        "visible_point_times": 3257
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "98355d3d49a8fde48fa9ac862a41e2f84fc626a66e41234f72d2413bee29c0c3"
+      },
+      "seconds": 0.16040028538554907,
+      "inference_seconds": 0.0013460549525916576,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_27_0064",
+      "sequence": "juggle_27.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.27656741266341967,
+        "global_scale": 6.244696791303144,
+        "queries": 225,
+        "visible_point_times": 3547
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5a9cf659215881dbc110614048beab7edd30ed7919d5a446069c0033b59364b8"
+      },
+      "seconds": 0.13963075494393706,
+      "inference_seconds": 0.0016645430587232113,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_27_0128",
+      "sequence": "juggle_27.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.30041769932619933,
+        "global_scale": 6.355856249192284,
+        "queries": 211,
+        "visible_point_times": 2978
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7b795ad6f79e385bb2ee70485dc1c90021d3bd02e5c922c0eee740e15944018c"
+      },
+      "seconds": 0.14979672012850642,
+      "inference_seconds": 0.0012828577309846878,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_29_0048",
+      "sequence": "softball_29.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.4754977747985015,
+        "global_scale": 5.2491279490694716,
+        "queries": 269,
+        "visible_point_times": 4225
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6a332370df162093bd1d5008f1daaaee36bf02ed10bad401f6bb09dcc5eba422"
+      },
+      "seconds": 0.15656494908034801,
+      "inference_seconds": 0.0016296878457069397,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_29_0112",
+      "sequence": "softball_29.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.4727064211064478,
+        "global_scale": 5.154997022401893,
+        "queries": 210,
+        "visible_point_times": 3212
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "50f082a901e77823bac0182d325ddbac5616ef19183d6f084d891382be9acb59"
+      },
+      "seconds": 0.16352532105520368,
+      "inference_seconds": 0.0018100207671523094,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_14_0032",
+      "sequence": "juggle_14.npz",
+      "metrics": {
+        "apd3d": 0.01476465730800991,
+        "epe_m": 0.14563078846609764,
+        "global_scale": 5.51108910214456,
+        "queries": 379,
+        "visible_point_times": 6055
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e2c964e865f66a32450cfefaf1188865351b8b8f01e35eab7614ed263164f619"
+      },
+      "seconds": 0.17209798702970147,
+      "inference_seconds": 0.0015244646929204464,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_14_0096",
+      "sequence": "juggle_14.npz",
+      "metrics": {
+        "apd3d": 0.02542339111376768,
+        "epe_m": 0.1399346562196704,
+        "global_scale": 4.462345548356793,
+        "queries": 349,
+        "visible_point_times": 5019
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e9658bb5b18130c6ab2a592dd2c16bc6ff9dedb0e24ef6bce2a29e98eefaca2b"
+      },
+      "seconds": 0.1590553829446435,
+      "inference_seconds": 0.001951334998011589,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_26_0016",
+      "sequence": "softball_26.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.22008048121885063,
+        "global_scale": 5.778418216330989,
+        "queries": 44,
+        "visible_point_times": 616
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "779f3c005792923d346b4d6551ae2301eb1f7ea571c7f0f78044e3e9af82a395"
+      },
+      "seconds": 0.15992645733058453,
+      "inference_seconds": 0.001127130351960659,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_26_0080",
+      "sequence": "softball_26.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2785285032869987,
+        "global_scale": 5.044635961433545,
+        "queries": 40,
+        "visible_point_times": 574
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "40da2cf34c943113a2b7e01a5974821c4532bc1981b15303c7be1130948b03e8"
+      },
+      "seconds": 0.14258386101573706,
+      "inference_seconds": 0.0016235667280852795,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_9_0000",
+      "sequence": "football_9.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.475109839587732,
+        "global_scale": 6.287794605053253,
+        "queries": 117,
+        "visible_point_times": 1849
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "628be409d6dc3203e3327e7e3b6ce3d878a3ed84c288f85b5bfe3ab7b371c3a8"
+      },
+      "seconds": 0.1388974031433463,
+      "inference_seconds": 0.0011953827925026417,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_9_0064",
+      "sequence": "football_9.npz",
+      "metrics": {
+        "apd3d": 0.017231638418079096,
+        "epe_m": 0.18979035744759143,
+        "global_scale": 5.608175559899619,
+        "queries": 101,
+        "visible_point_times": 1416
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "fadd8e44f4b4973ed8faae024a5568f36d99d2d39f405625aad45dec4de4a311"
+      },
+      "seconds": 0.15469826804473996,
+      "inference_seconds": 0.0017761345952749252,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_9_0128",
+      "sequence": "football_9.npz",
+      "metrics": {
+        "apd3d": 0.006788079470198676,
+        "epe_m": 0.1697023838755072,
+        "global_scale": 5.316983749039887,
+        "queries": 88,
+        "visible_point_times": 1208
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "75a54647b8bddfa8fa6d56d64b21733cb09a2329dd340b861782f067eb8f7a4a"
+      },
+      "seconds": 0.14033030299469829,
+      "inference_seconds": 0.0014191968366503716,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_1_0048",
+      "sequence": "softball_1.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2744253094428499,
+        "global_scale": 4.698320000336252,
+        "queries": 149,
+        "visible_point_times": 2281
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c419764a76745f8619c5af22be7f609295e872ba3cbae2408b96e6a932453970"
+      },
+      "seconds": 0.16449036495760083,
+      "inference_seconds": 0.0016797548159956932,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_1_0112",
+      "sequence": "softball_1.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.32623758637567624,
+        "global_scale": 4.656122705716538,
+        "queries": 166,
+        "visible_point_times": 2629
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0cf2d6715f299f2f7be50382c7ef08e65911adf2c9c4e50f4507420310565d54"
+      },
+      "seconds": 0.1501917107962072,
+      "inference_seconds": 0.0015775207430124283,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_6_0032",
+      "sequence": "juggle_6.npz",
+      "metrics": {
+        "apd3d": 0.002800658978583196,
+        "epe_m": 0.15241230048777196,
+        "global_scale": 4.900173075513536,
+        "queries": 235,
+        "visible_point_times": 3642
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c1e9f78985eabdf938981b5d7f7600b05a132b3a4bbc36f712c8f0ec5025f40a"
+      },
+      "seconds": 0.15164346108213067,
+      "inference_seconds": 0.0015204790979623795,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_6_0096",
+      "sequence": "juggle_6.npz",
+      "metrics": {
+        "apd3d": 0.05783312577833126,
+        "epe_m": 0.11868908396154847,
+        "global_scale": 4.746494770308069,
+        "queries": 262,
+        "visible_point_times": 4015
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4b7d3fabf7a11a173a22fd100f46468f9582390c915b57ab7dd9bfefe1d391bb"
+      },
+      "seconds": 0.1342992540448904,
+      "inference_seconds": 0.001327041070908308,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_21_0016",
+      "sequence": "boxes_21.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.22720661476646442,
+        "global_scale": 4.250597486691584,
+        "queries": 397,
+        "visible_point_times": 6161
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9ae1df06a8b773526d7bc4a2577195e604bcda6664979fae3fb302c01f462e99"
+      },
+      "seconds": 0.15844121109694242,
+      "inference_seconds": 0.0015947017818689346,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_21_0080",
+      "sequence": "boxes_21.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.18367628197840452,
+        "global_scale": 3.47487565586932,
+        "queries": 423,
+        "visible_point_times": 6732
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5743aac5c7600ca194df5c7cfe224eed8c1da0223438cf85ee3561b63a51134d"
+      },
+      "seconds": 0.1378686069510877,
+      "inference_seconds": 0.0016685565933585167,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_3_0000",
+      "sequence": "tennis_3.npz",
+      "metrics": {
+        "apd3d": 0.030303030303030304,
+        "epe_m": 0.14199235524782083,
+        "global_scale": 5.06580375087832,
+        "queries": 107,
+        "visible_point_times": 1617
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4bc59a3f82b01748df7894e965af11a487237147093b1e2ffe5e7d1b5152dbbe"
+      },
+      "seconds": 0.16789030889049172,
+      "inference_seconds": 0.0014376160688698292,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_3_0064",
+      "sequence": "tennis_3.npz",
+      "metrics": {
+        "apd3d": 0.040473684210526314,
+        "epe_m": 0.15999976807623853,
+        "global_scale": 4.843564044688725,
+        "queries": 287,
+        "visible_point_times": 3800
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e8a3eb5cf837c654460a917c22661ca083eeffda065666d7108a2f21b975233a"
+      },
+      "seconds": 0.1584529601968825,
+      "inference_seconds": 0.0017434349283576012,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_3_0128",
+      "sequence": "tennis_3.npz",
+      "metrics": {
+        "apd3d": 0.03027245206861756,
+        "epe_m": 0.1762658660663682,
+        "global_scale": 5.209818562055131,
+        "queries": 278,
+        "visible_point_times": 3964
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7f6aa5fb09295bbbf8ce340368d2bf15ae957feb3d7ece9ee61d7f17b3cac6b7"
+      },
+      "seconds": 0.14877385506406426,
+      "inference_seconds": 0.0014825500547885895,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_8_0048",
+      "sequence": "tennis_8.npz",
+      "metrics": {
+        "apd3d": 0.02226061204343534,
+        "epe_m": 0.2058967478007627,
+        "global_scale": 5.610485025932462,
+        "queries": 263,
+        "visible_point_times": 4052
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9aae3b1f8f4207ebeeaa0cb3a264682cff28a238c5e23fc206fc0bd9368d9ad9"
+      },
+      "seconds": 0.1778056318871677,
+      "inference_seconds": 0.0016730129718780518,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_8_0112",
+      "sequence": "tennis_8.npz",
+      "metrics": {
+        "apd3d": 0.006490872210953347,
+        "epe_m": 0.14925461474358903,
+        "global_scale": 5.177012895544242,
+        "queries": 285,
+        "visible_point_times": 4437
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "1f6b538929bdf85297761575634107257660bc6382e3c66849f7616dd1bafec0"
+      },
+      "seconds": 0.1229476616717875,
+      "inference_seconds": 0.0019507529214024544,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_16_0032",
+      "sequence": "tennis_16.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3229335975627768,
+        "global_scale": 5.2627690770140925,
+        "queries": 272,
+        "visible_point_times": 3678
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "52de5a41977ade9330afb4775bbb5e17bd7903520bafdd301ce66188d47cede2"
+      },
+      "seconds": 0.1484888819977641,
+      "inference_seconds": 0.001379567664116621,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_16_0096",
+      "sequence": "tennis_16.npz",
+      "metrics": {
+        "apd3d": 0.007059527370625188,
+        "epe_m": 0.24490828248384963,
+        "global_scale": 5.342582611685544,
+        "queries": 219,
+        "visible_point_times": 3343
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "417d46f4a01331cab4b2e29ad6348acfb3f432a498aebdf7596609e5a4a0be7f"
+      },
+      "seconds": 0.12096823286265135,
+      "inference_seconds": 0.001344169955700636,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_25_0016",
+      "sequence": "tennis_25.npz",
+      "metrics": {
+        "apd3d": 0.004043956043956043,
+        "epe_m": 0.2506575100342744,
+        "global_scale": 5.869179188595346,
+        "queries": 160,
+        "visible_point_times": 2275
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9eeba9a9e49ced96759b3c05e06bc5641999bc68f18bb09b7e4e7f9e5b25eca8"
+      },
+      "seconds": 0.1603832091204822,
+      "inference_seconds": 0.0013158959336578846,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_25_0080",
+      "sequence": "tennis_25.npz",
+      "metrics": {
+        "apd3d": 0.0065395095367847406,
+        "epe_m": 0.36102184757244543,
+        "global_scale": 7.408246039299003,
+        "queries": 273,
+        "visible_point_times": 4037
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8b7089109f7679b855b0d898e603a0d95ad1c50d90350fa138bb278efbec7241"
+      },
+      "seconds": 0.142172419000417,
+      "inference_seconds": 0.001470854040235281,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_18_0000",
+      "sequence": "juggle_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3282625655579783,
+        "global_scale": 5.703402732493391,
+        "queries": 267,
+        "visible_point_times": 4228
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "17266448134c0dcd650dbf8c250b4d3bd62112fb1578dcb2b9a73e259320486c"
+      },
+      "seconds": 0.1612803116440773,
+      "inference_seconds": 0.0017205323092639446,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_18_0064",
+      "sequence": "juggle_18.npz",
+      "metrics": {
+        "apd3d": 0.003387139454882244,
+        "epe_m": 0.1947229909090452,
+        "global_scale": 5.593257503461439,
+        "queries": 240,
+        "visible_point_times": 3779
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3a3da5aa5a7c80992ad6fa2fe1adf51fe425501236d7a1393ea10b35de6c352a"
+      },
+      "seconds": 0.13599272491410375,
+      "inference_seconds": 0.0015093148685991764,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_18_0128",
+      "sequence": "juggle_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3320490804502397,
+        "global_scale": 6.074352464602332,
+        "queries": 228,
+        "visible_point_times": 2913
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2031ec79a3278f144fccceb71ab93aa69d040b3f471fbe72bbe6924cad207b5b"
+      },
+      "seconds": 0.13219608506187797,
+      "inference_seconds": 0.001494924072176218,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_4_0048",
+      "sequence": "football_4.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.22364140476286545,
+        "global_scale": 4.826458578411377,
+        "queries": 81,
+        "visible_point_times": 1224
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5430ed5ca0d954d997b505ff9e1b066423d512c3bd73b95f4f094701247db80e"
+      },
+      "seconds": 0.1326525928452611,
+      "inference_seconds": 0.001253955066204071,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_4_0112",
+      "sequence": "football_4.npz",
+      "metrics": {
+        "apd3d": 0.021837837837837836,
+        "epe_m": 0.12941675685364493,
+        "global_scale": 4.6265362335634,
+        "queries": 69,
+        "visible_point_times": 925
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5475952d34f10c6bcea65fedd77d5210e3623ea60f5a99706e0d2c40874bc2e3"
+      },
+      "seconds": 0.11672087199985981,
+      "inference_seconds": 0.001219367142766714,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_4_0032",
+      "sequence": "softball_4.npz",
+      "metrics": {
+        "apd3d": 0.20702402957486138,
+        "epe_m": 0.062097909273251074,
+        "global_scale": 4.053570101016277,
+        "queries": 79,
+        "visible_point_times": 1082
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f025050d3c9f142b19c74373402f55f1f1325fdddaa8e0269305e407feecdcb6"
+      },
+      "seconds": 0.1538933189585805,
+      "inference_seconds": 0.0011760578490793705,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_4_0096",
+      "sequence": "softball_4.npz",
+      "metrics": {
+        "apd3d": 0.15822784810126583,
+        "epe_m": 0.0682564896707511,
+        "global_scale": 4.291063580416634,
+        "queries": 73,
+        "visible_point_times": 1106
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "827034c517974076944f2b313fb9b549453814a666bbcb2b3e02ea614c54ac35"
+      },
+      "seconds": 0.1456448850221932,
+      "inference_seconds": 0.0011952049098908901,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_12_0016",
+      "sequence": "football_12.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.33279609269260296,
+        "global_scale": 4.734862722431569,
+        "queries": 106,
+        "visible_point_times": 919
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "08e19871c801326d8ed113b7f8bddac7b5228c5bc271c4bbdaaf91171b91d748"
+      },
+      "seconds": 0.14493642002344131,
+      "inference_seconds": 0.001277741976082325,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_12_0080",
+      "sequence": "football_12.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3843426516884883,
+        "global_scale": 4.96712459062416,
+        "queries": 157,
+        "visible_point_times": 2383
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2cbc18d33fdc9a3bdaecd2e6d8ca08dba7f2357e294abf2d7fea20a479557f09"
+      },
+      "seconds": 0.1372665222734213,
+      "inference_seconds": 0.0014051049947738647,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_16_0000",
+      "sequence": "boxes_16.npz",
+      "metrics": {
+        "apd3d": 0.053217503217503216,
+        "epe_m": 0.3091016916039121,
+        "global_scale": 4.8288992009370615,
+        "queries": 208,
+        "visible_point_times": 3108
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b45fde4f10f38a2d0b7ab897412bac499726fb23cfc72d5208f5eb65192c4417"
+      },
+      "seconds": 0.15407901722937822,
+      "inference_seconds": 0.0013384781777858734,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_16_0064",
+      "sequence": "boxes_16.npz",
+      "metrics": {
+        "apd3d": 0.032216441207075966,
+        "epe_m": 0.23049856309847014,
+        "global_scale": 4.97857305498194,
+        "queries": 305,
+        "visible_point_times": 4805
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3ef106750adb6c25d4b0fe622ed741626056e130afe688dca38545da6f8cd754"
+      },
+      "seconds": 0.1265518651343882,
+      "inference_seconds": 0.0015218649059534073,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_16_0128",
+      "sequence": "boxes_16.npz",
+      "metrics": {
+        "apd3d": 0.013691275167785236,
+        "epe_m": 0.251549358487265,
+        "global_scale": 4.952462498129667,
+        "queries": 302,
+        "visible_point_times": 4470
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c63aceb59fb0c5eac773fe9f2842653cbe00b6d9c79f751aaa98841a507c3a18"
+      },
+      "seconds": 0.13158779172226787,
+      "inference_seconds": 0.0014185276813805103,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_17_0048",
+      "sequence": "softball_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.26076761651358477,
+        "global_scale": 4.822357311897059,
+        "queries": 107,
+        "visible_point_times": 1635
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "1de22449380f981ba3f0e6154ba7020a1612bd69b638beef1f4a8907e5dc1f54"
+      },
+      "seconds": 0.14894093293696642,
+      "inference_seconds": 0.0013332441449165344,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_17_0112",
+      "sequence": "softball_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2834688069555452,
+        "global_scale": 4.761541272190537,
+        "queries": 54,
+        "visible_point_times": 851
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e3302812c88ae018bfe02149b4589cbce89b8bfaed1c64d868a2723dc079cfff"
+      },
+      "seconds": 0.15659315697848797,
+      "inference_seconds": 0.0014897077344357967,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_29_0032",
+      "sequence": "juggle_29.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3499859373322432,
+        "global_scale": 5.098504740489586,
+        "queries": 357,
+        "visible_point_times": 5563
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d2a469600a4a7b8540fbaba2eb8e6efc01099a2ce586f3184fcdad8fd3bb0274"
+      },
+      "seconds": 0.15935559617355466,
+      "inference_seconds": 0.0014844490215182304,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_29_0096",
+      "sequence": "juggle_29.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.36866253311172337,
+        "global_scale": 5.67815475480707,
+        "queries": 383,
+        "visible_point_times": 6081
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7ceb32965bdf210c03e45b48d292bd852021d763e013cb6e83bf8d4a1a032f56"
+      },
+      "seconds": 0.1423355801962316,
+      "inference_seconds": 0.002138087060302496,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_25_0016",
+      "sequence": "juggle_25.npz",
+      "metrics": {
+        "apd3d": 0.0005218298834579927,
+        "epe_m": 0.1603710927978162,
+        "global_scale": 5.52380130688604,
+        "queries": 364,
+        "visible_point_times": 5749
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "905326db67234c953a0faecc880042ced3b2a689a8c63b2dab61a4187a9f549b"
+      },
+      "seconds": 0.14292658027261496,
+      "inference_seconds": 0.0015344279818236828,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_25_0080",
+      "sequence": "juggle_25.npz",
+      "metrics": {
+        "apd3d": 0.0024801395078473164,
+        "epe_m": 0.19230672951611788,
+        "global_scale": 5.793671842376827,
+        "queries": 331,
+        "visible_point_times": 5161
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ce8959de69fbbd3dbb6e255287d56679fc686a0cd356ba7c4013520cf8748282"
+      },
+      "seconds": 0.12784260790795088,
+      "inference_seconds": 0.0013721617870032787,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_9_0000",
+      "sequence": "boxes_9.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3719574666534199,
+        "global_scale": 6.453338642055623,
+        "queries": 179,
+        "visible_point_times": 2316
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6c42c126186cf89eda97aca8a5596c883a4bfc8845fd9abde2385a5633a5a7ec"
+      },
+      "seconds": 0.15375683223828673,
+      "inference_seconds": 0.0012987880036234856,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_9_0064",
+      "sequence": "boxes_9.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.27617495210912046,
+        "global_scale": 5.451614589466721,
+        "queries": 253,
+        "visible_point_times": 3972
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b4382cb2fc171b95a74b13f624c10bc46d4559d48119a63857a53b400b2d33de"
+      },
+      "seconds": 0.15141335502266884,
+      "inference_seconds": 0.0015480685979127884,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_9_0128",
+      "sequence": "boxes_9.npz",
+      "metrics": {
+        "apd3d": 0.0006034699522252955,
+        "epe_m": 0.26033949315088784,
+        "global_scale": 5.427264941024595,
+        "queries": 252,
+        "visible_point_times": 3977
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "278dcc73f5b1ec82ad4dced027d5a8af8815082ea2a51b968ff14b7c1f57352f"
+      },
+      "seconds": 0.14734104415401816,
+      "inference_seconds": 0.0016232458874583244,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_25_0048",
+      "sequence": "football_25.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3818239162366795,
+        "global_scale": 5.084167731146407,
+        "queries": 76,
+        "visible_point_times": 1130
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "bae20be7a738b9ada7311bd85fc3a60b38cd5a89cb30d12aef95071601bbbbe7"
+      },
+      "seconds": 0.1548550482839346,
+      "inference_seconds": 0.0011709579266607761,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_25_0112",
+      "sequence": "football_25.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.17104261388871753,
+        "global_scale": 5.3378885646907035,
+        "queries": 77,
+        "visible_point_times": 1180
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b32ca11ec9bddeccc8224df51a30782ac2f788ac0a9859924977eed2fdd3bf1e"
+      },
+      "seconds": 0.12654644437134266,
+      "inference_seconds": 0.001434599980711937,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_20_0032",
+      "sequence": "juggle_20.npz",
+      "metrics": {
+        "apd3d": 0.004010732947323825,
+        "epe_m": 0.27488051778462946,
+        "global_scale": 6.011537466994023,
+        "queries": 445,
+        "visible_point_times": 7081
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b41f9081a4212fe41ee202f3861a8e335d2aef902b44fedbf5bc9fa457d04de4"
+      },
+      "seconds": 0.15394518710672855,
+      "inference_seconds": 0.0015652836300432682,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_20_0096",
+      "sequence": "juggle_20.npz",
+      "metrics": {
+        "apd3d": 0.011476597594551514,
+        "epe_m": 0.24031708963915674,
+        "global_scale": 5.779470026837296,
+        "queries": 433,
+        "visible_point_times": 6901
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e137f1351e5b199d440c202624d289ebe7281539f2abc568cdd269afca0626c1"
+      },
+      "seconds": 0.13504947163164616,
+      "inference_seconds": 0.002338266000151634,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_1_0016",
+      "sequence": "juggle_1.npz",
+      "metrics": {
+        "apd3d": 0.019897669130187607,
+        "epe_m": 0.1652044327667488,
+        "global_scale": 5.077151365512562,
+        "queries": 333,
+        "visible_point_times": 5277
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "39e5135fa9bfa2c4eb8a50dbf10238c2cbaae9493cbcd4e0dcc3edc80076d2a4"
+      },
+      "seconds": 0.1622083536349237,
+      "inference_seconds": 0.001602573785930872,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_1_0080",
+      "sequence": "juggle_1.npz",
+      "metrics": {
+        "apd3d": 0.015962820771873106,
+        "epe_m": 0.18553899027858228,
+        "global_scale": 5.287158364370005,
+        "queries": 320,
+        "visible_point_times": 4949
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f2156ea1bdb1030010a4418d3508b2b8668eba536d82e6080e4e3e51b07c50e2"
+      },
+      "seconds": 0.14441155595704913,
+      "inference_seconds": 0.0014024227857589722,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_16_0000",
+      "sequence": "juggle_16.npz",
+      "metrics": {
+        "apd3d": 0.013091508656224238,
+        "epe_m": 0.2526652226770947,
+        "global_scale": 5.377163166165124,
+        "queries": 380,
+        "visible_point_times": 6065
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "345d51a8a59d0652af6a97e0cea0da6a248c83c8c7a496aa69ce39b55ce04479"
+      },
+      "seconds": 0.16272894106805325,
+      "inference_seconds": 0.001779249869287014,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_16_0064",
+      "sequence": "juggle_16.npz",
+      "metrics": {
+        "apd3d": 0.04257895598101784,
+        "epe_m": 0.20115619263789794,
+        "global_scale": 5.78297436958746,
+        "queries": 391,
+        "visible_point_times": 6111
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8e62380946958b63309d8b895b1ec4652af90d5192a67b7d94021b2699e52533"
+      },
+      "seconds": 0.15687842713668942,
+      "inference_seconds": 0.0017433282919228077,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_16_0128",
+      "sequence": "juggle_16.npz",
+      "metrics": {
+        "apd3d": 0.04498007211994686,
+        "epe_m": 0.16642773302884473,
+        "global_scale": 5.52394666545218,
+        "queries": 362,
+        "visible_point_times": 5269
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9d95ffbf98a5927e116dd495f52711bd61fddf6d040361b38a729d5f0d81dfc3"
+      },
+      "seconds": 0.14059728430584073,
+      "inference_seconds": 0.0016200290992856026,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_21_0048",
+      "sequence": "basketball_21.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.24167201878709343,
+        "global_scale": 4.730750878203546,
+        "queries": 206,
+        "visible_point_times": 3165
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a414f90d5471f9ea6705d10875342de44f0ab3e9bc266ea9db2c5af9d7775d88"
+      },
+      "seconds": 0.16726896399632096,
+      "inference_seconds": 0.0016214600764214993,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_21_0112",
+      "sequence": "basketball_21.npz",
+      "metrics": {
+        "apd3d": 5.971931919976113e-05,
+        "epe_m": 0.18367143218477142,
+        "global_scale": 4.667734776045521,
+        "queries": 225,
+        "visible_point_times": 3349
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6339bdde57b22cbf98083f3892b08c0122a83e8bb22a1f31291145ac66d18882"
+      },
+      "seconds": 0.15365854278206825,
+      "inference_seconds": 0.0012796148657798767,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_19_0032",
+      "sequence": "basketball_19.npz",
+      "metrics": {
+        "apd3d": 0.03594153052450559,
+        "epe_m": 0.14896659111384225,
+        "global_scale": 4.3901945683037775,
+        "queries": 89,
+        "visible_point_times": 1163
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f4da9c6cd49fc643f037560b74560c991110dda289d433d64450316b42cfd6d0"
+      },
+      "seconds": 0.14784374693408608,
+      "inference_seconds": 0.0015328042209148407,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_19_0096",
+      "sequence": "basketball_19.npz",
+      "metrics": {
+        "apd3d": 0.24123076923076922,
+        "epe_m": 0.07951880047687808,
+        "global_scale": 4.031068858853603,
+        "queries": 131,
+        "visible_point_times": 1950
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d126b995a4d6d08d33b3972358b0d61b0e5d7508334239b86aa816918b687f28"
+      },
+      "seconds": 0.15266572404652834,
+      "inference_seconds": 0.0015598391182720661,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_12_0016",
+      "sequence": "softball_12.npz",
+      "metrics": {
+        "apd3d": 0.02619420516836335,
+        "epe_m": 0.15660885080774836,
+        "global_scale": 5.296089749913401,
+        "queries": 326,
+        "visible_point_times": 5108
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0054f728b711a1e505a03d45c5dedf88912e3c688d17ddcb46853d68ba681387"
+      },
+      "seconds": 0.1794038531370461,
+      "inference_seconds": 0.0014428282156586647,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_12_0080",
+      "sequence": "softball_12.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.18298953663487513,
+        "global_scale": 4.875416978712649,
+        "queries": 324,
+        "visible_point_times": 4897
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ff5cf54c6b9174c4a492f64a7c8f688dc51e66c2b9ce6be751cab3c686b5ea0c"
+      },
+      "seconds": 0.15823661629110575,
+      "inference_seconds": 0.0017690099775791168,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_13_0000",
+      "sequence": "softball_13.npz",
+      "metrics": {
+        "apd3d": 0.028971962616822427,
+        "epe_m": 0.10528913050421339,
+        "global_scale": 4.68149898189711,
+        "queries": 108,
+        "visible_point_times": 1712
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f6147725e256f46e526b0df06747cfe3a8d2e23f8058fff360bd411fe1696aea"
+      },
+      "seconds": 0.15046611102297902,
+      "inference_seconds": 0.0013756416738033295,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_13_0064",
+      "sequence": "softball_13.npz",
+      "metrics": {
+        "apd3d": 0.1684531059683313,
+        "epe_m": 0.0689317775201777,
+        "global_scale": 4.244402040674534,
+        "queries": 104,
+        "visible_point_times": 1642
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b98121668859b2f7c23eb48503908efab776da49681aa08698185262b3efa441"
+      },
+      "seconds": 0.15355033427476883,
+      "inference_seconds": 0.0013577388599514961,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_13_0128",
+      "sequence": "softball_13.npz",
+      "metrics": {
+        "apd3d": 0.05734126984126984,
+        "epe_m": 0.10652673985428766,
+        "global_scale": 4.635047545570707,
+        "queries": 96,
+        "visible_point_times": 1008
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f2e4cee000914615114f9edde061f45414416983a1ffff894e841eab8c8da976"
+      },
+      "seconds": 0.14651489723473787,
+      "inference_seconds": 0.0012105037458240986,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_24_0048",
+      "sequence": "softball_24.npz",
+      "metrics": {
+        "apd3d": 0.03042175616501498,
+        "epe_m": 0.10927590960163695,
+        "global_scale": 4.999615301032217,
+        "queries": 281,
+        "visible_point_times": 4339
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0bdc95bc1034e25c9d49285f7d38d6f25aafb9984e0e318d6399bcf77cc938d2"
+      },
+      "seconds": 0.16176846297457814,
+      "inference_seconds": 0.001412097830325365,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_24_0112",
+      "sequence": "softball_24.npz",
+      "metrics": {
+        "apd3d": 0.11651319828115407,
+        "epe_m": 0.10482640014184395,
+        "global_scale": 5.252729668354232,
+        "queries": 220,
+        "visible_point_times": 3258
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a5945f65bb2052228bb54f2bfdf87846a4dc6791932d04f268647ebf3eb4a675"
+      },
+      "seconds": 0.14098445791751146,
+      "inference_seconds": 0.0015290342271327972,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_4_0032",
+      "sequence": "boxes_4.npz",
+      "metrics": {
+        "apd3d": 0.07669519420671495,
+        "epe_m": 0.13666436239911084,
+        "global_scale": 4.3267217706287795,
+        "queries": 192,
+        "visible_point_times": 3038
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "04399e41d7055f06213d7df63af621f224e09779237115e3bfe0e81f88c3c008"
+      },
+      "seconds": 0.15769736608490348,
+      "inference_seconds": 0.0014919601380825043,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_4_0096",
+      "sequence": "boxes_4.npz",
+      "metrics": {
+        "apd3d": 0.137840318140104,
+        "epe_m": 0.13965305476254689,
+        "global_scale": 3.988473542346432,
+        "queries": 206,
+        "visible_point_times": 3269
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5a3a9ace2cf287e573a91b0fd3d6975627fbfd69bcecda8c7e9d3d1382a2ca26"
+      },
+      "seconds": 0.1254943022504449,
+      "inference_seconds": 0.0012484360486268997,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_18_0016",
+      "sequence": "boxes_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.40553410337564433,
+        "global_scale": 4.985311257127003,
+        "queries": 201,
+        "visible_point_times": 2990
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "1020fd23b2c047760b3e9f9e0c8041345c5c477f2c2af2874952a3c5e4b47093"
+      },
+      "seconds": 0.14293358009308577,
+      "inference_seconds": 0.0012987703084945679,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_18_0080",
+      "sequence": "boxes_18.npz",
+      "metrics": {
+        "apd3d": 0.18699896157840082,
+        "epe_m": 0.11097111245688712,
+        "global_scale": 4.517847790996788,
+        "queries": 303,
+        "visible_point_times": 4815
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d7b5ec67d6f1fbedb3421e3a4617119ed4f1e99df264740246c3547e65b4b346"
+      },
+      "seconds": 0.14175411593168974,
+      "inference_seconds": 0.0016329269856214523,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_25_0000",
+      "sequence": "boxes_25.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.7748251105314125,
+        "global_scale": 4.620537011396823,
+        "queries": 273,
+        "visible_point_times": 3972
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c0a9fd4e2e345255e0ed395dd5b62df7263be49e01a601f95b1ab9dcbfcc6574"
+      },
+      "seconds": 0.1535441493615508,
+      "inference_seconds": 0.0012982860207557678,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_25_0064",
+      "sequence": "boxes_25.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.520433910897333,
+        "global_scale": 5.430327185847599,
+        "queries": 295,
+        "visible_point_times": 4592
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "39f160758a83dd766bf3e9cc9800e28d323384ebc90126b3e2b9470be5f5799e"
+      },
+      "seconds": 0.1446230299770832,
+      "inference_seconds": 0.0013753860257565975,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_25_0128",
+      "sequence": "boxes_25.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.38186643508571083,
+        "global_scale": 5.105798691411146,
+        "queries": 291,
+        "visible_point_times": 4340
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "953ae6411f8d9ddd8b93b2e8201fa10658cad834b5ee01346e004d2ab7a81a63"
+      },
+      "seconds": 0.13007381185889244,
+      "inference_seconds": 0.0013965019024908543,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_13_0048",
+      "sequence": "boxes_13.npz",
+      "metrics": {
+        "apd3d": 0.060232476224022544,
+        "epe_m": 0.1995368522973354,
+        "global_scale": 4.217081681530082,
+        "queries": 179,
+        "visible_point_times": 2839
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0fa78e43244b9667662b54502aae6f4f5f5a105c40b9194cd2c6a39ee6a79a5d"
+      },
+      "seconds": 0.15340260975062847,
+      "inference_seconds": 0.0015879450365900993,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_13_0112",
+      "sequence": "boxes_13.npz",
+      "metrics": {
+        "apd3d": 0.1061428125974431,
+        "epe_m": 0.20370053841651375,
+        "global_scale": 3.544156653926703,
+        "queries": 202,
+        "visible_point_times": 3207
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7af86f34ed80fe26021f35a63b86a4b015dda78d5d7e3d642137da300e39c779"
+      },
+      "seconds": 0.1405189810320735,
+      "inference_seconds": 0.0013188300654292107,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_19_0032",
+      "sequence": "tennis_19.npz",
+      "metrics": {
+        "apd3d": 0.19121730707135937,
+        "epe_m": 0.08419139794672179,
+        "global_scale": 4.123601433936353,
+        "queries": 219,
+        "visible_point_times": 3097
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9a8d0366860660b6d9ba3f47fb81369ececc9e787aaf36a92ee68c2ee80a0736"
+      },
+      "seconds": 0.1278530079871416,
+      "inference_seconds": 0.00165622029453516,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_19_0096",
+      "sequence": "tennis_19.npz",
+      "metrics": {
+        "apd3d": 0.16971246006389779,
+        "epe_m": 0.1006952404439935,
+        "global_scale": 4.27834068581819,
+        "queries": 214,
+        "visible_point_times": 3130
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "087b99b4fa3b4bfa14a604484cb3f631b90000f0f59e7c9930fbcf40a649f5b6"
+      },
+      "seconds": 0.13423871295526624,
+      "inference_seconds": 0.0013857311569154263,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_7_0016",
+      "sequence": "softball_7.npz",
+      "metrics": {
+        "apd3d": 0.03719193427931292,
+        "epe_m": 0.1159462535259434,
+        "global_scale": 4.107623226515786,
+        "queries": 271,
+        "visible_point_times": 4017
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4914663b41418f5af4fc78f4494352ab154f680d0f49b44d1f07e6d789f0e899"
+      },
+      "seconds": 0.1361718070693314,
+      "inference_seconds": 0.0014856201596558094,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_7_0080",
+      "sequence": "softball_7.npz",
+      "metrics": {
+        "apd3d": 0.051178952593695703,
+        "epe_m": 0.11186810164039492,
+        "global_scale": 3.9848761504914334,
+        "queries": 277,
+        "visible_point_times": 4029
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "cb1c2908f5b31ecb62c9316c8e8eb62e7cf00c6b0d6847cfe78bc8b59ec68531"
+      },
+      "seconds": 0.14873135602101684,
+      "inference_seconds": 0.0013893158175051212,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_1_0000",
+      "sequence": "basketball_1.npz",
+      "metrics": {
+        "apd3d": 0.0003129890453834116,
+        "epe_m": 0.29557958974265414,
+        "global_scale": 4.753939821669211,
+        "queries": 170,
+        "visible_point_times": 2556
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f2b69ff8a245522bdba9710b8de168967d6fcdb370fa6a460eb2fca9026ad8fe"
+      },
+      "seconds": 0.11796014197170734,
+      "inference_seconds": 0.0011527552269399166,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_1_0064",
+      "sequence": "basketball_1.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2923522904499956,
+        "global_scale": 4.735592995747969,
+        "queries": 154,
+        "visible_point_times": 1972
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "53bf696840b225ec81cf470d45632e3f97a9a3b1d745a20d3d28932d2fea8796"
+      },
+      "seconds": 0.12797776702791452,
+      "inference_seconds": 0.0013621649704873562,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_1_0128",
+      "sequence": "basketball_1.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.25584863001395536,
+        "global_scale": 4.663968591220824,
+        "queries": 143,
+        "visible_point_times": 2065
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "58eb84793bd90b4ee6ec3144af611c443801cb2bd07fe4734114a294d46513ef"
+      },
+      "seconds": 0.12097539193928242,
+      "inference_seconds": 0.0013083438389003277,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_16_0048",
+      "sequence": "basketball_16.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.44450351941718763,
+        "global_scale": 4.7455338623790135,
+        "queries": 109,
+        "visible_point_times": 1586
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5c666f9a794b94193dcdf41a8aa13f5519911f3b86f0747354f24a9ebc4e071d"
+      },
+      "seconds": 0.12961775483563542,
+      "inference_seconds": 0.0011963602155447006,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_16_0112",
+      "sequence": "basketball_16.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.41468444967503165,
+        "global_scale": 4.838791822793169,
+        "queries": 128,
+        "visible_point_times": 1900
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "06539ef77d601dcabd6615e124cd83dd2ea6fd0177fd545ea9e7a0211af2dca5"
+      },
+      "seconds": 0.12049972219392657,
+      "inference_seconds": 0.0012314319610595703,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_1_0032",
+      "sequence": "boxes_1.npz",
+      "metrics": {
+        "apd3d": 0.016817906836055656,
+        "epe_m": 0.22801394198318334,
+        "global_scale": 4.914353822535537,
+        "queries": 214,
+        "visible_point_times": 3306
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "86be526a5de531361cd3719a6652c014d1b3bcae1f99dbff6b7d612531069229"
+      },
+      "seconds": 0.13212822284549475,
+      "inference_seconds": 0.0013748700730502605,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_1_0096",
+      "sequence": "boxes_1.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.23992136816858378,
+        "global_scale": 4.780608526857335,
+        "queries": 209,
+        "visible_point_times": 3294
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "520fbae5d34611ac72cf54b80abaee7a65ad2b5ec0fc4aa9391362564aed8e7b"
+      },
+      "seconds": 0.14015960367396474,
+      "inference_seconds": 0.0014575012028217316,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_2_0016",
+      "sequence": "basketball_2.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.29872656771376294,
+        "global_scale": 4.276202307311384,
+        "queries": 72,
+        "visible_point_times": 1098
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3ecbdb5f712c071ca2a6c18f9dec30ddc9857e2ed258169c094a966aacc95b41"
+      },
+      "seconds": 0.13671743776649237,
+      "inference_seconds": 0.0012259730137884617,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_2_0080",
+      "sequence": "basketball_2.npz",
+      "metrics": {
+        "apd3d": 0.0011864406779661016,
+        "epe_m": 0.2385245062255425,
+        "global_scale": 4.273439856482607,
+        "queries": 152,
+        "visible_point_times": 2360
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d82acc59038f760acfd6c852a965c2479f0980fced156b0e6f24d7c3a51cb4db"
+      },
+      "seconds": 0.13595632184296846,
+      "inference_seconds": 0.0015039388090372086,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_6_0000",
+      "sequence": "football_6.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2498778996249984,
+        "global_scale": 4.456915374698481,
+        "queries": 119,
+        "visible_point_times": 1701
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8c8ebbddc42853ce39a9661ac24a422c4e58f9acc357532b1777988628403f7a"
+      },
+      "seconds": 0.1433912138454616,
+      "inference_seconds": 0.0013300036080181599,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_6_0064",
+      "sequence": "football_6.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.28484340828574634,
+        "global_scale": 4.575975183433021,
+        "queries": 125,
+        "visible_point_times": 1458
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "bf6e6b19b18638eceece51a8fa8f0f77119bd024087efd110bc9894f288312dc"
+      },
+      "seconds": 0.1397600481286645,
+      "inference_seconds": 0.0016294377855956554,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_6_0128",
+      "sequence": "football_6.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2400336398707603,
+        "global_scale": 4.568855713910188,
+        "queries": 142,
+        "visible_point_times": 2216
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9e4f4cbb0564787002c9f848aaff823741668744fb3bfeb276b6a04a02cab5cd"
+      },
+      "seconds": 0.12723077135160565,
+      "inference_seconds": 0.0013618571683764458,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_8_0048",
+      "sequence": "football_8.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2340146215224151,
+        "global_scale": 4.5783560274686455,
+        "queries": 73,
+        "visible_point_times": 1114
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "4358a3bb0a0b6f93d3d6e2a51e716b3bca7fd676ac2d3b4c842a169a610e1fce"
+      },
+      "seconds": 0.15646356623619795,
+      "inference_seconds": 0.0012855730019509792,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_8_0112",
+      "sequence": "football_8.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.20197282014601178,
+        "global_scale": 4.9213054751748,
+        "queries": 79,
+        "visible_point_times": 1245
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2682692c3bc55a7461512f10693e29a4962a08ec841018e5898c62cf4853b89e"
+      },
+      "seconds": 0.15171144669875503,
+      "inference_seconds": 0.0012335730716586113,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_6_0032",
+      "sequence": "softball_6.npz",
+      "metrics": {
+        "apd3d": 0.06405130139569973,
+        "epe_m": 0.17688413562750951,
+        "global_scale": 4.80414086659196,
+        "queries": 176,
+        "visible_point_times": 2651
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8867e34aabdc9db72cdad60f6b976d05875afa02b147ea25259e18ff07b5ab64"
+      },
+      "seconds": 0.16040094010531902,
+      "inference_seconds": 0.001301635056734085,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_6_0096",
+      "sequence": "softball_6.npz",
+      "metrics": {
+        "apd3d": 0.012083071113908118,
+        "epe_m": 0.19949532159250966,
+        "global_scale": 4.5385379876602325,
+        "queries": 149,
+        "visible_point_times": 1589
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "852544454cdbaf470e59e506ed81a1e105d4b8197355d196a47b9646e4b4456d"
+      },
+      "seconds": 0.14239380788058043,
+      "inference_seconds": 0.0013468479737639427,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_13_0016",
+      "sequence": "juggle_13.npz",
+      "metrics": {
+        "apd3d": 0.004390090937597993,
+        "epe_m": 0.12156845916481017,
+        "global_scale": 4.068956073216378,
+        "queries": 204,
+        "visible_point_times": 3189
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c7ef489325f0ed51e31929bf3ae53f18c4dccae405d98164e8af6f166cba7c49"
+      },
+      "seconds": 0.16233747079968452,
+      "inference_seconds": 0.0015145870856940746,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_13_0080",
+      "sequence": "juggle_13.npz",
+      "metrics": {
+        "apd3d": 0.08330058939096267,
+        "epe_m": 0.08724323463216722,
+        "global_scale": 3.9971565987001245,
+        "queries": 162,
+        "visible_point_times": 2545
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "388f49a6b41f0f58df4f02efe09c57201f624c425d9aff7daa56ee659879777d"
+      },
+      "seconds": 0.1415138109587133,
+      "inference_seconds": 0.0016511441208422184,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_28_0000",
+      "sequence": "basketball_28.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.34416050236186907,
+        "global_scale": 4.322512297662128,
+        "queries": 154,
+        "visible_point_times": 2222
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "138bcc658f6fd84c6437c5582589c9c83f062bc62819d95d6ba37397df3cf786"
+      },
+      "seconds": 0.1561548770405352,
+      "inference_seconds": 0.001425459049642086,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_28_0064",
+      "sequence": "basketball_28.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.41988370425777016,
+        "global_scale": 5.096315820263502,
+        "queries": 185,
+        "visible_point_times": 2820
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "eb6196c235f923088f9ae6dcdea5c04d6591d333a5a8a545fc3a17cc55d3bd03"
+      },
+      "seconds": 0.1626799968071282,
+      "inference_seconds": 0.0018184077925980091,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_28_0128",
+      "sequence": "basketball_28.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.36632108050439194,
+        "global_scale": 4.909612041943806,
+        "queries": 184,
+        "visible_point_times": 2535
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "97c370427e27fee8a2236b162025cc945cbf49ba5990ac053d5e622f61f78193"
+      },
+      "seconds": 0.1385092819109559,
+      "inference_seconds": 0.0013182740658521652,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_18_0048",
+      "sequence": "basketball_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.49611316916041037,
+        "global_scale": 4.969399764628332,
+        "queries": 112,
+        "visible_point_times": 1716
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d2a2ad7cca101f00b781b8e6dbe40922960ca0da195f41b7ac179b845ee4e98e"
+      },
+      "seconds": 0.1585991159081459,
+      "inference_seconds": 0.0016510142013430595,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_18_0112",
+      "sequence": "basketball_18.npz",
+      "metrics": {
+        "apd3d": 0.029978888106966924,
+        "epe_m": 0.17902435630919433,
+        "global_scale": 5.084638579836738,
+        "queries": 99,
+        "visible_point_times": 1421
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "80838b2c29090ce311ab8ab1dad2449220a3ab562fe8a0a785e14c68b6e19d7e"
+      },
+      "seconds": 0.14711275324225426,
+      "inference_seconds": 0.00145795289427042,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_21_0032",
+      "sequence": "tennis_21.npz",
+      "metrics": {
+        "apd3d": 0.002547770700636943,
+        "epe_m": 0.20293607786769183,
+        "global_scale": 5.104388282878601,
+        "queries": 197,
+        "visible_point_times": 2669
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6b023632e65d6c7a9137c7f8c9bf1e24b57f7c44859d460317ce24546147a47b"
+      },
+      "seconds": 0.15230918396264315,
+      "inference_seconds": 0.0012011793442070484,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_21_0096",
+      "sequence": "tennis_21.npz",
+      "metrics": {
+        "apd3d": 0.02595763857593511,
+        "epe_m": 0.14261765545867774,
+        "global_scale": 4.766500907037165,
+        "queries": 287,
+        "visible_point_times": 4438
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b7cb84899580883d92f7ff9ebc115ae2481817242ba2a5538f7d8603dc635e4c"
+      },
+      "seconds": 0.13160587893798947,
+      "inference_seconds": 0.0014819269999861717,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_5_0016",
+      "sequence": "softball_5.npz",
+      "metrics": {
+        "apd3d": 0.0005325218714340052,
+        "epe_m": 0.17729160370599267,
+        "global_scale": 5.292786977673568,
+        "queries": 335,
+        "visible_point_times": 5258
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2fa2e005de6e3689d1fa801cb9be849ae94cc1eba36ed3f72c4624eb2acd34c7"
+      },
+      "seconds": 0.14053803915157914,
+      "inference_seconds": 0.0017872340977191925,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_5_0080",
+      "sequence": "softball_5.npz",
+      "metrics": {
+        "apd3d": 0.0012690355329949238,
+        "epe_m": 0.21840355167562892,
+        "global_scale": 5.615299548458912,
+        "queries": 377,
+        "visible_point_times": 5516
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ef3bd9d4911a7cc8b0c84f4486f6fa203bd91a76cffd2f47867d7e2917d34e59"
+      },
+      "seconds": 0.17742786323651671,
+      "inference_seconds": 0.0015894919633865356,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_28_0000",
+      "sequence": "juggle_28.npz",
+      "metrics": {
+        "apd3d": 0.0006679389312977099,
+        "epe_m": 0.15637620983362543,
+        "global_scale": 4.553771169072509,
+        "queries": 269,
+        "visible_point_times": 4192
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a06391b0f983cc1ed2647aa33859676d40952deada0e10af48a05dd556331def"
+      },
+      "seconds": 0.17122586211189628,
+      "inference_seconds": 0.001313936896622181,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_28_0064",
+      "sequence": "juggle_28.npz",
+      "metrics": {
+        "apd3d": 0.013988198542172856,
+        "epe_m": 0.14613803891768293,
+        "global_scale": 4.86932740920336,
+        "queries": 374,
+        "visible_point_times": 5762
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "1e64faefcbd5f468435104b1bbfd2f1f9056c46ce51b1105157bbddc169cabef"
+      },
+      "seconds": 0.16025100415572524,
+      "inference_seconds": 0.0018697651103138924,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_28_0128",
+      "sequence": "juggle_28.npz",
+      "metrics": {
+        "apd3d": 0.20865497076023393,
+        "epe_m": 0.09701981621358668,
+        "global_scale": 5.105015521290669,
+        "queries": 387,
+        "visible_point_times": 5985
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "427b181ceabf60fd7953d823c7e924f0dc5a33be04a72efb1d0f6b8f74051035"
+      },
+      "seconds": 0.1530554541386664,
+      "inference_seconds": 0.0016815629787743092,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_20_0048",
+      "sequence": "softball_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3211719007645482,
+        "global_scale": 5.020304154454316,
+        "queries": 254,
+        "visible_point_times": 3699
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e45f98f194e9a521515cd9cf2544a9e2cedcdc170cc0694df4ffe7fa7e3bf5fb"
+      },
+      "seconds": 0.1506794742308557,
+      "inference_seconds": 0.001199471764266491,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_20_0112",
+      "sequence": "softball_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3014042256154064,
+        "global_scale": 5.592242550274666,
+        "queries": 206,
+        "visible_point_times": 2773
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "13f3b85756d8bc22b98fb1ac7d083a05a5233f996f50c8b3bd0d2e490a888964"
+      },
+      "seconds": 0.14204841013997793,
+      "inference_seconds": 0.0012679831124842167,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_17_0032",
+      "sequence": "basketball_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.2484546441945343,
+        "global_scale": 4.121233508508136,
+        "queries": 119,
+        "visible_point_times": 1396
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7425e16c391462a8b8dfecf01f8ca1b34ef16b155a299f19108871626aa30c7a"
+      },
+      "seconds": 0.15061376010999084,
+      "inference_seconds": 0.0014171916991472244,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_17_0096",
+      "sequence": "basketball_17.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.29059198413384163,
+        "global_scale": 3.928754998338338,
+        "queries": 88,
+        "visible_point_times": 1395
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6a76d0c7e840fc9301b319bd5ec9dfdd7f3f27c8cb7585032d7df4019f76f354"
+      },
+      "seconds": 0.16994365910068154,
+      "inference_seconds": 0.0012792795896530151,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_14_0016",
+      "sequence": "tennis_14.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.24558104620571555,
+        "global_scale": 5.338493315095108,
+        "queries": 91,
+        "visible_point_times": 1126
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7fc74b0e89745e77420bd9cbf66b349515c013e51726141af1fdc6e6232de8d9"
+      },
+      "seconds": 0.16343306424096227,
+      "inference_seconds": 0.0011788192205131054,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_14_0080",
+      "sequence": "tennis_14.npz",
+      "metrics": {
+        "apd3d": 0.012119289340101523,
+        "epe_m": 0.18304102856693466,
+        "global_scale": 5.338183895568493,
+        "queries": 221,
+        "visible_point_times": 3152
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "3e6e94f1b82ce38daeb4537c917c9f406667c13aa6536dc8f951b764c99bc1b0"
+      },
+      "seconds": 0.18142869509756565,
+      "inference_seconds": 0.001902492716908455,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_2_0000",
+      "sequence": "juggle_2.npz",
+      "metrics": {
+        "apd3d": 0.03473607394794454,
+        "epe_m": 0.13166217239724617,
+        "global_scale": 4.557106594730946,
+        "queries": 272,
+        "visible_point_times": 4111
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "a072158f60fb89e3d3d96a4f968f02dbdd33b7275039865ccf0c6cc7cf2d0f2e"
+      },
+      "seconds": 0.165396714117378,
+      "inference_seconds": 0.0016048029065132141,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_2_0064",
+      "sequence": "juggle_2.npz",
+      "metrics": {
+        "apd3d": 0.1032877724418175,
+        "epe_m": 0.1091515019405488,
+        "global_scale": 4.235163347241753,
+        "queries": 341,
+        "visible_point_times": 5414
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "2e3b465b054e2d5ff15013dfa0782216f92f74acb389f8ca53834636922f7e95"
+      },
+      "seconds": 0.1493510939180851,
+      "inference_seconds": 0.0015598149038851261,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_2_0128",
+      "sequence": "juggle_2.npz",
+      "metrics": {
+        "apd3d": 0.024340029885439148,
+        "epe_m": 0.15198005285029548,
+        "global_scale": 4.738713517198363,
+        "queries": 388,
+        "visible_point_times": 6023
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "7d7ccbca7fec3cf4dacdf4899ec816a9114ed661ab6a76f8d4372ddfa3113d80"
+      },
+      "seconds": 0.15838365396484733,
+      "inference_seconds": 0.0020756209269165993,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_2_0048",
+      "sequence": "boxes_2.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.15970322216344976,
+        "global_scale": 3.2824858909863064,
+        "queries": 288,
+        "visible_point_times": 4386
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "5124d75dcd421c78ac1a919397730525f62eed66c265bc80fa145d69ca5587f6"
+      },
+      "seconds": 0.16343423165380955,
+      "inference_seconds": 0.001454169861972332,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "boxes_2_0112",
+      "sequence": "boxes_2.npz",
+      "metrics": {
+        "apd3d": 0.004853951890034364,
+        "epe_m": 0.13383321469125,
+        "global_scale": 3.3428010281491054,
+        "queries": 294,
+        "visible_point_times": 4656
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f1fbec6a28f097a742ba3ad84dc1d3d10793b641d552d7ef76e23b14222c5edd"
+      },
+      "seconds": 0.13988126115873456,
+      "inference_seconds": 0.0015602209605276585,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_13_0032",
+      "sequence": "football_13.npz",
+      "metrics": {
+        "apd3d": 0.00044776119402985075,
+        "epe_m": 0.13838627047640997,
+        "global_scale": 4.239173696290191,
+        "queries": 84,
+        "visible_point_times": 1340
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c5933e5daf510375dee00f669cac5f6ec7f60ea798a11224b4273f2a83b206d9"
+      },
+      "seconds": 0.14082583598792553,
+      "inference_seconds": 0.0010444060899317265,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_13_0096",
+      "sequence": "football_13.npz",
+      "metrics": {
+        "apd3d": 0.28610108303249093,
+        "epe_m": 0.09563306031729261,
+        "global_scale": 4.271105109056126,
+        "queries": 74,
+        "visible_point_times": 1108
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0cb198da9e46c7e672bb540005e0637d8e86474d131bb4d9e93b7466a13348e8"
+      },
+      "seconds": 0.1215825923718512,
+      "inference_seconds": 0.0013401610776782036,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_3_0016",
+      "sequence": "juggle_3.npz",
+      "metrics": {
+        "apd3d": 0.003598326359832636,
+        "epe_m": 0.18904350726898372,
+        "global_scale": 5.116493391327443,
+        "queries": 308,
+        "visible_point_times": 4780
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "0fa8d70f11f8e477ce788cc0dc91f1b1fcb66c8634b28842a89fb1b5c62eb969"
+      },
+      "seconds": 0.15915278298780322,
+      "inference_seconds": 0.0018119351007044315,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_3_0080",
+      "sequence": "juggle_3.npz",
+      "metrics": {
+        "apd3d": 0.047619047619047616,
+        "epe_m": 0.14504580217448257,
+        "global_scale": 4.790441485384395,
+        "queries": 310,
+        "visible_point_times": 4767
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "70713a7d7579f59e7f4620f9a90994558f602f95917ad106a9d5ccce47ea7386"
+      },
+      "seconds": 0.16396100027486682,
+      "inference_seconds": 0.0013640569522976875,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_7_0000",
+      "sequence": "basketball_7.npz",
+      "metrics": {
+        "apd3d": 0.004378003203416978,
+        "epe_m": 0.26826240531324363,
+        "global_scale": 4.541096766812893,
+        "queries": 133,
+        "visible_point_times": 1873
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ee36f069341de9c53fbee84cb33be3cc7bb0ee90745c235808ebc5d09b46bf53"
+      },
+      "seconds": 0.1743741719983518,
+      "inference_seconds": 0.001531733199954033,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_7_0064",
+      "sequence": "basketball_7.npz",
+      "metrics": {
+        "apd3d": 0.04386554621848739,
+        "epe_m": 0.18270945313499765,
+        "global_scale": 4.835313823823496,
+        "queries": 159,
+        "visible_point_times": 2380
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "f3af2c82ca7f5ab866414281197fc1eaa51c2285fc5d177a18b5b2b05c82fe3d"
+      },
+      "seconds": 0.13566829124465585,
+      "inference_seconds": 0.0011111288331449032,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_7_0128",
+      "sequence": "basketball_7.npz",
+      "metrics": {
+        "apd3d": 0.026845637583892617,
+        "epe_m": 0.282837765562467,
+        "global_scale": 4.908671938582585,
+        "queries": 169,
+        "visible_point_times": 2235
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "d93ba6c5a804300587c4cd3165653ae552b6a531623737e7be94303b311db5c9"
+      },
+      "seconds": 0.13398344907909632,
+      "inference_seconds": 0.0011086845770478249,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_3_0048",
+      "sequence": "softball_3.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.21573799791051307,
+        "global_scale": 4.676944010321571,
+        "queries": 310,
+        "visible_point_times": 4437
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "016bba8347957c21bef5691d413e6aceab586ebc94f4b4b86acd748bcce36dbd"
+      },
+      "seconds": 0.1575526869855821,
+      "inference_seconds": 0.0012582349590957165,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_3_0112",
+      "sequence": "softball_3.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.24358370556466974,
+        "global_scale": 4.703884813814935,
+        "queries": 306,
+        "visible_point_times": 4865
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "03b5adae202a67f1982c7d86172c165ff4357c6cdcb306e5f01f7e4107f31fcb"
+      },
+      "seconds": 0.16128163505345583,
+      "inference_seconds": 0.0017465101554989815,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_8_0032",
+      "sequence": "softball_8.npz",
+      "metrics": {
+        "apd3d": 0.09189417989417989,
+        "epe_m": 0.11560706935469642,
+        "global_scale": 5.49264844917101,
+        "queries": 300,
+        "visible_point_times": 4725
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8eb6e30570959b673b68d24e609ca8fe2fcf0a815226f4b33b164d3c0deb9443"
+      },
+      "seconds": 0.16125065786764026,
+      "inference_seconds": 0.0013804039917886257,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_8_0096",
+      "sequence": "softball_8.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.28822844845099566,
+        "global_scale": 5.598808491597218,
+        "queries": 274,
+        "visible_point_times": 3125
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "95f9b9d2b20408e755681e21d0e7a5a0d1e777c1a68504ba46d38611f6f455c4"
+      },
+      "seconds": 0.17275318503379822,
+      "inference_seconds": 0.001854877918958664,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_20_0016",
+      "sequence": "tennis_20.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.37664265494452526,
+        "global_scale": 5.1350454384055695,
+        "queries": 147,
+        "visible_point_times": 2043
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "c63ca2d4d6065a8c146df04639fd581f8757aff111b854da9b243aead5ff0f8c"
+      },
+      "seconds": 0.15465743094682693,
+      "inference_seconds": 0.0014275023713707924,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "tennis_20_0080",
+      "sequence": "tennis_20.npz",
+      "metrics": {
+        "apd3d": 0.00545970735968552,
+        "epe_m": 0.24465185849736215,
+        "global_scale": 5.54692212191799,
+        "queries": 299,
+        "visible_point_times": 4579
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ce562f1161f09ace17d07039a1fa327ec8e208078f0115bc21c806164fe57f9b"
+      },
+      "seconds": 0.13910325802862644,
+      "inference_seconds": 0.0017924010753631592,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_18_0000",
+      "sequence": "football_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.4129316060852754,
+        "global_scale": 5.09593180458232,
+        "queries": 91,
+        "visible_point_times": 1387
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e539a0534f65c8551852fd029f56def7ac63001a25e9649dc42c3b72a6780c40"
+      },
+      "seconds": 0.14452115772292018,
+      "inference_seconds": 0.0011294111609458923,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_18_0064",
+      "sequence": "football_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.4362356027427545,
+        "global_scale": 4.926058351365691,
+        "queries": 117,
+        "visible_point_times": 1753
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "350a709c68c0fcc7e96c793b9fdecfadefff447f23ff9b38546d76f7aa052217"
+      },
+      "seconds": 0.15696564316749573,
+      "inference_seconds": 0.0011923727579414845,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_18_0128",
+      "sequence": "football_18.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.4151110708681303,
+        "global_scale": 5.231369820639604,
+        "queries": 94,
+        "visible_point_times": 1317
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "83c76f82d1ef1ee1b9532c580d75fb15b3be82571b98da333e3f2ac790a5f0ef"
+      },
+      "seconds": 0.13886027969419956,
+      "inference_seconds": 0.000986351165920496,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_23_0048",
+      "sequence": "basketball_23.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.41583388847534175,
+        "global_scale": 4.819127369419781,
+        "queries": 64,
+        "visible_point_times": 933
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "52112597b236a0f5ff63c766eeaf26c0aa4e89ec402e77581f70977eec8f029b"
+      },
+      "seconds": 0.13222910882905126,
+      "inference_seconds": 0.0009301789104938507,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "basketball_23_0112",
+      "sequence": "basketball_23.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3144110879102722,
+        "global_scale": 4.63807737880902,
+        "queries": 81,
+        "visible_point_times": 1195
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "82dfceb8e76aaa31479d4c6c02ab0424f66a4948816689b88e175681cdaae2c6"
+      },
+      "seconds": 0.1193971368484199,
+      "inference_seconds": 0.001089385710656643,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_23_0032",
+      "sequence": "football_23.npz",
+      "metrics": {
+        "apd3d": 0.07340918668352296,
+        "epe_m": 0.17079553623864785,
+        "global_scale": 4.928521211983135,
+        "queries": 152,
+        "visible_point_times": 2373
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6bdcbfe5db15345cf5b3a0eba24028813f4fe5b0dc1f372c612aab2e1a55140a"
+      },
+      "seconds": 0.14343889197334647,
+      "inference_seconds": 0.0014437278732657433,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_23_0096",
+      "sequence": "football_23.npz",
+      "metrics": {
+        "apd3d": 0.057647531112003214,
+        "epe_m": 0.14758078349766768,
+        "global_scale": 4.601249366326236,
+        "queries": 161,
+        "visible_point_times": 2491
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "db3569edde4797230d9200fd51dd88fe6dfa3a1791653d9d4191e99ade406567"
+      },
+      "seconds": 0.1643137251958251,
+      "inference_seconds": 0.0012650690041482449,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_28_0016",
+      "sequence": "football_28.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.28826281266495823,
+        "global_scale": 4.662884647607928,
+        "queries": 87,
+        "visible_point_times": 1389
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "ad861b95a2ecd8b232db5b03e9ee9c432ee591017213887a50f68d9aa949793e"
+      },
+      "seconds": 0.13391248881816864,
+      "inference_seconds": 0.001092500053346157,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_28_0080",
+      "sequence": "football_28.npz",
+      "metrics": {
+        "apd3d": 0.0005309734513274337,
+        "epe_m": 0.26339809248993706,
+        "global_scale": 4.596427199758881,
+        "queries": 86,
+        "visible_point_times": 1130
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "e7273f969d879428c57f108931e826244629d8a9c4fac65b06aad72ff5f10687"
+      },
+      "seconds": 0.13680251222103834,
+      "inference_seconds": 0.0014750552363693714,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_19_0000",
+      "sequence": "juggle_19.npz",
+      "metrics": {
+        "apd3d": 0.028399473387248447,
+        "epe_m": 0.17564564247347925,
+        "global_scale": 4.642246076179126,
+        "queries": 342,
+        "visible_point_times": 5317
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6aa0d584ca1de61ad5fbecaa08a99d53a761f41d8cf079fe5fbf8f6fe47966e6"
+      },
+      "seconds": 0.14587583113461733,
+      "inference_seconds": 0.0015157181769609451,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_19_0064",
+      "sequence": "juggle_19.npz",
+      "metrics": {
+        "apd3d": 0.15308916019237884,
+        "epe_m": 0.10565403116651464,
+        "global_scale": 4.798791080055778,
+        "queries": 350,
+        "visible_point_times": 5406
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "8d1aa5f58f660ebc54cef10bd5343dd7fc08c7f6d3dc5bf3ce9fb7a4281cc6a1"
+      },
+      "seconds": 0.13876181561499834,
+      "inference_seconds": 0.0014972439967095852,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "juggle_19_0128",
+      "sequence": "juggle_19.npz",
+      "metrics": {
+        "apd3d": 0.20391327340031729,
+        "epe_m": 0.0737945647845138,
+        "global_scale": 3.8644728533481856,
+        "queries": 290,
+        "visible_point_times": 3782
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "6bb78644b70181170f532fc8cb246244a5448858546cd64479e390fcc4adad00"
+      },
+      "seconds": 0.1318556941114366,
+      "inference_seconds": 0.0017659207805991173,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_11_0048",
+      "sequence": "football_11.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.5091035433934712,
+        "global_scale": 4.879516614277525,
+        "queries": 94,
+        "visible_point_times": 1407
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "55d15d0d5e5ba0a4369b3b4a292600be92d321e2383985d87e6baa605cfd68df"
+      },
+      "seconds": 0.15712684206664562,
+      "inference_seconds": 0.0014005126431584358,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "football_11_0112",
+      "sequence": "football_11.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.34974009162709163,
+        "global_scale": 4.72111141571379,
+        "queries": 120,
+        "visible_point_times": 1875
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "b11bfe49dedabe94710bcb90cb72afaab508fd80d2cf3ce316a7ec8959e0e756"
+      },
+      "seconds": 0.17358686588704586,
+      "inference_seconds": 0.0014212168753147125,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_16_0032",
+      "sequence": "softball_16.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.3223478759685637,
+        "global_scale": 5.226978757990558,
+        "queries": 205,
+        "visible_point_times": 3147
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "9713a6e20e35e241670f85565c4c7c1eab914db3771b0379be9efd237ef20fc1"
+      },
+      "seconds": 0.15169607568532228,
+      "inference_seconds": 0.0013806079514324665,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    },
+    {
+      "id": "softball_16_0096",
+      "sequence": "softball_16.npz",
+      "metrics": {
+        "apd3d": 0.0,
+        "epe_m": 0.33247338492419154,
+        "global_scale": 5.157316140649581,
+        "queries": 169,
+        "visible_point_times": 2110
+      },
+      "input": {
+        "raw_hw": [
+          360,
+          640
+        ],
+        "content_hw": [
+          284,
+          504
+        ],
+        "padded_hw": [
+          294,
+          504
+        ],
+        "rgb_sha256": "826bbcb720b69ede845c8f307bdcb67ceeeb6b6df201353be39057827f1b2e35"
+      },
+      "seconds": 0.1363135101273656,
+      "inference_seconds": 0.0011241738684475422,
+      "reused_inference": true,
+      "peak_cuda_bytes": 6176221184
+    }
+  ],
+  "failures": [],
+  "scoring_migration": {
+    "reason": "EPE scale precision matched to original float64 scorer",
+    "previous_contract": {
+      "plan_sha256": "65e8be23835ff25914ed06a6f8f9b19cad9efb3e71db49f4669512e68f7277fd",
+      "loading": {
+        "strict": true,
+        "tensors": 1106,
+        "step": 60000,
+        "config": {
+          "embed_dim": 1536,
+          "encoder_depth": 40,
+          "encoder_heads": 24,
+          "out_layers": [
+            19,
+            27,
+            33,
+            39
+          ],
+          "alt_start": 13,
+          "positional_image_size": 518,
+          "patch_size": 14,
+          "ffn_layer": "swiglufused",
+          "motion_depth": 4,
+          "motion_heads": 16,
+          "dpt_features": 256,
+          "dpt_channels": [
+            256,
+            512,
+            1024,
+            1024
+          ],
+          "decoder_memory": "target_time",
+          "time_origin": "clip_start",
+          "geometry_chunk_size": 8,
+          "attention_chunk_size": null,
+          "visibility_chunk_size": null,
+          "gradient_checkpointing": false
+        },
+        "method": "multid4rt",
+        "checkpoint": "/data9/zbf/multid4rt_modelscope_release_20261010/model/multid4rt_giant_step60000.pt",
+        "checkpoint_sha256": "1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0",
+        "parameters": 1527388286,
+        "torch": "2.11.0+cu128",
+        "numpy": "1.26.4"
+      },
+      "partitions": 4,
+      "partition_index": 3,
+      "memory_fraction": 0.21,
+      "scorer_sha256": "f83836ce6e6abc91c1902d9069eb63f9059d7f1e9dc220278bec386a319fbd30",
+      "implementation": {
+        "run_tapvid.py": "a13f9eda28363e99aa07a1ea50bbb80ae248e839e0a6c79f0a95fc2cc6367268",
+        "common.py": "039281cfa273d283beca7f39d2ca5497466a1bf2c1a4f3a64154c4b70c1cc129",
+        "native_omnix.py": "088b7c4c9ace9a256ee4d2d602ee85470f481adba32792febd6cb51319e5c1e8"
+      }
+    },
+    "old_failures": [],
+    "unchanged_prediction_functions": true,
+    "new_model_forwards_for_cached_predictions": 0
+  },
+  "by_sequence": {
+    "basketball_18.npz": {
+      "apd3d": 0.014989444053483462,
+      "epe_m": 0.33756876273480235
+    },
+    "football_5.npz": {
+      "apd3d": 0.003019344307312087,
+      "epe_m": 0.1623480803669711
+    },
+    "basketball_1.npz": {
+      "apd3d": 0.00010432968179447054,
+      "epe_m": 0.2812601700688684
+    },
+    "tennis_12.npz": {
+      "apd3d": 0.05363741321319108,
+      "epe_m": 0.20101347994470348
+    },
+    "softball_11.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.2812959014473442
+    },
+    "juggle_11.npz": {
+      "apd3d": 5.6227157717177394e-05,
+      "epe_m": 0.24419955370722168
+    },
+    "basketball_25.npz": {
+      "apd3d": 0.02079360624875761,
+      "epe_m": 0.10829823765771388
+    },
+    "juggle_6.npz": {
+      "apd3d": 0.03031689237845723,
+      "epe_m": 0.1355506922246602
+    },
+    "softball_4.npz": {
+      "apd3d": 0.1826259388380636,
+      "epe_m": 0.06517719947200108
+    },
+    "boxes_8.npz": {
+      "apd3d": 0.04319502906394067,
+      "epe_m": 0.41495082599766864
+    },
+    "football_25.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.2764332650626985
+    },
+    "tennis_18.npz": {
+      "apd3d": 0.000887292062995505,
+      "epe_m": 0.2969318558888705
+    },
+    "football_4.npz": {
+      "apd3d": 0.010918918918918918,
+      "epe_m": 0.1765290808082552
+    },
+    "boxes_24.npz": {
+      "apd3d": 0.0022188625137814126,
+      "epe_m": 0.12728392978386496
+    },
+    "boxes_16.npz": {
+      "apd3d": 0.033041739864121476,
+      "epe_m": 0.2637165377298824
+    },
+    "football_17.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.3121921867752243
+    },
+    "tennis_11.npz": {
+      "apd3d": 0.02022545634472447,
+      "epe_m": 0.18289397972342547
+    },
+    "tennis_25.npz": {
+      "apd3d": 0.005291732790370392,
+      "epe_m": 0.30583967880335994
+    },
+    "football_11.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.4294218175102814
+    },
+    "tennis_8.npz": {
+      "apd3d": 0.014375742127194344,
+      "epe_m": 0.17757568127217588
+    },
+    "juggle_27.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.3293567614285542
+    },
+    "softball_1.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.300331447909263
+    },
+    "softball_5.npz": {
+      "apd3d": 0.0009007787022144645,
+      "epe_m": 0.1978475776908108
+    },
+    "juggle_20.npz": {
+      "apd3d": 0.007743665270937669,
+      "epe_m": 0.2575988037118931
+    },
+    "tennis_14.npz": {
+      "apd3d": 0.006059644670050762,
+      "epe_m": 0.21431103738632512
+    },
+    "football_23.npz": {
+      "apd3d": 0.0655283588977631,
+      "epe_m": 0.15918815986815776
+    },
+    "tennis_20.npz": {
+      "apd3d": 0.00272985367984276,
+      "epe_m": 0.31064725672094373
+    },
+    "juggle_18.npz": {
+      "apd3d": 0.0011290464849607479,
+      "epe_m": 0.28501154563908776
+    },
+    "juggle_17.npz": {
+      "apd3d": 0.0018914728682170542,
+      "epe_m": 0.172943462614004
+    },
+    "basketball_22.npz": {
+      "apd3d": 0.05021280189997449,
+      "epe_m": 0.2357640105570733
+    },
+    "softball_20.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.3112880631899773
+    },
+    "basketball_2.npz": {
+      "apd3d": 0.0005932203389830508,
+      "epe_m": 0.26862553696965275
+    },
+    "softball_27.npz": {
+      "apd3d": 0.011890243902439025,
+      "epe_m": 0.19957717338447145
+    },
+    "softball_18.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.41028143394105415
+    },
+    "softball_13.npz": {
+      "apd3d": 0.08492211280880785,
+      "epe_m": 0.09358254929289293
+    },
+    "juggle_24.npz": {
+      "apd3d": 0.16124928039082911,
+      "epe_m": 0.08345093206633136
+    },
+    "juggle_25.npz": {
+      "apd3d": 0.0015009846956526545,
+      "epe_m": 0.17633891115696704
+    },
+    "basketball_21.npz": {
+      "apd3d": 2.9859659599880564e-05,
+      "epe_m": 0.21267172548593244
+    },
+    "football_2.npz": {
+      "apd3d": 8.8008800880088e-05,
+      "epe_m": 0.2797449477590918
+    },
+    "softball_24.npz": {
+      "apd3d": 0.07346747722308453,
+      "epe_m": 0.10705115487174045
+    },
+    "football_9.npz": {
+      "apd3d": 0.008006572629425925,
+      "epe_m": 0.2782008603036102
+    },
+    "juggle_2.npz": {
+      "apd3d": 0.054121292091733726,
+      "epe_m": 0.13093124239603016
+    },
+    "basketball_16.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.42959398454610964
+    },
+    "football_24.npz": {
+      "apd3d": 0.18499993748480958,
+      "epe_m": 0.0776376975381598
+    },
+    "juggle_14.npz": {
+      "apd3d": 0.020094024210888795,
+      "epe_m": 0.14278272234288403
+    },
+    "football_8.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.21799372083421342
+    },
+    "juggle_28.npz": {
+      "apd3d": 0.07443703607790149,
+      "epe_m": 0.13317802165496503
+    },
+    "boxes_4.npz": {
+      "apd3d": 0.10726775617340947,
+      "epe_m": 0.13815870858082885
+    },
+    "juggle_12.npz": {
+      "apd3d": 0.003477617462079171,
+      "epe_m": 0.25146051958313825
+    },
+    "softball_28.npz": {
+      "apd3d": 0.0014515382782216337,
+      "epe_m": 0.1956151686524401
+    },
+    "boxes_13.npz": {
+      "apd3d": 0.08318764441073281,
+      "epe_m": 0.20161869535692456
+    },
+    "juggle_3.npz": {
+      "apd3d": 0.025608686989440126,
+      "epe_m": 0.16704465472173313
+    },
+    "softball_6.npz": {
+      "apd3d": 0.038067186254803924,
+      "epe_m": 0.1881897286100096
+    },
+    "tennis_13.npz": {
+      "apd3d": 0.1012114192613446,
+      "epe_m": 0.10883195409815735
+    },
+    "boxes_21.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.20544144837243447
+    },
+    "boxes_1.npz": {
+      "apd3d": 0.008408953418027828,
+      "epe_m": 0.23396765507588357
+    },
+    "football_12.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.35856937219054563
+    },
+    "tennis_16.npz": {
+      "apd3d": 0.003529763685312594,
+      "epe_m": 0.2839209400233132
+    },
+    "basketball_17.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.26952331416418795
+    },
+    "football_28.npz": {
+      "apd3d": 0.00026548672566371683,
+      "epe_m": 0.27583045257744765
+    },
+    "tennis_24.npz": {
+      "apd3d": 0.1627988605449136,
+      "epe_m": 0.1037464050306896
+    },
+    "softball_12.npz": {
+      "apd3d": 0.013097102584181675,
+      "epe_m": 0.16979919372131175
+    },
+    "football_13.npz": {
+      "apd3d": 0.14327442211326039,
+      "epe_m": 0.11700966539685129
+    },
+    "tennis_1.npz": {
+      "apd3d": 0.012515151515151516,
+      "epe_m": 0.21406808721199383
+    },
+    "softball_3.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.2296608517375914
+    },
+    "softball_29.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.47410209795247465
+    },
+    "football_18.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.42142609323205343
+    },
+    "softball_26.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.24930449225292467
+    },
+    "boxes_25.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.5590418188381522
+    },
+    "basketball_23.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.365122488192807
+    },
+    "tennis_27.npz": {
+      "apd3d": 0.006718695532860141,
+      "epe_m": 0.29211108605814856
+    },
+    "tennis_7.npz": {
+      "apd3d": 0.12386693849774685,
+      "epe_m": 0.1300153143124457
+    },
+    "boxes_23.npz": {
+      "apd3d": 0.025912252380138123,
+      "epe_m": 0.23440397534286717
+    },
+    "juggle_21.npz": {
+      "apd3d": 0.0070303442371131425,
+      "epe_m": 0.1612032759551839
+    },
+    "tennis_3.npz": {
+      "apd3d": 0.03368305552739139,
+      "epe_m": 0.15941932979680917
+    },
+    "tennis_6.npz": {
+      "apd3d": 0.09706567857844782,
+      "epe_m": 0.13509458156678913
+    },
+    "tennis_29.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.4395835275393507
+    },
+    "tennis_9.npz": {
+      "apd3d": 0.011163064085994498,
+      "epe_m": 0.22175869362449618
+    },
+    "softball_22.npz": {
+      "apd3d": 0.00217873713939883,
+      "epe_m": 0.24106025207467177
+    },
+    "softball_17.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.27211821173456496
+    },
+    "boxes_9.npz": {
+      "apd3d": 0.00020115665074176516,
+      "epe_m": 0.30282397063780936
+    },
+    "softball_16.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.32741063044637764
+    },
+    "football_20.npz": {
+      "apd3d": 0.007146215326751293,
+      "epe_m": 0.26559906074909034
+    },
+    "juggle_26.npz": {
+      "apd3d": 0.004572180626346684,
+      "epe_m": 0.2654656511648777
+    },
+    "basketball_11.npz": {
+      "apd3d": 0.0010775862068965517,
+      "epe_m": 0.24589414776517313
+    },
+    "basketball_12.npz": {
+      "apd3d": 0.0012830002467308166,
+      "epe_m": 0.3331123547762065
+    },
+    "boxes_2.npz": {
+      "apd3d": 0.002426975945017182,
+      "epe_m": 0.14676821842734988
+    },
+    "juggle_19.npz": {
+      "apd3d": 0.1284673023266482,
+      "epe_m": 0.11836474614150255
+    },
+    "softball_8.npz": {
+      "apd3d": 0.045947089947089945,
+      "epe_m": 0.20191775890284602
+    },
+    "boxes_3.npz": {
+      "apd3d": 0.11282588036810373,
+      "epe_m": 0.10826626844114963
+    },
+    "basketball_28.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.3767884290413437
+    },
+    "basketball_26.npz": {
+      "apd3d": 0.0012226512226512225,
+      "epe_m": 0.40706408313487125
+    },
+    "juggle_13.npz": {
+      "apd3d": 0.043845340164280336,
+      "epe_m": 0.1044058468984887
+    },
+    "basketball_7.npz": {
+      "apd3d": 0.02502972900193233,
+      "epe_m": 0.2446032080035694
+    },
+    "football_6.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.25825164926050165
+    },
+    "boxes_20.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.24645235275587385
+    },
+    "basketball_19.npz": {
+      "apd3d": 0.1385861498776374,
+      "epe_m": 0.11424269579536017
+    },
+    "boxes_14.npz": {
+      "apd3d": 0.0010083820358815438,
+      "epe_m": 0.4402957790275841
+    },
+    "tennis_21.npz": {
+      "apd3d": 0.014252704638286026,
+      "epe_m": 0.17277686666318479
+    },
+    "softball_7.npz": {
+      "apd3d": 0.04418544343650431,
+      "epe_m": 0.11390717758316915
+    },
+    "boxes_18.npz": {
+      "apd3d": 0.09349948078920041,
+      "epe_m": 0.2582526079162657
+    },
+    "juggle_29.npz": {
+      "apd3d": 0.0,
+      "epe_m": 0.3593242352219833
+    },
+    "juggle_1.npz": {
+      "apd3d": 0.017930244951030357,
+      "epe_m": 0.17537171152266554
+    },
+    "juggle_23.npz": {
+      "apd3d": 0.06157855345388644,
+      "epe_m": 0.13205992405509973
+    },
+    "juggle_16.npz": {
+      "apd3d": 0.03355017891906298,
+      "epe_m": 0.20674971611461246
+    },
+    "tennis_19.npz": {
+      "apd3d": 0.18046488356762858,
+      "epe_m": 0.09244331919535764
+    }
+  },
+  "mean_metrics": {
+    "apd3d": 0.030360142711809084,
+    "epe_m": 0.23474760491945024
+  },
+  "clip_mean_metrics": {
+    "apd3d": 0.030109661223332435,
+    "epe_m": 0.23673131211492074
+  }
+}

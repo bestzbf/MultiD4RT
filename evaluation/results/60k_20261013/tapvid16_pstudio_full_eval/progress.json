@@ -341,7 +341,7 @@
     }
   ],
   "requested_cases": 954,
-  "plan_sha256": "65e8be23835ff25914ed06a6f8f9b19cad9efb3e71db49f4669512e68f7277fd",
+  "plan_sha256": "05b31b3c4d63fb3902cfe1e672baaf8c06882af70fb368046d666a716633b898",
   "scorer_check": "passed; not model inference",
   "worker_exit_codes": [
     0,
@@ -402,5 +402,7 @@
       "done": 238,
       "stage": "partition_complete"
     }
-  ]
+  ],
+  "metric_eval_short_side": 256,
+  "scoring_correction": "Official short-side-256 intrinsic scaling fixed; original predictions reused"
 }

@@ -1,0 +1,20 @@
+{
+  "stage": "passed",
+  "protocol": "omnix16-first-visible-v1",
+  "subset": "pstudio",
+  "split": "full_eval",
+  "clips": 954,
+  "sequences": 106,
+  "plan_sha256": "65e8be23835ff25914ed06a6f8f9b19cad9efb3e71db49f4669512e68f7277fd",
+  "identical_rgb": true,
+  "methods": {
+    "multid4rt": {
+      "apd3d": 0.03282269141017394,
+      "epe_m": 0.22712876622312508
+    },
+    "omnix": {
+      "apd3d": 0.13965723532330734,
+      "epe_m": 0.12793988031138873
+    }
+  }
+}

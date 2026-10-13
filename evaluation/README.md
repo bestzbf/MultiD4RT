@@ -9,7 +9,7 @@ are unchanged.
 
 | Test | Coverage | Metric | MultiD4RT 60k | OmniX release |
 |---|---|---|---:|---:|
-| TAPVid-3D PStudio | full_eval 106 videos, 954 complete T16 clips | APD3D ↑ | 3.2823% | 13.9657% |
+| TAPVid-3D PStudio | full_eval 106 videos, 954 complete T16 clips | APD3D ↑ | 6.6445% | 21.3096% |
 | TAPVid-3D PStudio | same clips | camera-coordinate EPE ↓ | 0.22713 m | 0.12794 m |
 | Panoptic multiview | all 6 released sequences, C4T150 | Δavg ↑ | 46.965% | 21.135% |
 | Panoptic multiview | same fixed queries | MTE ↓ | 22.515 cm | 39.020 cm |
@@ -39,7 +39,10 @@ padding frames. Queries are every GT-visible point at the first frame of each
 clip, projected into that frame using annotation intrinsics. Future labels are
 only scoring inputs. Each method converts its world trajectories into its own
 predicted target-camera frame. The untouched TAPVid-3D scorer applies the
-official depth-adaptive thresholds and one global median scale per clip. EPE
+official depth-adaptive thresholds after scaling annotation intrinsics to an
+image short side of 256, exactly as upstream `evaluate_model.py`, and one global
+median scale per clip. The RGB network still uses its original shared
+preprocessing, and camera-coordinate XYZ stays in meters. EPE
 uses exactly the same float64 scale. The headline aggregate gives each of the
 106 videos equal weight. No GT pose registration or 3D source anchoring is used.
 
@@ -200,3 +203,34 @@ Sources: [OmniX](https://github.com/yanqinJiang/OmniX),
 [4RC](https://github.com/Luo-Yihang/4RC),
 [evo](https://github.com/MichaelGrupp/evo),
 [D4RT](https://d4rt-paper.github.io/).
+
+
+## PStudio scoring correction and geometry diagnosis
+
+The initial APD3D values **3.2823% / 13.9657% are withdrawn**. The adapter called
+upstream `metrics.py` with original-resolution intrinsics, omitting the
+short-side-256 normalization in upstream `evaluate_model.py`. At 360×640, the
+omitted factor is `256/360`; the old distance thresholds were 1.40625 times too
+strict. Re-scoring all 954 clips of both releases gives **6.6445% / 21.3096%**.
+All predicted XYZ arrays, queries, GT, weights, EPE and other benchmarks remain
+unchanged. Historical reports are preserved under
+[legacy_raw_intrinsics](results/60k_20261013/tapvid16_pstudio_full_eval/legacy_raw_intrinsics/).
+
+`rescore_tapvid_resolution` validates unchanged inference ASTs, GT archive
+hashes, prediction hashes and query identities before recording the correction.
+`check_tapvid_resolution` executes the unchanged official caller functions on
+an 8 mm nonzero-error regression and eight real cached clips. An identity-only
+scorer check could not detect this bug. Future inference requires original
+image dimensions and records the scoring resolution in its protocol contract.
+
+The remaining model gap is primarily initial geometry. Across all 954 clips,
+60k's effective focal ratios are 0.805 (x) and 0.790 (y), with source-position
+EPE 22.5 cm versus OmniX's 13.1 cm. The intrinsic regression agrees with the
+actual camera head on four fixed clips chosen by plan indices 0,318,636,953.
+On those clips, changing only the source rays to GT intrinsics, while keeping
+predicted depth, motion and target poses, reduces 60k mean EPE from 26.7 to
+8.0 cm. **This GT intervention is a diagnostic, not a benchmark result.**
+Native-resolution and patch-grid-resolution controls do not remove the bias.
+The 67k checkpoint retains the issue on the same four clips; these are not a
+full 67k benchmark. No model architecture or ongoing training was changed.
+See [full diagnosis and evidence](results/60k_20261013/pstudio_diagnosis_20261013/diagnosis.md).

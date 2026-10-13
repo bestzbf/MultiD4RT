@@ -1,0 +1,54 @@
+{
+  "loading": {
+    "strict": true,
+    "tensors": 1106,
+    "step": 60000,
+    "config": {
+      "embed_dim": 1536,
+      "encoder_depth": 40,
+      "encoder_heads": 24,
+      "out_layers": [
+        19,
+        27,
+        33,
+        39
+      ],
+      "alt_start": 13,
+      "positional_image_size": 518,
+      "patch_size": 14,
+      "ffn_layer": "swiglufused",
+      "motion_depth": 4,
+      "motion_heads": 16,
+      "dpt_features": 256,
+      "dpt_channels": [
+        256,
+        512,
+        1024,
+        1024
+      ],
+      "decoder_memory": "target_time",
+      "time_origin": "clip_start",
+      "geometry_chunk_size": 8,
+      "attention_chunk_size": null,
+      "visibility_chunk_size": null,
+      "gradient_checkpointing": false
+    },
+    "method": "multid4rt",
+    "checkpoint": "/data9/zbf/multid4rt_modelscope_release_20261010/model/multid4rt_giant_step60000.pt",
+    "checkpoint_sha256": "1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0",
+    "parameters": 1527388286,
+    "torch": "2.11.0+cu128",
+    "numpy": "1.26.4"
+  },
+  "cases": [
+    "tennis_18_0000",
+    "juggle_26_0048",
+    "boxes_18_0096",
+    "softball_16_0128"
+  ],
+  "variants": [
+    "standard",
+    "native_resolution",
+    "patch_resize"
+  ]
+}

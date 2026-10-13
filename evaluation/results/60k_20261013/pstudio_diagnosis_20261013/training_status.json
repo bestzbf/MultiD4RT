@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-10-13T04:58:09.702225+00:00",
+  "published_checkpoint_step": 60000,
+  "latest_saved_checkpoint": "/data8/zbf/multicamera4rc_runs/loader_recovery_20261012/continued_training_loopback/continuation_66000_68000_try0/step_00067000.pt",
+  "latest_saved_step": 67000,
+  "latest_saved_bytes": 18293831637,
+  "latest_accepted_step": 66000,
+  "latest_accepted_checkpoint": "/data8/zbf/multicamera4rc_runs/loader_recovery_20261012/continued_training_loopback/continuation_64000_66000_try0/latest.pt",
+  "live_step": 67955,
+  "training_world_size": 4,
+  "training_gpus": [
+    2,
+    3,
+    4,
+    5
+  ]
+}

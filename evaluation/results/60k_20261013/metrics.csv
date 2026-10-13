@@ -1,5 +1,5 @@
 dataset,metric,unit,direction,samples,multid4rt,omnix,protocol
-PStudio · 单相机,APD3D,%,↑,106 视频 / 954 × T16,3.2822691410173936,13.965723532330735,RGB + 2D 查询；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均
+PStudio · 单相机,APD3D,%,↑,106 视频 / 954 × T16,6.644546936620841,21.309646125639002,RGB + 2D 查询；评分内参按原图短边 256 归一化；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均
 PStudio · 单相机,EPE,m,↓,106 视频 / 954 × T16,0.22712876622312508,0.12793988031138873,预测目标相机坐标；与 APD 相同尺度，GT 可见点欧氏误差；视频宏平均
 Sintel · 深度,AbsRel · S,,↓,14 序列 / 37 × T16,0.35509107191417666,0.3828617013185411,4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均
 Sintel · 深度,AbsRel · SS,,↓,14 序列 / 37 × T16,0.2740668538655784,0.28739526122808456,4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均
