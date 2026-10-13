@@ -1,0 +1,12 @@
+{
+  "depth_tools": {
+    "source": "https://github.com/Luo-Yihang/4RC.git",
+    "commit": "a08ca0a5394c7c5f6a2a3423223cb98f85f84e6a",
+    "relative_path": "eval/video_depth/tools.py",
+    "sha256": "079171f863616133446644309f22940572375c7a1ce61131084e01dbd38b0863"
+  },
+  "omnix": {
+    "source": "https://github.com/yanqinJiang/OmniX",
+    "commit": "5c6c8928f85552d78bb80cd8b9bbc36f7b4987db"
+  }
+}

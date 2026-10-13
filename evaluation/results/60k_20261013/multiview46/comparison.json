@@ -1,0 +1,109 @@
+{
+  "stage": "passed",
+  "plan_sha256": "3c8efe38d8b5117ceebb9ae5a9a42497ac3de5da9f8e2183e0117dd2a806c8bb",
+  "official": {
+    "repository": "https://github.com/ethz-vlg/mvtracker",
+    "commit": "ceea8ad2af77ed9b44148ef8e9eeba4ea3c3f072",
+    "sha256": {
+      "mvtracker/evaluation/metrics.py": "eeb5fb78ad60045a1a6f94e0916e3a7d44dd3dfc22340fbc7c2ae3812929b0e7",
+      "mvtracker/evaluation/evaluator_3dpt.py": "17a4c4a5b04c25f9c0d8f513d074dcd616875c61167c001df1f8331074aa09fb",
+      "mvtracker/datasets/utils.py": "a29403690d5d493c28a4e50ae047dbf5a4f4c6822573afaaed83d891888c0892",
+      "mvtracker/datasets/panoptic_studio_multiview_dataset.py": "3a4bf92350fc19d68fdf899d36fde39142c502080fc50728efe8ed856732ed55",
+      "mvtracker/datasets/dexycb_multiview_dataset.py": "81da5927b9b046a00b8228b3e2c0a8f75f1f21f20b5740034db43d48a0aee8e7",
+      "mvtracker/datasets/kubric_multiview_dataset.py": "669e0015db04150363cd9b233399c49a5f93468a48e82fe71efb53ad9d8b1a1e",
+      "mvtracker/utils/basic.py": "fca94d66d2a4dc3742485342af223999c56413fd8ad8a2e82171bc32139fb63f"
+    }
+  },
+  "identical_rgb": true,
+  "sequences": 46,
+  "rows": [
+    {
+      "dataset": "panoptic",
+      "method": "multid4rt",
+      "sequences": 6,
+      "point_group": "any",
+      "delta_avg_percent": 46.965,
+      "mte": 22.515,
+      "ate": 24.308333333333334,
+      "fde": 47.63166666666666,
+      "survival_percent": 98.14,
+      "aj3d_percent": 35.15,
+      "oa_percent": 91.21,
+      "units": "centimeters"
+    },
+    {
+      "dataset": "panoptic",
+      "method": "omnix",
+      "sequences": 6,
+      "point_group": "any",
+      "delta_avg_percent": 21.134999999999998,
+      "mte": 39.02,
+      "ate": 42.330000000000005,
+      "fde": 46.974999999999994,
+      "survival_percent": 70.21666666666668,
+      "aj3d_percent": null,
+      "oa_percent": null,
+      "units": "centimeters"
+    },
+    {
+      "dataset": "dexycb",
+      "method": "multid4rt",
+      "sequences": 10,
+      "point_group": "dynamic-static-mean",
+      "delta_avg_percent": 64.87199999999999,
+      "mte": 6.208,
+      "ate": 6.404999999999999,
+      "fde": 10.747,
+      "survival_percent": 71.731,
+      "aj3d_percent": 56.032000000000004,
+      "oa_percent": 91.28999999999999,
+      "units": "centimeters"
+    },
+    {
+      "dataset": "dexycb",
+      "method": "omnix",
+      "sequences": 10,
+      "point_group": "dynamic-static-mean",
+      "delta_avg_percent": 68.125,
+      "mte": 5.592,
+      "ate": 5.9879999999999995,
+      "fde": 10.01,
+      "survival_percent": 76.06199999999998,
+      "aj3d_percent": null,
+      "oa_percent": null,
+      "units": "centimeters"
+    },
+    {
+      "dataset": "mv-kubric",
+      "method": "multid4rt",
+      "sequences": 30,
+      "point_group": "dynamic-static-mean",
+      "delta_avg_percent": 54.03533333333335,
+      "mte": 56.12766666666666,
+      "ate": 54.62333333333334,
+      "fde": 89.93833333333333,
+      "survival_percent": 64.574,
+      "aj3d_percent": 46.23600000000001,
+      "oa_percent": 87.27566666666667,
+      "units": "original scene units *100"
+    },
+    {
+      "dataset": "mv-kubric",
+      "method": "omnix",
+      "sequences": 30,
+      "point_group": "dynamic-static-mean",
+      "delta_avg_percent": 54.143,
+      "mte": 78.955,
+      "ate": 77.78999999999999,
+      "fde": 131.88666666666666,
+      "survival_percent": 60.85900000000001,
+      "aj3d_percent": null,
+      "oa_percent": null,
+      "units": "original scene units *100"
+    }
+  ],
+  "input_condition": "rgb_calibrated_gauge_and_supplied_3d_queries",
+  "note": "Provided calibration registers a single camera-center Sim(3); supplied 3D query XYZ anchors the trajectory. RGB networks receive no camera matrices or future tracks.",
+  "omnix_visibility": "no official occlusion head; AJ/OA are unsupported, not copied from always-visible diagnostic scoring",
+  "equivalent_cache_reuse": 40
+}

@@ -1,0 +1,57 @@
+{
+  "camera_sim3_scale": 12.230797945589416,
+  "camera_sim3_rotation": [
+    [
+      -0.6923458576202393,
+      -0.29297298192977905,
+      -0.6594119071960449
+    ],
+    [
+      0.7210571765899658,
+      -0.31521889567375183,
+      -0.6170199513435364
+    ],
+    [
+      -0.027088921517133713,
+      -0.9026648998260498,
+      0.4294907748699188
+    ]
+  ],
+  "camera_sim3_translation": [
+    4.176051139831543,
+    2.6194911003112793,
+    -0.7664637565612793
+  ],
+  "camera_registration_rmse_normalized_world": 0.21571063171336277,
+  "source_observation_count": 57,
+  "input_observations": 100,
+  "frames": 25,
+  "queries": 384,
+  "max_query_offset_normalized_world": 1.2234513759613037,
+  "preprocessing": {
+    "raw_hw": [
+      480,
+      640
+    ],
+    "content_hw": [
+      200,
+      266
+    ],
+    "padded_hw": [
+      210,
+      266
+    ],
+    "rgb_sha256": "aea1678c9de3ff2cc8b86f04acdfd3d8166edc46c6065d50b2c47545c0b79b11"
+  },
+  "seconds": 5.911714017856866,
+  "visibility_predictor": "unavailable; all-visible storage placeholder",
+  "total_seconds": 9.53234441112727,
+  "cache_reuse": {
+    "source": "../multiview46/omnix_v1_native/dexycb/20200918-subject-06__20200918_114117.npz",
+    "source_archive_sha256": "36317fdbd27387b162a1ec5d17b322ce043659babb8ba39c8db3134ae085c742",
+    "source_run_sha256": "bf9bf738366d7599032e6856f0e83f64dc896b11dc3d7bb3fef7a13fe4417e63",
+    "destination_archive_sha256": "7d2b3cb98395ab43a457b7519a2608583c89b14d68f02e9a2efb4da75c9da86a",
+    "native_parity_report_sha256": "41f3a6ad63c2f0f93c3558c9ec80db9cee3c22356b815ddeac8b10a651d60102",
+    "inference_reused": true
+  }
+}

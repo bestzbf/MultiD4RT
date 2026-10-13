@@ -1,0 +1,350 @@
+{
+  "stage": "passed",
+  "created_utc": "2026-10-13T03:34:09.226328+00:00",
+  "rows": [
+    {
+      "dataset": "PStudio · 单相机",
+      "metric": "APD3D",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "106 视频 / 954 × T16",
+      "multid4rt": 3.2822691410173936,
+      "omnix": 13.965723532330735,
+      "protocol": "RGB + 2D 查询；官方 depth-adaptive 阈值、每段全局 median scale；视频宏平均"
+    },
+    {
+      "dataset": "PStudio · 单相机",
+      "metric": "EPE",
+      "unit": "m",
+      "direction": "↓",
+      "samples": "106 视频 / 954 × T16",
+      "multid4rt": 0.22712876622312508,
+      "omnix": 0.12793988031138873,
+      "protocol": "预测目标相机坐标；与 APD 相同尺度，GT 可见点欧氏误差；视频宏平均"
+    },
+    {
+      "dataset": "Sintel · 深度",
+      "metric": "AbsRel · S",
+      "unit": "",
+      "direction": "↓",
+      "samples": "14 序列 / 37 × T16",
+      "multid4rt": 0.35509107191417666,
+      "omnix": 0.3828617013185411,
+      "protocol": "4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均"
+    },
+    {
+      "dataset": "Sintel · 深度",
+      "metric": "AbsRel · SS",
+      "unit": "",
+      "direction": "↓",
+      "samples": "14 序列 / 37 × T16",
+      "multid4rt": 0.2740668538655784,
+      "omnix": 0.28739526122808456,
+      "protocol": "4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均"
+    },
+    {
+      "dataset": "Sintel · 深度",
+      "metric": "δ₁ · S",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "14 序列 / 37 × T16",
+      "multid4rt": 62.45368894793697,
+      "omnix": 58.0515299294446,
+      "protocol": "4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均"
+    },
+    {
+      "dataset": "Sintel · 深度",
+      "metric": "δ₁ · SS",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "14 序列 / 37 × T16",
+      "multid4rt": 63.92410923601002,
+      "omnix": 60.58385699886728,
+      "protocol": "4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均"
+    },
+    {
+      "dataset": "Sintel · 深度",
+      "metric": "RMSE · S",
+      "unit": "m",
+      "direction": "↓",
+      "samples": "14 序列 / 37 × T16",
+      "multid4rt": 4.7192869759290605,
+      "omnix": 3.706605015574275,
+      "protocol": "4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均"
+    },
+    {
+      "dataset": "Sintel · 深度",
+      "metric": "RMSE · SS",
+      "unit": "m",
+      "direction": "↓",
+      "samples": "14 序列 / 37 × T16",
+      "multid4rt": 5.188403032216671,
+      "omnix": 4.253609562040986,
+      "protocol": "4RC/CUT3R 官方函数；GT <70m；每段一个 S 或 SS 对齐；片段宏平均"
+    },
+    {
+      "dataset": "Sintel · 位姿",
+      "metric": "RPE-R · 全 37 段",
+      "unit": "°",
+      "direction": "↓",
+      "samples": "37 × T16",
+      "multid4rt": 0.21519838761879376,
+      "omnix": 0.16652677638540198,
+      "protocol": "evo 相邻帧旋转 RMSE；无需轨迹尺度对齐；双方旋转做有界 SO(3) 数值校正"
+    },
+    {
+      "dataset": "Sintel · 位姿",
+      "metric": "ATE · Sim3",
+      "unit": "m",
+      "direction": "↓",
+      "samples": "16 个 GT 非退化片段",
+      "multid4rt": 0.03764303477043267,
+      "omnix": 0.027468417452182526,
+      "protocol": "evo；GT 相机中心秩不足的 21 段同等排除；不是全 37 段位姿平均"
+    },
+    {
+      "dataset": "Sintel · 位姿",
+      "metric": "RPE-T · Sim3",
+      "unit": "m",
+      "direction": "↓",
+      "samples": "16 个 GT 非退化片段",
+      "multid4rt": 0.03336488466849905,
+      "omnix": 0.022810288651317345,
+      "protocol": "evo；GT 相机中心秩不足的 21 段同等排除；不是全 37 段位姿平均"
+    },
+    {
+      "dataset": "Panoptic · 多相机",
+      "metric": "Δavg",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "6 完整序列 / C4T150",
+      "multid4rt": 46.965,
+      "omnix": 21.134999999999998,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；any 组"
+    },
+    {
+      "dataset": "Panoptic · 多相机",
+      "metric": "MTE",
+      "unit": "cm",
+      "direction": "↓",
+      "samples": "6 完整序列 / C4T150",
+      "multid4rt": 22.515,
+      "omnix": 39.02,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；any 组"
+    },
+    {
+      "dataset": "Panoptic · 多相机",
+      "metric": "ATE · tracking",
+      "unit": "cm",
+      "direction": "↓",
+      "samples": "6 完整序列 / C4T150",
+      "multid4rt": 24.308333333333334,
+      "omnix": 42.330000000000005,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；any 组"
+    },
+    {
+      "dataset": "Panoptic · 多相机",
+      "metric": "Survival",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "6 完整序列 / C4T150",
+      "multid4rt": 98.14,
+      "omnix": 70.21666666666668,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；any 组"
+    },
+    {
+      "dataset": "Panoptic · 多相机",
+      "metric": "AJ3D（OmniX 无官方遮挡头）",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "6 完整序列 / C4T150",
+      "multid4rt": 35.15,
+      "omnix": null,
+      "protocol": "OmniX 存档 all-visible 占位不作为遮挡预测指标"
+    },
+    {
+      "dataset": "DexYCB · 多相机",
+      "metric": "Δavg",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "10 完整序列 / C4T24/25",
+      "multid4rt": 64.87199999999999,
+      "omnix": 68.125,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "DexYCB · 多相机",
+      "metric": "MTE",
+      "unit": "cm",
+      "direction": "↓",
+      "samples": "10 完整序列 / C4T24/25",
+      "multid4rt": 6.208,
+      "omnix": 5.592,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "DexYCB · 多相机",
+      "metric": "ATE · tracking",
+      "unit": "cm",
+      "direction": "↓",
+      "samples": "10 完整序列 / C4T24/25",
+      "multid4rt": 6.404999999999999,
+      "omnix": 5.9879999999999995,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "DexYCB · 多相机",
+      "metric": "Survival",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "10 完整序列 / C4T24/25",
+      "multid4rt": 71.731,
+      "omnix": 76.06199999999998,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "DexYCB · 多相机",
+      "metric": "AJ3D（OmniX 无官方遮挡头）",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "10 完整序列 / C4T24/25",
+      "multid4rt": 56.032000000000004,
+      "omnix": null,
+      "protocol": "OmniX 存档 all-visible 占位不作为遮挡预测指标"
+    },
+    {
+      "dataset": "MV-Kubric · 多相机",
+      "metric": "Δavg",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "30 完整序列 / C4T24",
+      "multid4rt": 54.03533333333335,
+      "omnix": 54.143,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "MV-Kubric · 多相机",
+      "metric": "MTE",
+      "unit": "原始场景单位 ×100",
+      "direction": "↓",
+      "samples": "30 完整序列 / C4T24",
+      "multid4rt": 56.12766666666666,
+      "omnix": 78.955,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "MV-Kubric · 多相机",
+      "metric": "ATE · tracking",
+      "unit": "原始场景单位 ×100",
+      "direction": "↓",
+      "samples": "30 完整序列 / C4T24",
+      "multid4rt": 54.62333333333334,
+      "omnix": 77.78999999999999,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "MV-Kubric · 多相机",
+      "metric": "Survival",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "30 完整序列 / C4T24",
+      "multid4rt": 64.574,
+      "omnix": 60.85900000000001,
+      "protocol": "官方固定查询、完整长度、官方 scorer；RGB 网络 + 标定坐标对齐 + 给定 3D 查询；dynamic-static-mean 组"
+    },
+    {
+      "dataset": "MV-Kubric · 多相机",
+      "metric": "AJ3D（OmniX 无官方遮挡头）",
+      "unit": "%",
+      "direction": "↑",
+      "samples": "30 完整序列 / C4T24",
+      "multid4rt": 46.23600000000001,
+      "omnix": null,
+      "protocol": "OmniX 存档 all-visible 占位不作为遮挡预测指标"
+    }
+  ],
+  "camera_sweep": [
+    {
+      "cameras": 4,
+      "frames": 8,
+      "sequences": 3,
+      "multid4rt": {
+        "delta_avg_percent": 49.03666666666667,
+        "mte": 31.336666666666662
+      },
+      "omnix": {
+        "delta_avg_percent": 38.78333333333333,
+        "mte": 61.376666666666665
+      }
+    },
+    {
+      "cameras": 6,
+      "frames": 8,
+      "sequences": 3,
+      "multid4rt": {
+        "delta_avg_percent": 50.98333333333334,
+        "mte": 27.659999999999997
+      },
+      "omnix": {
+        "delta_avg_percent": 38.856666666666676,
+        "mte": 53.919999999999995
+      }
+    },
+    {
+      "cameras": 8,
+      "frames": 8,
+      "sequences": 3,
+      "multid4rt": {
+        "delta_avg_percent": 52.416666666666664,
+        "mte": 25.600000000000005
+      },
+      "omnix": {
+        "delta_avg_percent": 39.25666666666667,
+        "mte": 52.81666666666666
+      }
+    },
+    {
+      "cameras": 10,
+      "frames": 8,
+      "sequences": 3,
+      "multid4rt": {
+        "delta_avg_percent": 53.22666666666667,
+        "mte": 24.80666666666667
+      },
+      "omnix": {
+        "delta_avg_percent": 38.35666666666667,
+        "mte": 52.04
+      }
+    }
+  ],
+  "error_diagnostics": {
+    "multid4rt": {
+      "source_apd3d": 0.03494961883756613,
+      "source_epe_m": 0.22507372692872596,
+      "future_epe_m": 0.22726417947132413,
+      "future_displacement_error_m": 0.047976042450013814
+    },
+    "omnix": {
+      "source_apd3d": 0.13434331443845068,
+      "source_epe_m": 0.13050878439185984,
+      "future_epe_m": 0.12776713517764832,
+      "future_displacement_error_m": 0.042590633313755046
+    }
+  },
+  "sources": {
+    "omnix": "https://github.com/yanqinJiang/OmniX",
+    "tapvid3d": "https://github.com/google-deepmind/tapnet",
+    "mvtracker": "https://github.com/ethz-vlg/mvtracker",
+    "depth": "https://github.com/Luo-Yihang/4RC",
+    "evo": "https://github.com/MichaelGrupp/evo",
+    "d4rt": "https://d4rt-paper.github.io/"
+  },
+  "limitations": [
+    "这是共同预处理和明确固定协议下的发布权重重跑；OmniX 的论文专用完整评测 wrapper 未发布，不能把论文表值直接当作这里的基线。",
+    "D4RT 官方页面未找到可运行模型代码/权重；未将 OpenD4RT 等非官方复现冒充官方 D4RT。",
+    "N3DV 是新视角渲染任务；本轮没有把几何/追踪输出转换成 PSNR、SSIM、LPIPS，未运行渲染对比。",
+    "不报告公平速度对比：OmniX CUDA attention/deformable kernels 在 B300 上使用等价 PyTorch 实现。",
+    "相机数量诊断只用固定 1、15、30 三个 MV-Kubric 场景、T8、固定 first-frame 查询与四个参考视角 GT 可见性；它与完整 C4T24 官方测试分开。",
+    "OmniX 的内存适配保留全部输入、attention、原目标槽和时间语义；实际 C2T4/C4T8/C4T24 与原完整输出差异为 0；40 个已完成预测通过逐数组与评分一致性核验复用。"
+  ]
+}

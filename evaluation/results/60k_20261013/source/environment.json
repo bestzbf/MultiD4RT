@@ -1,0 +1,25 @@
+{
+  "python": "3.10.20",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "1.26.4",
+    "Pillow": "9.2.0",
+    "opencv-python": "4.11.0.86",
+    "scipy": "1.13.1",
+    "evo": "1.38.0",
+    "omegaconf": "2.3.0",
+    "hydra-core": "1.3.2",
+    "addict": "2.4.0",
+    "einops": "0.8.2",
+    "kornia": "0.7.3",
+    "h5py": "3.14.0",
+    "imageio": "2.37.3",
+    "tifffile": "2025.5.10",
+    "huggingface-hub": "1.33.0",
+    "jaxtyping": "external/absent",
+    "beartype": "external/absent",
+    "timm": "1.0.26"
+  },
+  "source": "isolated evaluation environment; selected package versions only"
+}

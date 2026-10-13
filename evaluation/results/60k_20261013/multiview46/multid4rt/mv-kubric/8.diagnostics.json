@@ -1,0 +1,49 @@
+{
+  "camera_sim3_scale": 14.815610183363793,
+  "camera_sim3_rotation": [
+    [
+      -0.6572983860969543,
+      -0.4005885422229767,
+      0.6383475661277771
+    ],
+    [
+      -0.753411054611206,
+      0.36971643567085266,
+      -0.5437660217285156
+    ],
+    [
+      -0.018181143328547478,
+      -0.8383547067642212,
+      -0.5448218584060669
+    ]
+  ],
+  "camera_sim3_translation": [
+    -7.330885887145996,
+    6.931013584136963,
+    7.516286373138428
+  ],
+  "camera_registration_rmse_normalized_world": 0.5120174756911658,
+  "source_observation_count": 69,
+  "input_observations": 96,
+  "frames": 24,
+  "queries": 512,
+  "max_query_offset_normalized_world": 6.164739608764648,
+  "preprocessing": {
+    "raw_hw": [
+      512,
+      512
+    ],
+    "content_hw": [
+      266,
+      266
+    ],
+    "padded_hw": [
+      266,
+      266
+    ],
+    "rgb_sha256": "47bcb7ee1c6fb4f5144a9b9715149317736eb89ed11cf918f4e6ac0cfd69e5d2"
+  },
+  "seconds": 14.20551088778302,
+  "visibility_predictor": "native",
+  "total_seconds": 19.732915355358273
+}

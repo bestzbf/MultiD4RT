@@ -1,0 +1,57 @@
+{
+  "camera_sim3_scale": 21.890090228152893,
+  "camera_sim3_rotation": [
+    [
+      0.8053353428840637,
+      -0.20854444801807404,
+      0.5549271702766418
+    ],
+    [
+      -0.5924763679504395,
+      -0.25129613280296326,
+      0.7653900980949402
+    ],
+    [
+      -0.020166797563433647,
+      -0.9451769590377808,
+      -0.32593533396720886
+    ]
+  ],
+  "camera_sim3_translation": [
+    -7.036354064941406,
+    -10.806085586547852,
+    4.334311008453369
+  ],
+  "camera_registration_rmse_normalized_world": 0.3125554570819195,
+  "source_observation_count": 69,
+  "input_observations": 96,
+  "frames": 24,
+  "queries": 512,
+  "max_query_offset_normalized_world": 17.921772003173828,
+  "preprocessing": {
+    "raw_hw": [
+      512,
+      512
+    ],
+    "content_hw": [
+      266,
+      266
+    ],
+    "padded_hw": [
+      266,
+      266
+    ],
+    "rgb_sha256": "3cede7f88a59ea7059b067de9e3e310f0fbbfa761e208b2e5784954d47f5a297"
+  },
+  "seconds": 8.271486549638212,
+  "visibility_predictor": "unavailable; all-visible storage placeholder",
+  "total_seconds": 15.80945839220658,
+  "cache_reuse": {
+    "source": "../multiview46/omnix_v1_native/mv-kubric/26.npz",
+    "source_archive_sha256": "4db972c8712e6d97a3c75a47b5fb6dddd8a7222aa66803a814cec6145775330f",
+    "source_run_sha256": "bf9bf738366d7599032e6856f0e83f64dc896b11dc3d7bb3fef7a13fe4417e63",
+    "destination_archive_sha256": "519a4db10d350d7ccc1de0f41741fb27c4eea8215c7213dc3a544c45ccf39cb9",
+    "native_parity_report_sha256": "41f3a6ad63c2f0f93c3558c9ec80db9cee3c22356b815ddeac8b10a651d60102",
+    "inference_reused": true
+  }
+}

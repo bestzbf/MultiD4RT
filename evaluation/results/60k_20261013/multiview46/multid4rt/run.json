@@ -1,0 +1,60 @@
+{
+  "method": "multid4rt",
+  "checkpoint_sha256": "1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0",
+  "input_condition": "rgb_calibrated_gauge_and_supplied_3d_queries",
+  "network_inputs": "RGB plus camera/time IDs; no GT depth, poses, visibility or future tracks",
+  "alignment": "one camera-center Sim(3) per complete sequence, using provided calibration",
+  "query_adapter": "closest predicted source anchor among calibrated in-frame projections",
+  "query_anchor": "constant offset from supplied query XYZ; no future track fitting",
+  "visibility": "native head >0.5 OR across input views",
+  "long_side": 266,
+  "resize": "full-FOV aspect preserving, bilinear align_corners=True, bottom/right zero padding to patch14",
+  "target_chunk": 32,
+  "source_chunk": 4,
+  "amp": "bfloat16; regression float32",
+  "load_report": {
+    "strict": true,
+    "tensors": 1106,
+    "step": 60000,
+    "config": {
+      "embed_dim": 1536,
+      "encoder_depth": 40,
+      "encoder_heads": 24,
+      "out_layers": [
+        19,
+        27,
+        33,
+        39
+      ],
+      "alt_start": 13,
+      "positional_image_size": 518,
+      "patch_size": 14,
+      "ffn_layer": "swiglufused",
+      "motion_depth": 4,
+      "motion_heads": 16,
+      "dpt_features": 256,
+      "dpt_channels": [
+        256,
+        512,
+        1024,
+        1024
+      ],
+      "decoder_memory": "target_time",
+      "time_origin": "clip_start",
+      "geometry_chunk_size": 8,
+      "attention_chunk_size": null,
+      "visibility_chunk_size": null,
+      "gradient_checkpointing": false
+    },
+    "method": "multid4rt",
+    "checkpoint": "/data9/zbf/multid4rt_modelscope_release_20261010/model/multid4rt_giant_step60000.pt",
+    "checkpoint_sha256": "1161d6bfaa0d277b22108c5b9e803b9e1c36e289f98799e35bd59a9b821197e0",
+    "parameters": 1527388286,
+    "torch": "2.11.0+cu128",
+    "numpy": "1.26.4"
+  },
+  "code_sha256": {
+    "run_multiview.py": "9e602b6aaacb471fddaae04bae83c3e10020c3eeed5c2981679d071686821909",
+    "multiview_adapter.py": "ce97be8657e7ec55b2f1771852e46d5427496cd66e54c27541ff23b3493b665a"
+  }
+}

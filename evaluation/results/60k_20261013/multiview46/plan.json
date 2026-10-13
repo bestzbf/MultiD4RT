@@ -1,0 +1,814 @@
+{
+  "format": "multicamera4rc-official-multiview-v1",
+  "benchmark_root": "/data6/benchmarks",
+  "profiles": {
+    "panoptic": {
+      "name": "panoptic",
+      "official_name": "panoptic-multiview-views1_7_14_20-cached",
+      "family": "panoptic-multiview",
+      "folder": "panoptic-multiview",
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "sequences": 6,
+      "frames": 150,
+      "queries": 384,
+      "cache_name": "cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "depth": "dynamic3dgs"
+    },
+    "dexycb": {
+      "name": "dexycb",
+      "official_name": "dex-ycb-multiview-views0123-cached",
+      "family": "dexycb-multiview",
+      "folder": "dex-ycb-multiview",
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sequences": 10,
+      "frames": null,
+      "queries": 384,
+      "cache_name": "cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "depth": "sensor"
+    },
+    "mv-kubric": {
+      "name": "mv-kubric",
+      "official_name": "kubric-multiview-v3-views0123-cached",
+      "family": "kubric-multiview",
+      "folder": "kubric-multiview/test",
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sequences": 30,
+      "frames": 24,
+      "queries": 512,
+      "cache_name": "cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "depth": "rendered"
+    }
+  },
+  "official": {
+    "repository": "https://github.com/ethz-vlg/mvtracker",
+    "commit": "ceea8ad2af77ed9b44148ef8e9eeba4ea3c3f072",
+    "sha256": {
+      "mvtracker/evaluation/metrics.py": "eeb5fb78ad60045a1a6f94e0916e3a7d44dd3dfc22340fbc7c2ae3812929b0e7",
+      "mvtracker/evaluation/evaluator_3dpt.py": "17a4c4a5b04c25f9c0d8f513d074dcd616875c61167c001df1f8331074aa09fb",
+      "mvtracker/datasets/utils.py": "a29403690d5d493c28a4e50ae047dbf5a4f4c6822573afaaed83d891888c0892",
+      "mvtracker/datasets/panoptic_studio_multiview_dataset.py": "3a4bf92350fc19d68fdf899d36fde39142c502080fc50728efe8ed856732ed55",
+      "mvtracker/datasets/dexycb_multiview_dataset.py": "81da5927b9b046a00b8228b3e2c0a8f75f1f21f20b5740034db43d48a0aee8e7",
+      "mvtracker/datasets/kubric_multiview_dataset.py": "669e0015db04150363cd9b233399c49a5f93468a48e82fe71efb53ad9d8b1a1e",
+      "mvtracker/utils/basic.py": "fca94d66d2a4dc3742485342af223999c56413fd8ad8a2e82171bc32139fb63f"
+    }
+  },
+  "scenes": [
+    {
+      "id": "panoptic/basketball",
+      "profile": "panoptic",
+      "sequence": "basketball",
+      "cache": "datasets/mvtracker/panoptic-multiview/basketball/cache/cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "frames": 150,
+      "queries": 384,
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "cache_sha256": "556ecfd66b350e635cbdb7507fffff48c4b29f61f4153baea16d997c48c80ff6",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "panoptic/boxes",
+      "profile": "panoptic",
+      "sequence": "boxes",
+      "cache": "datasets/mvtracker/panoptic-multiview/boxes/cache/cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "frames": 150,
+      "queries": 384,
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "cache_sha256": "da4a8c5dac6cda2d53d293dfcde1e6672887f82cf1dfe473a452a7e31dd6eb71",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "panoptic/football",
+      "profile": "panoptic",
+      "sequence": "football",
+      "cache": "datasets/mvtracker/panoptic-multiview/football/cache/cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "frames": 150,
+      "queries": 384,
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "cache_sha256": "6f1a2af72d4381c817e8f14226b14b4861d89f4219dd2e02a58661d7545a3f15",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "panoptic/juggle",
+      "profile": "panoptic",
+      "sequence": "juggle",
+      "cache": "datasets/mvtracker/panoptic-multiview/juggle/cache/cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "frames": 150,
+      "queries": 384,
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "cache_sha256": "25d4025d0a7c2d350a86552f431e901e6eaeb73b9ff71e48b61a62a051a8b87f",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "panoptic/softball",
+      "profile": "panoptic",
+      "sequence": "softball",
+      "cache": "datasets/mvtracker/panoptic-multiview/softball/cache/cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "frames": 150,
+      "queries": 384,
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "cache_sha256": "d449b9e8410dc1737425a8e4d97710c72b5b066727e96ae518963919097d1a38",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "panoptic/tennis",
+      "profile": "panoptic",
+      "sequence": "tennis",
+      "cache": "datasets/mvtracker/panoptic-multiview/tennis/cache/cachedtracks--seed72-views1_7_14_20-n384--v1.npz",
+      "frames": 150,
+      "queries": 384,
+      "views": [
+        1,
+        7,
+        14,
+        20
+      ],
+      "cache_sha256": "92b3b6ad0cae75db0883d80f0fb62011736aa7cb287a31cd6d397bb97fb5b49a",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200709-subject-01__20200709_141754",
+      "profile": "dexycb",
+      "sequence": "20200709-subject-01__20200709_141754",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200709-subject-01__20200709_141754/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 24,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "62c22e273fa25c30a25460f8bc849fa598442005599d678493f6bd96c5abed62",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200813-subject-02__20200813_145653",
+      "profile": "dexycb",
+      "sequence": "20200813-subject-02__20200813_145653",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200813-subject-02__20200813_145653/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 24,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "d994db48031446bd6a52f7da3463dd9a5b556844e353be0370b998c009f4bdb8",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200820-subject-03__20200820_135841",
+      "profile": "dexycb",
+      "sequence": "20200820-subject-03__20200820_135841",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200820-subject-03__20200820_135841/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 25,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "3119b28f381f57e521d20293e95c28e50356003efb9ca2e89db689c84a0e3fac",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200903-subject-04__20200903_104428",
+      "profile": "dexycb",
+      "sequence": "20200903-subject-04__20200903_104428",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200903-subject-04__20200903_104428/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 24,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "0e55b6e5a315ba5679d70d80d356e17d472ba66054213ef854776720b668235e",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200908-subject-05__20200908_144409",
+      "profile": "dexycb",
+      "sequence": "20200908-subject-05__20200908_144409",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200908-subject-05__20200908_144409/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 24,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "2730ee9cce23474120b3faf982758b3f7a1e548823aa3bdbe83afa33448a4a53",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200918-subject-06__20200918_114117",
+      "profile": "dexycb",
+      "sequence": "20200918-subject-06__20200918_114117",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200918-subject-06__20200918_114117/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 25,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "97c982bb82be13c1081f955844fd474a285fbbdfb447afd09cd4be5fbfe81c4b",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20200928-subject-07__20200928_144906",
+      "profile": "dexycb",
+      "sequence": "20200928-subject-07__20200928_144906",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20200928-subject-07__20200928_144906/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 24,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "196566186d26e14528686e72f3e92fc04624609dcfb886dd4f434b6f29d3cfec",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20201002-subject-08__20201002_110227",
+      "profile": "dexycb",
+      "sequence": "20201002-subject-08__20201002_110227",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20201002-subject-08__20201002_110227/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 25,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "bd99cdd41a3a87daa6309ed4053e040ab9d5269877d2632d1569d6c155e10491",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20201015-subject-09__20201015_144721",
+      "profile": "dexycb",
+      "sequence": "20201015-subject-09__20201015_144721",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20201015-subject-09__20201015_144721/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 25,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "cc2e3c8a612c8caee5a30c90b9519c01fa68bb545399faffd72df2334f65bdd7",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "dexycb/20201022-subject-10__20201022_112651",
+      "profile": "dexycb",
+      "sequence": "20201022-subject-10__20201022_112651",
+      "cache": "datasets/mvtracker/dex-ycb-multiview/20201022-subject-10__20201022_112651/cache/cachedtracks--seed72-views0_1_2_3-n384--v1.npz",
+      "frames": 25,
+      "queries": 384,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "231916feab3c22630d6d41da5946ae0b076ad664e018a3c5a9d347385827c6b0",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/1",
+      "profile": "mv-kubric",
+      "sequence": "1",
+      "cache": "datasets/mvtracker/kubric-multiview/test/1/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "d64f53ddc7c919d0611e29a91b2ab0462a16e03106126f8463ff8d39f989cfa4",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/2",
+      "profile": "mv-kubric",
+      "sequence": "2",
+      "cache": "datasets/mvtracker/kubric-multiview/test/2/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "65ce8952a0a9be76e7409d9f76dcc6434e2d7e1f055b08982767a64a2db3b76a",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/3",
+      "profile": "mv-kubric",
+      "sequence": "3",
+      "cache": "datasets/mvtracker/kubric-multiview/test/3/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "fca2c48383c013e2ae63d19d925cbc081cb0b6873a8b69ebbe5732c459abd876",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/4",
+      "profile": "mv-kubric",
+      "sequence": "4",
+      "cache": "datasets/mvtracker/kubric-multiview/test/4/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "afdf19d5166095a547ef88b3cd031fc84bc6f9ce4ea71208dd6477f0fa0c4b3a",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/5",
+      "profile": "mv-kubric",
+      "sequence": "5",
+      "cache": "datasets/mvtracker/kubric-multiview/test/5/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "070554649b653d2906c40dacd9ba206de481e0c75522b7ff70a658375765757a",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/6",
+      "profile": "mv-kubric",
+      "sequence": "6",
+      "cache": "datasets/mvtracker/kubric-multiview/test/6/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "fac8e69ee8edcd5d2a51643ff44062ba9ba2ea964ee8aaca1f93eea63da8d018",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/7",
+      "profile": "mv-kubric",
+      "sequence": "7",
+      "cache": "datasets/mvtracker/kubric-multiview/test/7/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "c9e43ddc33192962288be4b06b7a53e50556c02df5b4c91b6ee7841e6dee62be",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/8",
+      "profile": "mv-kubric",
+      "sequence": "8",
+      "cache": "datasets/mvtracker/kubric-multiview/test/8/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "6bab522c4db8cab3c6060724edf00271474a5a8e229d27aad0bf59a91498539e",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/9",
+      "profile": "mv-kubric",
+      "sequence": "9",
+      "cache": "datasets/mvtracker/kubric-multiview/test/9/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "e9159ea82376fb49c4e85d14844fe20262c4b3d7320109fc828c4dbec5a76be6",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/10",
+      "profile": "mv-kubric",
+      "sequence": "10",
+      "cache": "datasets/mvtracker/kubric-multiview/test/10/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "32f9ff73c007176f477e15bcae5526df71e01f56bad4a717bcdfda2f9d1c91b5",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/11",
+      "profile": "mv-kubric",
+      "sequence": "11",
+      "cache": "datasets/mvtracker/kubric-multiview/test/11/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "f31bf1da50d11f16ba9d626e8600c2c4864d34d56fe458c94ddf8b46d5d056de",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/12",
+      "profile": "mv-kubric",
+      "sequence": "12",
+      "cache": "datasets/mvtracker/kubric-multiview/test/12/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "29f98d38a6f12bf8b8c2c6fbbe1ddc8ca973f63bef6901e712c44550ae440a8d",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/13",
+      "profile": "mv-kubric",
+      "sequence": "13",
+      "cache": "datasets/mvtracker/kubric-multiview/test/13/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "ca4c057ea01508ebe64ff9c9508c0bfcb7b40967d7cde4f4305a87d4a4c9b846",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/14",
+      "profile": "mv-kubric",
+      "sequence": "14",
+      "cache": "datasets/mvtracker/kubric-multiview/test/14/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "5dbe7afd196a95d048d53198f574100432506bf414271e559cf26c8364abcd5f",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/15",
+      "profile": "mv-kubric",
+      "sequence": "15",
+      "cache": "datasets/mvtracker/kubric-multiview/test/15/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "a993e4acf14262888d21a9c15f5918c20382a6af767681e290f5da4b3b796316",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/16",
+      "profile": "mv-kubric",
+      "sequence": "16",
+      "cache": "datasets/mvtracker/kubric-multiview/test/16/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "7ccb550a71674809030709838078fcec283ed82b52885e4deadd7645417a9765",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/17",
+      "profile": "mv-kubric",
+      "sequence": "17",
+      "cache": "datasets/mvtracker/kubric-multiview/test/17/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "fe9f3584ac26bece858ad025ffca28b5f58f7fd7b7c31c9a3f2087a26df1d43c",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/18",
+      "profile": "mv-kubric",
+      "sequence": "18",
+      "cache": "datasets/mvtracker/kubric-multiview/test/18/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "fc2bef7a90be99c78afd8ca2b397dd97ede2768aa9c773ca7e11f4a89a113f0f",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/19",
+      "profile": "mv-kubric",
+      "sequence": "19",
+      "cache": "datasets/mvtracker/kubric-multiview/test/19/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "d1cdc380833517ec122b73eb386dc630fefd4510d0b581e5f82123f3aea0ce82",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/20",
+      "profile": "mv-kubric",
+      "sequence": "20",
+      "cache": "datasets/mvtracker/kubric-multiview/test/20/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "ff15a3648e6f30b5f65753568942975f2617723a3a59af4f129eebe53418c1bc",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/21",
+      "profile": "mv-kubric",
+      "sequence": "21",
+      "cache": "datasets/mvtracker/kubric-multiview/test/21/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "9b39376c7702ae43d0c2f4ed3a9bee7d7c8d3e1e5a6fb8a690ffcf0eb0883316",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/22",
+      "profile": "mv-kubric",
+      "sequence": "22",
+      "cache": "datasets/mvtracker/kubric-multiview/test/22/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "cb73125f8adb9e8960698252b1c7b090e7ea31e3f93208e062c066f8f88ddac4",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/23",
+      "profile": "mv-kubric",
+      "sequence": "23",
+      "cache": "datasets/mvtracker/kubric-multiview/test/23/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "fd4fb0e73008d67d38d75dcd5e15d8fd4e9dd8ccbddf01465acc7dfedb496c1c",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/24",
+      "profile": "mv-kubric",
+      "sequence": "24",
+      "cache": "datasets/mvtracker/kubric-multiview/test/24/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "c47253ef6dc745df2b69748540dfb1586ca0231c307bb9267897e72952aab5c5",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/25",
+      "profile": "mv-kubric",
+      "sequence": "25",
+      "cache": "datasets/mvtracker/kubric-multiview/test/25/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "833925dd5249dddcd5370753af2ffd89d4d152055b165b70cd8da03471f647b2",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/26",
+      "profile": "mv-kubric",
+      "sequence": "26",
+      "cache": "datasets/mvtracker/kubric-multiview/test/26/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "a7c37ac1e5d551b0ef865bbc8dbd3b99f94b81cc6bbf11ffa2e9b1142b1fa724",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/27",
+      "profile": "mv-kubric",
+      "sequence": "27",
+      "cache": "datasets/mvtracker/kubric-multiview/test/27/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "9f955d34d3a7594dde99cfb8c3c0275c1f4b5d62f6bcb93c4b28de0ccc05015b",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/28",
+      "profile": "mv-kubric",
+      "sequence": "28",
+      "cache": "datasets/mvtracker/kubric-multiview/test/28/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "56387526056a18379a523df8ccdb50fb473eeefdc4f7873bbb35a325b12a395c",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/29",
+      "profile": "mv-kubric",
+      "sequence": "29",
+      "cache": "datasets/mvtracker/kubric-multiview/test/29/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "24b96bdfc7fddf544a398b391c93d0629eba2e66e3c61272d16ca8407f25448a",
+      "max_query_anchor_error": 0.0
+    },
+    {
+      "id": "mv-kubric/30",
+      "profile": "mv-kubric",
+      "sequence": "30",
+      "cache": "datasets/mvtracker/kubric-multiview/test/30/cache/cachedtracks--seed72-dynamic0.5-verydynamic-0.25-views0_1_2_3-n512-numviews-1-t24--v1.npz",
+      "frames": 24,
+      "queries": 512,
+      "views": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cache_sha256": "6a33356f07e4be598f167600dfaaf042889e63d9d360b3b293033235a5113a86",
+      "max_query_anchor_error": 0.0
+    }
+  ],
+  "query_mode": "first",
+  "visibility": "OR over the selected input cameras",
+  "coordinates": "official loader normalized world; restore scale in official scorer",
+  "aggregation": "official rounded per-sequence metrics, arithmetic mean within each profile",
+  "download_verification_sha256": "5100cc8562bcc82d5f114aa1559aebe8f517342e26f8d0834f4cade8f054d109",
+  "plan_sha256": "3c8efe38d8b5117ceebb9ae5a9a42497ac3de5da9f8e2183e0117dd2a806c8bb"
+}

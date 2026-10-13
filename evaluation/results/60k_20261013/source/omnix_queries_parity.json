@@ -1,0 +1,88 @@
+{
+  "stage": "passed",
+  "checkpoint_sha256": "871638d02bf8591ccb24de9da28bf862a0c1fa10a8640442e76cb58face343ed",
+  "adapter_sha256": "c45c9ede6eeaf007efc69d8df9d2d1e554f0848c4c6fb5a4d0cc6355567c8b99",
+  "actual_inputs": {
+    "raw_hw": [
+      480,
+      640
+    ],
+    "content_hw": [
+      200,
+      266
+    ],
+    "padded_hw": [
+      210,
+      266
+    ],
+    "rgb_sha256": "b94eb2dab7e97c047927d9d58a6d2344706c3b87ae906dc2b6b4f4038b386b2c"
+  },
+  "cases": [
+    {
+      "cameras": 2,
+      "frames": 4,
+      "source_chunk": 4,
+      "maximum_absolute_errors": {
+        "trajectory": 0.0,
+        "pts3d": 0.0,
+        "camera_pose": 0.0,
+        "intrinsics": 0.0
+      },
+      "passed": true,
+      "adapter_provenance": {
+        "st_auxiliary": {
+          "source_sha256": "4d78929afb7d1b50b454e6bc0377eb6a208560a0f288f37bd20c6411d7980936",
+          "removed_ast": [
+            "Assign(targets=[Name(id='out_feature', ctx=Store())], value=Call(func=Attribute(value=Call(func=Attribute(value=Name(id='torch', ctx=Load()), attr='zeros', ctx=Load()), args=[Name(id='b', ctx=Load()), Name(id='im', ctx=Load()), Name(id='t', ctx=Load()), BinOp(left=Name(id='resized_hp', ctx=Load()), op=Mult(), right=Name(id='resized_wp', ctx=Load())), Attribute(value=Name(id='self', ctx=Load()), attr='embed_dim', ctx=Load())], keywords=[]), attr='to', ctx=Load()), args=[Name(id='dynamic_token', ctx=Load())], keywords=[]))",
+            "Assign(targets=[Name(id='indices_feat', ctx=Store())], value=Call(func=Attribute(value=Call(func=Attribute(value=Name(id='topk_indices', ctx=Load()), attr='unsqueeze', ctx=Load()), args=[Constant(value=2)], keywords=[]), attr='unsqueeze', ctx=Load()), args=[UnaryOp(op=USub(), operand=Constant(value=1))], keywords=[]))",
+            "Assign(targets=[Name(id='indices_feat', ctx=Store())], value=Call(func=Attribute(value=Name(id='indices_feat', ctx=Load()), attr='expand', ctx=Load()), args=[Name(id='b', ctx=Load()), Name(id='im', ctx=Load()), Name(id='t', ctx=Load()), Name(id='k', ctx=Load()), Attribute(value=Name(id='self', ctx=Load()), attr='embed_dim', ctx=Load())], keywords=[]))",
+            "Expr(value=Call(func=Attribute(value=Name(id='out_feature', ctx=Load()), attr='scatter_', ctx=Load()), args=[], keywords=[keyword(arg='dim', value=Constant(value=3)), keyword(arg='index', value=Name(id='indices_feat', ctx=Load())), keyword(arg='src', value=Name(id='dynamic_token', ctx=Load()))]))"
+          ]
+        },
+        "model_auxiliary": {
+          "source_sha256": "26783bdfcb4c0e3786dcc98752cc883632bf5d026e52723cc88ef143ebc98c21",
+          "removed_ast": [
+            "If(test=Attribute(value=Attribute(value=Name(id='self', ctx=Load()), attr='offset_head', ctx=Load()), attr='pred_conf', ctx=Load()), body=[Assign(targets=[Name(id='sampling_conf', ctx=Store())], value=Subscript(value=Name(id='offset_output', ctx=Load()), slice=Constant(value='sampling_conf'), ctx=Load())), Assign(targets=[Name(id='trajectory_conf', ctx=Store())], value=Call(func=Name(id='repeat', ctx=Load()), args=[Name(id='sampling_conf', ctx=Load()), Constant(value='b im h w -> b im t h w')], keywords=[keyword(arg='t', value=Name(id='im', ctx=Load()))])), Assign(targets=[Subscript(value=Name(id='predictions', ctx=Load()), slice=Constant(value='trajectory_conf'), ctx=Store())], value=Name(id='trajectory_conf', ctx=Load()))], orelse=[])"
+          ]
+        },
+        "trajectory_source_sha256": "6eca26ca3db84b591a882810b2328fe311e548369378004704fe533be2b553e3",
+        "target_mapping": "canonical first-camera slots for shared global_time_idx; preserves official synced-video semantics",
+        "source_selection": "original source-independent final trajectory function, evaluated only for requested sources",
+        "preserves": "all encoder inputs, every ST target slot, attention, learned heads, original physical reference times"
+      }
+    },
+    {
+      "cameras": 4,
+      "frames": 8,
+      "source_chunk": 4,
+      "maximum_absolute_errors": {
+        "trajectory": 0.0,
+        "pts3d": 0.0,
+        "camera_pose": 0.0,
+        "intrinsics": 0.0
+      },
+      "passed": true,
+      "adapter_provenance": {
+        "st_auxiliary": {
+          "source_sha256": "4d78929afb7d1b50b454e6bc0377eb6a208560a0f288f37bd20c6411d7980936",
+          "removed_ast": [
+            "Assign(targets=[Name(id='out_feature', ctx=Store())], value=Call(func=Attribute(value=Call(func=Attribute(value=Name(id='torch', ctx=Load()), attr='zeros', ctx=Load()), args=[Name(id='b', ctx=Load()), Name(id='im', ctx=Load()), Name(id='t', ctx=Load()), BinOp(left=Name(id='resized_hp', ctx=Load()), op=Mult(), right=Name(id='resized_wp', ctx=Load())), Attribute(value=Name(id='self', ctx=Load()), attr='embed_dim', ctx=Load())], keywords=[]), attr='to', ctx=Load()), args=[Name(id='dynamic_token', ctx=Load())], keywords=[]))",
+            "Assign(targets=[Name(id='indices_feat', ctx=Store())], value=Call(func=Attribute(value=Call(func=Attribute(value=Name(id='topk_indices', ctx=Load()), attr='unsqueeze', ctx=Load()), args=[Constant(value=2)], keywords=[]), attr='unsqueeze', ctx=Load()), args=[UnaryOp(op=USub(), operand=Constant(value=1))], keywords=[]))",
+            "Assign(targets=[Name(id='indices_feat', ctx=Store())], value=Call(func=Attribute(value=Name(id='indices_feat', ctx=Load()), attr='expand', ctx=Load()), args=[Name(id='b', ctx=Load()), Name(id='im', ctx=Load()), Name(id='t', ctx=Load()), Name(id='k', ctx=Load()), Attribute(value=Name(id='self', ctx=Load()), attr='embed_dim', ctx=Load())], keywords=[]))",
+            "Expr(value=Call(func=Attribute(value=Name(id='out_feature', ctx=Load()), attr='scatter_', ctx=Load()), args=[], keywords=[keyword(arg='dim', value=Constant(value=3)), keyword(arg='index', value=Name(id='indices_feat', ctx=Load())), keyword(arg='src', value=Name(id='dynamic_token', ctx=Load()))]))"
+          ]
+        },
+        "model_auxiliary": {
+          "source_sha256": "26783bdfcb4c0e3786dcc98752cc883632bf5d026e52723cc88ef143ebc98c21",
+          "removed_ast": [
+            "If(test=Attribute(value=Attribute(value=Name(id='self', ctx=Load()), attr='offset_head', ctx=Load()), attr='pred_conf', ctx=Load()), body=[Assign(targets=[Name(id='sampling_conf', ctx=Store())], value=Subscript(value=Name(id='offset_output', ctx=Load()), slice=Constant(value='sampling_conf'), ctx=Load())), Assign(targets=[Name(id='trajectory_conf', ctx=Store())], value=Call(func=Name(id='repeat', ctx=Load()), args=[Name(id='sampling_conf', ctx=Load()), Constant(value='b im h w -> b im t h w')], keywords=[keyword(arg='t', value=Name(id='im', ctx=Load()))])), Assign(targets=[Subscript(value=Name(id='predictions', ctx=Load()), slice=Constant(value='trajectory_conf'), ctx=Store())], value=Name(id='trajectory_conf', ctx=Load()))], orelse=[])"
+          ]
+        },
+        "trajectory_source_sha256": "6eca26ca3db84b591a882810b2328fe311e548369378004704fe533be2b553e3",
+        "target_mapping": "canonical first-camera slots for shared global_time_idx; preserves official synced-video semantics",
+        "source_selection": "original source-independent final trajectory function, evaluated only for requested sources",
+        "preserves": "all encoder inputs, every ST target slot, attention, learned heads, original physical reference times"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "mvtracker": {
+    "commit": "ceea8ad2af77ed9b44148ef8e9eeba4ea3c3f072",
+    "sha256": {
+      "mvtracker/evaluation/metrics.py": "eeb5fb78ad60045a1a6f94e0916e3a7d44dd3dfc22340fbc7c2ae3812929b0e7",
+      "mvtracker/evaluation/evaluator_3dpt.py": "17a4c4a5b04c25f9c0d8f513d074dcd616875c61167c001df1f8331074aa09fb",
+      "mvtracker/datasets/utils.py": "a29403690d5d493c28a4e50ae047dbf5a4f4c6822573afaaed83d891888c0892",
+      "mvtracker/datasets/panoptic_studio_multiview_dataset.py": "3a4bf92350fc19d68fdf899d36fde39142c502080fc50728efe8ed856732ed55",
+      "mvtracker/datasets/dexycb_multiview_dataset.py": "81da5927b9b046a00b8228b3e2c0a8f75f1f21f20b5740034db43d48a0aee8e7",
+      "mvtracker/datasets/kubric_multiview_dataset.py": "669e0015db04150363cd9b233399c49a5f93468a48e82fe71efb53ad9d8b1a1e",
+      "mvtracker/utils/basic.py": "fca94d66d2a4dc3742485342af223999c56413fd8ad8a2e82171bc32139fb63f"
+    }
+  },
+  "4DGaussians": {
+    "commit": "843d5ac636c37e4b611242287754f3d4ed150144",
+    "sha256": {
+      "metrics.py": "26feca064f9f74137b0481422c58960419fbc33f65ed7d4b99a37cdf5a4ab64d",
+      "utils/loss_utils.py": "980f64ffa391d9b673a9412d0f4b38ff6b0aac3618e237b079f8a5107c33810f",
+      "utils/image_utils.py": "a159f2e2767c96f1b4e408dd1f49b7c2c3195cfa0a839a567206cdc8c60bd4ba",
+      "scene/neural_3D_dataset_NDC.py": "a921790efc97ed0bb459277e631cfdf5f9ecef2dab8ac77ec601492a4b780e4f",
+      "lpipsPyTorch/__init__.py": "a657ce7355782eb970f95fd0d2e26eec5b9023212d2b655814da6e15b70510b4",
+      "lpipsPyTorch/modules/lpips.py": "3bece0b9cf9943af5b043026458819d259df9bfe7c2a1d3ffc6c905e7e5aa2b4",
+      "lpipsPyTorch/modules/networks.py": "dfa6f152b0e3fbc23ac3bfaea52b46e9473e64ad539ea22ab030c57af51c7f14",
+      "lpipsPyTorch/modules/utils.py": "1bd4a7d4e7b43215497675ed852936fe4f27e7ea3068afe0b0e1f7cfb6c48570"
+    },
+    "weights_sha256": {
+      "alex.pth": "df73285e35b22355a2df87cdb6b70b343713b667eddbda73e1977e0c860835c0",
+      "vgg.pth": "a78928a0af1e5f0fcb1f3b9e8f8c3a2a5a3de244d830ad5c1feddc79b8432868",
+      "alexnet-owt-7be5be79.pth": "7be5be791159472b1fbf3c69796f7cb30dca7ad8466c2df70058c37116cdee02",
+      "vgg16-397923af.pth": "397923af8e79cdbb6a7127f12361acd7a2f83e06b05044ddf496e83de57a5bf0"
+    }
+  }
+}
